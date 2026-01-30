@@ -136,11 +136,69 @@
 
     /* Mobile menu */
     .menu-btn { background: rgba(10,10,18,0.9); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(20px); }
+
+    /* Copy Button */
+    .code-wrapper { position: relative; }
+    .copy-btn { position: absolute; top: 8px; right: 8px; padding: 6px 10px; background: rgba(0,255,136,0.15); border: 1px solid rgba(0,255,136,0.3); border-radius: 6px; color: #00ff88; font-size: 11px; cursor: pointer; opacity: 0; transition: all 0.2s; display: flex; align-items: center; gap: 4px; }
+    .code-wrapper:hover .copy-btn { opacity: 1; }
+    .copy-btn:hover { background: rgba(0,255,136,0.25); }
+    .copy-btn.copied { background: rgba(0,255,136,0.3); }
+
+    /* Toast Notification */
+    .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(100px); background: linear-gradient(135deg, rgba(0,255,136,0.2) 0%, rgba(0,212,255,0.15) 100%); border: 1px solid rgba(0,255,136,0.4); padding: 12px 24px; border-radius: 12px; color: #00ff88; font-size: 14px; font-weight: 500; z-index: 1000; opacity: 0; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px; backdrop-filter: blur(10px); }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* Collapsible Sections */
+    .collapsible-header { cursor: pointer; user-select: none; }
+    .collapsible-header:hover { opacity: 0.9; }
+    .collapsible-icon { transition: transform 0.3s ease; }
+    .collapsible-header.collapsed .collapsible-icon { transform: rotate(-90deg); }
+    .collapsible-content { max-height: 5000px; overflow: hidden; transition: max-height 0.5s ease, opacity 0.3s ease; opacity: 1; }
+    .collapsible-content.collapsed { max-height: 0; opacity: 0; }
+
+    /* Section Link Button */
+    .section-link-btn { opacity: 0; padding: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: rgba(255,255,255,0.5); cursor: pointer; transition: all 0.2s; margin-left: auto; }
+    .section-header:hover .section-link-btn { opacity: 1; }
+    .section-link-btn:hover { background: rgba(0,255,136,0.15); border-color: rgba(0,255,136,0.3); color: #00ff88; }
+
+    /* Search Modal */
+    .search-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); z-index: 100; opacity: 0; visibility: hidden; transition: all 0.3s; }
+    .search-overlay.active { opacity: 1; visibility: visible; }
+    .search-modal { position: fixed; top: 15%; left: 50%; transform: translateX(-50%); width: 90%; max-width: 600px; background: linear-gradient(145deg, rgba(15,22,40,0.98) 0%, rgba(10,15,30,0.99) 100%); border: 1px solid rgba(0,255,136,0.2); border-radius: 20px; z-index: 101; opacity: 0; visibility: hidden; transition: all 0.3s; box-shadow: 0 25px 80px rgba(0,0,0,0.5), 0 0 60px rgba(0,255,136,0.1); }
+    .search-modal.active { opacity: 1; visibility: visible; }
+    .search-input { width: 100%; padding: 20px 24px; background: transparent; border: none; color: white; font-size: 18px; outline: none; }
+    .search-input::placeholder { color: rgba(255,255,255,0.3); }
+    .search-results { max-height: 400px; overflow-y: auto; border-top: 1px solid rgba(255,255,255,0.05); }
+    .search-result { padding: 16px 24px; cursor: pointer; transition: background 0.2s; border-bottom: 1px solid rgba(255,255,255,0.03); }
+    .search-result:hover { background: rgba(0,255,136,0.08); }
+    .search-result:last-child { border-bottom: none; }
+    .search-result-title { font-weight: 600; color: white; margin-bottom: 4px; }
+    .search-result-section { font-size: 12px; color: rgba(0,255,136,0.8); }
+    .search-hint { padding: 16px 24px; color: rgba(255,255,255,0.3); font-size: 13px; text-align: center; }
+
+    /* Update Badge */
+    .update-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 11px; color: rgba(0,212,255,0.9); }
   </style>
 </head>
 <body class="min-h-screen text-gray-200">
   <div id="progressBar" class="progress-bar fixed top-0 left-0 md:left-64 right-0 z-50 transition-all" style="width:0%"></div>
   <button id="menuToggle" class="menu-btn fixed top-4 left-4 z-50 md:hidden p-3 rounded-xl text-accent-primary"><i data-lucide="menu" class="w-6 h-6"></i></button>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast"><i data-lucide="check-circle" class="w-5 h-5"></i><span id="toastText">Kopiert!</span></div>
+
+  <!-- Search Modal -->
+  <div id="searchOverlay" class="search-overlay" onclick="closeSearch()"></div>
+  <div id="searchModal" class="search-modal">
+    <div class="flex items-center gap-3 px-6 pt-5">
+      <i data-lucide="search" class="w-5 h-5 text-accent-primary"></i>
+      <input type="text" id="searchInput" class="search-input" placeholder="Suchen... (z.B. EXPO, G-Sync, VBS)" oninput="handleSearch(this.value)">
+      <button onclick="closeSearch()" class="p-2 hover:bg-white/5 rounded-lg transition-colors"><i data-lucide="x" class="w-5 h-5 text-gray-400"></i></button>
+    </div>
+    <div id="searchResults" class="search-results">
+      <div class="search-hint">Tippe um zu suchen...</div>
+    </div>
+  </div>
 
   <!-- Sidebar -->
   <aside id="sidebar" class="sidebar fixed top-0 left-0 w-64 h-screen z-40 overflow-y-auto transform -translate-x-full md:translate-x-0 transition-transform duration-300">
@@ -152,9 +210,21 @@
         </div>
         <div>
           <h1 class="font-bold text-lg text-white">Gaming Guide</h1>
-          <p class="text-xs text-accent-primary font-medium">Version 2.0</p>
+          <div class="flex items-center gap-2">
+            <p class="text-xs text-accent-primary font-medium">Version 2.0</p>
+            <span class="update-badge"><i data-lucide="calendar" class="w-3 h-3"></i>Jan 2026</span>
+          </div>
         </div>
       </div>
+    </div>
+
+    <!-- Search Button -->
+    <div class="px-3 mb-4">
+      <button onclick="openSearch()" class="w-full flex items-center gap-3 px-4 py-3 bg-dark-800/50 border border-white/5 rounded-xl text-gray-400 text-sm hover:border-accent-primary/30 hover:text-white transition-all">
+        <i data-lucide="search" class="w-4 h-4"></i>
+        <span>Suchen...</span>
+        <span class="ml-auto text-xs bg-dark-700 px-2 py-0.5 rounded">Strg+K</span>
+      </button>
     </div>
 
     <!-- Navigation -->
@@ -191,6 +261,7 @@
       <a href="#upgrades" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="trending-up" class="w-4 h-4"></i><span>Upgrades</span></a>
       <a href="#checklist" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="check-square" class="w-4 h-4"></i><span>Checkliste</span></a>
       <a href="#troubleshooting" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="bug" class="w-4 h-4"></i><span>Troubleshooting</span></a>
+      <a href="#changelog" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="history" class="w-4 h-4"></i><span>Changelog</span></a>
 
       <!-- Sidebar Footer -->
       <div class="mt-8 pt-4 border-t border-white/5">
@@ -1435,6 +1506,63 @@
         </div>
       </section>
 
+      <!-- Section: Changelog -->
+      <section id="changelog" class="py-12 scroll-mt-8">
+        <div class="section-header">
+          <div class="section-icon">
+            <i data-lucide="history" class="w-6 h-6 text-accent-primary"></i>
+          </div>
+          <div>
+            <h2 class="text-3xl font-bold text-white">Changelog</h2>
+            <p class="text-gray-500 text-sm mt-1">Versionshistorie & Updates</p>
+          </div>
+          <button onclick="copyAnchorLink('changelog')" class="section-link-btn" title="Link kopieren"><i data-lucide="link" class="w-4 h-4"></i></button>
+        </div>
+
+        <div class="category-box">
+        <div class="space-y-6">
+          <!-- Version 2.0 -->
+          <div class="border-l-2 border-accent-primary pl-4">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="text-accent-primary font-bold">v2.0</span>
+              <span class="update-badge"><i data-lucide="calendar" class="w-3 h-3"></i>30. Januar 2026</span>
+              <span class="px-2 py-0.5 bg-accent-primary/20 text-accent-primary text-xs rounded-full">Aktuell</span>
+            </div>
+            <ul class="space-y-1 text-sm text-gray-400">
+              <li class="flex gap-2"><span class="text-accent-primary">+</span> Komplettes Redesign mit neuem UI</li>
+              <li class="flex gap-2"><span class="text-accent-primary">+</span> Detaillierte BIOS-Anleitungen für Gigabyte X670</li>
+              <li class="flex gap-2"><span class="text-accent-primary">+</span> RAM-Optimierung mit EXPO-Anleitung</li>
+              <li class="flex gap-2"><span class="text-accent-primary">+</span> VBS-Deaktivierung für Windows 11 24H2</li>
+              <li class="flex gap-2"><span class="text-accent-primary">+</span> Q-Flash BIOS Update Guide</li>
+              <li class="flex gap-2"><span class="text-accent-primary">+</span> Suchfunktion & Kopieren-Buttons</li>
+              <li class="flex gap-2"><span class="text-accent-primary">+</span> Interaktive Checklisten mit Speicherung</li>
+            </ul>
+          </div>
+
+          <!-- Version 1.0 -->
+          <div class="border-l-2 border-gray-600 pl-4 opacity-60">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="text-gray-400 font-bold">v1.0</span>
+              <span class="text-gray-500 text-xs">Initial Release</span>
+            </div>
+            <ul class="space-y-1 text-sm text-gray-500">
+              <li class="flex gap-2"><span class="text-gray-500">+</span> Erste Version des Guides</li>
+              <li class="flex gap-2"><span class="text-gray-500">+</span> Hardware-Übersicht</li>
+              <li class="flex gap-2"><span class="text-gray-500">+</span> Basis-Einstellungen</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="alert alert-info mt-6">
+          <i data-lucide="info" class="w-5 h-5 text-accent-primary flex-shrink-0"></i>
+          <div>
+            <p class="text-sm"><span class="font-semibold text-white">Nächstes Update?</span></p>
+            <p class="text-sm text-gray-400">Geplant nach Windows 11 25H2 Release oder RTX 50-Serie Launch. Updates werden hier dokumentiert.</p>
+          </div>
+        </div>
+        </div>
+      </section>
+
       <!-- Quick Wins -->
       <section class="py-10">
         <div class="section-header">
@@ -1524,7 +1652,136 @@
     function updateProgress(id){const c=document.getElementById(id+'Checklist'),boxes=c.querySelectorAll('input[type="checkbox"]'),checked=c.querySelectorAll('input:checked').length,total=boxes.length;document.getElementById(id+'Count').textContent=checked;document.getElementById(id+'Total').textContent=total;document.getElementById(id+'Bar').style.width=(checked/total*100)+'%';boxes.forEach(b=>{const svg=b.nextElementSibling.querySelector('svg');if(b.checked){svg.classList.remove('opacity-0');svg.classList.add('opacity-100');b.nextElementSibling.classList.add('bg-accent-primary')}else{svg.classList.add('opacity-0');svg.classList.remove('opacity-100');b.nextElementSibling.classList.remove('bg-accent-primary')}});localStorage.setItem('checklist_'+id,JSON.stringify(Array.from(boxes).map(b=>b.checked)))}
     function loadChecklist(id){const saved=localStorage.getItem('checklist_'+id);if(saved){const states=JSON.parse(saved),boxes=document.getElementById(id+'Checklist').querySelectorAll('input[type="checkbox"]');boxes.forEach((b,i)=>{if(states[i])b.checked=true})}updateProgress(id)}
     function resetChecklist(id){document.getElementById(id+'Checklist').querySelectorAll('input').forEach(b=>b.checked=false);localStorage.removeItem('checklist_'+id);updateProgress(id)}
-    document.addEventListener('DOMContentLoaded',()=>{loadChecklist('setup');loadChecklist('monthly')});
+    document.addEventListener('DOMContentLoaded',()=>{loadChecklist('setup');loadChecklist('monthly');initCopyButtons();});
+
+    // Toast Notification
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toastText').textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    // Copy to Clipboard
+    function copyToClipboard(text, btn) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('In Zwischenablage kopiert!');
+        if (btn) {
+          btn.innerHTML = '<i data-lucide="check" class="w-3 h-3"></i> Kopiert';
+          btn.classList.add('copied');
+          lucide.createIcons();
+          setTimeout(() => {
+            btn.innerHTML = '<i data-lucide="copy" class="w-3 h-3"></i> Kopieren';
+            btn.classList.remove('copied');
+            lucide.createIcons();
+          }, 2000);
+        }
+      });
+    }
+
+    // Initialize Copy Buttons for all code blocks
+    function initCopyButtons() {
+      document.querySelectorAll('.bg-dark-900 code, .code-block code').forEach(codeEl => {
+        const parent = codeEl.closest('.bg-dark-900') || codeEl.closest('.code-block');
+        if (parent && !parent.querySelector('.copy-btn')) {
+          parent.style.position = 'relative';
+          const btn = document.createElement('button');
+          btn.className = 'copy-btn';
+          btn.innerHTML = '<i data-lucide="copy" class="w-3 h-3"></i> Kopieren';
+          btn.onclick = () => copyToClipboard(codeEl.textContent.trim(), btn);
+          parent.appendChild(btn);
+        }
+      });
+      lucide.createIcons();
+    }
+
+    // Copy Anchor Link
+    function copyAnchorLink(sectionId) {
+      const url = window.location.origin + window.location.pathname + '#' + sectionId;
+      navigator.clipboard.writeText(url).then(() => {
+        showToast('Link kopiert: #' + sectionId);
+      });
+    }
+
+    // Search Functionality
+    const searchData = [
+      { title: 'EXPO aktivieren', section: 'BIOS / RAM', id: 'bios', keywords: 'expo xmp ram ddr5 6000 memory speicher' },
+      { title: 'PBO & Curve Optimizer', section: 'BIOS', id: 'bios', keywords: 'pbo curve optimizer overclock boost cpu' },
+      { title: 'Global C-State', section: 'BIOS', id: 'bios', keywords: 'c-state stutter micro stuttering' },
+      { title: 'Resizable BAR', section: 'BIOS', id: 'bios', keywords: 'rebar bar resize gpu' },
+      { title: 'VBS deaktivieren', section: 'Windows', id: 'windows', keywords: 'vbs memory integrity virtualization security fps' },
+      { title: 'Ultimate Performance', section: 'Windows', id: 'windows', keywords: 'power plan energie leistung powercfg' },
+      { title: 'Game Mode / HAGS', section: 'Windows', id: 'windows', keywords: 'game mode hags hardware accelerated gpu scheduling' },
+      { title: 'G-Sync Einstellungen', section: 'NVIDIA', id: 'nvidia', keywords: 'gsync g-sync vsync fps cap monitor' },
+      { title: 'Low Latency Mode', section: 'NVIDIA', id: 'nvidia', keywords: 'latency input lag nvidia reflex' },
+      { title: 'Shader Cache', section: 'NVIDIA', id: 'nvidia', keywords: 'shader cache stutter' },
+      { title: 'RAM Stabilität testen', section: 'RAM', id: 'ram', keywords: 'testmem5 tm5 occt aida64 benchmark' },
+      { title: 'Samsung Firmware', section: 'SSD', id: 'ssd', keywords: 'firmware 990 pro samsung magician ssd' },
+      { title: 'DDU Clean Install', section: 'Anti-Stutter', id: 'antistutter', keywords: 'ddu treiber driver clean uninstall' },
+      { title: 'Rapid Trigger', section: 'Wooting', id: 'wooting', keywords: 'rapid trigger wooting keyboard actuation' },
+      { title: 'Wootabase Profile', section: 'Wooting', id: 'wooting', keywords: 'wootabase profile cs2 valorant' },
+      { title: '8kHz Polling Rate', section: 'Mouse', id: 'mouse', keywords: 'polling rate 8khz 4khz maus viper' },
+      { title: 'Razer Synapse', section: 'Mouse', id: 'mouse', keywords: 'synapse dpi lift-off' },
+      { title: 'Sonar 3D Audio', section: 'Headset', id: 'headset', keywords: 'sonar spatial audio eq steelseries arctis' },
+      { title: 'OLED Care', section: 'Monitor', id: 'oled', keywords: 'oled burn-in pixel shift screen saver' },
+      { title: 'OBS NVENC', section: 'Streaming', id: 'obs', keywords: 'obs nvenc streaming twitch encoder bitrate' },
+      { title: 'Q-Flash BIOS Update', section: 'Software', id: 'software', keywords: 'bios update q-flash qflash gigabyte' },
+      { title: 'Temperaturen', section: 'Troubleshooting', id: 'troubleshooting', keywords: 'temperatur temp hitze thermal throttle' },
+      { title: 'CMOS Reset', section: 'BIOS', id: 'bios', keywords: 'cmos reset boot problem crash' },
+    ];
+
+    function openSearch() {
+      document.getElementById('searchOverlay').classList.add('active');
+      document.getElementById('searchModal').classList.add('active');
+      document.getElementById('searchInput').focus();
+      document.getElementById('searchInput').value = '';
+      document.getElementById('searchResults').innerHTML = '<div class="search-hint">Tippe um zu suchen...</div>';
+    }
+
+    function closeSearch() {
+      document.getElementById('searchOverlay').classList.remove('active');
+      document.getElementById('searchModal').classList.remove('active');
+    }
+
+    function handleSearch(query) {
+      const resultsContainer = document.getElementById('searchResults');
+      if (!query.trim()) {
+        resultsContainer.innerHTML = '<div class="search-hint">Tippe um zu suchen...</div>';
+        return;
+      }
+      const q = query.toLowerCase();
+      const results = searchData.filter(item =>
+        item.title.toLowerCase().includes(q) ||
+        item.keywords.toLowerCase().includes(q) ||
+        item.section.toLowerCase().includes(q)
+      );
+      if (results.length === 0) {
+        resultsContainer.innerHTML = '<div class="search-hint">Keine Ergebnisse für "' + query + '"</div>';
+        return;
+      }
+      resultsContainer.innerHTML = results.map(r => `
+        <div class="search-result" onclick="goToSection('${r.id}')">
+          <div class="search-result-title">${r.title}</div>
+          <div class="search-result-section">${r.section}</div>
+        </div>
+      `).join('');
+    }
+
+    function goToSection(id) {
+      closeSearch();
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Keyboard Shortcuts
+    document.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        openSearch();
+      }
+      if (e.key === 'Escape') {
+        closeSearch();
+      }
+    });
   </script>
 </body>
 </html>
