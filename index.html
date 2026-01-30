@@ -504,7 +504,7 @@
         </div>
 
         <div class="card rounded-2xl p-4 mb-6 border-l-4 border-accent-secondary">
-          <h4 class="font-semibold text-accent-secondary mb-2 flex items-center gap-2"><i data-lucide="navigation" class="w-5 h-5"></i> BIOS aufrufen (Gigabyte)</h4>
+          <h4 class="font-semibold text-accent-secondary mb-2 flex items-center gap-2"><i data-lucide="navigation" class="w-5 h-5"></i> BIOS aufrufen (ASUS ROG)</h4>
           <ol class="text-sm text-gray-400 space-y-1">
             <li><span class="text-white">1.</span> PC neustarten</li>
             <li><span class="text-white">2.</span> Sofort <code class="bg-dark-800 px-2 py-0.5 rounded text-accent-primary">DEL</code> oder <code class="bg-dark-800 px-2 py-0.5 rounded text-accent-primary">ENTF</code> drücken (mehrmals)</li>
@@ -555,8 +555,8 @@
           <table class="w-full text-sm"><thead><tr><th class="text-left px-4 py-3">Einstellung</th><th class="text-left px-4 py-3 text-accent-primary text-xs uppercase">Pfad</th><th class="text-left px-4 py-3 text-accent-primary text-xs uppercase">Wert</th></tr></thead>
             <tbody>
               <tr class="border-t border-dark-700"><td class="px-4 py-2 font-semibold text-white">XMP/EXPO Profile</td><td class="px-4 py-2 text-gray-400 text-xs">Tweaker</td><td class="px-4 py-2 text-accent-primary font-semibold">EXPO 1</td></tr>
-              <tr><td class="px-4 py-2 font-semibold text-white">X3D Turbo Mode</td><td class="px-4 py-2 text-gray-400 text-xs">Tweaker</td><td class="px-4 py-2 text-accent-primary font-semibold">Enable</td></tr>
-              <tr><td class="px-4 py-2 font-semibold text-white">PBO Enhancement</td><td class="px-4 py-2 text-gray-400 text-xs">Tweaker</td><td class="px-4 py-2 text-accent-primary font-semibold">Enabled</td></tr>
+              <tr><td class="px-4 py-2 font-semibold text-white">X3D Turbo Mode</td><td class="px-4 py-2 text-gray-400 text-xs">Tweaker</td><td class="px-4 py-2 text-accent-danger font-semibold">Disabled ⚠️</td></tr>
+              <tr><td class="px-4 py-2 font-semibold text-white">PBO Enhancement</td><td class="px-4 py-2 text-gray-400 text-xs">Tweaker</td><td class="px-4 py-2 text-accent-primary font-semibold">Level 4-5</td></tr>
               <tr><td class="px-4 py-2 font-semibold text-white">Re-Size BAR Support</td><td class="px-4 py-2 text-gray-400 text-xs">Settings → IO Ports</td><td class="px-4 py-2 text-accent-primary font-semibold">Enabled</td></tr>
               <tr><td class="px-4 py-2 font-semibold text-white">CSM Support</td><td class="px-4 py-2 text-gray-400 text-xs">Boot</td><td class="px-4 py-2 text-accent-primary font-semibold">Disabled</td></tr>
               <tr><td class="px-4 py-2 font-semibold text-white">Global C-State</td><td class="px-4 py-2 text-gray-400 text-xs">Settings → AMD CBS → CPU Common Options</td><td class="px-4 py-2 text-accent-warning font-semibold">Enabled</td></tr>
@@ -583,8 +583,8 @@
               <table class="w-full text-sm"><thead><tr><th class="text-left px-4 py-3">Einstellung</th><th class="text-left px-4 py-3 text-accent-primary text-xs uppercase">Wert</th></tr></thead>
                 <tbody>
                   <tr><td class="px-4 py-2">XMP/EXPO Profile</td><td class="px-4 py-2 text-accent-primary font-semibold">EXPO 1</td></tr>
-                  <tr><td class="px-4 py-2">X3D Turbo Mode</td><td class="px-4 py-2 text-accent-primary font-semibold">Enable</td></tr>
-                  <tr><td class="px-4 py-2">Precision Boost Overdrive(PBO) Enhancement</td><td class="px-4 py-2 text-accent-primary font-semibold">Enabled</td></tr>
+                  <tr><td class="px-4 py-2">X3D Turbo Mode</td><td class="px-4 py-2 text-accent-danger font-semibold">Disabled ⚠️</td></tr>
+                  <tr><td class="px-4 py-2">Precision Boost Overdrive(PBO) Enhancement</td><td class="px-4 py-2 text-accent-primary font-semibold">Level 4-5</td></tr>
                   <tr><td class="px-4 py-2 text-gray-400">System Memory Multiplier</td><td class="px-4 py-2 text-gray-400">Auto</td></tr>
                 </tbody>
               </table>
@@ -592,8 +592,15 @@
           </div>
           <div class="card rounded-2xl p-4 border-l-4 border-accent-secondary bg-gradient-to-br from-accent-secondary/10 to-transparent">
             <p class="text-xs text-accent-secondary font-semibold uppercase tracking-wider mb-2">Dein Vorteil</p>
-            <p class="text-white font-bold text-lg mb-1">DDR5-6000 + X3D Boost</p>
-            <p class="text-xs text-gray-400">64GB @ 6000 MT/s. X3D Turbo verbessert Low-FPS in Games.</p>
+            <p class="text-white font-bold text-lg mb-1">DDR5-6000 Optimiert</p>
+            <p class="text-xs text-gray-400">64GB @ 6000 MT/s. X3D Turbo ist für 9800X3D NICHT empfohlen (nur für Dual-CCD wie 9950X3D)!</p>
+          </div>
+        </div>
+        <div class="alert alert-danger mb-4">
+          <i data-lucide="alert-triangle" class="w-5 h-5 text-accent-danger flex-shrink-0 mt-0.5"></i>
+          <div>
+            <p class="font-semibold text-accent-danger text-sm">X3D Turbo Mode = DISABLED für 9800X3D!</p>
+            <p class="text-xs text-gray-400">Dieses Feature ist für Dual-CCD Chips (9950X3D) gedacht. Beim Single-CCD 9800X3D verursacht es <span class="text-white">Stutter, höhere CPU-Auslastung</span> und teilweise Packet Loss in Games. Lass es AUS!</p>
           </div>
         </div>
         <div class="card rounded-2xl p-3 mb-6">
