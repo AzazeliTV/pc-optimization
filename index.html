@@ -408,120 +408,6 @@
         </div>
       </section>
 
-      <!-- Section: BIOS Update -->
-      <section id="biosupdate" class="py-12 scroll-mt-8">
-        <div class="section-header">
-          <div class="section-icon">
-            <i data-lucide="refresh-cw" class="w-6 h-6 text-accent-primary"></i>
-          </div>
-          <div><h2 class="text-3xl font-bold text-white">BIOS Update (Q-Flash)</h2></div>
-        </div>
-        <div class="category-box">
-        <div class="flex flex-col md:flex-row gap-4 mb-4">
-          <div class="flex-1">
-            <p class="text-gray-400 text-sm mb-3">BIOS-Updates nur wenn nötig - "Never change a running system". Q-Flash ist die sicherste Methode für Gigabyte Mainboards.</p>
-            <div class="alert alert-danger">
-              <i data-lucide="alert-octagon" class="w-5 h-5 text-accent-danger flex-shrink-0 mt-0.5"></i>
-              <div>
-                <p class="font-semibold text-accent-danger text-sm">NIEMALS BIOS über Windows updaten!</p>
-                <p class="text-xs text-gray-400 mt-1">Gigabyte Control Center, @BIOS können das BIOS beschädigen. Immer Q-Flash im BIOS nutzen!</p>
-              </div>
-            </div>
-          </div>
-          <div class="card rounded-2xl p-4 border-l-4 border-accent-warning bg-gradient-to-br from-accent-warning/10 to-transparent md:w-56 flex-shrink-0">
-            <p class="text-xs text-accent-warning font-semibold uppercase tracking-wider mb-2">Wann updaten?</p>
-            <p class="text-white font-bold text-sm mb-1">Nur bei Problemen</p>
-            <p class="text-xs text-gray-400">CPU-Support, Stabilität, kritische Fixes</p>
-          </div>
-        </div>
-
-        <h3 class="text-sm font-semibold text-accent-secondary uppercase tracking-wider mb-4">Schritt-für-Schritt Anleitung</h3>
-
-        <div class="grid md:grid-cols-2 gap-4 mb-4">
-          <div class="card rounded-2xl p-4 border border-accent-primary/20">
-            <div class="flex items-center gap-2 mb-3">
-              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold">1</span>
-              <h4 class="font-semibold text-white">BIOS herunterladen</h4>
-            </div>
-            <ol class="text-xs text-gray-400 space-y-1">
-              <li>• <a href="https://www.gigabyte.com/Motherboard/X670-GAMING-X-AX-rev-10/support#support-dl-bios" target="_blank" class="text-accent-primary underline">Gigabyte Support-Seite</a> öffnen</li>
-              <li>• Neueste <span class="text-white">stabile</span> Version (nicht Beta!)</li>
-              <li>• ZIP herunterladen & entpacken</li>
-              <li>• Datei: <code class="bg-dark-800 px-1 rounded text-accent-primary text-xs">X670GAMINGXAX.Fxx</code></li>
-            </ol>
-          </div>
-          <div class="card rounded-2xl p-4 border border-accent-primary/20">
-            <div class="flex items-center gap-2 mb-3">
-              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold">2</span>
-              <h4 class="font-semibold text-white">USB-Stick vorbereiten</h4>
-            </div>
-            <ol class="text-xs text-gray-400 space-y-1">
-              <li>• USB-Stick (mind. 1GB) anschließen</li>
-              <li>• Formatieren: <span class="text-accent-primary font-semibold">FAT32</span></li>
-              <li>• BIOS-Datei ins Root kopieren</li>
-              <li>• <span class="text-accent-warning">Nicht</span> in Unterordner!</li>
-            </ol>
-          </div>
-          <div class="card rounded-2xl p-4 border border-accent-secondary/20">
-            <div class="flex items-center gap-2 mb-3">
-              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent-secondary text-dark-900 flex items-center justify-center font-bold">3</span>
-              <h4 class="font-semibold text-white">Q-Flash starten</h4>
-            </div>
-            <ol class="text-xs text-gray-400 space-y-1">
-              <li>• PC neustarten mit USB-Stick</li>
-              <li>• <code class="bg-dark-800 px-1 rounded text-accent-primary">DEL</code> drücken → BIOS</li>
-              <li>• <code class="bg-dark-800 px-1 rounded text-accent-primary">F8</code> für Q-Flash</li>
-              <li>• Oder: Save & Exit → Q-Flash</li>
-            </ol>
-          </div>
-          <div class="card rounded-2xl p-4 border border-accent-secondary/20">
-            <div class="flex items-center gap-2 mb-3">
-              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent-secondary text-dark-900 flex items-center justify-center font-bold">4</span>
-              <h4 class="font-semibold text-white">BIOS flashen</h4>
-            </div>
-            <ol class="text-xs text-gray-400 space-y-1">
-              <li>• <span class="text-accent-primary font-semibold">"Update BIOS"</span> wählen</li>
-              <li>• USB-Stick → BIOS-Datei auswählen</li>
-              <li>• "Yes" bestätigen</li>
-              <li>• <span class="text-accent-danger font-semibold">WARTEN!</span> Nicht ausschalten!</li>
-            </ol>
-          </div>
-        </div>
-
-        <div class="card rounded-2xl p-4 mb-4 border-2 border-accent-primary/30">
-          <h4 class="font-semibold text-accent-primary mb-3 flex items-center gap-2"><i data-lucide="monitor" class="w-5 h-5"></i> Q-Flash Utility Bildschirm</h4>
-          <p class="text-xs text-gray-400 mb-3">Nach F8 siehst du diesen blauen Bildschirm:</p>
-          <div class="grid grid-cols-2 gap-2 mb-3">
-            <div class="bg-dark-800 rounded-lg p-3 border-2 border-accent-primary">
-              <p class="text-accent-primary font-bold text-sm">► Update BIOS</p>
-              <p class="text-xs text-gray-500">← Das wählen!</p>
-            </div>
-            <div class="bg-dark-800 rounded-lg p-3 border border-dark-600">
-              <p class="text-gray-400 font-semibold text-sm">Save BIOS to Drive</p>
-              <p class="text-xs text-gray-500">Backup (optional)</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="card rounded-2xl p-4 mb-4 border border-accent-warning/20">
-          <div class="flex items-center gap-2 mb-3">
-            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent-warning text-dark-900 flex items-center justify-center font-bold">5</span>
-            <h4 class="font-semibold text-white">Nach dem Update</h4>
-          </div>
-          <ol class="text-sm text-gray-400 space-y-2">
-            <li class="flex gap-2"><i data-lucide="alert-triangle" class="w-4 h-4 text-accent-warning flex-shrink-0 mt-0.5"></i><span>Alle BIOS-Einstellungen wurden zurückgesetzt!</span></li>
-            <li class="flex gap-2"><i data-lucide="settings" class="w-4 h-4 text-accent-primary flex-shrink-0 mt-0.5"></i><span>Neu konfigurieren: <span class="text-white">EXPO, PBO, Curve Optimizer, C-State</span></span></li>
-            <li class="flex gap-2"><i data-lucide="save" class="w-4 h-4 text-accent-secondary flex-shrink-0 mt-0.5"></i><span>Mit <code class="bg-dark-800 px-1 rounded text-accent-primary">F10</code> speichern</span></li>
-          </ol>
-        </div>
-
-        <div class="alert alert-info">
-          <i data-lucide="lightbulb" class="w-5 h-5 text-accent-primary flex-shrink-0"></i>
-          <p class="text-sm"><span class="font-semibold text-accent-primary">Tipp:</span> Mache Fotos von deinen BIOS-Einstellungen BEVOR du updatest!</p>
-        </div>
-        </div>
-      </section>
-
       <!-- Section: BIOS -->
       <section id="bios" class="py-12 scroll-mt-8">
         <div class="section-header">
@@ -2406,6 +2292,120 @@
             <tr><td class="px-4 py-2 text-gray-400">Downscale Filter</td><td class="px-4 py-2 text-accent-primary font-semibold">Lanczos (36 Samples)</td></tr>
             <tr><td class="px-4 py-2 text-gray-400">FPS</td><td class="px-4 py-2">60</td></tr>
           </tbody></table>
+        </div>
+        </div>
+      </section>
+
+      <!-- Section: BIOS Update -->
+      <section id="biosupdate" class="py-12 scroll-mt-8">
+        <div class="section-header">
+          <div class="section-icon">
+            <i data-lucide="refresh-cw" class="w-6 h-6 text-accent-primary"></i>
+          </div>
+          <div><h2 class="text-3xl font-bold text-white">BIOS Update (Q-Flash)</h2></div>
+        </div>
+        <div class="category-box">
+        <div class="flex flex-col md:flex-row gap-4 mb-4">
+          <div class="flex-1">
+            <p class="text-gray-400 text-sm mb-3">BIOS-Updates nur wenn nötig - "Never change a running system". Q-Flash ist die sicherste Methode für Gigabyte Mainboards.</p>
+            <div class="alert alert-danger">
+              <i data-lucide="alert-octagon" class="w-5 h-5 text-accent-danger flex-shrink-0 mt-0.5"></i>
+              <div>
+                <p class="font-semibold text-accent-danger text-sm">NIEMALS BIOS über Windows updaten!</p>
+                <p class="text-xs text-gray-400 mt-1">Gigabyte Control Center, @BIOS können das BIOS beschädigen. Immer Q-Flash im BIOS nutzen!</p>
+              </div>
+            </div>
+          </div>
+          <div class="card rounded-2xl p-4 border-l-4 border-accent-warning bg-gradient-to-br from-accent-warning/10 to-transparent md:w-56 flex-shrink-0">
+            <p class="text-xs text-accent-warning font-semibold uppercase tracking-wider mb-2">Wann updaten?</p>
+            <p class="text-white font-bold text-sm mb-1">Nur bei Problemen</p>
+            <p class="text-xs text-gray-400">CPU-Support, Stabilität, kritische Fixes</p>
+          </div>
+        </div>
+
+        <h3 class="text-sm font-semibold text-accent-secondary uppercase tracking-wider mb-4">Schritt-für-Schritt Anleitung</h3>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <div class="card rounded-2xl p-4 border border-accent-primary/20">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold">1</span>
+              <h4 class="font-semibold text-white">BIOS herunterladen</h4>
+            </div>
+            <ol class="text-xs text-gray-400 space-y-1">
+              <li>• <a href="https://www.gigabyte.com/Motherboard/X670-GAMING-X-AX-rev-10/support#support-dl-bios" target="_blank" class="text-accent-primary underline">Gigabyte Support-Seite</a> öffnen</li>
+              <li>• Neueste <span class="text-white">stabile</span> Version (nicht Beta!)</li>
+              <li>• ZIP herunterladen & entpacken</li>
+              <li>• Datei: <code class="bg-dark-800 px-1 rounded text-accent-primary text-xs">X670GAMINGXAX.Fxx</code></li>
+            </ol>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-primary/20">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold">2</span>
+              <h4 class="font-semibold text-white">USB-Stick vorbereiten</h4>
+            </div>
+            <ol class="text-xs text-gray-400 space-y-1">
+              <li>• USB-Stick (mind. 1GB) anschließen</li>
+              <li>• Formatieren: <span class="text-accent-primary font-semibold">FAT32</span></li>
+              <li>• BIOS-Datei ins Root kopieren</li>
+              <li>• <span class="text-accent-warning">Nicht</span> in Unterordner!</li>
+            </ol>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-secondary/20">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent-secondary text-dark-900 flex items-center justify-center font-bold">3</span>
+              <h4 class="font-semibold text-white">Q-Flash starten</h4>
+            </div>
+            <ol class="text-xs text-gray-400 space-y-1">
+              <li>• PC neustarten mit USB-Stick</li>
+              <li>• <code class="bg-dark-800 px-1 rounded text-accent-primary">DEL</code> drücken → BIOS</li>
+              <li>• <code class="bg-dark-800 px-1 rounded text-accent-primary">F8</code> für Q-Flash</li>
+              <li>• Oder: Save & Exit → Q-Flash</li>
+            </ol>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-secondary/20">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent-secondary text-dark-900 flex items-center justify-center font-bold">4</span>
+              <h4 class="font-semibold text-white">BIOS flashen</h4>
+            </div>
+            <ol class="text-xs text-gray-400 space-y-1">
+              <li>• <span class="text-accent-primary font-semibold">"Update BIOS"</span> wählen</li>
+              <li>• USB-Stick → BIOS-Datei auswählen</li>
+              <li>• "Yes" bestätigen</li>
+              <li>• <span class="text-accent-danger font-semibold">WARTEN!</span> Nicht ausschalten!</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="card rounded-2xl p-4 mb-4 border-2 border-accent-primary/30">
+          <h4 class="font-semibold text-accent-primary mb-3 flex items-center gap-2"><i data-lucide="monitor" class="w-5 h-5"></i> Q-Flash Utility Bildschirm</h4>
+          <p class="text-xs text-gray-400 mb-3">Nach F8 siehst du diesen blauen Bildschirm:</p>
+          <div class="grid grid-cols-2 gap-2 mb-3">
+            <div class="bg-dark-800 rounded-lg p-3 border-2 border-accent-primary">
+              <p class="text-accent-primary font-bold text-sm">► Update BIOS</p>
+              <p class="text-xs text-gray-500">← Das wählen!</p>
+            </div>
+            <div class="bg-dark-800 rounded-lg p-3 border border-dark-600">
+              <p class="text-gray-400 font-semibold text-sm">Save BIOS to Drive</p>
+              <p class="text-xs text-gray-500">Backup (optional)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card rounded-2xl p-4 mb-4 border border-accent-warning/20">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent-warning text-dark-900 flex items-center justify-center font-bold">5</span>
+            <h4 class="font-semibold text-white">Nach dem Update</h4>
+          </div>
+          <ol class="text-sm text-gray-400 space-y-2">
+            <li class="flex gap-2"><i data-lucide="alert-triangle" class="w-4 h-4 text-accent-warning flex-shrink-0 mt-0.5"></i><span>Alle BIOS-Einstellungen wurden zurückgesetzt!</span></li>
+            <li class="flex gap-2"><i data-lucide="settings" class="w-4 h-4 text-accent-primary flex-shrink-0 mt-0.5"></i><span>Neu konfigurieren: <span class="text-white">EXPO, PBO, Curve Optimizer, C-State</span></span></li>
+            <li class="flex gap-2"><i data-lucide="save" class="w-4 h-4 text-accent-secondary flex-shrink-0 mt-0.5"></i><span>Mit <code class="bg-dark-800 px-1 rounded text-accent-primary">F10</code> speichern</span></li>
+          </ol>
+        </div>
+
+        <div class="alert alert-info">
+          <i data-lucide="lightbulb" class="w-5 h-5 text-accent-primary flex-shrink-0"></i>
+          <p class="text-sm"><span class="font-semibold text-accent-primary">Tipp:</span> Mache Fotos von deinen BIOS-Einstellungen BEVOR du updatest!</p>
         </div>
         </div>
       </section>
