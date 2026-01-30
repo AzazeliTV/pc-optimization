@@ -271,6 +271,7 @@
       <a href="#directstorage" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="rocket" class="w-4 h-4" style="color: #ff6b35;"></i><span>DirectStorage</span></a>
       <a href="#network" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="wifi" class="w-4 h-4" style="color: #4ecdc4;"></i><span>Netzwerk</span></a>
       <a href="#antistutter" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="zap-off" class="w-4 h-4"></i><span>Anti-Stutter</span></a>
+      <a href="#gamesettings" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="swords" class="w-4 h-4" style="color: #aa44ff;"></i><span>Game Settings</span></a>
 
       <!-- Peripherals Section -->
       <div class="mt-6 mb-2"><span class="nav-section">PERIPHERIE</span></div>
@@ -288,6 +289,8 @@
       <a href="#biosupdate" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="refresh-cw" class="w-4 h-4"></i><span>BIOS Update</span></a>
       <a href="#amdchipset" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="cpu" class="w-4 h-4"></i><span>AMD Chipset</span></a>
       <a href="#monitoring" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="bar-chart-2" class="w-4 h-4"></i><span>Monitoring</span></a>
+      <a href="#backup" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="hard-drive" class="w-4 h-4"></i><span>Backup</span></a>
+      <a href="#thermal" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="thermometer" class="w-4 h-4"></i><span>Thermal</span></a>
       <a href="#upgrades" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="trending-up" class="w-4 h-4"></i><span>Upgrades</span></a>
       <a href="#checklist" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="check-square" class="w-4 h-4"></i><span>Checkliste</span></a>
       <a href="#troubleshooting" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="bug" class="w-4 h-4"></i><span>Troubleshooting</span></a>
@@ -329,7 +332,18 @@
           <span class="tag">Razer Viper V3 Pro</span>
         </div>
 
-        <div class="mt-12 flex justify-center gap-4">
+        <!-- Hardware Disclaimer -->
+        <div class="mt-8 max-w-2xl mx-auto">
+          <div class="alert alert-info">
+            <i data-lucide="info" class="w-5 h-5 text-accent-primary flex-shrink-0 mt-0.5"></i>
+            <div class="text-sm text-gray-300">
+              <strong class="text-white">Hinweis:</strong> Dieser Guide ist für die oben genannte Hardware optimiert (AMD Ryzen 9800X3D, NVIDIA RTX 4080 Super, X870 Mainboard).
+              Die meisten Tipps sind universell anwendbar, aber BIOS-Pfade und spezifische Einstellungen können bei anderer Hardware abweichen.
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 flex justify-center gap-4">
           <a href="#hardware" class="px-6 py-3 bg-gradient-to-r from-accent-primary to-accent-secondary text-dark-900 font-semibold rounded-xl hover:opacity-90 transition-opacity flex items-center gap-2">
             <i data-lucide="arrow-down" class="w-4 h-4"></i> Loslegen
           </a>
@@ -467,6 +481,43 @@
             <li><span class="text-white">2.</span> Sofort <code class="bg-dark-800 px-2 py-0.5 rounded text-accent-primary">DEL</code> oder <code class="bg-dark-800 px-2 py-0.5 rounded text-accent-primary">ENTF</code> drücken (mehrmals)</li>
             <li><span class="text-white">3.</span> Im Easy Mode: <code class="bg-dark-800 px-2 py-0.5 rounded text-accent-primary">F2</code> drücken für <span class="text-accent-primary">Advanced Mode</span></li>
           </ol>
+        </div>
+
+        <!-- Technical Terms Explanation -->
+        <div class="card rounded-2xl p-5 mb-6 border border-accent-secondary/20 bg-gradient-to-br from-accent-secondary/5 to-transparent">
+          <h3 class="text-sm font-semibold text-accent-secondary uppercase tracking-wider mb-4 flex items-center gap-2">
+            <i data-lucide="book-open" class="w-4 h-4"></i> Technische Begriffe erklärt
+          </h3>
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div class="space-y-3">
+              <div>
+                <span class="text-white font-semibold">EXPO / XMP</span>
+                <p class="text-gray-400 text-xs mt-1">Extended Profiles for Overclocking – AMD's Pendant zu Intel XMP. Aktiviert automatisch die beworbene RAM-Geschwindigkeit (z.B. 6000MHz statt Standard 4800MHz) und optimierte Timings.</p>
+              </div>
+              <div>
+                <span class="text-white font-semibold">PBO (Precision Boost Overdrive)</span>
+                <p class="text-gray-400 text-xs mt-1">AMD-Technologie die der CPU erlaubt, über die Standard-Boost-Takte zu gehen. "Enhancement" gibt mehr Spielraum, "+200MHz Override" erhöht das Maximum.</p>
+              </div>
+              <div>
+                <span class="text-white font-semibold">Curve Optimizer</span>
+                <p class="text-gray-400 text-xs mt-1">Untervoltet die CPU pro Kern. Negative Werte (-10 bis -30) = weniger Spannung = kühlere Temps + höhere Boosts. Start konservativ bei -10!</p>
+              </div>
+            </div>
+            <div class="space-y-3">
+              <div>
+                <span class="text-white font-semibold">C-States (Global C-State Control)</span>
+                <p class="text-gray-400 text-xs mt-1">CPU-Stromsparmodi. Bei 9800X3D <strong class="text-accent-warning">MUSS</strong> dies auf "Enabled" stehen (nicht Auto!), sonst entstehen Micro-Stutters durch falsche Thread-Zuweisung.</p>
+              </div>
+              <div>
+                <span class="text-white font-semibold">Resizable BAR (Re-BAR)</span>
+                <p class="text-gray-400 text-xs mt-1">Erlaubt der CPU direkten Zugriff auf den gesamten VRAM der GPU. Bringt 5-10% mehr FPS in vielen Spielen. Benötigt: UEFI Boot + CSM Disabled.</p>
+              </div>
+              <div>
+                <span class="text-white font-semibold">CSM (Compatibility Support Module)</span>
+                <p class="text-gray-400 text-xs mt-1">Legacy BIOS-Modus für alte Betriebssysteme. Muss für Resizable BAR und Secure Boot <strong class="text-accent-primary">deaktiviert</strong> sein. Windows 11 braucht es nicht.</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Quick Overview Table -->
@@ -1142,6 +1193,16 @@
           </div>
         </div>
 
+        <!-- DLSS vs Frame Gen Explanation -->
+        <div class="alert alert-info mb-4">
+          <i data-lucide="info" class="w-5 h-5 text-accent-primary flex-shrink-0 mt-0.5"></i>
+          <div class="text-xs">
+            <p class="font-semibold text-white mb-1">Was ist der Unterschied?</p>
+            <p class="text-gray-400"><strong class="text-green-400">DLSS Super Resolution</strong> = KI rendert intern niedriger und skaliert hoch → gleiche Qualität, mehr FPS.<br>
+            <strong class="text-accent-purple">Frame Generation</strong> = KI erzeugt Zwischenframes zwischen echten Frames → verdoppelt FPS, aber +10ms Latenz.</p>
+          </div>
+        </div>
+
         <div class="grid md:grid-cols-2 gap-4 mb-4">
           <div class="card rounded-2xl p-4">
             <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="sparkles" class="w-5 h-5 text-green-400"></i> DLSS Super Resolution</h4>
@@ -1267,6 +1328,39 @@
               </div>
             </div>
             <p class="text-xs text-gray-500 mt-3">Ziel: Beste Grafik, smooth 60-120 FPS mit Frame Gen</p>
+          </div>
+          <div class="card rounded-2xl p-4 border-l-4 border-blue-500">
+            <h4 class="font-semibold text-white mb-2 flex items-center gap-2 text-blue-400">
+              <i data-lucide="swords" class="w-5 h-5"></i> MMO Profile (WoW, FFXIV, ESO)
+            </h4>
+            <p class="text-xs text-gray-500 mb-3">World of Warcraft, Final Fantasy XIV, Elder Scrolls Online</p>
+            <div class="space-y-2">
+              <div class="flex justify-between text-sm items-center p-2 bg-dark-800 rounded-lg">
+                <span class="text-gray-400">Low Latency Mode</span>
+                <span class="text-blue-400 font-semibold">On</span>
+              </div>
+              <div class="flex justify-between text-sm items-center p-2 bg-dark-800 rounded-lg">
+                <span class="text-gray-400">Max Frame Rate</span>
+                <span class="text-blue-400 font-semibold">237 FPS (G-Sync)</span>
+              </div>
+              <div class="flex justify-between text-sm items-center p-2 bg-dark-800 rounded-lg">
+                <span class="text-gray-400">Power Management</span>
+                <span class="text-blue-400 font-semibold">Prefer Max Performance</span>
+              </div>
+              <div class="flex justify-between text-sm items-center p-2 bg-dark-800 rounded-lg">
+                <span class="text-gray-400">Texture Filtering</span>
+                <span class="text-blue-400 font-semibold">Quality</span>
+              </div>
+              <div class="flex justify-between text-sm items-center p-2 bg-dark-800 rounded-lg">
+                <span class="text-gray-400">Threaded Optimization</span>
+                <span class="text-blue-400 font-semibold">On</span>
+              </div>
+              <div class="flex justify-between text-sm items-center p-2 bg-dark-800 rounded-lg">
+                <span class="text-gray-400">V-Sync</span>
+                <span class="text-accent-danger font-semibold">Off (G-Sync nutzen)</span>
+              </div>
+            </div>
+            <p class="text-xs text-gray-500 mt-3">Ziel: Stabile FPS in Raids, Max Performance für Open World</p>
           </div>
         </div>
 
@@ -2162,6 +2256,259 @@
         </div>
       </section>
 
+      <!-- Section: Game-specific Settings -->
+      <section id="gamesettings" class="py-12 scroll-mt-8">
+        <div class="section-header">
+          <div class="section-icon" style="background: linear-gradient(135deg, rgba(170,68,255,0.2) 0%, rgba(255,68,102,0.15) 100%); border-color: rgba(170,68,255,0.3);">
+            <i data-lucide="swords" class="w-6 h-6" style="color: #aa44ff;"></i>
+          </div>
+          <div>
+            <h2 class="text-3xl font-bold text-white">Game-spezifische Optimierung</h2>
+            <p class="text-gray-400 text-sm mt-1">Optimale Settings für die beliebtesten Games</p>
+          </div>
+        </div>
+
+        <!-- CS2 -->
+        <div class="category-box" id="game-cs2">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500/20 to-yellow-500/20 border border-orange-500/30 flex items-center justify-center">
+            <span class="text-2xl">🎯</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white">Counter-Strike 2</h3>
+            <p class="text-xs text-gray-400">Competitive FPS • 240Hz+ Fokus</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="monitor" class="w-4 h-4 text-accent-primary"></i> Video Settings</h4>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between"><span class="text-gray-400">Auflösung</span><span class="text-white">Native (4K oder 1440p)</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Display Mode</span><span class="text-accent-primary font-semibold">Fullscreen</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Refresh Rate</span><span class="text-accent-primary font-semibold">240Hz</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">V-Sync</span><span class="text-accent-danger font-semibold">Aus</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">NVIDIA Reflex</span><span class="text-accent-primary font-semibold">Enabled + Boost</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Multisampling</span><span class="text-white">4x MSAA oder 8x</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Global Shadow</span><span class="text-white">High</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Model/Texture</span><span class="text-white">Medium-High</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Shader Detail</span><span class="text-white">High</span></div>
+            </div>
+          </div>
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="terminal" class="w-4 h-4 text-accent-secondary"></i> Launch Options</h4>
+            <div class="code-wrapper mb-3">
+              <div class="code-block p-3 text-xs">
+                <code class="text-gray-300">-novid -high -tickrate 128 +fps_max 0</code>
+              </div>
+              <button class="copy-btn" onclick="copyCode(this)"><i data-lucide="copy" class="w-3 h-3"></i> Copy</button>
+            </div>
+            <p class="text-xs text-gray-400 mb-3">Steam → Rechtsklick auf CS2 → Eigenschaften → Startoptionen</p>
+
+            <h4 class="font-semibold text-white mb-2 flex items-center gap-2"><i data-lucide="sliders" class="w-4 h-4 text-accent-warning"></i> Console Commands</h4>
+            <div class="code-wrapper">
+              <div class="code-block p-3 text-xs space-y-1">
+                <code class="text-gray-300 block">cl_forcepreload 1</code>
+                <code class="text-gray-300 block">r_drawtracers_firstperson 0</code>
+                <code class="text-gray-300 block">cl_showfps 1</code>
+              </div>
+              <button class="copy-btn" onclick="copyCode(this)"><i data-lucide="copy" class="w-3 h-3"></i> Copy</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-info">
+          <i data-lucide="zap" class="w-5 h-5 text-accent-primary flex-shrink-0"></i>
+          <div class="text-sm">
+            <p class="font-semibold text-white">Mit 9800X3D + 4080 Super</p>
+            <p class="text-gray-400 text-xs">Erwarte <strong class="text-accent-primary">400-600+ FPS</strong> auf den meisten Maps. DLSS/FSR nicht nötig - native Auflösung für beste Klarheit!</p>
+          </div>
+        </div>
+        </div>
+
+        <!-- Valorant -->
+        <div class="category-box" id="game-valorant">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500/20 to-pink-500/20 border border-red-500/30 flex items-center justify-center">
+            <span class="text-2xl">🔫</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white">Valorant</h3>
+            <p class="text-xs text-gray-400">Competitive Tac-Shooter • Anti-Cheat kompatibel</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="monitor" class="w-4 h-4 text-accent-primary"></i> Graphics Settings</h4>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between"><span class="text-gray-400">Display Mode</span><span class="text-accent-primary font-semibold">Fullscreen</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Resolution</span><span class="text-white">Native</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Limit FPS Always</span><span class="text-accent-danger font-semibold">Off</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">NVIDIA Reflex</span><span class="text-accent-primary font-semibold">On + Boost</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Multithreaded Rendering</span><span class="text-accent-primary font-semibold">On</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Material Quality</span><span class="text-white">Low-Medium</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Texture Quality</span><span class="text-white">Medium-High</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Detail Quality</span><span class="text-white">Low</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Anti-Aliasing</span><span class="text-white">MSAA 4x</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Anisotropic Filter</span><span class="text-white">4x</span></div>
+            </div>
+          </div>
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="shield" class="w-4 h-4 text-accent-danger"></i> Vanguard Anti-Cheat</h4>
+            <p class="text-xs text-gray-400 mb-3">Valorant's Anti-Cheat läuft auf Kernel-Level. Einige Tweaks sind nicht kompatibel!</p>
+            <div class="space-y-2 text-sm">
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-green-400"></i>
+                <span class="text-gray-400">VBS deaktivieren: <span class="text-green-400">OK</span></span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-green-400"></i>
+                <span class="text-gray-400">NVIDIA Reflex: <span class="text-green-400">OK</span></span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-green-400"></i>
+                <span class="text-gray-400">Secure Boot: <span class="text-green-400">Empfohlen AN</span></span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="x" class="w-4 h-4 text-accent-danger"></i>
+                <span class="text-gray-400">Cheating Software: <span class="text-accent-danger">HWID Ban!</span></span>
+              </div>
+            </div>
+            <p class="text-xs text-accent-warning mt-3">⚠️ Vanguard startet mit Windows. Deaktivierung = Valorant startet nicht.</p>
+          </div>
+        </div>
+        </div>
+
+        <!-- World of Warcraft -->
+        <div class="category-box" id="game-wow">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 border border-blue-500/30 flex items-center justify-center">
+            <span class="text-2xl">⚔️</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white">World of Warcraft</h3>
+            <p class="text-xs text-gray-400">MMORPG • Raids, M+ & Open World</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="monitor" class="w-4 h-4 text-accent-primary"></i> Graphics Settings</h4>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between"><span class="text-gray-400">Display Mode</span><span class="text-accent-primary font-semibold">Fullscreen</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Resolution Scale</span><span class="text-white">100% (oder DLSS)</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">V-Sync</span><span class="text-accent-danger font-semibold">Aus (G-Sync nutzen)</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Max Foreground FPS</span><span class="text-accent-primary font-semibold">237</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Max Background FPS</span><span class="text-white">30</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Anti-Aliasing</span><span class="text-white">CMAA oder MSAA 4x</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Ray Traced Shadows</span><span class="text-white">Optional (FPS-Verlust)</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Projected Textures</span><span class="text-accent-primary font-semibold">Enabled (wichtig!)</span></div>
+            </div>
+          </div>
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="sliders" class="w-4 h-4 text-accent-secondary"></i> Raid/M+ Optimierung</h4>
+            <p class="text-xs text-gray-400 mb-3">Für stabile FPS in 20-Mann Raids:</p>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between"><span class="text-gray-400">Raid Graphics Preset</span><span class="text-accent-warning font-semibold">Separat einstellen!</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Spell Density</span><span class="text-white">Essential (Raid)</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Particle Density</span><span class="text-white">Low-Fair</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Compute Effects</span><span class="text-white">Low (Raid)</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Outline Mode</span><span class="text-white">Low</span></div>
+            </div>
+            <p class="text-xs text-accent-primary mt-3">💡 Graphics → Raid and Battleground für separate Settings!</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <div class="card rounded-2xl p-4 border border-accent-purple/20">
+            <h4 class="font-semibold text-accent-purple mb-3 flex items-center gap-2"><i data-lucide="puzzle" class="w-4 h-4"></i> Must-Have Addons</h4>
+            <ul class="text-sm text-gray-400 space-y-1">
+              <li>• <strong class="text-white">WeakAuras 2</strong> - Custom UI & Alerts</li>
+              <li>• <strong class="text-white">Details!</strong> - DPS/Healing Meter</li>
+              <li>• <strong class="text-white">BigWigs/DBM</strong> - Boss Mods</li>
+              <li>• <strong class="text-white">Plater</strong> - Nameplates</li>
+              <li>• <strong class="text-white">OmniCD</strong> - Cooldown Tracking</li>
+              <li>• <strong class="text-white">ElvUI</strong> - Complete UI Overhaul</li>
+            </ul>
+            <p class="text-xs text-gray-500 mt-2">Addon Manager: <a href="https://www.curseforge.com/download/app" target="_blank" class="text-accent-primary hover:underline">CurseForge</a> oder <a href="https://wowup.io/" target="_blank" class="text-accent-primary hover:underline">WowUp</a></p>
+          </div>
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="terminal" class="w-4 h-4 text-accent-primary"></i> Console Commands</h4>
+            <div class="code-wrapper mb-3">
+              <div class="code-block p-3 text-xs space-y-1">
+                <code class="text-gray-300 block">/console SpellQueueWindow 80</code>
+                <code class="text-gray-300 block">/console cameraDistanceMaxZoomFactor 2.6</code>
+                <code class="text-gray-300 block">/console nameplateShowEnemies 1</code>
+                <code class="text-gray-300 block">/console ffxGlow 0</code>
+                <code class="text-gray-300 block">/console ffxDeath 0</code>
+              </div>
+              <button class="copy-btn" onclick="copyCode(this)"><i data-lucide="copy" class="w-3 h-3"></i> Copy</button>
+            </div>
+            <p class="text-xs text-gray-400">SpellQueueWindow 80 = optimale GCD-Verzahnung</p>
+          </div>
+        </div>
+
+        <div class="alert alert-info">
+          <i data-lucide="cpu" class="w-5 h-5 text-accent-primary flex-shrink-0"></i>
+          <div class="text-sm">
+            <p class="font-semibold text-white">9800X3D ist PERFEKT für WoW!</p>
+            <p class="text-gray-400 text-xs">WoW ist extrem single-thread lastig. Der 3D V-Cache liefert <strong class="text-accent-primary">20-40% mehr FPS</strong> als normale CPUs in Raids!</p>
+          </div>
+        </div>
+        </div>
+
+        <!-- Cyberpunk 2077 -->
+        <div class="category-box" id="game-cyberpunk">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-500/20 to-red-500/20 border border-yellow-500/30 flex items-center justify-center">
+            <span class="text-2xl">🌆</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white">Cyberpunk 2077</h3>
+            <p class="text-xs text-gray-400">Open World RPG • Ray Tracing Showcase</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="monitor" class="w-4 h-4 text-accent-primary"></i> Optimale Settings (4K)</h4>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between"><span class="text-gray-400">Quick Preset</span><span class="text-white">Ray Tracing: Ultra</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">DLSS</span><span class="text-accent-primary font-semibold">Quality oder Auto</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">DLSS Frame Gen</span><span class="text-accent-primary font-semibold">On</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Ray Tracing</span><span class="text-green-400 font-semibold">Ultra/Psycho</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Path Tracing</span><span class="text-accent-warning font-semibold">Optional (30-40 FPS)</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">V-Sync</span><span class="text-accent-danger font-semibold">Aus</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Max FPS</span><span class="text-white">120 (für Frame Gen)</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Crowd Density</span><span class="text-white">High</span></div>
+            </div>
+          </div>
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="zap" class="w-4 h-4 text-accent-warning"></i> Performance-Tipps</h4>
+            <ul class="text-sm text-gray-400 space-y-2">
+              <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5"></i> <span><strong class="text-white">DLSS + Frame Gen</strong> = 100+ FPS bei 4K RT Ultra</span></li>
+              <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5"></i> <span><strong class="text-white">Path Tracing</strong> nur für Screenshots/Photomode</span></li>
+              <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5"></i> <span><strong class="text-white">Slow HDD Mode</strong> deaktivieren wenn NVMe</span></li>
+              <li class="flex gap-2"><i data-lucide="alert-triangle" class="w-4 h-4 text-accent-warning flex-shrink-0 mt-0.5"></i> <span>Screen Space Reflections Quality: <span class="text-white">High</span> (nicht Psycho)</span></li>
+            </ul>
+            <div class="bg-dark-800 rounded-lg p-3 mt-3 text-xs">
+              <p class="text-gray-400"><strong class="text-accent-primary">Erwartete FPS (4K RT Ultra + DLSS + FG):</strong></p>
+              <p class="text-white">100-140 FPS in Night City</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-warning">
+          <i data-lucide="alert-triangle" class="w-5 h-5 text-accent-warning flex-shrink-0"></i>
+          <div class="text-sm">
+            <p class="font-semibold text-accent-warning">Frame Generation Latenz</p>
+            <p class="text-gray-400 text-xs">DLSS Frame Generation fügt ~10-15ms Latenz hinzu. Für Singleplayer wie Cyberpunk absolut OK, für Competitive-Shooter AUS!</p>
+          </div>
+        </div>
+        </div>
+      </section>
+
       <!-- Section: Wooting -->
       <section id="wooting" class="py-12 scroll-mt-8">
         <div class="section-header">
@@ -2300,6 +2647,54 @@
         <div class="card rounded-2xl p-3 mt-4 border-l-4 border-accent-danger flex gap-3">
           <i data-lucide="alert-octagon" class="w-5 h-5 text-accent-danger flex-shrink-0"></i>
           <p class="text-sm"><span class="font-semibold text-accent-danger">Achtung:</span> Rappy Snappy ist in CS2 verboten!</p>
+        </div>
+        </div>
+
+        <!-- WoW / MMO Settings -->
+        <div class="category-box">
+        <h3 class="text-sm font-semibold text-blue-400 uppercase tracking-wider mb-4 flex items-center gap-2">
+          <i data-lucide="swords" class="w-4 h-4"></i> World of Warcraft / MMO Settings
+        </h3>
+        <p class="text-gray-400 text-sm mb-4">Die Wooting 80HE ist perfekt für MMOs! Rapid Trigger macht Bewegung flüssiger und Analog Input ermöglicht präzise Steuerung.</p>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="move" class="w-4 h-4 text-blue-400"></i> Movement (WASD)</h4>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between"><span class="text-gray-400">Actuation Point</span><span class="text-blue-400 font-semibold">0.5mm</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Rapid Trigger</span><span class="text-accent-primary font-semibold">On</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">RT Sensitivity</span><span class="text-blue-400 font-semibold">0.2mm</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Analog Input</span><span class="text-accent-warning font-semibold">Optional (für Mount)</span></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-3">Schnelles Strafing in PvP, flüssiges Kiten</p>
+          </div>
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="zap" class="w-4 h-4 text-accent-warning"></i> Keybinds (Spells)</h4>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between"><span class="text-gray-400">Actuation Point</span><span class="text-white font-semibold">1.0mm</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Rapid Trigger</span><span class="text-accent-danger font-semibold">Off</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Mods (Shift/Ctrl/Alt)</span><span class="text-white font-semibold">0.8mm</span></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-3">Höherer AP verhindert Versehen-Casts beim Tippen</p>
+          </div>
+        </div>
+
+        <div class="card rounded-2xl p-4 border border-blue-500/20">
+          <h4 class="font-semibold text-blue-400 mb-3 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4"></i> WoW-spezifische Tipps</h4>
+          <ul class="text-sm text-gray-400 space-y-2">
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5"></i> <span><strong class="text-white">Auto-Run Toggle:</strong> Auf extra Taste legen (z.B. Num Lock) - nicht auf WASD!</span></li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5"></i> <span><strong class="text-white">Modifier Keys:</strong> Shift+, Ctrl+, Alt+ für mehr Keybinds ohne Mausklick</span></li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5"></i> <span><strong class="text-white">Macro-Tasten:</strong> Wootility Macros für komplexe Sequenzen (nicht in PvP!)</span></li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5"></i> <span><strong class="text-white">DK Mode:</strong> Für Profile wechseln (Raid vs. PvP vs. Open World)</span></li>
+          </ul>
+        </div>
+
+        <div class="alert alert-info mt-4">
+          <i data-lucide="gamepad-2" class="w-5 h-5 text-accent-primary flex-shrink-0"></i>
+          <div class="text-sm">
+            <p class="font-semibold text-white">Analog Input für Mounts!</p>
+            <p class="text-gray-400 text-xs">Mit aktiviertem Analog Input kannst du die Drückstärke von W nutzen um Mount-Geschwindigkeit zu steuern - wie mit einem Controller Stick!</p>
+          </div>
         </div>
         </div>
       </section>
@@ -3932,6 +4327,351 @@
         </div>
       </section>
 
+      <!-- Section: Backup & Recovery -->
+      <section id="backup" class="py-12 scroll-mt-8">
+        <div class="section-header">
+          <div class="section-icon" style="background: linear-gradient(135deg, rgba(0,212,255,0.2) 0%, rgba(99,102,241,0.15) 100%); border-color: rgba(0,212,255,0.3);">
+            <i data-lucide="hard-drive" class="w-6 h-6" style="color: #00d4ff;"></i>
+          </div>
+          <div>
+            <h2 class="text-3xl font-bold text-white">Backup & Recovery</h2>
+            <p class="text-gray-400 text-sm mt-1">Sichere dein System vor Optimierungen ab</p>
+          </div>
+        </div>
+
+        <div class="alert alert-warning mb-6">
+          <i data-lucide="shield-alert" class="w-5 h-5 text-accent-warning flex-shrink-0"></i>
+          <div class="text-sm">
+            <p class="font-semibold text-accent-warning">Wichtig!</p>
+            <p class="text-gray-400">BIOS-Änderungen, Registry-Edits und Treiber-Updates können Probleme verursachen. Ein Backup vorher spart stundenlange Fehlersuche!</p>
+          </div>
+        </div>
+
+        <div class="category-box">
+        <h3 class="text-sm font-semibold text-accent-secondary uppercase tracking-wider mb-4">1. Windows Systemabbild erstellen</h3>
+        <p class="text-gray-400 text-sm mb-4">Ein komplettes Systemabbild sichert Windows, Programme und Einstellungen. Kann bei Problemen komplett wiederhergestellt werden.</p>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="box" class="w-5 h-5 text-accent-secondary"></i> Windows Backup (integriert)</h4>
+            <ol class="text-sm text-gray-400 space-y-2">
+              <li class="flex gap-2"><span class="text-accent-primary font-bold">1.</span> <span>Windows-Taste → <code class="bg-dark-800 px-1 rounded text-xs">Systemsteuerung</code></span></li>
+              <li class="flex gap-2"><span class="text-accent-primary font-bold">2.</span> <span>Sichern und Wiederherstellen (Windows 7)</span></li>
+              <li class="flex gap-2"><span class="text-accent-primary font-bold">3.</span> <span>Systemabbild erstellen (links)</span></li>
+              <li class="flex gap-2"><span class="text-accent-primary font-bold">4.</span> <span>Externe Festplatte auswählen</span></li>
+              <li class="flex gap-2"><span class="text-accent-primary font-bold">5.</span> <span>Sicherung starten</span></li>
+            </ol>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-primary/20">
+            <h4 class="font-semibold text-accent-primary mb-3 flex items-center gap-2"><i data-lucide="star" class="w-5 h-5"></i> Empfohlen: Macrium Reflect Free</h4>
+            <p class="text-xs text-gray-400 mb-3">Schneller, zuverlässiger und mit Wiederherstellungs-USB.</p>
+            <ol class="text-sm text-gray-400 space-y-2">
+              <li class="flex gap-2"><span class="text-accent-primary font-bold">1.</span> <span>Download: <a href="https://www.macrium.com/reflectfree" target="_blank" class="text-accent-primary hover:underline">macrium.com/reflectfree</a></span></li>
+              <li class="flex gap-2"><span class="text-accent-primary font-bold">2.</span> <span>Create an image of the partition(s)...</span></li>
+              <li class="flex gap-2"><span class="text-accent-primary font-bold">3.</span> <span>C: Laufwerk auswählen</span></li>
+              <li class="flex gap-2"><span class="text-accent-primary font-bold">4.</span> <span>Ziel: Externe Festplatte</span></li>
+            </ol>
+            <p class="text-xs text-accent-warning mt-3">💡 Erstelle auch einen Rescue USB!</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="category-box">
+        <h3 class="text-sm font-semibold text-accent-secondary uppercase tracking-wider mb-4">2. Registry Backup</h3>
+        <p class="text-gray-400 text-sm mb-4">Vor Registry-Änderungen IMMER ein Backup erstellen. Ein Klick kann das System unbenutzbar machen!</p>
+
+        <div class="card rounded-2xl p-4 mb-4">
+          <h4 class="font-semibold text-white mb-3">Registry exportieren</h4>
+          <ol class="text-sm text-gray-400 space-y-2">
+            <li class="flex gap-2"><span class="text-accent-primary font-bold">1.</span> <span><kbd class="bg-dark-700 px-2 py-0.5 rounded text-xs">Win + R</kbd> → <code class="bg-dark-800 px-1 rounded text-xs">regedit</code></span></li>
+            <li class="flex gap-2"><span class="text-accent-primary font-bold">2.</span> <span>Datei → Exportieren</span></li>
+            <li class="flex gap-2"><span class="text-accent-primary font-bold">3.</span> <span>Exportbereich: <strong class="text-white">Alles</strong></span></li>
+            <li class="flex gap-2"><span class="text-accent-primary font-bold">4.</span> <span>Speichern als: <code class="bg-dark-800 px-1 rounded text-xs">backup_datum.reg</code></span></li>
+          </ol>
+          <div class="bg-dark-800 rounded-lg p-3 mt-3">
+            <p class="text-xs text-gray-400 font-mono">Wiederherstellen: Doppelklick auf .reg Datei → Ja → Ja</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="category-box">
+        <h3 class="text-sm font-semibold text-accent-secondary uppercase tracking-wider mb-4">3. Treiber Backup</h3>
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="terminal" class="w-5 h-5 text-accent-primary"></i> Mit PowerShell (Windows)</h4>
+            <div class="code-wrapper">
+              <div class="code-block p-3 text-xs">
+                <code class="text-gray-300">Export-WindowsDriver -Online -Destination "D:\DriverBackup"</code>
+              </div>
+              <button class="copy-btn" onclick="copyCode(this)"><i data-lucide="copy" class="w-3 h-3"></i> Copy</button>
+            </div>
+            <p class="text-xs text-gray-400 mt-2">Exportiert alle installierten Treiber in einen Ordner.</p>
+          </div>
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="download" class="w-5 h-5 text-green-400"></i> Mit Double Driver (Tool)</h4>
+            <p class="text-xs text-gray-400 mb-2">Portable, grafische Oberfläche.</p>
+            <ol class="text-sm text-gray-400 space-y-1">
+              <li>• Download: <a href="https://www.majorgeeks.com/files/details/double_driver.html" target="_blank" class="text-accent-primary hover:underline">majorgeeks.com</a></li>
+              <li>• Scan → Backup → Zielordner wählen</li>
+              <li>• Restore: Ordner auswählen → Wiederherstellen</li>
+            </ol>
+          </div>
+        </div>
+        </div>
+
+        <div class="category-box">
+        <h3 class="text-sm font-semibold text-accent-secondary uppercase tracking-wider mb-4">4. Spielstände sichern</h3>
+        <div class="grid md:grid-cols-3 gap-4 mb-4">
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white mb-2 flex items-center gap-2"><i data-lucide="cloud" class="w-4 h-4 text-accent-secondary"></i> Steam Cloud</h4>
+            <p class="text-xs text-gray-400 mb-2">Automatisch für die meisten Spiele aktiv.</p>
+            <p class="text-xs text-gray-500">Steam → Einstellungen → Cloud → ✓ aktiviert</p>
+          </div>
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white mb-2 flex items-center gap-2"><i data-lucide="folder" class="w-4 h-4 text-accent-warning"></i> Lokale Saves</h4>
+            <p class="text-xs text-gray-400 mb-2">Typische Speicherorte:</p>
+            <div class="text-xs text-gray-500 space-y-1">
+              <p>• <code class="bg-dark-800 px-1 rounded">%USERPROFILE%\Documents\My Games</code></p>
+              <p>• <code class="bg-dark-800 px-1 rounded">%LOCALAPPDATA%\[Spielname]</code></p>
+              <p>• <code class="bg-dark-800 px-1 rounded">%APPDATA%\[Spielname]</code></p>
+            </div>
+          </div>
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white mb-2 flex items-center gap-2"><i data-lucide="gamepad-2" class="w-4 h-4 text-accent-purple"></i> WoW Addon Settings</h4>
+            <p class="text-xs text-gray-400 mb-2">Interface & WTF Ordner sichern:</p>
+            <p class="text-xs text-gray-500"><code class="bg-dark-800 px-1 rounded">World of Warcraft\_retail_\WTF</code></p>
+            <p class="text-xs text-gray-500"><code class="bg-dark-800 px-1 rounded">World of Warcraft\_retail_\Interface</code></p>
+          </div>
+        </div>
+
+        <div class="alert alert-info">
+          <i data-lucide="lightbulb" class="w-5 h-5 text-accent-primary flex-shrink-0"></i>
+          <div class="text-sm">
+            <p class="font-semibold text-white">Pro-Tipp: GameSave Manager</p>
+            <p class="text-gray-400 text-xs">Kostenlos, findet automatisch alle Spielstände und sichert sie: <a href="https://www.gamesave-manager.com/" target="_blank" class="text-accent-primary hover:underline">gamesave-manager.com</a></p>
+          </div>
+        </div>
+        </div>
+
+        <div class="category-box">
+        <h3 class="text-sm font-semibold text-accent-secondary uppercase tracking-wider mb-4">5. BIOS Settings notieren</h3>
+        <p class="text-gray-400 text-sm mb-4">Falls CMOS Reset nötig wird, sind alle Einstellungen weg. Vorher dokumentieren!</p>
+        <div class="card rounded-2xl p-4">
+          <h4 class="font-semibold text-white mb-3">Checkliste - Diese Werte notieren:</h4>
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <ul class="text-gray-400 space-y-1">
+              <li>☐ EXPO/XMP Profil (1 oder 2)</li>
+              <li>☐ PBO Einstellungen (+XXX MHz)</li>
+              <li>☐ Curve Optimizer Werte pro Core</li>
+              <li>☐ Fan-Kurven (falls im BIOS)</li>
+            </ul>
+            <ul class="text-gray-400 space-y-1">
+              <li>☐ Boot-Reihenfolge</li>
+              <li>☐ Secure Boot Status</li>
+              <li>☐ Resizable BAR Status</li>
+              <li>☐ BIOS Version (für Support)</li>
+            </ul>
+          </div>
+          <p class="text-xs text-accent-primary mt-3">💡 Tipp: Mit Handy Fotos von den BIOS-Screens machen!</p>
+        </div>
+        </div>
+      </section>
+
+      <!-- Section: Thermal Management -->
+      <section id="thermal" class="py-12 scroll-mt-8">
+        <div class="section-header">
+          <div class="section-icon" style="background: linear-gradient(135deg, rgba(255,68,102,0.2) 0%, rgba(255,140,0,0.15) 100%); border-color: rgba(255,68,102,0.3);">
+            <i data-lucide="thermometer" class="w-6 h-6" style="color: #ff4466;"></i>
+          </div>
+          <div>
+            <h2 class="text-3xl font-bold text-white">Thermal Management</h2>
+            <p class="text-gray-400 text-sm mt-1">Temperaturen optimieren für maximale Performance</p>
+          </div>
+        </div>
+
+        <div class="category-box">
+        <h3 class="text-sm font-semibold text-accent-danger uppercase tracking-wider mb-4">Temperatur-Zielwerte</h3>
+        <p class="text-gray-400 text-sm mb-4">Optimale Temperaturen für dein High-End System. Höhere Werte = thermisches Throttling = weniger FPS!</p>
+
+        <div class="table-modern bg-dark-800/50 mb-6">
+          <table class="w-full text-sm">
+            <thead><tr>
+              <th class="text-left px-4 py-3">Komponente</th>
+              <th class="text-left px-4 py-3 text-green-400">Optimal</th>
+              <th class="text-left px-4 py-3 text-accent-warning">Akzeptabel</th>
+              <th class="text-left px-4 py-3 text-accent-danger">Kritisch</th>
+            </tr></thead>
+            <tbody>
+              <tr><td class="px-4 py-2 font-semibold text-white">CPU (9800X3D) Idle</td><td class="px-4 py-2 text-green-400">&lt;45°C</td><td class="px-4 py-2 text-accent-warning">45-55°C</td><td class="px-4 py-2 text-accent-danger">&gt;60°C</td></tr>
+              <tr><td class="px-4 py-2 font-semibold text-white">CPU Gaming</td><td class="px-4 py-2 text-green-400">&lt;75°C</td><td class="px-4 py-2 text-accent-warning">75-85°C</td><td class="px-4 py-2 text-accent-danger">&gt;90°C (Throttle)</td></tr>
+              <tr><td class="px-4 py-2 font-semibold text-white">GPU (4080 Super) Idle</td><td class="px-4 py-2 text-green-400">&lt;40°C</td><td class="px-4 py-2 text-accent-warning">40-50°C</td><td class="px-4 py-2 text-accent-danger">&gt;55°C</td></tr>
+              <tr><td class="px-4 py-2 font-semibold text-white">GPU Gaming</td><td class="px-4 py-2 text-green-400">&lt;70°C</td><td class="px-4 py-2 text-accent-warning">70-80°C</td><td class="px-4 py-2 text-accent-danger">&gt;83°C (Throttle)</td></tr>
+              <tr><td class="px-4 py-2 font-semibold text-white">GPU Hot Spot</td><td class="px-4 py-2 text-green-400">&lt;85°C</td><td class="px-4 py-2 text-accent-warning">85-95°C</td><td class="px-4 py-2 text-accent-danger">&gt;100°C</td></tr>
+              <tr><td class="px-4 py-2 font-semibold text-white">VRAM (GDDR6X)</td><td class="px-4 py-2 text-green-400">&lt;90°C</td><td class="px-4 py-2 text-accent-warning">90-100°C</td><td class="px-4 py-2 text-accent-danger">&gt;105°C</td></tr>
+              <tr><td class="px-4 py-2 font-semibold text-white">NVMe SSD</td><td class="px-4 py-2 text-green-400">&lt;55°C</td><td class="px-4 py-2 text-accent-warning">55-70°C</td><td class="px-4 py-2 text-accent-danger">&gt;75°C (Throttle)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        </div>
+
+        <div class="category-box">
+        <h3 class="text-sm font-semibold text-accent-danger uppercase tracking-wider mb-4">Wärmeleitpaste wechseln</h3>
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <div>
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4 text-accent-primary"></i> Wann wechseln?</h4>
+            <ul class="text-sm text-gray-400 space-y-2">
+              <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5"></i> <span>Alle <strong class="text-white">2-3 Jahre</strong> präventiv</span></li>
+              <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5"></i> <span>CPU-Temps <strong class="text-white">10-15°C höher</strong> als früher</span></li>
+              <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5"></i> <span>Nach Kühler-Demontage (immer neu!)</span></li>
+              <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5"></i> <span>Alte Paste ist ausgetrocknet/rissig</span></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="star" class="w-4 h-4 text-accent-warning"></i> Empfohlene Pasten</h4>
+            <div class="space-y-2 text-sm">
+              <div class="card rounded-xl p-3 border border-accent-primary/20">
+                <p class="font-semibold text-accent-primary">Thermal Grizzly Kryonaut</p>
+                <p class="text-xs text-gray-400">12.5 W/mK - Premium, nicht leitend</p>
+              </div>
+              <div class="card rounded-xl p-3">
+                <p class="font-semibold text-white">Noctua NT-H1 / NT-H2</p>
+                <p class="text-xs text-gray-400">8.9 W/mK - Gutes Preis-Leistung</p>
+              </div>
+              <div class="card rounded-xl p-3">
+                <p class="font-semibold text-white">Arctic MX-6</p>
+                <p class="text-xs text-gray-400">Günstig, einfach aufzutragen</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-warning mb-4">
+          <i data-lucide="alert-triangle" class="w-5 h-5 text-accent-warning flex-shrink-0"></i>
+          <div class="text-sm">
+            <p class="font-semibold text-accent-warning">Achtung bei Flüssigmetall!</p>
+            <p class="text-gray-400 text-xs">Thermal Grizzly Conductonaut ist elektrisch leitend! Nur für erfahrene User. Bei Kontakt mit PCB = Kurzschluss!</p>
+          </div>
+        </div>
+
+        <h4 class="font-semibold text-white mb-3">Anleitung: Paste wechseln</h4>
+        <ol class="space-y-3 text-sm mb-4">
+          <li class="flex gap-3">
+            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">1</span>
+            <div><span class="font-semibold text-white">PC ausschalten</span><p class="text-gray-400 mt-1">Netzkabel ziehen, Power-Knopf 10s halten (Restladung entleeren)</p></div>
+          </li>
+          <li class="flex gap-3">
+            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">2</span>
+            <div><span class="font-semibold text-white">Kühler demontieren</span><p class="text-gray-400 mt-1">Schrauben über Kreuz lösen. Bei AIO: Pumpe vorsichtig abheben, nicht kippen!</p></div>
+          </li>
+          <li class="flex gap-3">
+            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">3</span>
+            <div><span class="font-semibold text-white">Alte Paste entfernen</span><p class="text-gray-400 mt-1">Isopropanol (99%) + fusselfreies Tuch. CPU UND Kühler reinigen!</p></div>
+          </li>
+          <li class="flex gap-3">
+            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">4</span>
+            <div><span class="font-semibold text-white">Neue Paste auftragen</span><p class="text-gray-400 mt-1">Erbsengroße Menge in der Mitte. NICHT verstreichen - der Kühler verteilt sie!</p></div>
+          </li>
+          <li class="flex gap-3">
+            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">5</span>
+            <div><span class="font-semibold text-white">Kühler montieren</span><p class="text-gray-400 mt-1">Gerade aufsetzen, Schrauben über Kreuz festziehen. Nicht zu fest!</p></div>
+          </li>
+        </ol>
+        </div>
+
+        <div class="category-box">
+        <h3 class="text-sm font-semibold text-accent-danger uppercase tracking-wider mb-4">Gehäuse-Airflow optimieren</h3>
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="wind" class="w-5 h-5 text-accent-secondary"></i> Optimaler Airflow</h4>
+            <div class="bg-dark-800 rounded-xl p-4 mb-3 text-center">
+              <p class="text-xs text-gray-500 mb-2">Empfohlene Konfiguration</p>
+              <div class="flex items-center justify-center gap-4 text-sm">
+                <div class="text-center">
+                  <p class="text-accent-secondary font-bold">FRONT</p>
+                  <p class="text-white">2-3x Intake</p>
+                  <p class="text-xs text-gray-400">↓ Frischluft rein</p>
+                </div>
+                <i data-lucide="arrow-right" class="w-6 h-6 text-gray-600"></i>
+                <div class="text-center">
+                  <p class="text-accent-danger font-bold">REAR + TOP</p>
+                  <p class="text-white">1x Rear + 2-3x Top</p>
+                  <p class="text-xs text-gray-400">↑ Warme Luft raus</p>
+                </div>
+              </div>
+            </div>
+            <p class="text-xs text-gray-400"><strong class="text-white">Positiver Luftdruck:</strong> Mehr Intake als Exhaust = weniger Staub!</p>
+          </div>
+
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="x-circle" class="w-5 h-5 text-accent-danger"></i> Typische Fehler</h4>
+            <ul class="text-sm text-gray-400 space-y-2">
+              <li class="flex gap-2"><i data-lucide="x" class="w-4 h-4 text-accent-danger flex-shrink-0 mt-0.5"></i> <span>Alle Lüfter als Exhaust (Unterdruck = Staub!)</span></li>
+              <li class="flex gap-2"><i data-lucide="x" class="w-4 h-4 text-accent-danger flex-shrink-0 mt-0.5"></i> <span>Kabel blockieren GPU-Lüfter</span></li>
+              <li class="flex gap-2"><i data-lucide="x" class="w-4 h-4 text-accent-danger flex-shrink-0 mt-0.5"></i> <span>PC direkt an Wand (kein Luftstrom)</span></li>
+              <li class="flex gap-2"><i data-lucide="x" class="w-4 h-4 text-accent-danger flex-shrink-0 mt-0.5"></i> <span>Staubfilter nie gereinigt</span></li>
+              <li class="flex gap-2"><i data-lucide="x" class="w-4 h-4 text-accent-danger flex-shrink-0 mt-0.5"></i> <span>Lüfter verkehrt herum montiert</span></li>
+            </ul>
+            <p class="text-xs text-accent-primary mt-3">💡 Tipp: Lüfterrichtung = Pfeil auf Rahmen zeigt Luftstrom</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="category-box">
+        <h3 class="text-sm font-semibold text-accent-danger uppercase tracking-wider mb-4">Lüfterkurven einstellen (iCUE / Fan Control)</h3>
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <div>
+            <h4 class="font-semibold text-white mb-3">CPU-Lüfter / AIO Pumpe</h4>
+            <div class="table-modern bg-dark-800/50">
+              <table class="w-full text-sm">
+                <thead><tr><th class="text-left px-3 py-2">CPU Temp</th><th class="text-left px-3 py-2">Lüfter %</th></tr></thead>
+                <tbody>
+                  <tr><td class="px-3 py-2 text-gray-400">&lt;50°C</td><td class="px-3 py-2 text-green-400">30% (Silent)</td></tr>
+                  <tr><td class="px-3 py-2 text-gray-400">50-65°C</td><td class="px-3 py-2 text-accent-secondary">50%</td></tr>
+                  <tr><td class="px-3 py-2 text-gray-400">65-75°C</td><td class="px-3 py-2 text-accent-warning">70%</td></tr>
+                  <tr><td class="px-3 py-2 text-gray-400">75-85°C</td><td class="px-3 py-2 text-accent-danger">90%</td></tr>
+                  <tr><td class="px-3 py-2 text-gray-400">&gt;85°C</td><td class="px-3 py-2 text-accent-danger font-bold">100%</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-semibold text-white mb-3">Gehäuselüfter</h4>
+            <div class="table-modern bg-dark-800/50">
+              <table class="w-full text-sm">
+                <thead><tr><th class="text-left px-3 py-2">GPU Temp</th><th class="text-left px-3 py-2">Lüfter %</th></tr></thead>
+                <tbody>
+                  <tr><td class="px-3 py-2 text-gray-400">&lt;45°C</td><td class="px-3 py-2 text-green-400">25% (Silent)</td></tr>
+                  <tr><td class="px-3 py-2 text-gray-400">45-60°C</td><td class="px-3 py-2 text-accent-secondary">40%</td></tr>
+                  <tr><td class="px-3 py-2 text-gray-400">60-70°C</td><td class="px-3 py-2 text-accent-warning">60%</td></tr>
+                  <tr><td class="px-3 py-2 text-gray-400">70-80°C</td><td class="px-3 py-2 text-accent-danger">80%</td></tr>
+                  <tr><td class="px-3 py-2 text-gray-400">&gt;80°C</td><td class="px-3 py-2 text-accent-danger font-bold">100%</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="card rounded-2xl p-4 border border-accent-secondary/20">
+          <h4 class="font-semibold text-accent-secondary mb-2 flex items-center gap-2"><i data-lucide="download" class="w-4 h-4"></i> Empfohlene Software</h4>
+          <div class="grid md:grid-cols-3 gap-3 text-sm">
+            <div>
+              <p class="font-semibold text-white">Corsair iCUE</p>
+              <p class="text-xs text-gray-400">Für Corsair AIOs + Lüfter</p>
+            </div>
+            <div>
+              <p class="font-semibold text-white">Fan Control</p>
+              <p class="text-xs text-gray-400">Universal, Open Source</p>
+              <a href="https://github.com/Rem0o/FanControl.Releases" target="_blank" class="text-accent-primary text-xs hover:underline">github.com/Rem0o/FanControl</a>
+            </div>
+            <div>
+              <p class="font-semibold text-white">MSI Afterburner</p>
+              <p class="text-xs text-gray-400">Für GPU-Lüfterkurven</p>
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>
+
       <!-- Section: Upgrades -->
       <section id="upgrades" class="py-12 scroll-mt-8">
         <div class="section-header">
@@ -4356,6 +5096,19 @@
       { title: 'Benchmark Routine', section: 'Monitoring', id: 'monitoring', keywords: '3dmark timespy cinebench benchmark score' },
       { title: 'Temperaturen', section: 'Troubleshooting', id: 'troubleshooting', keywords: 'temperatur temp hitze thermal throttle' },
       { title: 'CMOS Reset', section: 'BIOS', id: 'bios', keywords: 'cmos reset boot problem crash' },
+      { title: 'Backup & Recovery', section: 'Wartung', id: 'backup', keywords: 'backup sicherung recovery system image registry wiederherstellung' },
+      { title: 'Treiber Backup', section: 'Backup', id: 'backup', keywords: 'treiber driver backup export powershell double driver' },
+      { title: 'Spielstände sichern', section: 'Backup', id: 'backup', keywords: 'savegame spielstand backup steam cloud' },
+      { title: 'Thermal Management', section: 'Wartung', id: 'thermal', keywords: 'temperatur wärmeleitpaste thermal paste airflow lüfter kühlung' },
+      { title: 'Wärmeleitpaste wechseln', section: 'Thermal', id: 'thermal', keywords: 'thermal paste kryonaut noctua wechseln repaste' },
+      { title: 'Lüfterkurve', section: 'Thermal', id: 'thermal', keywords: 'lüfter fan curve icue fan control msi afterburner' },
+      { title: 'Gehäuse Airflow', section: 'Thermal', id: 'thermal', keywords: 'airflow case lüfter intake exhaust staub' },
+      { title: 'CS2 Settings', section: 'Game Settings', id: 'gamesettings', keywords: 'cs2 counter-strike launch options video settings' },
+      { title: 'Valorant Settings', section: 'Game Settings', id: 'gamesettings', keywords: 'valorant vanguard settings graphics competitive' },
+      { title: 'World of Warcraft', section: 'Game Settings', id: 'gamesettings', keywords: 'wow warcraft mmo raid addon weakauras elvui' },
+      { title: 'Cyberpunk 2077', section: 'Game Settings', id: 'gamesettings', keywords: 'cyberpunk 2077 dlss ray tracing path tracing' },
+      { title: 'WoW Wooting', section: 'Wooting', id: 'wooting', keywords: 'wow warcraft wooting mmo keybind rapid trigger' },
+      { title: 'MMO NVIDIA Profile', section: 'NVIDIA', id: 'nvidia', keywords: 'wow mmo ffxiv eso nvidia profile' },
     ];
 
     function openSearch() {
