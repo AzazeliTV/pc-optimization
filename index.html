@@ -694,16 +694,27 @@
         </div>
 
         <div class="category-box">
-        <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">VBS/Memory Integrity deaktivieren (5-15% FPS!)</h3>
-
-        <div class="alert alert-danger mb-4">
-          <i data-lucide="alert-octagon" class="w-5 h-5 text-accent-danger flex-shrink-0 mt-0.5"></i>
-          <div><p class="font-semibold text-accent-danger">Sicherheitshinweis</p><p class="text-sm text-gray-400">VBS deaktivieren reduziert die Windows-Sicherheit. Nur empfohlen wenn du: keine sensiblen Daten auf dem Gaming-PC hast und der PC nicht im Firmennetzwerk ist.</p></div>
+        <div class="flex flex-col md:flex-row gap-4 mb-4">
+          <div class="flex-1">
+            <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-3">VBS/Memory Integrity deaktivieren</h3>
+            <p class="text-gray-400 text-sm">Virtualization-Based Security prüft jeden Speicherzugriff auf Malware. Gut für Firmen-PCs, aber kostet Gaming-Performance.</p>
+          </div>
+          <div class="card rounded-2xl p-4 border-l-4 border-accent-danger bg-gradient-to-br from-accent-danger/10 to-transparent md:w-56 flex-shrink-0">
+            <p class="text-xs text-accent-danger font-semibold uppercase tracking-wider mb-2">Dein Vorteil</p>
+            <p class="text-white font-bold text-lg mb-1">+5-15% FPS</p>
+            <p class="text-xs text-gray-400">Besonders in CPU-limitierten Games wie CS2, Valorant, Fortnite.</p>
+          </div>
         </div>
 
-        <div class="alert alert-warning mb-4">
-          <i data-lucide="alert-triangle" class="w-5 h-5 text-accent-warning flex-shrink-0 mt-0.5"></i>
-          <div><p class="font-semibold text-accent-warning">Windows 11 24H2 Update</p><p class="text-sm text-gray-400">VBS ist komplexer zu deaktivieren. Alle 4 Schritte sind nötig!</p></div>
+        <div class="grid md:grid-cols-2 gap-3 mb-4">
+          <div class="alert alert-danger">
+            <i data-lucide="shield-off" class="w-5 h-5 text-accent-danger flex-shrink-0 mt-0.5"></i>
+            <div><p class="font-semibold text-accent-danger text-sm">Sicherheitshinweis</p><p class="text-xs text-gray-400">Reduziert Windows-Sicherheit. Nur für reine Gaming-PCs empfohlen.</p></div>
+          </div>
+          <div class="alert alert-warning">
+            <i data-lucide="alert-triangle" class="w-5 h-5 text-accent-warning flex-shrink-0 mt-0.5"></i>
+            <div><p class="font-semibold text-accent-warning text-sm">Windows 11 24H2</p><p class="text-xs text-gray-400">Alle 4 Schritte nötig! Microsoft hat VBS schwerer deaktivierbar gemacht.</p></div>
+          </div>
         </div>
 
         <div class="card rounded-2xl p-4 mb-6">
@@ -759,20 +770,68 @@
         </div>
 
         <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">Weitere Gaming-Optimierungen</h3>
-        <div class="table-modern bg-dark-800/50 mb-4">
-          <table class="w-full text-sm"><thead><tr><th class="text-left px-5 py-4">Einstellung</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Pfad</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Wert</th></tr></thead>
-            <tbody class="">
-              <tr><td class="px-4 py-2">Game Mode</td><td class="px-4 py-2 text-gray-400">Einstellungen → Gaming</td><td class="px-4 py-2 text-accent-primary font-semibold">EIN</td></tr>
-              <tr><td class="px-4 py-2">HAGS</td><td class="px-4 py-2 text-gray-400">System → Bildschirm → Grafik</td><td class="px-4 py-2 text-accent-primary font-semibold">EIN</td></tr>
-              <tr><td class="px-4 py-2">Optimierungen für Fenstermodus</td><td class="px-4 py-2 text-gray-400">System → Bildschirm → Grafik</td><td class="px-4 py-2 text-accent-warning font-semibold">AUS (Stutter Fix!)</td></tr>
-              <tr><td class="px-4 py-2">Xbox Game Bar</td><td class="px-4 py-2 text-gray-400">Einstellungen → Gaming</td><td class="px-4 py-2 text-accent-primary font-semibold">AUS</td></tr>
-              <tr><td class="px-4 py-2">Hintergrundaufnahme</td><td class="px-4 py-2 text-gray-400">Gaming → Aufnahmen</td><td class="px-4 py-2 text-accent-primary font-semibold">AUS</td></tr>
-            </tbody>
-          </table>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 mb-4">
+          <div class="card rounded-2xl p-4">
+            <div class="flex items-center justify-between mb-2">
+              <h4 class="font-semibold text-white">Game Mode</h4>
+              <span class="px-2 py-1 rounded-full bg-accent-primary/20 text-accent-primary text-xs font-bold">EIN</span>
+            </div>
+            <p class="text-xs text-gray-500 mb-2">Einstellungen → Gaming</p>
+            <p class="text-xs text-gray-400"><span class="text-accent-secondary font-semibold">Vorteil:</span> Priorisiert Game-Prozesse, pausiert Windows Update während Gaming.</p>
+          </div>
+          <div class="card rounded-2xl p-4">
+            <div class="flex items-center justify-between mb-2">
+              <h4 class="font-semibold text-white">HAGS</h4>
+              <span class="px-2 py-1 rounded-full bg-accent-primary/20 text-accent-primary text-xs font-bold">EIN</span>
+            </div>
+            <p class="text-xs text-gray-500 mb-2">System → Bildschirm → Grafik</p>
+            <p class="text-xs text-gray-400"><span class="text-accent-secondary font-semibold">Vorteil:</span> GPU verwaltet eigenen VRAM-Speicher. Weniger CPU-Overhead, bessere Latenz.</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-warning/30">
+            <div class="flex items-center justify-between mb-2">
+              <h4 class="font-semibold text-white">Fenstermodus-Opt.</h4>
+              <span class="px-2 py-1 rounded-full bg-accent-warning/20 text-accent-warning text-xs font-bold">AUS</span>
+            </div>
+            <p class="text-xs text-gray-500 mb-2">System → Bildschirm → Grafik</p>
+            <p class="text-xs text-gray-400"><span class="text-accent-warning font-semibold">Wichtig:</span> Erzwingt verstecktes VSync! Deaktivieren für echtes Fullscreen-Feeling.</p>
+          </div>
+          <div class="card rounded-2xl p-4">
+            <div class="flex items-center justify-between mb-2">
+              <h4 class="font-semibold text-white">Xbox Game Bar</h4>
+              <span class="px-2 py-1 rounded-full bg-accent-danger/20 text-accent-danger text-xs font-bold">AUS</span>
+            </div>
+            <p class="text-xs text-gray-500 mb-2">Einstellungen → Gaming</p>
+            <p class="text-xs text-gray-400"><span class="text-accent-secondary font-semibold">Vorteil:</span> Spart ~100MB RAM und CPU-Zyklen. Du nutzt eh OBS/Discord Overlay.</p>
+          </div>
+          <div class="card rounded-2xl p-4">
+            <div class="flex items-center justify-between mb-2">
+              <h4 class="font-semibold text-white">Hintergrundaufnahme</h4>
+              <span class="px-2 py-1 rounded-full bg-accent-danger/20 text-accent-danger text-xs font-bold">AUS</span>
+            </div>
+            <p class="text-xs text-gray-500 mb-2">Gaming → Aufnahmen</p>
+            <p class="text-xs text-gray-400"><span class="text-accent-secondary font-semibold">Vorteil:</span> Kein permanentes Recording im Hintergrund. Spart SSD-Schreibzyklen + GPU-Last.</p>
+          </div>
+          <div class="card rounded-2xl p-4">
+            <div class="flex items-center justify-between mb-2">
+              <h4 class="font-semibold text-white">Startup Apps</h4>
+              <span class="px-2 py-1 rounded-full bg-accent-secondary/20 text-accent-secondary text-xs font-bold">PRÜFEN</span>
+            </div>
+            <p class="text-xs text-gray-500 mb-2">Einstellungen → Apps → Autostart</p>
+            <p class="text-xs text-gray-400"><span class="text-accent-secondary font-semibold">Tipp:</span> Deaktiviere alles außer Synapse, Wootility, Wave Link, Discord.</p>
+          </div>
         </div>
 
-        <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">Ultimate Performance Power Plan</h3>
-        <p class="text-gray-400 text-sm mb-3">Dieser versteckte Energiesparplan verhindert, dass Windows CPU/GPU drosselt. Ideal für Gaming!</p>
+        <div class="flex flex-col md:flex-row gap-4 mb-4">
+          <div class="flex-1">
+            <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-3">Ultimate Performance Power Plan</h3>
+            <p class="text-gray-400 text-sm">Versteckter Windows-Energieplan der CPU/GPU-Throttling verhindert. Hardware bleibt auf maximaler Leistung.</p>
+          </div>
+          <div class="card rounded-2xl p-4 border-l-4 border-accent-warning bg-gradient-to-br from-accent-warning/10 to-transparent md:w-56 flex-shrink-0">
+            <p class="text-xs text-accent-warning font-semibold uppercase tracking-wider mb-2">Dein Vorteil</p>
+            <p class="text-white font-bold text-lg mb-1">Kein Throttling</p>
+            <p class="text-xs text-gray-400">CPU/GPU takten nicht runter. Konstante FPS ohne Dips beim Boost.</p>
+          </div>
+        </div>
 
         <div class="card rounded-2xl p-4 mb-4">
           <h4 class="font-semibold text-accent-primary mb-3 flex items-center gap-2"><i data-lucide="terminal" class="w-5 h-5"></i> Schritt-für-Schritt Aktivierung</h4>
@@ -812,17 +871,18 @@
           </ol>
         </div>
 
-        <div class="alert alert-info mb-4">
-          <i data-lucide="lightbulb" class="w-5 h-5 text-accent-primary flex-shrink-0"></i>
-          <div>
-            <p class="text-sm"><span class="font-semibold text-white">Was macht Ultimate Performance?</span></p>
-            <p class="text-sm text-gray-400">Verhindert CPU/GPU-Throttling, deaktiviert Energiesparen bei Inaktivität, hält Hardware auf voller Leistung. Kein messbarer Unterschied beim Stromverbrauch im Gaming!</p>
+        <div class="grid md:grid-cols-2 gap-3">
+          <div class="alert alert-info">
+            <i data-lucide="zap" class="w-5 h-5 text-accent-primary flex-shrink-0"></i>
+            <div>
+              <p class="text-sm font-semibold text-white">Stromverbrauch?</p>
+              <p class="text-xs text-gray-400">Kein messbarer Unterschied beim Gaming! Im Idle etwas höher, aber minimal.</p>
+            </div>
           </div>
-        </div>
-
-        <div class="card rounded-2xl p-3 border-l-4 border-accent-secondary">
-          <h4 class="font-semibold text-accent-secondary text-sm mb-2">Verifizieren</h4>
-          <p class="text-sm text-gray-400">Einstellungen → System → Strom & Akku → <span class="text-white">Energiemodus</span> sollte jetzt <span class="text-accent-primary">"Ultimate Performance"</span> zeigen (oder leer sein, da custom Plan).</p>
+          <div class="card rounded-2xl p-3 border-l-4 border-accent-secondary">
+            <h4 class="font-semibold text-accent-secondary text-sm mb-2">Verifizieren</h4>
+            <p class="text-xs text-gray-400">Systemsteuerung → Energieoptionen → <span class="text-accent-primary">"Ultimate Performance"</span> sollte ausgewählt sein.</p>
+          </div>
         </div>
         </div>
       </section>
