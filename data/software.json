@@ -1,0 +1,180 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-01-30",
+  "categories": {
+    "drivers": {
+      "title": "System-Treiber",
+      "icon": "download",
+      "items": [
+        {
+          "name": "AMD Chipset Driver",
+          "purpose": "CPU-Treiber inkl. 3D V-Cache Optimizer",
+          "url": "https://www.amd.com/en/support",
+          "required": true,
+          "notes": "Unbedingt installieren für 9800X3D!"
+        },
+        {
+          "name": "NVIDIA App / GeForce Driver",
+          "purpose": "GPU-Treiber & Einstellungen",
+          "url": "https://www.nvidia.com/download/index.aspx",
+          "required": true,
+          "notes": "Empfohlen: Game Ready Driver"
+        }
+      ]
+    },
+    "monitoring": {
+      "title": "System Monitoring",
+      "icon": "activity",
+      "items": [
+        {
+          "name": "HWiNFO64",
+          "purpose": "Detailliertes System Monitoring",
+          "url": "https://www.hwinfo.com/download/",
+          "required": true,
+          "notes": "Beste Monitoring-Software"
+        },
+        {
+          "name": "GPU-Z",
+          "purpose": "GPU Informationen & Monitoring",
+          "url": "https://www.techpowerup.com/gpuz/",
+          "required": false,
+          "notes": "Für GPU-Details"
+        },
+        {
+          "name": "CPU-Z",
+          "purpose": "CPU & RAM Informationen",
+          "url": "https://www.cpuid.com/softwares/cpu-z.html",
+          "required": false,
+          "notes": "Für Hardware-Verifizierung"
+        }
+      ]
+    },
+    "driverManagement": {
+      "title": "Treiber-Management",
+      "icon": "trash-2",
+      "items": [
+        {
+          "name": "DDU (Display Driver Uninstaller)",
+          "purpose": "Saubere Treiber-Deinstallation",
+          "url": "https://www.guru3d.com/files-details/display-driver-uninstaller-download.html",
+          "required": true,
+          "notes": "Nutzen bei Treiber-Problemen"
+        },
+        {
+          "name": "NVCleanstall",
+          "purpose": "NVIDIA Driver Customizer",
+          "url": "https://www.techpowerup.com/nvcleanstall/",
+          "required": false,
+          "notes": "Für minimale Treiber-Installation"
+        }
+      ]
+    },
+    "hardware": {
+      "title": "Hardware-Software",
+      "icon": "settings",
+      "items": [
+        {
+          "name": "Samsung Magician",
+          "purpose": "SSD Firmware & Health Management",
+          "url": "https://semiconductor.samsung.com/consumer-storage/support/tools/",
+          "required": true,
+          "notes": "Firmware 5B2QJXF7+ sicherstellen!"
+        },
+        {
+          "name": "Corsair iCUE",
+          "purpose": "AIO & RGB Steuerung",
+          "url": "https://www.corsair.com/icue",
+          "required": true,
+          "notes": "Für H150i Pumpen-Kontrolle"
+        },
+        {
+          "name": "DisplayWidget Center",
+          "purpose": "ASUS Monitor OLED Care",
+          "url": "https://www.asus.com/support/",
+          "required": true,
+          "notes": "Für OLED-Schutzfunktionen"
+        },
+        {
+          "name": "Wootility",
+          "purpose": "Wooting Keyboard Konfiguration",
+          "url": "https://wootility.io",
+          "required": true,
+          "notes": "Läuft im Browser"
+        }
+      ]
+    },
+    "benchmarking": {
+      "title": "Benchmarking & Testing",
+      "icon": "gauge",
+      "items": [
+        {
+          "name": "Cinebench 2024",
+          "purpose": "CPU Benchmark",
+          "url": "https://www.maxon.net/cinebench",
+          "required": false,
+          "notes": "Für CPU-Performance-Test"
+        },
+        {
+          "name": "3DMark",
+          "purpose": "GPU & System Benchmark",
+          "url": "https://store.steampowered.com/app/223850/3DMark/",
+          "required": false,
+          "notes": "Basis-Version kostenlos auf Steam"
+        },
+        {
+          "name": "OCCT",
+          "purpose": "Stabilitätstest (CPU, GPU, RAM)",
+          "url": "https://www.ocbase.com/",
+          "required": true,
+          "notes": "Für Curve Optimizer Testing"
+        },
+        {
+          "name": "AIDA64",
+          "purpose": "Memory Benchmark & Latenz",
+          "url": "https://www.aida64.com/downloads",
+          "required": false,
+          "notes": "Für RAM-Latenz-Tests"
+        },
+        {
+          "name": "TestMem5",
+          "purpose": "RAM Stabilitätstest",
+          "url": "https://github.com/integralfx/MemTestHelper",
+          "required": false,
+          "notes": "Mit anta777 Extreme Preset"
+        }
+      ]
+    },
+    "streaming": {
+      "title": "Streaming & Recording",
+      "icon": "video",
+      "items": [
+        {
+          "name": "OBS Studio",
+          "purpose": "Streaming & Recording",
+          "url": "https://obsproject.com/",
+          "required": true,
+          "notes": "Version 30.2+ für Enhanced Broadcasting"
+        },
+        {
+          "name": "StreamElements OBS.Live",
+          "purpose": "OBS Plugin für Streaming",
+          "url": "https://streamelements.com/obslive",
+          "required": false,
+          "notes": "Optional für Twitch-Features"
+        }
+      ]
+    }
+  },
+  "warnings": [
+    {
+      "icon": "alert-triangle",
+      "type": "danger",
+      "message": "NIEMALS BIOS über Windows-Apps updaten! Immer Q-Flash im BIOS nutzen."
+    },
+    {
+      "icon": "shield-alert",
+      "type": "warning",
+      "message": "Bei SSD: Firmware 5B2QJXF7+ prüfen wegen Health-Bug!"
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-01-30",
+  "globalSettings": {
+    "pollingRate": "8000 Hz",
+    "tachyonMode": true,
+    "rapidTrigger": true,
+    "firmwareUrl": "https://wootility.io"
+  },
+  "profiles": [
+    {
+      "id": "fps-competitive",
+      "name": "FPS Competitive",
+      "icon": "crosshair",
+      "games": ["CS2", "Valorant", "R6 Siege", "Apex Legends"],
+      "description": "Maximale Reaktionszeit für Counter-Strafing",
+      "settings": {
+        "actuationPoint": "0.1 - 0.2mm",
+        "rapidTriggerSensitivity": "0.2 - 0.4mm",
+        "continuousRT": true,
+        "rappySnappy": true,
+        "spacebar": "2.0mm"
+      },
+      "wootabaseProfiles": [
+        {
+          "name": "BEST CS2 SETTINGS BY WOOTING",
+          "url": "https://wootabase.com/profile/5de7a9b20bbef678f8aadc77e982386cc3f4",
+          "game": "CS2"
+        },
+        {
+          "name": "80HE CS2 Design",
+          "url": "https://wootabase.com/profile/67f593b260b63980da1eb825f5c9cd6e3a7b",
+          "game": "CS2"
+        },
+        {
+          "name": "FPS Rapid Trigger",
+          "url": "https://wootabase.com/profile/f8e85ca041a8787333aa8502da524aa4bb50",
+          "game": "Valorant/FPS"
+        },
+        {
+          "name": "Radiant Valorant",
+          "url": "https://wootabase.com/profile/502a0236cc59e21126ba066c0576375ef4e8",
+          "game": "Valorant"
+        }
+      ],
+      "warnings": ["Rappy Snappy ist in CS2 verboten!"]
+    },
+    {
+      "id": "fortnite-building",
+      "name": "Fortnite / Building",
+      "icon": "box",
+      "games": ["Fortnite", "Build-focused games"],
+      "description": "Schnelles Bauen & Edits",
+      "settings": {
+        "actuationPoint": "0.1mm",
+        "rapidTriggerSensitivity": "0.2mm",
+        "continuousRT": true,
+        "rappySnappy": false,
+        "spacebar": "1.5 - 2.0mm"
+      },
+      "wootabaseProfiles": [],
+      "warnings": []
+    },
+    {
+      "id": "mmo-wow",
+      "name": "MMO / World of Warcraft",
+      "icon": "swords",
+      "games": ["WoW", "FFXIV", "Lost Ark", "ESO"],
+      "description": "Rotation & Movement",
+      "settings": {
+        "actuationPoint": "1.0 - 1.5mm",
+        "rapidTriggerSensitivity": "Optional",
+        "continuousRT": false,
+        "rappySnappy": false,
+        "keybinds": "1.5mm"
+      },
+      "wootabaseProfiles": [],
+      "warnings": []
+    },
+    {
+      "id": "racing-casual",
+      "name": "Racing / Casual",
+      "icon": "car",
+      "games": ["Forza", "Gran Turismo", "Single-Player Games"],
+      "description": "Normale Spielerfahrung",
+      "settings": {
+        "actuationPoint": "1.5 - 2.0mm",
+        "rapidTriggerSensitivity": "AUS",
+        "continuousRT": false,
+        "rappySnappy": false,
+        "analogInput": "Optional für Gas/Bremse"
+      },
+      "wootabaseProfiles": [],
+      "warnings": []
+    },
+    {
+      "id": "rhythm-games",
+      "name": "Rhythm Games",
+      "icon": "music",
+      "games": ["osu!", "Beat Saber", "Rhythm games"],
+      "description": "Maximal sensitiv für schnelle Hits",
+      "settings": {
+        "actuationPoint": "0.1mm",
+        "rapidTriggerSensitivity": "0.1 - 0.2mm",
+        "continuousRT": true,
+        "rappySnappy": false,
+        "pollingRate": "8000 Hz"
+      },
+      "wootabaseProfiles": [],
+      "warnings": []
+    },
+    {
+      "id": "typing-work",
+      "name": "Typing / Arbeit",
+      "icon": "file-text",
+      "games": [],
+      "description": "Wie normale Tastatur, weniger CPU-Last",
+      "settings": {
+        "actuationPoint": "2.0mm",
+        "rapidTriggerSensitivity": "AUS",
+        "continuousRT": false,
+        "rappySnappy": false,
+        "pollingRate": "1000 Hz"
+      },
+      "wootabaseProfiles": [],
+      "warnings": []
+    }
+  ],
+  "proPlayerSettings": [
+    {
+      "name": "TenZ",
+      "game": "Valorant",
+      "url": "https://wooting.io/ambassadors/tenz",
+      "description": "Offizielle TenZ x Wooting Settings"
+    }
+  ],
+  "resources": {
+    "wootabase": "https://wootabase.com",
+    "wootility": "https://wootility.io",
+    "rapidTriggerGuide": "https://wooting.io/rapid-trigger",
+    "help": "https://help.wooting.io"
+  }
+}

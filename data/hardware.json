@@ -1,0 +1,128 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-01-30",
+  "system": {
+    "cpu": {
+      "name": "AMD Ryzen 7 9800X3D",
+      "icon": "cpu",
+      "tier": "gold",
+      "specs": {
+        "cores": 8,
+        "threads": 16,
+        "baseClock": "4.7 GHz",
+        "boostClock": "5.2 GHz",
+        "cache": "104 MB (96 MB 3D V-Cache)",
+        "tdp": "120W",
+        "socket": "AM5"
+      },
+      "notes": "Beste Gaming-CPU 2025/2026"
+    },
+    "gpu": {
+      "name": "MSI RTX 4080 Super Gaming X Trio",
+      "icon": "monitor",
+      "tier": "silver",
+      "specs": {
+        "vram": "16 GB GDDR6X",
+        "boostClock": "2610 MHz",
+        "tdp": "320W",
+        "pcie": "Gen 4 x16"
+      },
+      "notes": "High-End 4K Gaming"
+    },
+    "ram": {
+      "name": "G.Skill 64GB DDR5-6000 CL30",
+      "icon": "memory-stick",
+      "tier": "good",
+      "specs": {
+        "capacity": "64 GB (2x32 GB)",
+        "speed": "6000 MHz",
+        "timings": "CL30-40-40-96",
+        "voltage": "1.35V"
+      },
+      "notes": "Optimaler Sweet Spot für AM5"
+    },
+    "motherboard": {
+      "name": "Gigabyte X670 Gaming X AX",
+      "icon": "circuit-board",
+      "tier": "good",
+      "specs": {
+        "chipset": "AMD X670",
+        "socket": "AM5",
+        "formFactor": "ATX",
+        "wifi": "Wi-Fi 6E"
+      },
+      "notes": "Solides Gaming-Board"
+    },
+    "storage": {
+      "name": "Samsung 990 PRO 2TB",
+      "icon": "hard-drive",
+      "tier": "good",
+      "specs": {
+        "capacity": "2 TB",
+        "interface": "NVMe Gen4 x4",
+        "readSpeed": "7450 MB/s",
+        "writeSpeed": "6900 MB/s"
+      },
+      "notes": "Firmware 5B2QJXF7+ empfohlen!"
+    },
+    "cooler": {
+      "name": "Corsair H150i Elite Capellix XT",
+      "icon": "wind",
+      "tier": "good",
+      "specs": {
+        "type": "AIO Liquid",
+        "radiator": "360mm",
+        "fans": "3x ML120 RGB"
+      },
+      "notes": "Ausreichend für PBO + Curve Optimizer"
+    },
+    "psu": {
+      "name": "be quiet! Straight Power 12 1000W",
+      "icon": "zap",
+      "tier": "good",
+      "specs": {
+        "wattage": "1000W",
+        "efficiency": "80+ Gold",
+        "modular": "Fully Modular"
+      },
+      "notes": "Genug Headroom"
+    },
+    "keyboard": {
+      "name": "Wooting 80HE",
+      "icon": "keyboard",
+      "tier": "gold",
+      "specs": {
+        "switches": "Gateron Lekker (Hall Effect)",
+        "pollingRate": "8000 Hz",
+        "features": "Rapid Trigger, Analog Input"
+      },
+      "notes": "Beste Gaming-Tastatur"
+    }
+  },
+  "monitors": [
+    {
+      "name": "ASUS ROG SWIFT OLED PG32UCDMR",
+      "resolution": "3840x2160",
+      "refreshRate": "240 Hz",
+      "panel": "QD-OLED",
+      "usage": "Main Gaming (G-Sync)",
+      "tier": "gold"
+    },
+    {
+      "name": "Alienware AW2723DF",
+      "resolution": "2560x1440",
+      "refreshRate": "280 Hz",
+      "panel": "IPS",
+      "usage": "Secondary",
+      "tier": "good"
+    },
+    {
+      "name": "Gigabyte M28U",
+      "resolution": "3840x2160",
+      "refreshRate": "144 Hz",
+      "panel": "IPS",
+      "usage": "Third Monitor",
+      "tier": "good"
+    }
+  ]
+}
