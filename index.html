@@ -893,6 +893,12 @@
             <div class="mt-3 p-2 bg-dark-800 rounded-lg">
               <p class="text-xs text-gray-500"><span class="text-accent-secondary font-semibold">Rückgängig machen:</span> <code class="text-accent-primary">bcdedit /set hypervisorlaunchtype auto</code> + Schalter wieder AN</p>
             </div>
+            <div class="mt-3 p-2 bg-accent-danger/10 border border-accent-danger/30 rounded-lg">
+              <p class="text-xs text-accent-danger font-semibold mb-1">Registry funktioniert immer noch nicht? (24H2 Okt 2025+)</p>
+              <p class="text-xs text-gray-400">In neueren 24H2 Builds muss VBS zusätzlich im <span class="text-white">BIOS</span> deaktiviert werden:</p>
+              <p class="text-xs text-gray-400 mt-1">BIOS → Advanced → CPU Configuration → <span class="text-white">SVM Mode</span> (AMD) → <span class="text-accent-danger">Disabled</span></p>
+              <p class="text-xs text-gray-500 mt-1">⚠️ Deaktiviert auch WSL2, Android Subsystem und Hyper-V</p>
+            </div>
           </div>
         </details>
 
@@ -1263,7 +1269,7 @@
           <div class="space-y-1 text-sm">
             <div class="flex justify-between"><span class="text-gray-500">FPS Boost</span><span class="text-accent-purple font-semibold">+30-44%</span></div>
             <div class="flex justify-between"><span class="text-gray-500">Latenz</span><span class="text-accent-warning font-semibold">+10-15ms</span></div>
-            <div class="flex justify-between"><span class="text-gray-500">Verfügbar seit</span><span class="text-gray-400">Januar 2026</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Verfügbar seit</span><span class="text-gray-400">Januar 2025 (RTX 50) / Aug 2025 (RTX 40)</span></div>
           </div>
           <p class="text-xs text-gray-500 mt-3">Perfekt für ältere Spiele ohne DLSS-Support oder Indie-Games!</p>
         </div>
@@ -2154,9 +2160,9 @@
             <div class="flex items-center justify-between mb-2">
               <h4 class="font-semibold text-white text-sm flex items-center gap-2"><i data-lucide="hard-drive" class="w-4 h-4 text-accent-primary"></i> NVIDIA Treiber</h4>
             </div>
-            <p class="text-xs text-gray-400 mb-2">Nach Treiberupdate Stutter?</p>
-            <p class="text-accent-primary font-bold text-sm">DDU Clean Install ↓</p>
-            <p class="text-xs text-gray-500 mt-2"><span class="text-accent-primary font-semibold">Fix:</span> Alte Treiber-Reste entfernen</p>
+            <p class="text-xs text-gray-400 mb-2">Nach Windows Update KB5066835 (Okt 2025)?</p>
+            <p class="text-accent-primary font-bold text-sm">Treiber 581.94+ installieren!</p>
+            <p class="text-xs text-gray-500 mt-2"><span class="text-accent-primary font-semibold">Fix:</span> Behebt bis zu 50% FPS-Drop nach Win-Update</p>
           </div>
           <div class="card rounded-2xl p-4 border border-gray-600">
             <div class="flex items-center justify-between mb-2">
@@ -5006,7 +5012,7 @@
             </div>
           </div>
           <p class="text-sm text-gray-400 mb-2">Erwarteter Gain: <span class="text-accent-primary">+40-70% Performance</span></p>
-          <p class="text-sm text-gray-400">→ Größter Gewinn für konstante 4K 240Hz. Warten auf Q1 2026 Release.</p>
+          <p class="text-sm text-gray-400">→ Größter Gewinn für konstante 4K 240Hz. RTX 5090 seit Jan 2025 verfügbar (€1.999+).</p>
         </div>
 
         <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">Nicht lohnenswert</h3>
