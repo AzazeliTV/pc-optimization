@@ -8,7 +8,7 @@
       "id": "expo",
       "title": "RAM aktivieren (EXPO)",
       "icon": "memory-stick",
-      "description": "Aktiviert automatisch DDR5-6000MHz CL30 mit FCLK 3000MHz (1:1 Ratio).",
+      "description": "Aktiviert automatisch DDR5-6000MHz CL30 (MCLK 3000MHz, UCLK 3000MHz, FCLK 2000MHz).",
       "settings": [
         {
           "path": "Tweaker",
@@ -52,7 +52,7 @@
       "description": "Manuell auf 'Enabled' setzen eliminiert Micro-Stuttering bei X3D CPUs! 'Auto' kann Probleme verursachen.",
       "settings": [
         {
-          "path": "Settings → AMD CBS → SMU Common Options → CPPC",
+          "path": "Settings → AMD CBS → CPU Common Options",
           "name": "Global C-State Control",
           "value": "Enabled (NICHT Auto!)",
           "status": "critical"
@@ -82,9 +82,9 @@
         {
           "path": "AMD Overclocking → PBO",
           "name": "PBO Scalar",
-          "value": "1x - 10x",
+          "value": "7x - 10x",
           "status": "recommended",
-          "explanation": "1x für Stabilität, höher für mehr Boost"
+          "explanation": "7X-10X empfohlen für 9800X3D (Silicon Lottery beachten)"
         },
         {
           "path": "AMD Overclocking → PBO",
@@ -100,7 +100,7 @@
       "title": "Curve Optimizer",
       "icon": "trending-down",
       "description": "Undervolting für bessere Temperaturen und höhere Boost-Clocks. Mit 360mm AIO empfohlen.",
-      "warning": "Stabilität testen! Starte mit -15 bis -20 und teste mit Cinebench R23, OCCT oder Y-Cruncher. Viele User mit 360mm AIO erreichen -25 bis -30 stabil, aber jede CPU ist anders. Bei Crashes: Wert erhöhen (z.B. -20 → -15).",
+      "warning": "Stabilität testen! Starte konservativ mit -10 bis -15 und teste mit Cinebench R23, OCCT oder Y-Cruncher. Jede CPU ist anders (Silicon Lottery). AMD Safe Voltage Range: 1.28V-1.31V. Bei Crashes: Wert erhöhen (z.B. -15 → -10).",
       "settings": [
         {
           "path": "AMD Overclocking → PBO → Curve Optimizer",
@@ -119,9 +119,9 @@
         {
           "path": "AMD Overclocking → PBO → Curve Optimizer",
           "name": "All Core Curve Optimizer Magnitude",
-          "value": "-15 bis -20",
+          "value": "-10 bis -15",
           "status": "warning",
-          "explanation": "Konservativ starten! Max stabil: -25 bis -30"
+          "explanation": "Konservativ starten! Jede CPU ist anders (Silicon Lottery). Max stabil: -20 bis -30"
         }
       ],
       "stabilityTests": [

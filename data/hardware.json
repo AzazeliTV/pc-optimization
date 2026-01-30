@@ -89,22 +89,20 @@
       ]
     },
     "storage": {
-      "name": "Samsung 990 PRO 2TB",
+      "name": "Samsung 9100 PRO 2TB",
       "icon": "hard-drive",
-      "tier": "good",
+      "tier": "gold",
       "specs": {
         "capacity": "2 TB",
-        "interface": "NVMe Gen4 x4",
-        "readSpeed": "7450 MB/s",
-        "writeSpeed": "6900 MB/s"
+        "interface": "NVMe PCIe 5.0 x4",
+        "readSpeed": "14800 MB/s",
+        "writeSpeed": "13400 MB/s",
+        "randomRead": "2200K IOPS",
+        "randomWrite": "2600K IOPS",
+        "tbw": "1200 TB"
       },
-      "notes": "Firmware 5B2QJXF7+ empfohlen!",
+      "notes": "PCIe 5.0 - Samsung Magician für Firmware-Updates nutzen!",
       "upgradeOptions": [
-        {
-          "name": "Gen5 SSD (T700, 990 EVO Plus)",
-          "expectedGain": "Schnellere Ladezeiten",
-          "recommendation": "Kaum spürbar im Gaming, nur für Produktivität"
-        },
         {
           "name": "Zweite 2TB SSD",
           "expectedGain": "Mehr Speicher",

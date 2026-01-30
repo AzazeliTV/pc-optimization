@@ -453,7 +453,7 @@
               <tr><td class="px-4 py-2 font-semibold text-white">Global C-State</td><td class="px-4 py-2 text-gray-400 text-xs">Settings → AMD CBS → CPU Common Options</td><td class="px-4 py-2 text-accent-warning font-semibold">Enabled</td></tr>
               <tr><td class="px-4 py-2 font-semibold text-white">PBO (Detailliert)</td><td class="px-4 py-2 text-gray-400 text-xs">Settings → AMD Overclocking → PBO</td><td class="px-4 py-2 text-accent-primary font-semibold">Advanced</td></tr>
               <tr><td class="px-4 py-2 font-semibold text-white">Max CPU Boost Override</td><td class="px-4 py-2 text-gray-400 text-xs">Settings → AMD Overclocking → PBO</td><td class="px-4 py-2 text-accent-primary font-semibold">+200 MHz</td></tr>
-              <tr><td class="px-4 py-2 font-semibold text-white">Curve Optimizer</td><td class="px-4 py-2 text-gray-400 text-xs">Settings → AMD Overclocking → PBO</td><td class="px-4 py-2 text-accent-secondary font-semibold">-15 (Start)</td></tr>
+              <tr><td class="px-4 py-2 font-semibold text-white">Curve Optimizer</td><td class="px-4 py-2 text-gray-400 text-xs">Settings → AMD Overclocking → PBO</td><td class="px-4 py-2 text-accent-secondary font-semibold">-10 bis -15 (Start)</td></tr>
               <tr><td class="px-4 py-2 font-semibold text-white">SVM Mode</td><td class="px-4 py-2 text-gray-400 text-xs">Settings → AMD CBS → CPU Common Options</td><td class="px-4 py-2 text-gray-400">Nach Bedarf</td></tr>
               <tr><td class="px-4 py-2 font-semibold text-white">ErP Ready</td><td class="px-4 py-2 text-gray-400 text-xs">Settings → Platform Power</td><td class="px-4 py-2 text-accent-primary font-semibold">Enabled</td></tr>
             </tbody>
@@ -568,7 +568,7 @@
                 <tbody>
                   <tr><td class="px-4 py-2">Precision Boost Overdrive</td><td class="px-4 py-2 text-accent-primary font-semibold">Advanced</td></tr>
                   <tr><td class="px-4 py-2">PBO Limits</td><td class="px-4 py-2 text-accent-primary font-semibold">Motherboard</td></tr>
-                  <tr><td class="px-4 py-2">Precision Boost Overdrive Scalar Ctrl</td><td class="px-4 py-2 text-accent-primary font-semibold">Auto oder 10X</td></tr>
+                  <tr><td class="px-4 py-2">Precision Boost Overdrive Scalar Ctrl</td><td class="px-4 py-2 text-accent-primary font-semibold">7X - 10X (empfohlen)</td></tr>
                   <tr><td class="px-4 py-2">CPU Boost Clock Override</td><td class="px-4 py-2 text-accent-primary font-semibold">200 MHz (optional)</td></tr>
                   <tr><td class="px-4 py-2">Platform Thermal Throttle Ctrl</td><td class="px-4 py-2 text-gray-400">Auto oder Disabled</td></tr>
                 </tbody>
@@ -598,7 +598,7 @@
                 <tbody>
                   <tr><td class="px-4 py-2">Curve Optimizer</td><td class="px-4 py-2 text-accent-primary font-semibold">All Cores</td></tr>
                   <tr><td class="px-4 py-2">All Core Curve Optimizer Sign</td><td class="px-4 py-2 text-accent-primary font-semibold">Negative</td></tr>
-                  <tr><td class="px-4 py-2">All Core Curve Optimizer Magnitude</td><td class="px-4 py-2 text-accent-secondary font-semibold">15 (Start)</td></tr>
+                  <tr><td class="px-4 py-2">All Core Curve Optimizer Magnitude</td><td class="px-4 py-2 text-accent-secondary font-semibold">10-15 (Start)</td></tr>
                 </tbody>
               </table>
             </div>
@@ -769,6 +769,7 @@
                   <p class="text-gray-400 text-xs mb-1">Diese Befehle nacheinander eingeben:</p>
                   <div class="bg-dark-900 rounded-lg p-2 font-mono text-xs text-accent-primary overflow-x-auto space-y-1">
                     <code class="block">reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v EnableVirtualizationBasedSecurity /t REG_DWORD /d 0 /f</code>
+                    <code class="block">reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\WindowsHello" /v Enabled /t REG_DWORD /d 0 /f</code>
                     <code class="block">bcdedit /set hypervisorlaunchtype off</code>
                   </div>
                 </div>
@@ -1102,8 +1103,8 @@
         <div class="category-box">
         <div class="flex flex-col md:flex-row gap-4 mb-4">
           <div class="flex-1">
-            <h3 class="text-sm font-semibold text-green-400 uppercase tracking-wider mb-3">DLSS & Frame Generation (RTX 4080 Super)</h3>
-            <p class="text-gray-400 text-sm">DLSS 3 mit Frame Generation - KI-Frames für massive FPS-Boosts in Singleplayer-Games.</p>
+            <h3 class="text-sm font-semibold text-green-400 uppercase tracking-wider mb-3">DLSS 4 & Frame Generation (RTX 4080 Super)</h3>
+            <p class="text-gray-400 text-sm">DLSS 4 mit Multi Frame Generation - KI-Frames für massive FPS-Boosts in 250+ Games. Neu: <span class="text-accent-purple font-semibold">Smooth Motion</span> für Frame Gen in ALLEN Spielen via NVIDIA App!</p>
           </div>
           <div class="card rounded-2xl p-4 border-l-4 border-accent-purple bg-gradient-to-br from-accent-purple/10 to-transparent md:w-56 flex-shrink-0">
             <p class="text-xs text-accent-purple font-semibold uppercase tracking-wider mb-2">Dein Vorteil</p>
@@ -1124,7 +1125,7 @@
           </div>
           <div class="card rounded-2xl p-4">
             <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="clapperboard" class="w-5 h-5 text-accent-purple"></i> Frame Generation</h4>
-            <p class="text-xs text-gray-400 mb-3">KI-Zwischenframes. Nur RTX 40-Series!</p>
+            <p class="text-xs text-gray-400 mb-3">KI-Zwischenframes. RTX 40-Series + DLSS 4!</p>
             <div class="space-y-2 text-sm">
               <div class="flex justify-between"><span class="text-gray-500">Competitive</span><span class="text-accent-danger font-semibold">AUS</span></div>
               <div class="flex justify-between"><span class="text-gray-500">Singleplayer</span><span class="text-green-400 font-semibold">EIN</span></div>
@@ -1134,11 +1135,25 @@
           </div>
         </div>
 
+        <div class="card rounded-2xl p-4 mb-4 border-l-4 border-accent-purple">
+          <h4 class="font-semibold text-accent-purple mb-3 flex items-center gap-2"><i data-lucide="sparkles" class="w-5 h-5"></i> NEU: Smooth Motion (RTX 40-Series)</h4>
+          <p class="text-xs text-gray-400 mb-3">Frame Generation für <span class="text-white font-semibold">ALLE Spiele</span> - auch ohne native DLSS-Unterstützung! Aktiviert über die NVIDIA App.</p>
+          <div class="bg-dark-800 rounded-lg p-3 mb-3">
+            <p class="text-xs text-gray-400 font-mono">NVIDIA App → Graphics → Smooth Motion → <span class="text-accent-primary">EIN</span></p>
+          </div>
+          <div class="space-y-1 text-sm">
+            <div class="flex justify-between"><span class="text-gray-500">FPS Boost</span><span class="text-accent-purple font-semibold">+30-44%</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Latenz</span><span class="text-accent-warning font-semibold">+10-15ms</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Verfügbar seit</span><span class="text-gray-400">Januar 2026</span></div>
+          </div>
+          <p class="text-xs text-gray-500 mt-3">Perfekt für ältere Spiele ohne DLSS-Support oder Indie-Games!</p>
+        </div>
+
         <div class="alert alert-warning">
           <i data-lucide="alert-triangle" class="w-5 h-5 text-accent-warning flex-shrink-0"></i>
           <div>
             <p class="font-semibold text-accent-warning text-sm">Für dein Setup</p>
-            <p class="text-xs text-gray-400">CS2/Valorant: <span class="text-white">DLSS AUS, Reflex EIN</span> - 240Hz easy erreichbar. Frame Gen nur für Cyberpunk etc!</p>
+            <p class="text-xs text-gray-400">CS2/Valorant: <span class="text-white">DLSS AUS, Reflex EIN</span> - 240Hz easy erreichbar. Frame Gen/Smooth Motion nur für AAA-Games!</p>
           </div>
         </div>
         </div>
@@ -1210,7 +1225,7 @@
               <i data-lucide="link" class="w-5 h-5 text-accent-secondary"></i>
               <h4 class="font-semibold text-white text-sm">FCLK 1:1 Ratio</h4>
             </div>
-            <p class="text-xs text-gray-400"><span class="text-accent-secondary font-semibold">3000MHz FCLK</span> = optimale Infinity Fabric Latenz. Wird von EXPO automatisch gesetzt!</p>
+            <p class="text-xs text-gray-400"><span class="text-accent-secondary font-semibold">FCLK 2000MHz</span> = optimale Infinity Fabric Latenz (MCLK:UCLK:FCLK = 3000:3000:2000). Wird von EXPO automatisch gesetzt!</p>
           </div>
           <div class="card rounded-2xl p-4 border border-accent-danger/20">
             <div class="flex items-center gap-2 mb-2">
@@ -1697,7 +1712,22 @@
           <div><h2 class="text-3xl font-bold text-white">Wooting 80HE Settings</h2></div>
         </div>
         <div class="category-box">
-        <p class="text-gray-400 mb-4 text-sm">Beste Gaming-Tastatur dank Rapid Trigger und 8kHz Polling.</p>
+        <p class="text-gray-400 mb-4 text-sm">Beste Gaming-Tastatur dank Rapid Trigger und 8kHz Polling. 67% der VCT 2025 Pros nutzen Rapid Trigger!</p>
+
+        <div class="card rounded-2xl p-4 mb-4 border-l-4 border-accent-primary bg-gradient-to-br from-accent-primary/10 to-transparent">
+          <h4 class="font-semibold text-accent-primary mb-2 flex items-center gap-2"><i data-lucide="zap" class="w-5 h-5"></i> Counter-Strafing Vorteil</h4>
+          <p class="text-xs text-gray-400 mb-2">Mit Rapid Trigger stoppst du <span class="text-white font-semibold">26% schneller</span> als mit normalen Tastaturen!</p>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="bg-dark-800 rounded-lg p-2 text-center">
+              <p class="text-xs text-gray-500">Normale Tastatur</p>
+              <p class="text-accent-danger font-bold">82ms</p>
+            </div>
+            <div class="bg-dark-800 rounded-lg p-2 text-center">
+              <p class="text-xs text-gray-500">Wooting + RT</p>
+              <p class="text-accent-primary font-bold">61ms</p>
+            </div>
+          </div>
+        </div>
 
         <div class="card rounded-2xl p-4 mb-6 border-l-4 border-accent-secondary">
           <h4 class="font-semibold text-accent-secondary mb-3 flex items-center gap-2"><i data-lucide="globe" class="w-5 h-5"></i> Wootility öffnen</h4>
@@ -2733,6 +2763,34 @@
             </ul>
           </div>
         </div>
+
+        <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4 mt-6">Pro-Features (DisplayWidget Center)</h3>
+        <div class="grid md:grid-cols-3 gap-3 mb-4">
+          <div class="card rounded-2xl p-4 border border-accent-danger/20">
+            <div class="flex items-center gap-2 mb-2">
+              <i data-lucide="crosshair" class="w-5 h-5 text-accent-danger"></i>
+              <h4 class="font-semibold text-white text-sm">Esports Mode</h4>
+            </div>
+            <p class="text-xs text-gray-400 mb-2">Reduziert den sichtbaren Bereich auf 24.5" oder 27" für Competitive Gaming.</p>
+            <p class="text-xs text-accent-danger font-semibold">Perfekt für CS2/Valorant!</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-secondary/20">
+            <div class="flex items-center gap-2 mb-2">
+              <i data-lucide="sun" class="w-5 h-5 text-accent-secondary"></i>
+              <h4 class="font-semibold text-white text-sm">Uniform Brightness</h4>
+            </div>
+            <p class="text-xs text-gray-400 mb-2">Gleicht Helligkeitsunterschiede über den gesamten Bildschirm aus.</p>
+            <p class="text-xs text-accent-secondary font-semibold">Für Content Creation</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-warning/20">
+            <div class="flex items-center gap-2 mb-2">
+              <i data-lucide="eye" class="w-5 h-5 text-accent-warning"></i>
+              <h4 class="font-semibold text-white text-sm">Dynamic Shadow Boost</h4>
+            </div>
+            <p class="text-xs text-gray-400 mb-2">Hellt dunkle Bereiche auf ohne Highlights zu überstrahlen.</p>
+            <p class="text-xs text-accent-warning font-semibold">Level 1-3 verfügbar</p>
+          </div>
+        </div>
         </div>
       </section>
 
@@ -3351,7 +3409,7 @@
             <tbody class="">
               <tr><td class="px-4 py-2">PC bootet nicht nach BIOS</td><td class="px-4 py-2">CMOS Reset (Jumper oder Batterie 30s)</td></tr>
               <tr><td class="px-4 py-2">EXPO instabil</td><td class="px-4 py-2">Memory Training, evtl. 5600MHz testen</td></tr>
-              <tr><td class="px-4 py-2">Curve Optimizer Crash</td><td class="px-4 py-2">Wert erhöhen (-20 → -15 → -10)</td></tr>
+              <tr><td class="px-4 py-2">Curve Optimizer Crash</td><td class="px-4 py-2">Wert erhöhen (-15 → -10 → -5)</td></tr>
               <tr><td class="px-4 py-2">VBS deaktiviert sich nicht</td><td class="px-4 py-2">Windows Hello Registry auch deaktivieren!</td></tr>
               <tr><td class="px-4 py-2">Samsung FW Update fehlgeschlagen</td><td class="px-4 py-2">ISO von Samsung, via USB booten</td></tr>
             </tbody>
@@ -3415,7 +3473,7 @@
         <div class="category-box">
         <ol class="space-y-2 text-sm text-gray-300">
           <li class="flex gap-2"><span class="text-accent-primary font-bold">1.</span><span><strong class="text-white">BIOS:</strong> EXPO + Global C-State Enabled + PBO +200MHz</span></li>
-          <li class="flex gap-2"><span class="text-accent-primary font-bold">2.</span><span><strong class="text-white">BIOS:</strong> Curve Optimizer -15 bis -20</span></li>
+          <li class="flex gap-2"><span class="text-accent-primary font-bold">2.</span><span><strong class="text-white">BIOS:</strong> Curve Optimizer -10 bis -15 (konservativ starten)</span></li>
           <li class="flex gap-2"><span class="text-accent-primary font-bold">3.</span><span><strong class="text-white">Windows:</strong> VBS deaktivieren (5-15% FPS!)</span></li>
           <li class="flex gap-2"><span class="text-accent-primary font-bold">4.</span><span><strong class="text-white">Windows:</strong> Fenstermodus-Optimierung AUS</span></li>
           <li class="flex gap-2"><span class="text-accent-primary font-bold">5.</span><span><strong class="text-white">NVIDIA:</strong> G-Sync + 237 FPS Cap + Low Latency</span></li>
@@ -3556,7 +3614,7 @@
       { title: 'G-Sync Einstellungen', section: 'NVIDIA', id: 'nvidia', keywords: 'gsync g-sync vsync fps cap monitor tearing' },
       { title: 'Low Latency Mode', section: 'NVIDIA', id: 'nvidia', keywords: 'latency input lag nvidia low latency' },
       { title: 'NVIDIA Reflex', section: 'NVIDIA', id: 'nvidia', keywords: 'reflex latenz input lag cs2 valorant fortnite' },
-      { title: 'DLSS Frame Generation', section: 'NVIDIA', id: 'nvidia', keywords: 'dlss frame generation fps boost rtx 4080' },
+      { title: 'DLSS 4 Frame Generation', section: 'NVIDIA', id: 'nvidia', keywords: 'dlss dlss4 frame generation fps boost rtx 4080 smooth motion' },
       { title: 'Shader Cache', section: 'NVIDIA', id: 'nvidia', keywords: 'shader cache stutter kompilieren' },
       { title: 'RAM Stabilität testen', section: 'RAM', id: 'ram', keywords: 'testmem5 tm5 occt aida64 benchmark' },
       { title: 'Samsung Firmware', section: 'SSD', id: 'ssd', keywords: 'firmware 9100 pro samsung magician ssd pcie 5.0' },
