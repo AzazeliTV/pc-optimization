@@ -21,16 +21,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; }
-    body { font-family: 'Inter', system-ui, sans-serif; background: #050508; }
-    body::before { content: ''; position: fixed; inset: 0; background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 255, 136, 0.08), transparent), radial-gradient(ellipse 60% 40% at 80% 100%, rgba(0, 212, 255, 0.05), transparent); pointer-events: none; z-index: -1; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: linear-gradient(135deg, #0c1222 0%, #0a0f1a 50%, #0d1525 100%); min-height: 100vh; }
+    body::before { content: ''; position: fixed; inset: 0; background:
+      radial-gradient(ellipse 100% 80% at 50% -30%, rgba(0, 255, 136, 0.12), transparent 60%),
+      radial-gradient(ellipse 80% 60% at 100% 100%, rgba(0, 212, 255, 0.08), transparent 50%),
+      radial-gradient(ellipse 60% 40% at 0% 50%, rgba(99, 102, 241, 0.06), transparent 40%);
+      pointer-events: none; z-index: -1; }
+    body::after { content: ''; position: fixed; inset: 0; background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); opacity: 0.02; pointer-events: none; z-index: -1; }
 
     /* Glass Effects */
-    .glass { background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.05); }
-    .glass-card { background: linear-gradient(145deg, rgba(15,15,25,0.9) 0%, rgba(10,10,18,0.95) 100%); backdrop-filter: blur(40px); border: 1px solid rgba(255,255,255,0.06); box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05); }
-    .glass-card:hover { border-color: rgba(0,255,136,0.2); box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 20px rgba(0,255,136,0.05), inset 0 1px 0 rgba(255,255,255,0.05); transform: translateY(-2px); }
+    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.08); }
+    .glass-card { background: linear-gradient(145deg, rgba(20,25,40,0.8) 0%, rgba(15,20,35,0.9) 100%); backdrop-filter: blur(40px); border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+    .glass-card:hover { border-color: rgba(0,255,136,0.3); box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 30px rgba(0,255,136,0.08); transform: translateY(-2px); }
 
     /* Sidebar */
-    .sidebar { background: linear-gradient(180deg, rgba(8,8,15,0.98) 0%, rgba(5,5,10,0.99) 100%); border-right: 1px solid rgba(255,255,255,0.04); }
+    .sidebar { background: linear-gradient(180deg, rgba(12,18,34,0.98) 0%, rgba(8,12,24,0.99) 100%); border-right: 1px solid rgba(255,255,255,0.06); box-shadow: 4px 0 24px rgba(0,0,0,0.3); }
     .sidebar::-webkit-scrollbar { width: 4px; }
     .sidebar::-webkit-scrollbar-thumb { background: rgba(0,255,136,0.2); border-radius: 2px; }
     .nav-section { font-size: 10px; letter-spacing: 0.15em; color: rgba(255,255,255,0.3); margin-bottom: 8px; padding-left: 16px; }
@@ -50,15 +55,17 @@
     .glow-subtle { box-shadow: 0 4px 20px rgba(0,0,0,0.5), 0 0 40px rgba(0,255,136,0.05); }
 
     /* Cards */
-    .card { background: linear-gradient(145deg, rgba(18,18,30,0.8) 0%, rgba(12,12,22,0.9) 100%); border: 1px solid rgba(255,255,255,0.04); border-radius: 16px; transition: all 0.3s ease; }
-    .card:hover { border-color: rgba(0,255,136,0.15); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+    .card { background: linear-gradient(145deg, rgba(20,28,50,0.7) 0%, rgba(15,22,40,0.8) 100%); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); cursor: default; }
+    .card:hover { border-color: rgba(0,255,136,0.25); transform: translateY(-3px); box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 40px rgba(0,255,136,0.06); }
+    .card:hover .card-icon { transform: scale(1.1); }
+    .card-icon { transition: transform 0.3s ease; }
 
     /* Tables */
-    .table-modern { border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.04); }
-    .table-modern thead { background: linear-gradient(90deg, rgba(0,255,136,0.08) 0%, rgba(0,212,255,0.05) 100%); }
-    .table-modern th { font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(0,255,136,0.8); }
-    .table-modern tbody tr { border-bottom: 1px solid rgba(255,255,255,0.03); transition: background 0.2s; }
-    .table-modern tbody tr:hover { background: rgba(255,255,255,0.02); }
+    .table-modern { border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); background: rgba(15,22,40,0.5); }
+    .table-modern thead { background: linear-gradient(90deg, rgba(0,255,136,0.12) 0%, rgba(0,212,255,0.08) 100%); }
+    .table-modern th { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(0,255,136,0.9); }
+    .table-modern tbody tr { border-bottom: 1px solid rgba(255,255,255,0.04); transition: background 0.2s; }
+    .table-modern tbody tr:hover { background: rgba(0,255,136,0.03); }
     .table-modern tbody tr:last-child { border-bottom: none; }
 
     /* Scrollbar */
@@ -68,9 +75,9 @@
     ::-webkit-scrollbar-thumb:hover { background: rgba(0,255,136,0.3); }
 
     /* Section Headers */
-    .section-header { position: relative; display: flex; align-items: center; gap: 16px; padding-bottom: 16px; margin-bottom: 24px; }
-    .section-header::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, rgba(0,255,136,0.3) 0%, rgba(0,212,255,0.1) 50%, transparent 100%); }
-    .section-icon { width: 48px; height: 48px; border-radius: 14px; background: linear-gradient(135deg, rgba(0,255,136,0.15) 0%, rgba(0,212,255,0.1) 100%); border: 1px solid rgba(0,255,136,0.2); display: flex; align-items: center; justify-content: center; }
+    .section-header { position: relative; display: flex; align-items: center; gap: 16px; padding-bottom: 20px; margin-bottom: 28px; }
+    .section-header::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, rgba(0,255,136,0.4) 0%, rgba(0,212,255,0.2) 30%, transparent 70%); }
+    .section-icon { width: 52px; height: 52px; border-radius: 16px; background: linear-gradient(135deg, rgba(0,255,136,0.2) 0%, rgba(0,212,255,0.15) 100%); border: 1px solid rgba(0,255,136,0.25); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,255,136,0.1); }
 
     /* Animations */
     @keyframes float { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-15px) rotate(2deg); } }
@@ -80,8 +87,17 @@
     .animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
 
     /* Tags */
-    .tag { background: linear-gradient(135deg, rgba(0,255,136,0.1) 0%, rgba(0,212,255,0.05) 100%); border: 1px solid rgba(0,255,136,0.15); padding: 6px 14px; border-radius: 20px; font-size: 13px; color: rgba(255,255,255,0.8); transition: all 0.2s; }
-    .tag:hover { background: linear-gradient(135deg, rgba(0,255,136,0.15) 0%, rgba(0,212,255,0.1) 100%); border-color: rgba(0,255,136,0.3); transform: scale(1.02); }
+    .tag { background: linear-gradient(135deg, rgba(0,255,136,0.1) 0%, rgba(0,212,255,0.05) 100%); border: 1px solid rgba(0,255,136,0.15); padding: 6px 14px; border-radius: 20px; font-size: 13px; color: rgba(255,255,255,0.8); transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+    .tag:hover { background: linear-gradient(135deg, rgba(0,255,136,0.2) 0%, rgba(0,212,255,0.15) 100%); border-color: rgba(0,255,136,0.4); transform: scale(1.05); box-shadow: 0 4px 12px rgba(0,255,136,0.15); }
+
+    /* Links */
+    a[href^="http"] { transition: all 0.2s ease; }
+    a[href^="http"]:hover { color: #00ff88; }
+
+    /* Buttons */
+    .btn { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,255,136,0.2); }
+    .btn:active { transform: translateY(0); }
 
     /* Code blocks */
     .code-block { background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.05); border-radius: 10px; font-family: 'JetBrains Mono', monospace; }
@@ -112,7 +128,7 @@
   <button id="menuToggle" class="menu-btn fixed top-4 left-4 z-50 md:hidden p-3 rounded-xl text-accent-primary"><i data-lucide="menu" class="w-6 h-6"></i></button>
 
   <!-- Sidebar -->
-  <aside id="sidebar" class="sidebar fixed top-0 left-0 w-72 h-screen z-40 overflow-y-auto transform -translate-x-full md:translate-x-0 transition-transform duration-300">
+  <aside id="sidebar" class="sidebar fixed top-0 left-0 w-64 h-screen z-40 overflow-y-auto transform -translate-x-full md:translate-x-0 transition-transform duration-300">
     <!-- Logo -->
     <div class="p-6 mb-2">
       <div class="flex items-center gap-4">
@@ -160,20 +176,17 @@
       <a href="#upgrades" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="trending-up" class="w-4 h-4"></i><span>Upgrades</span></a>
       <a href="#checklist" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="check-square" class="w-4 h-4"></i><span>Checkliste</span></a>
       <a href="#troubleshooting" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="bug" class="w-4 h-4"></i><span>Troubleshooting</span></a>
-    </nav>
 
-    <!-- Footer -->
-    <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-white/5">
-      <div class="flex items-center gap-2 text-xs text-gray-500">
-        <i data-lucide="github" class="w-3 h-3"></i>
-        <span>Made for AzazeliTV</span>
+      <!-- Sidebar Footer -->
+      <div class="mt-8 pt-4 border-t border-white/5">
+        <p class="text-[10px] text-gray-600 text-center">Made for AzazeliTV</p>
       </div>
-    </div>
+    </nav>
   </aside>
 
   <!-- Main Content -->
-  <main class="main-content md:ml-72 min-h-screen">
-    <div class="max-w-5xl mx-auto px-6 md:px-10 py-10">
+  <main class="main-content md:ml-64 min-h-screen">
+    <div class="max-w-4xl mx-auto px-6 md:px-8 py-10">
 
       <!-- Hero -->
       <header id="hero" class="text-center py-16 mb-8">
@@ -261,7 +274,7 @@
       </section>
 
       <!-- Section: Peripherals -->
-      <section id="peripherals" class="py-12 scroll-mt-8"
+      <section id="peripherals" class="py-12 scroll-mt-8">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="mouse" class="w-6 h-6 text-accent-primary"></i>
@@ -277,7 +290,7 @@
       </section>
 
       <!-- Section: Software -->
-      <section id="software" class="py-12 scroll-mt-8"
+      <section id="software" class="py-12 scroll-mt-8">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="download" class="w-6 h-6 text-accent-primary"></i>
@@ -308,7 +321,7 @@
       </section>
 
       <!-- Section: BIOS -->
-      <section id="bios" class="py-12 scroll-mt-8"
+      <section id="bios" class="py-12 scroll-mt-8">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="settings" class="w-6 h-6 text-accent-primary"></i>
@@ -389,7 +402,7 @@
       </section>
 
       <!-- Section: Windows -->
-      <section id="windows" class="py-12 scroll-mt-8"
+      <section id="windows" class="py-12 scroll-mt-8">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="layout-grid" class="w-6 h-6 text-accent-primary"></i>
@@ -469,7 +482,7 @@
       </section>
 
       <!-- Section: RAM -->
-      <section id="ram" class="py-12 scroll-mt-8"
+      <section id="ram" class="py-12 scroll-mt-8">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="memory-stick" class="w-6 h-6 text-accent-primary"></i>
@@ -498,7 +511,7 @@
       </section>
 
       <!-- Section: SSD -->
-      <section id="ssd" class="py-12 scroll-mt-8"
+      <section id="ssd" class="py-12 scroll-mt-8">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="hard-drive" class="w-6 h-6 text-accent-primary"></i>
@@ -519,7 +532,7 @@
       </section>
 
       <!-- Section: Anti-Stutter -->
-      <section id="antistutter" class="py-12 scroll-mt-8"
+      <section id="antistutter" class="py-12 scroll-mt-8">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="zap-off" class="w-6 h-6 text-accent-primary"></i>
@@ -558,7 +571,7 @@
       </section>
 
       <!-- Section: Wooting -->
-      <section id="wooting" class="py-12 scroll-mt-8"
+      <section id="wooting" class="py-12 scroll-mt-8">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="keyboard" class="w-6 h-6 text-accent-primary"></i>
@@ -617,7 +630,7 @@
       </section>
 
       <!-- Section: Mouse -->
-      <section id="mouse" class="py-12 scroll-mt-8"
+      <section id="mouse" class="py-12 scroll-mt-8">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="mouse" class="w-6 h-6 text-accent-primary"></i>
@@ -647,7 +660,7 @@
       </section>
 
       <!-- Section: Headset -->
-      <section id="headset" class="py-12 scroll-mt-8"
+      <section id="headset" class="py-12 scroll-mt-8">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="headphones" class="w-6 h-6 text-accent-primary"></i>
@@ -684,7 +697,7 @@
       </section>
 
       <!-- Section: Stream Deck -->
-      <section id="streamdeck" class="py-12 scroll-mt-8"
+      <section id="streamdeck" class="py-12 scroll-mt-8">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="grid-3x3" class="w-6 h-6 text-accent-primary"></i>
@@ -722,7 +735,7 @@
       </section>
 
       <!-- Section: OLED -->
-      <section id="oled" class="py-12 scroll-mt-8"
+      <section id="oled" class="py-12 scroll-mt-8">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="monitor" class="w-6 h-6 text-accent-primary"></i>
@@ -758,7 +771,7 @@
       </section>
 
       <!-- Section: OBS -->
-      <section id="obs" class="py-12 scroll-mt-8"
+      <section id="obs" class="py-12 scroll-mt-8">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="video" class="w-6 h-6 text-accent-primary"></i>
@@ -801,7 +814,7 @@
       </section>
 
       <!-- Section: Upgrades -->
-      <section id="upgrades" class="py-12 scroll-mt-8"
+      <section id="upgrades" class="py-12 scroll-mt-8">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="trending-up" class="w-6 h-6 text-accent-primary"></i>
@@ -837,7 +850,7 @@
       </section>
 
       <!-- Section: Checklist -->
-      <section id="checklist" class="py-12 scroll-mt-8"
+      <section id="checklist" class="py-12 scroll-mt-8">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="check-square" class="w-6 h-6 text-accent-primary"></i>
@@ -882,7 +895,7 @@
       </section>
 
       <!-- Section: Troubleshooting -->
-      <section id="troubleshooting" class="py-12 scroll-mt-8"
+      <section id="troubleshooting" class="py-12 scroll-mt-8">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="bug" class="w-6 h-6 text-accent-primary"></i>
