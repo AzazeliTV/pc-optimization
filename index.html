@@ -116,18 +116,47 @@
     pre[class*="language-"] { background: rgba(0,0,0,0.4) !important; border-radius: 10px; margin: 0; padding: 16px !important; }
     code[class*="language-"] { font-family: 'JetBrains Mono', monospace !important; font-size: 13px; }
 
-    /* Section Accent Colors */
-    .section-directstorage .section-icon { background: linear-gradient(135deg, rgba(255,107,53,0.2) 0%, rgba(255,140,0,0.15) 100%); border-color: rgba(255,107,53,0.3); box-shadow: 0 4px 20px rgba(255,107,53,0.15); }
-    .section-directstorage .section-header::after { background: linear-gradient(90deg, rgba(255,107,53,0.4) 0%, rgba(255,140,0,0.2) 30%, transparent 70%); }
-    .section-directstorage .category-label { background: linear-gradient(135deg, rgba(255,107,53,0.12) 0%, rgba(255,140,0,0.08) 100%); border-color: rgba(255,107,53,0.25); color: #ff6b35; }
+    /* Section Accent Colors - Complete Color Scheme */
 
+    /* Green - Hardware, NVIDIA, RAM, Performance */
+    .section-hardware .section-icon, .section-nvidia .section-icon, .section-ram .section-icon { background: linear-gradient(135deg, rgba(0,255,136,0.2) 0%, rgba(0,212,255,0.15) 100%); border-color: rgba(0,255,136,0.3); box-shadow: 0 4px 20px rgba(0,255,136,0.15); }
+    .section-hardware .section-header::after, .section-nvidia .section-header::after, .section-ram .section-header::after { background: linear-gradient(90deg, rgba(0,255,136,0.4) 0%, rgba(0,212,255,0.2) 30%, transparent 70%); }
+
+    /* Blue - BIOS, Windows, AMD Chipset */
+    .section-bios .section-icon, .section-windows .section-icon, .section-amdchipset .section-icon { background: linear-gradient(135deg, rgba(59,130,246,0.2) 0%, rgba(99,102,241,0.15) 100%); border-color: rgba(59,130,246,0.3); box-shadow: 0 4px 20px rgba(59,130,246,0.15); }
+    .section-bios .section-header::after, .section-windows .section-header::after, .section-amdchipset .section-header::after { background: linear-gradient(90deg, rgba(59,130,246,0.4) 0%, rgba(99,102,241,0.2) 30%, transparent 70%); }
+
+    /* Orange - DirectStorage, SSD, BIOS Update */
+    .section-directstorage .section-icon, .section-ssd .section-icon, .section-biosupdate .section-icon { background: linear-gradient(135deg, rgba(255,107,53,0.2) 0%, rgba(255,140,0,0.15) 100%); border-color: rgba(255,107,53,0.3); box-shadow: 0 4px 20px rgba(255,107,53,0.15); }
+    .section-directstorage .section-header::after, .section-ssd .section-header::after, .section-biosupdate .section-header::after { background: linear-gradient(90deg, rgba(255,107,53,0.4) 0%, rgba(255,140,0,0.2) 30%, transparent 70%); }
+
+    /* Teal - Network */
     .section-network .section-icon { background: linear-gradient(135deg, rgba(78,205,196,0.2) 0%, rgba(0,212,255,0.15) 100%); border-color: rgba(78,205,196,0.3); box-shadow: 0 4px 20px rgba(78,205,196,0.15); }
     .section-network .section-header::after { background: linear-gradient(90deg, rgba(78,205,196,0.4) 0%, rgba(0,212,255,0.2) 30%, transparent 70%); }
-    .section-network .category-label { background: linear-gradient(135deg, rgba(78,205,196,0.12) 0%, rgba(0,212,255,0.08) 100%); border-color: rgba(78,205,196,0.25); color: #4ecdc4; }
 
-    .section-monitoring .section-icon { background: linear-gradient(135deg, rgba(170,68,255,0.2) 0%, rgba(138,43,226,0.15) 100%); border-color: rgba(170,68,255,0.3); box-shadow: 0 4px 20px rgba(170,68,255,0.15); }
-    .section-monitoring .section-header::after { background: linear-gradient(90deg, rgba(170,68,255,0.4) 0%, rgba(138,43,226,0.2) 30%, transparent 70%); }
-    .section-monitoring .category-label { background: linear-gradient(135deg, rgba(170,68,255,0.12) 0%, rgba(138,43,226,0.08) 100%); border-color: rgba(170,68,255,0.25); color: #aa44ff; }
+    /* Purple - Game Settings, Monitoring, Software */
+    .section-gamesettings .section-icon, .section-monitoring .section-icon, .section-software .section-icon { background: linear-gradient(135deg, rgba(170,68,255,0.2) 0%, rgba(138,43,226,0.15) 100%); border-color: rgba(170,68,255,0.3); box-shadow: 0 4px 20px rgba(170,68,255,0.15); }
+    .section-gamesettings .section-header::after, .section-monitoring .section-header::after, .section-software .section-header::after { background: linear-gradient(90deg, rgba(170,68,255,0.4) 0%, rgba(138,43,226,0.2) 30%, transparent 70%); }
+
+    /* Red - Troubleshooting, Anti-Stutter, Thermal */
+    .section-troubleshooting .section-icon, .section-antistutter .section-icon, .section-thermal .section-icon { background: linear-gradient(135deg, rgba(255,68,102,0.2) 0%, rgba(255,100,100,0.15) 100%); border-color: rgba(255,68,102,0.3); box-shadow: 0 4px 20px rgba(255,68,102,0.15); }
+    .section-troubleshooting .section-header::after, .section-antistutter .section-header::after, .section-thermal .section-header::after { background: linear-gradient(90deg, rgba(255,68,102,0.4) 0%, rgba(255,100,100,0.2) 30%, transparent 70%); }
+
+    /* Yellow/Gold - Peripherals (Wooting, Mouse, Headset) */
+    .section-wooting .section-icon, .section-mouse .section-icon, .section-headset .section-icon, .section-peripherals .section-icon { background: linear-gradient(135deg, rgba(255,170,0,0.2) 0%, rgba(255,200,50,0.15) 100%); border-color: rgba(255,170,0,0.3); box-shadow: 0 4px 20px rgba(255,170,0,0.15); }
+    .section-wooting .section-header::after, .section-mouse .section-header::after, .section-headset .section-header::after, .section-peripherals .section-header::after { background: linear-gradient(90deg, rgba(255,170,0,0.4) 0%, rgba(255,200,50,0.2) 30%, transparent 70%); }
+
+    /* Cyan - Streaming (OBS, Wave Link, Discord, Stream Deck) */
+    .section-obs .section-icon, .section-wavelink .section-icon, .section-discord .section-icon, .section-streamdeck .section-icon { background: linear-gradient(135deg, rgba(0,212,255,0.2) 0%, rgba(56,189,248,0.15) 100%); border-color: rgba(0,212,255,0.3); box-shadow: 0 4px 20px rgba(0,212,255,0.15); }
+    .section-obs .section-header::after, .section-wavelink .section-header::after, .section-discord .section-header::after, .section-streamdeck .section-header::after { background: linear-gradient(90deg, rgba(0,212,255,0.4) 0%, rgba(56,189,248,0.2) 30%, transparent 70%); }
+
+    /* Teal/Turquoise - OLED Monitor */
+    .section-oled .section-icon { background: linear-gradient(135deg, rgba(45,212,191,0.2) 0%, rgba(20,184,166,0.15) 100%); border-color: rgba(45,212,191,0.3); box-shadow: 0 4px 20px rgba(45,212,191,0.15); }
+    .section-oled .section-header::after { background: linear-gradient(90deg, rgba(45,212,191,0.4) 0%, rgba(20,184,166,0.2) 30%, transparent 70%); }
+
+    /* Light Blue - Backup, Upgrades, Checklist, Changelog */
+    .section-backup .section-icon, .section-upgrades .section-icon, .section-checklist .section-icon, .section-changelog .section-icon { background: linear-gradient(135deg, rgba(56,189,248,0.2) 0%, rgba(99,102,241,0.15) 100%); border-color: rgba(56,189,248,0.3); box-shadow: 0 4px 20px rgba(56,189,248,0.15); }
+    .section-backup .section-header::after, .section-upgrades .section-header::after, .section-checklist .section-header::after, .section-changelog .section-header::after { background: linear-gradient(90deg, rgba(56,189,248,0.4) 0%, rgba(99,102,241,0.2) 30%, transparent 70%); }
 
     /* Unified hover transitions */
     .card, .glass-card, .category-box, .btn, .tag, .nav-link { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
@@ -257,44 +286,44 @@
 
       <!-- Hardware Section -->
       <div class="mt-6 mb-2"><span class="nav-section">HARDWARE</span></div>
-      <a href="#hardware" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="cpu" class="w-4 h-4"></i><span>System</span></a>
-      <a href="#peripherals" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="mouse" class="w-4 h-4"></i><span>Peripherie</span></a>
-      <a href="#software" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="download" class="w-4 h-4"></i><span>Software</span></a>
+      <a href="#hardware" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="cpu" class="w-4 h-4" style="color: #00ff88;"></i><span>System</span></a>
+      <a href="#peripherals" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="mouse" class="w-4 h-4" style="color: #ffaa00;"></i><span>Peripherie</span></a>
+      <a href="#software" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="download" class="w-4 h-4" style="color: #aa44ff;"></i><span>Software</span></a>
 
       <!-- Optimization Section -->
       <div class="mt-6 mb-2"><span class="nav-section">OPTIMIERUNG</span></div>
-      <a href="#bios" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="settings" class="w-4 h-4"></i><span>BIOS Settings</span></a>
-      <a href="#windows" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="layout-grid" class="w-4 h-4"></i><span>Windows 11</span></a>
-      <a href="#nvidia" class="nav-link flex items-center gap-3 text-sm font-medium"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>NVIDIA</span></a>
-      <a href="#ram" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="memory-stick" class="w-4 h-4"></i><span>RAM</span></a>
-      <a href="#ssd" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="hard-drive" class="w-4 h-4"></i><span>SSD</span></a>
+      <a href="#bios" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="settings" class="w-4 h-4" style="color: #3b82f6;"></i><span>BIOS Settings</span></a>
+      <a href="#windows" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="layout-grid" class="w-4 h-4" style="color: #3b82f6;"></i><span>Windows 11</span></a>
+      <a href="#nvidia" class="nav-link flex items-center gap-3 text-sm font-medium"><svg class="w-4 h-4" style="color: #00ff88;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>NVIDIA</span></a>
+      <a href="#ram" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="memory-stick" class="w-4 h-4" style="color: #00ff88;"></i><span>RAM</span></a>
+      <a href="#ssd" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="hard-drive" class="w-4 h-4" style="color: #ff6b35;"></i><span>SSD</span></a>
       <a href="#directstorage" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="rocket" class="w-4 h-4" style="color: #ff6b35;"></i><span>DirectStorage</span></a>
       <a href="#network" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="wifi" class="w-4 h-4" style="color: #4ecdc4;"></i><span>Netzwerk</span></a>
-      <a href="#antistutter" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="zap-off" class="w-4 h-4"></i><span>Anti-Stutter</span></a>
+      <a href="#antistutter" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="zap-off" class="w-4 h-4" style="color: #ff4466;"></i><span>Anti-Stutter</span></a>
       <a href="#gamesettings" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="swords" class="w-4 h-4" style="color: #aa44ff;"></i><span>Game Settings</span></a>
 
       <!-- Peripherals Section -->
       <div class="mt-6 mb-2"><span class="nav-section">PERIPHERIE</span></div>
-      <a href="#wooting" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="keyboard" class="w-4 h-4"></i><span>Wooting 80HE</span></a>
-      <a href="#mouse" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="mouse" class="w-4 h-4"></i><span>Razer Viper V3</span></a>
-      <a href="#headset" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="headphones" class="w-4 h-4"></i><span>Arctis Nova Pro</span></a>
-      <a href="#wavelink" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="mic" class="w-4 h-4"></i><span>Wave Link</span></a>
-      <a href="#discord" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="message-circle" class="w-4 h-4"></i><span>Discord</span></a>
-      <a href="#streamdeck" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="grid-3x3" class="w-4 h-4"></i><span>Stream Deck</span></a>
-      <a href="#oled" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="monitor" class="w-4 h-4"></i><span>OLED Monitor</span></a>
-      <a href="#obs" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="video" class="w-4 h-4"></i><span>OBS Streaming</span></a>
+      <a href="#wooting" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="keyboard" class="w-4 h-4" style="color: #ffaa00;"></i><span>Wooting 80HE</span></a>
+      <a href="#mouse" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="mouse" class="w-4 h-4" style="color: #ffaa00;"></i><span>Razer Viper V3</span></a>
+      <a href="#headset" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="headphones" class="w-4 h-4" style="color: #ffaa00;"></i><span>Arctis Nova Pro</span></a>
+      <a href="#wavelink" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="mic" class="w-4 h-4" style="color: #00d4ff;"></i><span>Wave Link</span></a>
+      <a href="#discord" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="message-circle" class="w-4 h-4" style="color: #00d4ff;"></i><span>Discord</span></a>
+      <a href="#streamdeck" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="grid-3x3" class="w-4 h-4" style="color: #00d4ff;"></i><span>Stream Deck</span></a>
+      <a href="#oled" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="monitor" class="w-4 h-4" style="color: #2dd4bf;"></i><span>OLED Monitor</span></a>
+      <a href="#obs" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="video" class="w-4 h-4" style="color: #00d4ff;"></i><span>OBS Streaming</span></a>
 
       <!-- Maintenance Section -->
       <div class="mt-6 mb-2"><span class="nav-section">WARTUNG</span></div>
-      <a href="#biosupdate" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="refresh-cw" class="w-4 h-4"></i><span>BIOS Update</span></a>
-      <a href="#amdchipset" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="cpu" class="w-4 h-4"></i><span>AMD Chipset</span></a>
-      <a href="#monitoring" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="bar-chart-2" class="w-4 h-4"></i><span>Monitoring</span></a>
-      <a href="#backup" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="hard-drive" class="w-4 h-4"></i><span>Backup</span></a>
-      <a href="#thermal" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="thermometer" class="w-4 h-4"></i><span>Thermal</span></a>
-      <a href="#upgrades" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="trending-up" class="w-4 h-4"></i><span>Upgrades</span></a>
-      <a href="#checklist" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="check-square" class="w-4 h-4"></i><span>Checkliste</span></a>
-      <a href="#troubleshooting" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="bug" class="w-4 h-4"></i><span>Troubleshooting</span></a>
-      <a href="#changelog" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="history" class="w-4 h-4"></i><span>Changelog</span></a>
+      <a href="#biosupdate" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="refresh-cw" class="w-4 h-4" style="color: #ff6b35;"></i><span>BIOS Update</span></a>
+      <a href="#amdchipset" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="cpu" class="w-4 h-4" style="color: #3b82f6;"></i><span>AMD Chipset</span></a>
+      <a href="#monitoring" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="bar-chart-2" class="w-4 h-4" style="color: #aa44ff;"></i><span>Monitoring</span></a>
+      <a href="#backup" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="hard-drive" class="w-4 h-4" style="color: #38bdf8;"></i><span>Backup</span></a>
+      <a href="#thermal" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="thermometer" class="w-4 h-4" style="color: #ff4466;"></i><span>Thermal</span></a>
+      <a href="#upgrades" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="trending-up" class="w-4 h-4" style="color: #38bdf8;"></i><span>Upgrades</span></a>
+      <a href="#checklist" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="check-square" class="w-4 h-4" style="color: #38bdf8;"></i><span>Checkliste</span></a>
+      <a href="#troubleshooting" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="bug" class="w-4 h-4" style="color: #ff4466;"></i><span>Troubleshooting</span></a>
+      <a href="#changelog" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="history" class="w-4 h-4" style="color: #38bdf8;"></i><span>Changelog</span></a>
 
       <!-- Sidebar Footer -->
       <div class="mt-8 pt-4 border-t border-white/5">
@@ -354,7 +383,7 @@
       </header>
 
       <!-- Section: Hardware -->
-      <section id="hardware" class="py-12 scroll-mt-8">
+      <section id="hardware" class="py-12 scroll-mt-8 section-hardware">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="cpu" class="w-6 h-6 text-accent-primary"></i>
@@ -406,7 +435,7 @@
       </section>
 
       <!-- Section: Peripherals -->
-      <section id="peripherals" class="py-12 scroll-mt-8">
+      <section id="peripherals" class="py-12 scroll-mt-8 section-peripherals">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="mouse" class="w-6 h-6 text-accent-primary"></i>
@@ -424,7 +453,7 @@
       </section>
 
       <!-- Section: Software -->
-      <section id="software" class="py-12 scroll-mt-8">
+      <section id="software" class="py-12 scroll-mt-8 section-software">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="download" class="w-6 h-6 text-accent-primary"></i>
@@ -453,7 +482,7 @@
       </section>
 
       <!-- Section: BIOS -->
-      <section id="bios" class="py-12 scroll-mt-8">
+      <section id="bios" class="py-12 scroll-mt-8 section-bios">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="settings" class="w-6 h-6 text-accent-primary"></i>
@@ -772,7 +801,7 @@
       </section>
 
       <!-- Section: Windows -->
-      <section id="windows" class="py-12 scroll-mt-8">
+      <section id="windows" class="py-12 scroll-mt-8 section-windows">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="layout-grid" class="w-6 h-6 text-accent-primary"></i>
@@ -1013,7 +1042,7 @@
       </section>
 
       <!-- Section: NVIDIA -->
-      <section id="nvidia" class="py-12 scroll-mt-8">
+      <section id="nvidia" class="py-12 scroll-mt-8 section-nvidia">
         <div class="section-header">
           <div class="section-icon" style="background: linear-gradient(135deg, rgba(118,185,0,0.2) 0%, rgba(136,204,0,0.15) 100%); border-color: rgba(118,185,0,0.3);">
             <svg class="w-6 h-6 text-green-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12.006 0c-2.306.034-4.378 1.003-5.854 2.562l3.587 3.587c.65-.65 1.537-1.05 2.523-1.05h.012c.993 0 1.887.406 2.535 1.062l3.583-3.583C16.9 1.034 14.6.034 12.006 0zm6.643 3.385L15.06 6.972c.65.65 1.05 1.537 1.05 2.523v.012c0 .993-.406 1.887-1.062 2.535l3.583 3.583c1.55-1.476 2.516-3.548 2.55-5.854.034-2.307-.966-4.38-2.532-5.854v-.532zm-12.764.532C4.335 5.393 3.369 7.465 3.335 9.771c-.034 2.307.966 4.38 2.532 5.854l3.589-3.587c-.65-.65-1.05-1.537-1.05-2.523v-.012c0-.993.406-1.887 1.062-2.535L5.885 3.385v.532zm6.121 3.611c-.993 0-1.8.807-1.8 1.8s.807 1.8 1.8 1.8 1.8-.807 1.8-1.8-.807-1.8-1.8-1.8zm-3.068 5.508l-3.587 3.587c1.476 1.55 3.548 2.516 5.854 2.55 2.307.034 4.38-.966 5.854-2.532l-3.587-3.589c-.65.65-1.537 1.05-2.523 1.05h-.012c-.993 0-1.887-.406-2.535-1.062l.536-.004z"/></svg>
@@ -1391,7 +1420,7 @@
       </section>
 
       <!-- Section: RAM -->
-      <section id="ram" class="py-12 scroll-mt-8">
+      <section id="ram" class="py-12 scroll-mt-8 section-ram">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="memory-stick" class="w-6 h-6 text-accent-primary"></i>
@@ -1577,7 +1606,7 @@
       </section>
 
       <!-- Section: SSD -->
-      <section id="ssd" class="py-12 scroll-mt-8">
+      <section id="ssd" class="py-12 scroll-mt-8 section-ssd">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="hard-drive" class="w-6 h-6 text-accent-primary"></i>
@@ -2067,7 +2096,7 @@
       </section>
 
       <!-- Section: Anti-Stutter -->
-      <section id="antistutter" class="py-12 scroll-mt-8">
+      <section id="antistutter" class="py-12 scroll-mt-8 section-antistutter">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="zap-off" class="w-6 h-6 text-accent-primary"></i>
@@ -2257,7 +2286,7 @@
       </section>
 
       <!-- Section: Game-specific Settings -->
-      <section id="gamesettings" class="py-12 scroll-mt-8">
+      <section id="gamesettings" class="py-12 scroll-mt-8 section-gamesettings">
         <div class="section-header">
           <div class="section-icon" style="background: linear-gradient(135deg, rgba(170,68,255,0.2) 0%, rgba(255,68,102,0.15) 100%); border-color: rgba(170,68,255,0.3);">
             <i data-lucide="swords" class="w-6 h-6" style="color: #aa44ff;"></i>
@@ -2510,7 +2539,7 @@
       </section>
 
       <!-- Section: Wooting -->
-      <section id="wooting" class="py-12 scroll-mt-8">
+      <section id="wooting" class="py-12 scroll-mt-8 section-wooting">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="keyboard" class="w-6 h-6 text-accent-primary"></i>
@@ -2700,7 +2729,7 @@
       </section>
 
       <!-- Section: Mouse -->
-      <section id="mouse" class="py-12 scroll-mt-8">
+      <section id="mouse" class="py-12 scroll-mt-8 section-mouse">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="mouse" class="w-6 h-6 text-accent-primary"></i>
@@ -2810,7 +2839,7 @@
       </section>
 
       <!-- Section: Headset -->
-      <section id="headset" class="py-12 scroll-mt-8">
+      <section id="headset" class="py-12 scroll-mt-8 section-headset">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="headphones" class="w-6 h-6 text-accent-primary"></i>
@@ -2945,7 +2974,7 @@
       </section>
 
       <!-- Section: Wave Link -->
-      <section id="wavelink" class="py-12 scroll-mt-8">
+      <section id="wavelink" class="py-12 scroll-mt-8 section-wavelink">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="mic" class="w-6 h-6 text-accent-primary"></i>
@@ -3088,7 +3117,7 @@
       </section>
 
       <!-- Section: Discord -->
-      <section id="discord" class="py-12 scroll-mt-8">
+      <section id="discord" class="py-12 scroll-mt-8 section-discord">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="message-circle" class="w-6 h-6 text-accent-primary"></i>
@@ -3198,7 +3227,7 @@
       </section>
 
       <!-- Section: Stream Deck -->
-      <section id="streamdeck" class="py-12 scroll-mt-8">
+      <section id="streamdeck" class="py-12 scroll-mt-8 section-streamdeck">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="grid-3x3" class="w-6 h-6 text-accent-primary"></i>
@@ -3512,7 +3541,7 @@
       </section>
 
       <!-- Section: OLED -->
-      <section id="oled" class="py-12 scroll-mt-8">
+      <section id="oled" class="py-12 scroll-mt-8 section-oled">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="monitor" class="w-6 h-6 text-accent-primary"></i>
@@ -3649,7 +3678,7 @@
       </section>
 
       <!-- Section: OBS -->
-      <section id="obs" class="py-12 scroll-mt-8">
+      <section id="obs" class="py-12 scroll-mt-8 section-obs">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="video" class="w-6 h-6 text-accent-primary"></i>
@@ -3790,7 +3819,7 @@
       </section>
 
       <!-- Section: BIOS Update -->
-      <section id="biosupdate" class="py-12 scroll-mt-8">
+      <section id="biosupdate" class="py-12 scroll-mt-8 section-biosupdate">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="refresh-cw" class="w-6 h-6 text-accent-primary"></i>
@@ -3929,7 +3958,7 @@
       </section>
 
       <!-- Section: AMD Chipset -->
-      <section id="amdchipset" class="py-12 scroll-mt-8">
+      <section id="amdchipset" class="py-12 scroll-mt-8 section-amdchipset">
         <div class="section-header">
           <div class="section-icon" style="background: linear-gradient(135deg, rgba(237,28,36,0.2) 0%, rgba(237,28,36,0.1) 100%); border-color: rgba(237,28,36,0.3);">
             <i data-lucide="cpu" class="w-6 h-6 text-red-500"></i>
@@ -4328,7 +4357,7 @@
       </section>
 
       <!-- Section: Backup & Recovery -->
-      <section id="backup" class="py-12 scroll-mt-8">
+      <section id="backup" class="py-12 scroll-mt-8 section-backup">
         <div class="section-header">
           <div class="section-icon" style="background: linear-gradient(135deg, rgba(0,212,255,0.2) 0%, rgba(99,102,241,0.15) 100%); border-color: rgba(0,212,255,0.3);">
             <i data-lucide="hard-drive" class="w-6 h-6" style="color: #00d4ff;"></i>
@@ -4461,7 +4490,7 @@
           <div class="grid md:grid-cols-2 gap-4 text-sm">
             <ul class="text-gray-400 space-y-1">
               <li>☐ EXPO/XMP Profil (1 oder 2)</li>
-              <li>☐ PBO Einstellungen (+XXX MHz)</li>
+              <li>☐ PBO Einstellungen (z.B. +200 MHz)</li>
               <li>☐ Curve Optimizer Werte pro Core</li>
               <li>☐ Fan-Kurven (falls im BIOS)</li>
             </ul>
@@ -4478,7 +4507,7 @@
       </section>
 
       <!-- Section: Thermal Management -->
-      <section id="thermal" class="py-12 scroll-mt-8">
+      <section id="thermal" class="py-12 scroll-mt-8 section-thermal">
         <div class="section-header">
           <div class="section-icon" style="background: linear-gradient(135deg, rgba(255,68,102,0.2) 0%, rgba(255,140,0,0.15) 100%); border-color: rgba(255,68,102,0.3);">
             <i data-lucide="thermometer" class="w-6 h-6" style="color: #ff4466;"></i>
@@ -4673,7 +4702,7 @@
       </section>
 
       <!-- Section: Upgrades -->
-      <section id="upgrades" class="py-12 scroll-mt-8">
+      <section id="upgrades" class="py-12 scroll-mt-8 section-upgrades">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="trending-up" class="w-6 h-6 text-accent-primary"></i>
@@ -4711,7 +4740,7 @@
       </section>
 
       <!-- Section: Checklist -->
-      <section id="checklist" class="py-12 scroll-mt-8">
+      <section id="checklist" class="py-12 scroll-mt-8 section-checklist">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="check-square" class="w-6 h-6 text-accent-primary"></i>
@@ -4758,7 +4787,7 @@
       </section>
 
       <!-- Section: Troubleshooting -->
-      <section id="troubleshooting" class="py-12 scroll-mt-8">
+      <section id="troubleshooting" class="py-12 scroll-mt-8 section-troubleshooting">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="bug" class="w-6 h-6 text-accent-primary"></i>
@@ -4868,7 +4897,7 @@
       </section>
 
       <!-- Section: Changelog -->
-      <section id="changelog" class="py-12 scroll-mt-8">
+      <section id="changelog" class="py-12 scroll-mt-8 section-changelog">
         <div class="section-header">
           <div class="section-icon">
             <i data-lucide="history" class="w-6 h-6 text-accent-primary"></i>
@@ -4962,6 +4991,82 @@
 
   <script>
     lucide.createIcons();
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // HARDWARE CONFIG - Hier zentral alle Specs ändern wenn neue Hardware kommt!
+    // ═══════════════════════════════════════════════════════════════════════════
+    const CONFIG = {
+      // Letzte Aktualisierung
+      lastUpdate: 'Januar 2026',
+
+      // CPU
+      cpu: {
+        name: 'AMD Ryzen 7 9800X3D',
+        cores: '8 Kerne / 16 Threads',
+        cache: '96MB 3D V-Cache',
+        socket: 'AM5'
+      },
+
+      // GPU
+      gpu: {
+        name: 'NVIDIA GeForce RTX 4080 Super',
+        vram: '16GB GDDR6X',
+        driver: 'Game Ready Driver (aktuellste Version)',
+        features: ['DLSS 4', 'Frame Generation', 'Reflex', 'G-Sync']
+      },
+
+      // Mainboard
+      mainboard: {
+        name: 'ASUS ROG Crosshair X870E Hero',
+        chipset: 'AMD X870E',
+        biosVersion: 'Aktuelle Version von ASUS Support-Seite'
+      },
+
+      // RAM
+      ram: {
+        name: 'G.Skill Trident Z5 RGB',
+        capacity: '64GB (2x32GB)',
+        speed: 'DDR5-6000 CL30',
+        expo: true
+      },
+
+      // SSD
+      ssd: {
+        name: 'Samsung 9100 PRO',
+        capacity: '4TB',
+        interface: 'PCIe 5.0 NVMe',
+        speed: '14.8 GB/s',
+        directStorageReady: true
+      },
+
+      // Monitor
+      monitor: {
+        name: 'ASUS ROG Swift OLED PG32UCDM',
+        resolution: '4K (3840x2160)',
+        refreshRate: '240Hz',
+        features: ['OLED', 'G-Sync Compatible', '0.03ms GTG']
+      },
+
+      // Peripherie
+      peripherals: {
+        keyboard: { name: 'Wooting 80HE', features: ['Rapid Trigger', 'Analog'] },
+        mouse: { name: 'Razer Viper V3 Pro', pollingRate: '8000Hz' },
+        headset: { name: 'SteelSeries Arctis Nova Pro Wireless', features: ['GameDAC Gen 2', 'ANC'] },
+        microphone: { name: 'Elgato Wave:3' },
+        streamdeck: { name: 'Elgato Stream Deck XL' }
+      },
+
+      // Wichtige Links (zentral verwaltet)
+      links: {
+        nvidiDrivers: 'https://www.nvidia.com/Download/index.aspx',
+        amdChipset: 'https://www.amd.com/en/support',
+        asusBios: 'https://rog.asus.com/de/motherboards/rog-crosshair/rog-crosshair-x870e-hero/helpdesk_bios/',
+        samsungMagician: 'https://semiconductor.samsung.com/consumer-storage/support/tools/',
+        wootility: 'https://wooting.io/wootility'
+      }
+    };
+    // ═══════════════════════════════════════════════════════════════════════════
+
     const menuToggle=document.getElementById('menuToggle'),sidebar=document.getElementById('sidebar');
     menuToggle.addEventListener('click',()=>sidebar.classList.toggle('-translate-x-full'));
     document.querySelectorAll('.nav-link').forEach(l=>l.addEventListener('click',()=>{if(window.innerWidth<768)sidebar.classList.add('-translate-x-full')}));
