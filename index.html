@@ -324,9 +324,82 @@
             </tbody>
           </table>
         </div>
-        <div class="alert alert-danger">
+        <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4 mt-6">BIOS Update mit Q-Flash (Gigabyte)</h3>
+
+        <div class="alert alert-danger mb-4">
           <i data-lucide="alert-octagon" class="w-5 h-5 text-accent-danger flex-shrink-0 mt-0.5"></i>
-          <p class="text-sm"><span class="font-semibold text-accent-danger">NIEMALS</span> BIOS über Windows-Apps (Gigabyte Control Center) updaten! Immer Q-Flash im BIOS nutzen.</p>
+          <div>
+            <p class="font-semibold text-accent-danger">NIEMALS BIOS über Windows updaten!</p>
+            <p class="text-sm text-gray-400 mt-1">Gigabyte Control Center, @BIOS oder andere Windows-Tools können das BIOS beschädigen wenn Windows abstürzt. Immer Q-Flash im BIOS selbst nutzen!</p>
+          </div>
+        </div>
+
+        <div class="card rounded-2xl p-4 mb-4">
+          <h4 class="font-semibold text-accent-primary mb-3 flex items-center gap-2"><i data-lucide="download" class="w-5 h-5"></i> Schritt 1: BIOS herunterladen</h4>
+          <ol class="text-sm text-gray-400 space-y-2">
+            <li><span class="text-white font-semibold">1.</span> Gehe zu: <a href="https://www.gigabyte.com/Motherboard/X670-GAMING-X-AX-rev-10/support#support-dl-bios" target="_blank" class="text-accent-primary underline">Gigabyte X670 Gaming X AX Support-Seite</a></li>
+            <li><span class="text-white font-semibold">2.</span> Unter "BIOS" die <span class="text-accent-primary">neueste stabile Version</span> finden (NICHT Beta!)</li>
+            <li><span class="text-white font-semibold">3.</span> Auf das Download-Symbol klicken → ZIP-Datei herunterladen</li>
+            <li><span class="text-white font-semibold">4.</span> ZIP entpacken → Du bekommst eine Datei wie <code class="bg-dark-800 px-2 py-0.5 rounded text-accent-primary">X670GAMINGXAX.F12</code></li>
+          </ol>
+        </div>
+
+        <div class="card rounded-2xl p-4 mb-4">
+          <h4 class="font-semibold text-accent-primary mb-3 flex items-center gap-2"><i data-lucide="usb" class="w-5 h-5"></i> Schritt 2: USB-Stick vorbereiten</h4>
+          <ol class="text-sm text-gray-400 space-y-2">
+            <li><span class="text-white font-semibold">1.</span> USB-Stick (mind. 1GB) an PC anschließen</li>
+            <li><span class="text-white font-semibold">2.</span> USB-Stick formatieren: Rechtsklick → Formatieren → <span class="text-accent-primary">FAT32</span> wählen → Starten</li>
+            <li><span class="text-white font-semibold">3.</span> Die BIOS-Datei (z.B. <code class="bg-dark-800 px-2 py-0.5 rounded text-accent-primary">X670GAMINGXAX.F12</code>) auf den USB-Stick kopieren</li>
+            <li><span class="text-white font-semibold">4.</span> <span class="text-accent-warning">Wichtig:</span> Datei direkt ins Root-Verzeichnis, NICHT in einen Ordner!</li>
+          </ol>
+        </div>
+
+        <div class="card rounded-2xl p-4 mb-4">
+          <h4 class="font-semibold text-accent-primary mb-3 flex items-center gap-2"><i data-lucide="settings" class="w-5 h-5"></i> Schritt 3: Q-Flash starten</h4>
+          <ol class="text-sm text-gray-400 space-y-2">
+            <li><span class="text-white font-semibold">1.</span> PC neustarten, USB-Stick eingesteckt lassen</li>
+            <li><span class="text-white font-semibold">2.</span> Beim Booten <code class="bg-dark-800 px-2 py-0.5 rounded text-accent-primary">DEL</code> drücken um ins BIOS zu kommen</li>
+            <li><span class="text-white font-semibold">3.</span> Im BIOS: Drücke <code class="bg-dark-800 px-2 py-0.5 rounded text-accent-primary">F8</code> für Q-Flash</li>
+            <li><span class="text-white font-semibold">4.</span> Oder: Gehe zu <span class="text-white">Save & Exit</span> → <span class="text-white">Q-Flash</span></li>
+          </ol>
+        </div>
+
+        <div class="card rounded-2xl p-4 mb-4">
+          <h4 class="font-semibold text-accent-primary mb-3 flex items-center gap-2"><i data-lucide="refresh-cw" class="w-5 h-5"></i> Schritt 4: BIOS flashen</h4>
+          <ol class="text-sm text-gray-400 space-y-2">
+            <li><span class="text-white font-semibold">1.</span> Wähle <span class="text-accent-primary">"Update BIOS"</span></li>
+            <li><span class="text-white font-semibold">2.</span> Wähle deinen USB-Stick aus der Liste</li>
+            <li><span class="text-white font-semibold">3.</span> Wähle die BIOS-Datei (z.B. X670GAMINGXAX.F12)</li>
+            <li><span class="text-white font-semibold">4.</span> Bestätige mit <span class="text-accent-primary">"Yes"</span> oder Enter</li>
+            <li><span class="text-white font-semibold">5.</span> <span class="text-accent-danger font-semibold">WARTEN!</span> PC nicht ausschalten! Dauert 2-5 Minuten</li>
+            <li><span class="text-white font-semibold">6.</span> PC startet automatisch neu</li>
+          </ol>
+        </div>
+
+        <div class="card rounded-2xl p-4 mb-4">
+          <h4 class="font-semibold text-accent-primary mb-3 flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5"></i> Schritt 5: Nach dem Update</h4>
+          <ol class="text-sm text-gray-400 space-y-2">
+            <li><span class="text-white font-semibold">1.</span> PC bootet ins BIOS (Einstellungen wurden zurückgesetzt!)</li>
+            <li><span class="text-white font-semibold">2.</span> <span class="text-accent-warning">Alle Einstellungen neu konfigurieren:</span> EXPO, PBO, Curve Optimizer, etc.</li>
+            <li><span class="text-white font-semibold">3.</span> Speichern mit <code class="bg-dark-800 px-2 py-0.5 rounded text-accent-primary">F10</code> → Yes</li>
+            <li><span class="text-white font-semibold">4.</span> BIOS-Version prüfen: Steht oben rechts im BIOS</li>
+          </ol>
+        </div>
+
+        <div class="alert alert-warning mb-4">
+          <i data-lucide="alert-triangle" class="w-5 h-5 text-accent-warning flex-shrink-0"></i>
+          <div>
+            <p class="font-semibold text-accent-warning">Wann BIOS updaten?</p>
+            <ul class="text-sm text-gray-400 mt-1 space-y-1">
+              <li>• <span class="text-accent-primary">JA:</span> Bei Stabilitätsproblemen, neuer CPU-Support, kritischen Fixes</li>
+              <li>• <span class="text-accent-danger">NEIN:</span> "Never change a running system" - wenn alles läuft, nicht updaten!</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="alert alert-info">
+          <i data-lucide="lightbulb" class="w-5 h-5 text-accent-primary flex-shrink-0"></i>
+          <p class="text-sm"><span class="font-semibold text-accent-primary">Tipp:</span> Mache Fotos von deinen aktuellen BIOS-Einstellungen BEVOR du updatest! Nach dem Update sind alle Einstellungen auf Standard zurückgesetzt.</p>
         </div>
         </div>
       </section>
