@@ -4,255 +4,74 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ultimate Gaming PC Optimization Guide</title>
-
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            dark: {
-              900: '#0a0a0f',
-              800: '#0f0f19',
-              700: '#14142a',
-              600: '#1a1a2e',
-            },
-            accent: {
-              primary: '#00ff88',
-              secondary: '#00d4ff',
-              warning: '#ffaa00',
-              danger: '#ff4466',
-              purple: '#aa44ff',
-            }
-          },
-          fontFamily: {
-            display: ['Inter', 'system-ui', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
-          },
-          animation: {
-            'glow': 'glow 2s ease-in-out infinite alternate',
-            'float': 'float 3s ease-in-out infinite',
-          },
-          keyframes: {
-            glow: {
-              '0%': { boxShadow: '0 0 20px rgba(0, 255, 136, 0.3)' },
-              '100%': { boxShadow: '0 0 30px rgba(0, 255, 136, 0.5)' },
-            },
-            float: {
-              '0%, 100%': { transform: 'translateY(0)' },
-              '50%': { transform: 'translateY(-10px)' },
-            }
+            dark: { 900: '#0a0a0f', 800: '#0f0f19', 700: '#14142a', 600: '#1a1a2e' },
+            accent: { primary: '#00ff88', secondary: '#00d4ff', warning: '#ffaa00', danger: '#ff4466', purple: '#aa44ff' }
           }
         }
       }
     }
   </script>
-
-  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
   <style>
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: linear-gradient(135deg, #0a0a0f 0%, #0f0f19 50%, #0a0a0f 100%);
-    }
-
-    /* Glassmorphism */
-    .glass {
-      background: rgba(20, 20, 42, 0.6);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(0, 255, 136, 0.1);
-    }
-
-    .glass-strong {
-      background: rgba(15, 15, 25, 0.85);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(0, 255, 136, 0.2);
-    }
-
-    /* Glow Effects */
-    .glow-green {
-      box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
-    }
-
-    .glow-blue {
-      box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
-    }
-
-    /* Text Gradient */
-    .text-gradient {
-      background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    /* Scrollbar */
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #0a0a0f; }
-    ::-webkit-scrollbar-thumb { background: rgba(0, 255, 136, 0.3); border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #00ff88; }
-
-    /* Code Blocks */
-    .code-block {
-      font-family: 'JetBrains Mono', monospace;
-    }
-
-    /* Sidebar Active Link */
-    .nav-link.active {
-      background: rgba(0, 255, 136, 0.1);
-      border-left-color: #00ff88;
-      color: #00ff88;
-    }
-
-    /* Checkbox Animation */
-    .checkbox-custom:checked + .checkbox-label .checkbox-box {
-      background: #00ff88;
-      border-color: #00ff88;
-    }
-
-    .checkbox-custom:checked + .checkbox-label .checkbox-box svg {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    /* Print Styles */
-    @media print {
-      .sidebar, .no-print { display: none !important; }
-      .main-content { margin-left: 0 !important; }
-      body { background: white; color: black; }
-    }
+    body { font-family: 'Inter', system-ui, sans-serif; background: linear-gradient(135deg, #0a0a0f 0%, #0f0f19 50%, #0a0a0f 100%); }
+    .glass { background: rgba(20, 20, 42, 0.6); backdrop-filter: blur(20px); border: 1px solid rgba(0, 255, 136, 0.1); }
+    .glass-strong { background: rgba(15, 15, 25, 0.85); backdrop-filter: blur(20px); border: 1px solid rgba(0, 255, 136, 0.2); }
+    .text-gradient { background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .glow-green { box-shadow: 0 0 20px rgba(0, 255, 136, 0.3); }
+    ::-webkit-scrollbar { width: 8px; } ::-webkit-scrollbar-track { background: #0a0a0f; } ::-webkit-scrollbar-thumb { background: rgba(0, 255, 136, 0.3); border-radius: 4px; }
+    .nav-link.active { background: rgba(0, 255, 136, 0.1); border-left-color: #00ff88; color: #00ff88; }
+    .checkbox-custom:checked + .checkbox-label .checkbox-box { background: #00ff88; }
+    .checkbox-custom:checked + .checkbox-label .checkbox-box svg { opacity: 1; transform: scale(1); }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    .animate-float { animation: float 3s ease-in-out infinite; }
+    @media print { .sidebar, .no-print { display: none !important; } .main-content { margin-left: 0 !important; } }
   </style>
 </head>
 <body class="min-h-screen text-gray-200">
-
-  <!-- Progress Bar -->
-  <div id="progressBar" class="fixed top-0 left-0 md:left-64 right-0 h-1 bg-gradient-to-r from-accent-primary to-accent-secondary z-50 transition-all duration-100" style="width: 0%"></div>
-
-  <!-- Mobile Menu Button -->
-  <button id="menuToggle" class="fixed top-4 left-4 z-50 md:hidden glass-strong p-3 rounded-lg text-accent-primary">
-    <i data-lucide="menu" class="w-6 h-6"></i>
-  </button>
+  <div id="progressBar" class="fixed top-0 left-0 md:left-64 right-0 h-1 bg-gradient-to-r from-accent-primary to-accent-secondary z-50" style="width:0%"></div>
+  <button id="menuToggle" class="fixed top-4 left-4 z-50 md:hidden glass-strong p-3 rounded-lg text-accent-primary"><i data-lucide="menu" class="w-6 h-6"></i></button>
 
   <!-- Sidebar -->
-  <aside id="sidebar" class="sidebar fixed top-0 left-0 w-64 h-screen glass-strong z-40 overflow-y-auto transform -translate-x-full md:translate-x-0 transition-transform duration-300">
-
-    <!-- Logo -->
+  <aside id="sidebar" class="sidebar fixed top-0 left-0 w-64 h-screen glass-strong z-40 overflow-y-auto transform -translate-x-full md:translate-x-0 transition-transform">
     <div class="p-5 border-b border-accent-primary/20">
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-accent-primary to-accent-secondary flex items-center justify-center">
           <i data-lucide="monitor" class="w-5 h-5 text-dark-900"></i>
         </div>
-        <div>
-          <h1 class="font-bold text-gradient">Ultimate Guide</h1>
-          <p class="text-xs text-gray-500">v2.0.0</p>
-        </div>
+        <div><h1 class="font-bold text-gradient">Ultimate Guide</h1><p class="text-xs text-gray-500">v2.0.0</p></div>
       </div>
     </div>
-
-    <!-- Search -->
-    <div class="p-4">
-      <div class="relative">
-        <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500"></i>
-        <input type="text" id="searchInput" placeholder="Suchen..."
-               class="w-full pl-10 pr-4 py-2 bg-dark-800 border border-accent-primary/10 rounded-lg text-sm focus:outline-none focus:border-accent-primary/50 transition-colors">
-      </div>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="px-2 pb-6">
+    <nav class="px-2 pb-6 pt-4">
       <ul class="space-y-1">
-        <li><a href="#hero" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 hover:border-accent-primary transition-all">
-          <i data-lucide="home" class="w-4 h-4"></i>
-          <span>Übersicht</span>
-        </a></li>
-
-        <li class="pt-4 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Hardware</li>
-
-        <li><a href="#hardware" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 hover:border-accent-primary transition-all">
-          <i data-lucide="cpu" class="w-4 h-4"></i>
-          <span>System</span>
-          <span class="ml-auto text-xs text-gray-600">01</span>
-        </a></li>
-
-        <li><a href="#software" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 hover:border-accent-primary transition-all">
-          <i data-lucide="download" class="w-4 h-4"></i>
-          <span>Software</span>
-          <span class="ml-auto text-xs text-gray-600">02</span>
-        </a></li>
-
-        <li class="pt-4 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Optimierung</li>
-
-        <li><a href="#bios" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 hover:border-accent-primary transition-all">
-          <i data-lucide="settings" class="w-4 h-4"></i>
-          <span>BIOS</span>
-          <span class="ml-auto text-xs text-gray-600">03</span>
-        </a></li>
-
-        <li><a href="#windows" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 hover:border-accent-primary transition-all">
-          <i data-lucide="monitor" class="w-4 h-4"></i>
-          <span>Windows 11</span>
-          <span class="ml-auto text-xs text-gray-600">04</span>
-        </a></li>
-
-        <li><a href="#nvidia" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 hover:border-accent-primary transition-all">
-          <i data-lucide="gpu-card" class="w-4 h-4"></i>
-          <span>NVIDIA</span>
-          <span class="ml-auto text-xs text-gray-600">05</span>
-        </a></li>
-
-        <li><a href="#ram" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 hover:border-accent-primary transition-all">
-          <i data-lucide="memory-stick" class="w-4 h-4"></i>
-          <span>RAM</span>
-          <span class="ml-auto text-xs text-gray-600">06</span>
-        </a></li>
-
-        <li><a href="#ssd" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 hover:border-accent-primary transition-all">
-          <i data-lucide="hard-drive" class="w-4 h-4"></i>
-          <span>SSD</span>
-          <span class="ml-auto text-xs text-gray-600">07</span>
-        </a></li>
-
-        <li class="pt-4 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Peripherie</li>
-
-        <li><a href="#obs" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 hover:border-accent-primary transition-all">
-          <i data-lucide="video" class="w-4 h-4"></i>
-          <span>OBS Streaming</span>
-          <span class="ml-auto text-xs text-gray-600">08</span>
-        </a></li>
-
-        <li><a href="#oled" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 hover:border-accent-primary transition-all">
-          <i data-lucide="monitor" class="w-4 h-4"></i>
-          <span>OLED Monitor</span>
-          <span class="ml-auto text-xs text-gray-600">09</span>
-        </a></li>
-
-        <li><a href="#wooting" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 hover:border-accent-primary transition-all">
-          <i data-lucide="keyboard" class="w-4 h-4"></i>
-          <span>Wooting 80HE</span>
-          <span class="ml-auto text-xs text-gray-600">10</span>
-        </a></li>
-
-        <li class="pt-4 px-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Wartung</li>
-
-        <li><a href="#checklist" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 hover:border-accent-primary transition-all">
-          <i data-lucide="check-square" class="w-4 h-4"></i>
-          <span>Checkliste</span>
-          <span class="ml-auto text-xs text-gray-600">11</span>
-        </a></li>
-
-        <li><a href="#troubleshooting" class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 hover:border-accent-primary transition-all">
-          <i data-lucide="bug" class="w-4 h-4"></i>
-          <span>Troubleshooting</span>
-          <span class="ml-auto text-xs text-gray-600">12</span>
-        </a></li>
+        <li><a href="#hero" class="nav-link flex items-center gap-3 px-4 py-2 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 transition-all"><i data-lucide="home" class="w-4 h-4"></i><span>Übersicht</span></a></li>
+        <li class="pt-3 px-4 text-xs font-semibold text-gray-500 uppercase">Hardware</li>
+        <li><a href="#hardware" class="nav-link flex items-center gap-3 px-4 py-2 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 transition-all"><i data-lucide="cpu" class="w-4 h-4"></i><span>System</span></a></li>
+        <li><a href="#peripherals" class="nav-link flex items-center gap-3 px-4 py-2 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 transition-all"><i data-lucide="mouse" class="w-4 h-4"></i><span>Peripherie</span></a></li>
+        <li><a href="#software" class="nav-link flex items-center gap-3 px-4 py-2 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 transition-all"><i data-lucide="download" class="w-4 h-4"></i><span>Software</span></a></li>
+        <li class="pt-3 px-4 text-xs font-semibold text-gray-500 uppercase">Optimierung</li>
+        <li><a href="#bios" class="nav-link flex items-center gap-3 px-4 py-2 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 transition-all"><i data-lucide="settings" class="w-4 h-4"></i><span>BIOS</span></a></li>
+        <li><a href="#windows" class="nav-link flex items-center gap-3 px-4 py-2 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 transition-all"><i data-lucide="layout-grid" class="w-4 h-4"></i><span>Windows 11</span></a></li>
+        <li><a href="#nvidia" class="nav-link flex items-center gap-3 px-4 py-2 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 transition-all"><i data-lucide="gpu-card" class="w-4 h-4"></i><span>NVIDIA</span></a></li>
+        <li><a href="#ram" class="nav-link flex items-center gap-3 px-4 py-2 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 transition-all"><i data-lucide="memory-stick" class="w-4 h-4"></i><span>RAM</span></a></li>
+        <li><a href="#ssd" class="nav-link flex items-center gap-3 px-4 py-2 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 transition-all"><i data-lucide="hard-drive" class="w-4 h-4"></i><span>SSD</span></a></li>
+        <li><a href="#antistutter" class="nav-link flex items-center gap-3 px-4 py-2 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 transition-all"><i data-lucide="zap-off" class="w-4 h-4"></i><span>Anti-Stutter</span></a></li>
+        <li class="pt-3 px-4 text-xs font-semibold text-gray-500 uppercase">Peripherie</li>
+        <li><a href="#wooting" class="nav-link flex items-center gap-3 px-4 py-2 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 transition-all"><i data-lucide="keyboard" class="w-4 h-4"></i><span>Wooting 80HE</span></a></li>
+        <li><a href="#mouse" class="nav-link flex items-center gap-3 px-4 py-2 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 transition-all"><i data-lucide="mouse" class="w-4 h-4"></i><span>Razer Viper V3</span></a></li>
+        <li><a href="#headset" class="nav-link flex items-center gap-3 px-4 py-2 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 transition-all"><i data-lucide="headphones" class="w-4 h-4"></i><span>Arctis Nova Pro</span></a></li>
+        <li><a href="#oled" class="nav-link flex items-center gap-3 px-4 py-2 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 transition-all"><i data-lucide="monitor" class="w-4 h-4"></i><span>OLED Monitor</span></a></li>
+        <li><a href="#obs" class="nav-link flex items-center gap-3 px-4 py-2 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 transition-all"><i data-lucide="video" class="w-4 h-4"></i><span>OBS Streaming</span></a></li>
+        <li class="pt-3 px-4 text-xs font-semibold text-gray-500 uppercase">Wartung</li>
+        <li><a href="#upgrades" class="nav-link flex items-center gap-3 px-4 py-2 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 transition-all"><i data-lucide="trending-up" class="w-4 h-4"></i><span>Upgrades</span></a></li>
+        <li><a href="#checklist" class="nav-link flex items-center gap-3 px-4 py-2 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 transition-all"><i data-lucide="check-square" class="w-4 h-4"></i><span>Checkliste</span></a></li>
+        <li><a href="#troubleshooting" class="nav-link flex items-center gap-3 px-4 py-2 rounded-lg border-l-2 border-transparent hover:bg-accent-primary/10 transition-all"><i data-lucide="bug" class="w-4 h-4"></i><span>Troubleshooting</span></a></li>
       </ul>
     </nav>
   </aside>
@@ -261,872 +80,713 @@
   <main class="main-content md:ml-64 min-h-screen">
     <div class="max-w-4xl mx-auto px-6 py-8">
 
-      <!-- Hero Section -->
-      <header id="hero" class="text-center py-16">
+      <!-- Hero -->
+      <header id="hero" class="text-center py-12">
         <div class="animate-float mb-6">
           <div class="w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-accent-primary to-accent-secondary flex items-center justify-center glow-green">
             <i data-lucide="monitor" class="w-10 h-10 text-dark-900"></i>
           </div>
         </div>
-
         <h1 class="text-4xl md:text-5xl font-bold text-gradient mb-2">ULTIMATE GAMING PC</h1>
-        <h2 class="text-xl md:text-2xl text-gray-400 tracking-widest mb-8">OPTIMIZATION GUIDE</h2>
-
-        <div class="flex flex-wrap justify-center gap-2 mb-4">
-          <span class="glass px-4 py-2 rounded-full text-sm flex items-center gap-2">
-            <i data-lucide="cpu" class="w-4 h-4 text-accent-primary"></i>
-            Ryzen 7 9800X3D
-          </span>
-          <span class="glass px-4 py-2 rounded-full text-sm flex items-center gap-2">
-            <i data-lucide="monitor" class="w-4 h-4 text-accent-secondary"></i>
-            RTX 4080 Super
-          </span>
-          <span class="glass px-4 py-2 rounded-full text-sm flex items-center gap-2">
-            <i data-lucide="memory-stick" class="w-4 h-4 text-accent-purple"></i>
-            64GB DDR5-6000
-          </span>
+        <h2 class="text-xl text-gray-400 tracking-widest mb-6">OPTIMIZATION GUIDE</h2>
+        <div class="flex flex-wrap justify-center gap-2 mb-3">
+          <span class="glass px-3 py-1.5 rounded-full text-sm">Ryzen 7 9800X3D</span>
+          <span class="glass px-3 py-1.5 rounded-full text-sm">RTX 4080 Super</span>
+          <span class="glass px-3 py-1.5 rounded-full text-sm">64GB DDR5-6000</span>
         </div>
-
         <div class="flex flex-wrap justify-center gap-2">
-          <span class="glass px-4 py-2 rounded-full text-sm flex items-center gap-2">
-            <i data-lucide="monitor" class="w-4 h-4 text-accent-warning"></i>
-            ASUS ROG OLED 4K 240Hz
-          </span>
-          <span class="glass px-4 py-2 rounded-full text-sm flex items-center gap-2">
-            <i data-lucide="keyboard" class="w-4 h-4 text-accent-primary"></i>
-            Wooting 80HE
-          </span>
+          <span class="glass px-3 py-1.5 rounded-full text-sm">ASUS ROG OLED 4K 240Hz</span>
+          <span class="glass px-3 py-1.5 rounded-full text-sm">Wooting 80HE</span>
+          <span class="glass px-3 py-1.5 rounded-full text-sm">Razer Viper V3 Pro</span>
         </div>
       </header>
 
       <!-- Section: Hardware -->
-      <section id="hardware" class="py-12 scroll-mt-8">
-        <div class="flex items-center gap-4 mb-8 pb-4 border-b border-accent-primary/20">
-          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 flex items-center justify-center">
-            <i data-lucide="cpu" class="w-6 h-6 text-accent-primary"></i>
+      <section id="hardware" class="py-10 scroll-mt-8">
+        <div class="flex items-center gap-4 mb-6 pb-3 border-b border-accent-primary/20">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 flex items-center justify-center">
+            <i data-lucide="cpu" class="w-5 h-5 text-accent-primary"></i>
           </div>
           <h2 class="text-2xl font-bold text-gradient">Systemübersicht</h2>
         </div>
 
-        <h3 class="text-lg font-semibold text-accent-secondary mb-4 pl-4 border-l-2 border-accent-secondary">Deine Hardware</h3>
-
-        <div class="grid md:grid-cols-2 gap-4 mb-8">
-          <!-- CPU -->
-          <div class="glass-strong rounded-xl p-4 flex items-center gap-4 hover:border-accent-primary/50 transition-colors">
-            <div class="w-12 h-12 rounded-lg bg-dark-700 flex items-center justify-center">
-              <i data-lucide="cpu" class="w-6 h-6 text-accent-primary"></i>
-            </div>
-            <div class="flex-1">
-              <p class="text-xs text-gray-500 uppercase">CPU</p>
-              <p class="font-semibold text-accent-primary">AMD Ryzen 7 9800X3D</p>
-            </div>
-            <div class="text-2xl" title="Beste Gaming CPU">🥇</div>
-          </div>
-
-          <!-- GPU -->
-          <div class="glass-strong rounded-xl p-4 flex items-center gap-4 hover:border-accent-primary/50 transition-colors">
-            <div class="w-12 h-12 rounded-lg bg-dark-700 flex items-center justify-center">
-              <i data-lucide="monitor" class="w-6 h-6 text-accent-secondary"></i>
-            </div>
-            <div class="flex-1">
-              <p class="text-xs text-gray-500 uppercase">GPU</p>
-              <p class="font-semibold text-accent-secondary">MSI RTX 4080 Super Gaming X Trio</p>
-            </div>
-            <div class="text-2xl" title="High-End GPU">🥈</div>
-          </div>
-
-          <!-- RAM -->
-          <div class="glass-strong rounded-xl p-4 flex items-center gap-4 hover:border-accent-primary/50 transition-colors">
-            <div class="w-12 h-12 rounded-lg bg-dark-700 flex items-center justify-center">
-              <i data-lucide="memory-stick" class="w-6 h-6 text-accent-purple"></i>
-            </div>
-            <div class="flex-1">
-              <p class="text-xs text-gray-500 uppercase">RAM</p>
-              <p class="font-semibold text-white">G.Skill 64GB DDR5-6000 CL30</p>
-            </div>
-            <i data-lucide="check-circle" class="w-6 h-6 text-accent-primary"></i>
-          </div>
-
-          <!-- Mainboard -->
-          <div class="glass-strong rounded-xl p-4 flex items-center gap-4 hover:border-accent-primary/50 transition-colors">
-            <div class="w-12 h-12 rounded-lg bg-dark-700 flex items-center justify-center">
-              <i data-lucide="circuit-board" class="w-6 h-6 text-accent-warning"></i>
-            </div>
-            <div class="flex-1">
-              <p class="text-xs text-gray-500 uppercase">Mainboard</p>
-              <p class="font-semibold text-white">Gigabyte X670 Gaming X AX</p>
-            </div>
-            <i data-lucide="check-circle" class="w-6 h-6 text-accent-primary"></i>
-          </div>
-
-          <!-- SSD -->
-          <div class="glass-strong rounded-xl p-4 flex items-center gap-4 hover:border-accent-primary/50 transition-colors">
-            <div class="w-12 h-12 rounded-lg bg-dark-700 flex items-center justify-center">
-              <i data-lucide="hard-drive" class="w-6 h-6 text-accent-secondary"></i>
-            </div>
-            <div class="flex-1">
-              <p class="text-xs text-gray-500 uppercase">SSD</p>
-              <p class="font-semibold text-white">Samsung 990 PRO 2TB</p>
-            </div>
-            <i data-lucide="check-circle" class="w-6 h-6 text-accent-primary"></i>
-          </div>
-
-          <!-- Cooler -->
-          <div class="glass-strong rounded-xl p-4 flex items-center gap-4 hover:border-accent-primary/50 transition-colors">
-            <div class="w-12 h-12 rounded-lg bg-dark-700 flex items-center justify-center">
-              <i data-lucide="wind" class="w-6 h-6 text-accent-secondary"></i>
-            </div>
-            <div class="flex-1">
-              <p class="text-xs text-gray-500 uppercase">CPU-Kühler</p>
-              <p class="font-semibold text-white">Corsair H150i Elite 360mm</p>
-            </div>
-            <i data-lucide="check-circle" class="w-6 h-6 text-accent-primary"></i>
-          </div>
-
-          <!-- PSU -->
-          <div class="glass-strong rounded-xl p-4 flex items-center gap-4 hover:border-accent-primary/50 transition-colors">
-            <div class="w-12 h-12 rounded-lg bg-dark-700 flex items-center justify-center">
-              <i data-lucide="zap" class="w-6 h-6 text-accent-warning"></i>
-            </div>
-            <div class="flex-1">
-              <p class="text-xs text-gray-500 uppercase">Netzteil</p>
-              <p class="font-semibold text-white">be quiet! 1000W Gold</p>
-            </div>
-            <i data-lucide="check-circle" class="w-6 h-6 text-accent-primary"></i>
-          </div>
-
-          <!-- Keyboard -->
-          <div class="glass-strong rounded-xl p-4 flex items-center gap-4 hover:border-accent-primary/50 transition-colors">
-            <div class="w-12 h-12 rounded-lg bg-dark-700 flex items-center justify-center">
-              <i data-lucide="keyboard" class="w-6 h-6 text-accent-primary"></i>
-            </div>
-            <div class="flex-1">
-              <p class="text-xs text-gray-500 uppercase">Keyboard</p>
-              <p class="font-semibold text-accent-primary">Wooting 80HE</p>
-            </div>
-            <div class="text-2xl" title="Beste Gaming Tastatur">🥇</div>
-          </div>
+        <h3 class="text-lg font-semibold text-accent-secondary mb-4 pl-3 border-l-2 border-accent-secondary">Deine Hardware</h3>
+        <div class="grid md:grid-cols-2 gap-3 mb-6">
+          <div class="glass-strong rounded-xl p-4 flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-dark-700 flex items-center justify-center"><i data-lucide="cpu" class="w-5 h-5 text-accent-primary"></i></div><div class="flex-1"><p class="text-xs text-gray-500">CPU</p><p class="font-semibold text-accent-primary">AMD Ryzen 7 9800X3D</p></div><span class="text-xl">🥇</span></div>
+          <div class="glass-strong rounded-xl p-4 flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-dark-700 flex items-center justify-center"><i data-lucide="monitor" class="w-5 h-5 text-accent-secondary"></i></div><div class="flex-1"><p class="text-xs text-gray-500">GPU</p><p class="font-semibold text-accent-secondary">MSI RTX 4080 Super Gaming X Trio</p></div><span class="text-xl">🥈</span></div>
+          <div class="glass-strong rounded-xl p-4 flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-dark-700 flex items-center justify-center"><i data-lucide="memory-stick" class="w-5 h-5 text-accent-purple"></i></div><div class="flex-1"><p class="text-xs text-gray-500">RAM</p><p class="font-semibold">G.Skill 64GB DDR5-6000 CL30</p></div><i data-lucide="check-circle" class="w-5 h-5 text-accent-primary"></i></div>
+          <div class="glass-strong rounded-xl p-4 flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-dark-700 flex items-center justify-center"><i data-lucide="circuit-board" class="w-5 h-5 text-accent-warning"></i></div><div class="flex-1"><p class="text-xs text-gray-500">Mainboard</p><p class="font-semibold">Gigabyte X670 Gaming X AX</p></div><i data-lucide="check-circle" class="w-5 h-5 text-accent-primary"></i></div>
+          <div class="glass-strong rounded-xl p-4 flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-dark-700 flex items-center justify-center"><i data-lucide="hard-drive" class="w-5 h-5 text-accent-secondary"></i></div><div class="flex-1"><p class="text-xs text-gray-500">SSD</p><p class="font-semibold">Samsung 990 PRO 2TB</p></div><i data-lucide="check-circle" class="w-5 h-5 text-accent-primary"></i></div>
+          <div class="glass-strong rounded-xl p-4 flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-dark-700 flex items-center justify-center"><i data-lucide="wind" class="w-5 h-5 text-accent-secondary"></i></div><div class="flex-1"><p class="text-xs text-gray-500">CPU-Kühler</p><p class="font-semibold">Corsair H150i Elite 360mm AIO</p></div><i data-lucide="check-circle" class="w-5 h-5 text-accent-primary"></i></div>
+          <div class="glass-strong rounded-xl p-4 flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-dark-700 flex items-center justify-center"><i data-lucide="zap" class="w-5 h-5 text-accent-warning"></i></div><div class="flex-1"><p class="text-xs text-gray-500">Netzteil</p><p class="font-semibold">be quiet! 1000W Gold</p></div><i data-lucide="check-circle" class="w-5 h-5 text-accent-primary"></i></div>
+          <div class="glass-strong rounded-xl p-4 flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-dark-700 flex items-center justify-center"><i data-lucide="box" class="w-5 h-5 text-gray-400"></i></div><div class="flex-1"><p class="text-xs text-gray-500">Gehäuse</p><p class="font-semibold">Lian Li PC-O11 Dynamic</p></div><i data-lucide="check-circle" class="w-5 h-5 text-accent-primary"></i></div>
         </div>
 
-        <h3 class="text-lg font-semibold text-accent-secondary mb-4 pl-4 border-l-2 border-accent-secondary">Deine Monitore</h3>
-
-        <div class="glass-strong rounded-xl overflow-hidden">
+        <h3 class="text-lg font-semibold text-accent-secondary mb-4 pl-3 border-l-2 border-accent-secondary">Deine Monitore</h3>
+        <div class="glass-strong rounded-xl overflow-hidden mb-6">
           <table class="w-full text-sm">
-            <thead>
-              <tr class="bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10">
-                <th class="text-left px-4 py-3 text-accent-primary font-semibold uppercase text-xs tracking-wider">Monitor</th>
-                <th class="text-left px-4 py-3 text-accent-primary font-semibold uppercase text-xs tracking-wider">Auflösung</th>
-                <th class="text-left px-4 py-3 text-accent-primary font-semibold uppercase text-xs tracking-wider">Verwendung</th>
-              </tr>
-            </thead>
+            <thead><tr class="bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10"><th class="text-left px-4 py-3 text-accent-primary font-semibold text-xs uppercase">Monitor</th><th class="text-left px-4 py-3 text-accent-primary font-semibold text-xs uppercase">Auflösung</th><th class="text-left px-4 py-3 text-accent-primary font-semibold text-xs uppercase">Verwendung</th></tr></thead>
             <tbody class="divide-y divide-accent-primary/10">
-              <tr class="hover:bg-accent-primary/5 transition-colors">
-                <td class="px-4 py-3">ASUS ROG SWIFT OLED PG32UCDMR</td>
-                <td class="px-4 py-3">4K 240Hz QD-OLED</td>
-                <td class="px-4 py-3"><span class="text-accent-warning flex items-center gap-2"><i data-lucide="gamepad-2" class="w-4 h-4"></i> Main Gaming (G-Sync)</span></td>
-              </tr>
-              <tr class="hover:bg-accent-primary/5 transition-colors">
-                <td class="px-4 py-3">Alienware AW2723DF</td>
-                <td class="px-4 py-3">QHD 280Hz</td>
-                <td class="px-4 py-3"><span class="text-accent-primary">Secondary</span></td>
-              </tr>
-              <tr class="hover:bg-accent-primary/5 transition-colors">
-                <td class="px-4 py-3">Gigabyte M28U</td>
-                <td class="px-4 py-3">4K 144Hz</td>
-                <td class="px-4 py-3"><span class="text-accent-primary">Third Monitor</span></td>
-              </tr>
+              <tr><td class="px-4 py-3">ASUS ROG SWIFT OLED PG32UCDMR</td><td class="px-4 py-3">4K 240Hz QD-OLED</td><td class="px-4 py-3 text-accent-warning">🎮 Main Gaming (G-Sync)</td></tr>
+              <tr><td class="px-4 py-3">Alienware AW2723DF</td><td class="px-4 py-3">QHD 280Hz</td><td class="px-4 py-3 text-accent-primary">Secondary</td></tr>
+              <tr><td class="px-4 py-3">Gigabyte M28U</td><td class="px-4 py-3">4K 144Hz</td><td class="px-4 py-3 text-accent-primary">Third Monitor</td></tr>
             </tbody>
           </table>
+        </div>
+
+        <h3 class="text-lg font-semibold text-accent-secondary mb-4 pl-3 border-l-2 border-accent-secondary">Erwartete Performance</h3>
+        <div class="glass-strong rounded-xl overflow-hidden">
+          <table class="w-full text-sm">
+            <thead><tr class="bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10"><th class="text-left px-4 py-3 text-accent-primary font-semibold text-xs uppercase">Szenario</th><th class="text-left px-4 py-3 text-accent-primary font-semibold text-xs uppercase">Erwartete FPS</th></tr></thead>
+            <tbody class="divide-y divide-accent-primary/10">
+              <tr><td class="px-4 py-3">4K Ultra (Native)</td><td class="px-4 py-3">80-120+ FPS</td></tr>
+              <tr><td class="px-4 py-3">4K DLSS Quality</td><td class="px-4 py-3">144-200+ FPS</td></tr>
+              <tr><td class="px-4 py-3">4K DLSS + Frame Gen</td><td class="px-4 py-3 text-accent-warning font-semibold">240Hz erreichbar!</td></tr>
+              <tr><td class="px-4 py-3">Streaming (NVENC)</td><td class="px-4 py-3 text-accent-primary">Kein Performance-Verlust</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section: Peripherals -->
+      <section id="peripherals" class="py-10 scroll-mt-8">
+        <div class="flex items-center gap-4 mb-6 pb-3 border-b border-accent-primary/20">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 flex items-center justify-center">
+            <i data-lucide="mouse" class="w-5 h-5 text-accent-primary"></i>
+          </div>
+          <h2 class="text-2xl font-bold text-gradient">Peripheriegeräte</h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-3">
+          <div class="glass-strong rounded-xl p-4 flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-dark-700 flex items-center justify-center"><i data-lucide="keyboard" class="w-5 h-5 text-accent-primary"></i></div><div class="flex-1"><p class="text-xs text-gray-500">Keyboard</p><p class="font-semibold text-accent-primary">Wooting 80HE</p><p class="text-xs text-gray-500">8kHz, Rapid Trigger, Hall Effect</p></div><span class="text-xl">🥇</span></div>
+          <div class="glass-strong rounded-xl p-4 flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-dark-700 flex items-center justify-center"><i data-lucide="mouse" class="w-5 h-5 text-accent-primary"></i></div><div class="flex-1"><p class="text-xs text-gray-500">Maus</p><p class="font-semibold text-accent-primary">Razer Viper V3 Pro</p><p class="text-xs text-gray-500">8kHz, 54g, Focus Pro 35K</p></div><span class="text-xl">🥇</span></div>
+          <div class="glass-strong rounded-xl p-4 flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-dark-700 flex items-center justify-center"><i data-lucide="headphones" class="w-5 h-5 text-accent-primary"></i></div><div class="flex-1"><p class="text-xs text-gray-500">Headset</p><p class="font-semibold text-accent-primary">SteelSeries Arctis Nova Pro Wireless</p><p class="text-xs text-gray-500">ANC, Dual-Battery, Hi-Res Audio</p></div><span class="text-xl">🥇</span></div>
+          <div class="glass-strong rounded-xl p-4 flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-dark-700 flex items-center justify-center"><i data-lucide="sliders" class="w-5 h-5 text-accent-secondary"></i></div><div class="flex-1"><p class="text-xs text-gray-500">Stream Deck</p><p class="font-semibold">Elgato Stream Deck</p><p class="text-xs text-gray-500">OBS-Steuerung, Shortcuts</p></div><i data-lucide="check-circle" class="w-5 h-5 text-accent-primary"></i></div>
+        </div>
+      </section>
+
+      <!-- Section: Software -->
+      <section id="software" class="py-10 scroll-mt-8">
+        <div class="flex items-center gap-4 mb-6 pb-3 border-b border-accent-primary/20">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 flex items-center justify-center">
+            <i data-lucide="download" class="w-5 h-5 text-accent-primary"></i>
+          </div>
+          <h2 class="text-2xl font-bold text-gradient">Benötigte Software</h2>
+        </div>
+        <div class="glass-strong rounded-xl overflow-hidden mb-4">
+          <table class="w-full text-sm">
+            <thead><tr class="bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10"><th class="text-left px-4 py-3 text-accent-primary font-semibold text-xs uppercase">Tool</th><th class="text-left px-4 py-3 text-accent-primary font-semibold text-xs uppercase">Zweck</th><th class="text-left px-4 py-3 text-accent-primary font-semibold text-xs uppercase">Download</th></tr></thead>
+            <tbody class="divide-y divide-accent-primary/10">
+              <tr><td class="px-4 py-3 font-medium">AMD Chipset Driver</td><td class="px-4 py-3 text-gray-400">CPU-Treiber + 3D V-Cache Optimizer</td><td class="px-4 py-3"><a href="https://www.amd.com/en/support" target="_blank" class="text-accent-primary hover:underline">amd.com/support</a></td></tr>
+              <tr><td class="px-4 py-3 font-medium">NVIDIA App</td><td class="px-4 py-3 text-gray-400">GPU-Treiber & Einstellungen</td><td class="px-4 py-3"><a href="https://www.nvidia.com/download" target="_blank" class="text-accent-primary hover:underline">nvidia.com/download</a></td></tr>
+              <tr><td class="px-4 py-3 font-medium">Corsair iCUE</td><td class="px-4 py-3 text-gray-400">AIO Pumpen-Steuerung</td><td class="px-4 py-3"><a href="https://www.corsair.com/icue" target="_blank" class="text-accent-primary hover:underline">corsair.com/icue</a></td></tr>
+              <tr><td class="px-4 py-3 font-medium">DisplayWidget Center</td><td class="px-4 py-3 text-gray-400">Monitor OLED Care</td><td class="px-4 py-3"><a href="https://www.asus.com/support" target="_blank" class="text-accent-primary hover:underline">asus.com/support</a></td></tr>
+              <tr><td class="px-4 py-3 font-medium">Samsung Magician</td><td class="px-4 py-3 text-gray-400">SSD Firmware & Health</td><td class="px-4 py-3"><a href="https://semiconductor.samsung.com/consumer-storage/support/tools/" target="_blank" class="text-accent-primary hover:underline">samsung.com</a></td></tr>
+              <tr><td class="px-4 py-3 font-medium">Wootility</td><td class="px-4 py-3 text-gray-400">Wooting Keyboard Config</td><td class="px-4 py-3"><a href="https://wootility.io" target="_blank" class="text-accent-primary hover:underline">wootility.io</a></td></tr>
+              <tr><td class="px-4 py-3 font-medium">Razer Synapse 4</td><td class="px-4 py-3 text-gray-400">Viper V3 Pro Settings</td><td class="px-4 py-3"><a href="https://www.razer.com/synapse-4" target="_blank" class="text-accent-primary hover:underline">razer.com/synapse-4</a></td></tr>
+              <tr><td class="px-4 py-3 font-medium">SteelSeries GG</td><td class="px-4 py-3 text-gray-400">Arctis Nova Pro + Sonar</td><td class="px-4 py-3"><a href="https://steelseries.com/gg" target="_blank" class="text-accent-primary hover:underline">steelseries.com/gg</a></td></tr>
+              <tr><td class="px-4 py-3 font-medium">HWiNFO64</td><td class="px-4 py-3 text-gray-400">System Monitoring</td><td class="px-4 py-3"><a href="https://www.hwinfo.com" target="_blank" class="text-accent-primary hover:underline">hwinfo.com</a></td></tr>
+              <tr><td class="px-4 py-3 font-medium">DDU</td><td class="px-4 py-3 text-gray-400">Treiber Clean Install</td><td class="px-4 py-3"><a href="https://www.guru3d.com/files-details/display-driver-uninstaller-download.html" target="_blank" class="text-accent-primary hover:underline">guru3d.com</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="glass-strong rounded-xl p-4 border-l-4 border-accent-danger flex gap-3">
+          <i data-lucide="alert-octagon" class="w-5 h-5 text-accent-danger flex-shrink-0 mt-0.5"></i>
+          <p class="text-sm"><span class="font-semibold text-accent-danger">NIEMALS</span> BIOS über Windows-Apps (Gigabyte Control Center) updaten! Immer Q-Flash im BIOS nutzen.</p>
         </div>
       </section>
 
       <!-- Section: BIOS -->
-      <section id="bios" class="py-12 scroll-mt-8">
-        <div class="flex items-center gap-4 mb-8 pb-4 border-b border-accent-primary/20">
-          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 flex items-center justify-center">
-            <i data-lucide="settings" class="w-6 h-6 text-accent-primary"></i>
+      <section id="bios" class="py-10 scroll-mt-8">
+        <div class="flex items-center gap-4 mb-6 pb-3 border-b border-accent-primary/20">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 flex items-center justify-center">
+            <i data-lucide="settings" class="w-5 h-5 text-accent-primary"></i>
           </div>
           <h2 class="text-2xl font-bold text-gradient">BIOS-Einstellungen (Gigabyte X670)</h2>
         </div>
 
-        <!-- Warning Alert -->
-        <div class="glass-strong rounded-xl p-4 mb-6 border-l-4 border-accent-warning flex gap-4">
-          <i data-lucide="alert-triangle" class="w-6 h-6 text-accent-warning flex-shrink-0"></i>
-          <div>
-            <p class="font-semibold text-accent-warning">9800X3D Sicherheitshinweis</p>
-            <p class="text-sm text-gray-400">Dein Gigabyte X670 ist NICHT in der Hauptrisikogruppe für CPU-Ausfälle (82% waren ASRock). Trotzdem: Immer stabiles BIOS (keine Beta!), konservatives PBO starten.</p>
-          </div>
+        <div class="glass-strong rounded-xl p-4 mb-6 border-l-4 border-accent-warning flex gap-3">
+          <i data-lucide="alert-triangle" class="w-5 h-5 text-accent-warning flex-shrink-0 mt-0.5"></i>
+          <div><p class="font-semibold text-accent-warning">9800X3D Sicherheitshinweis</p><p class="text-sm text-gray-400">Dein Gigabyte X670 ist NICHT in der Hauptrisikogruppe für CPU-Ausfälle (82% waren ASRock). Trotzdem: Immer stabiles BIOS (keine Beta!), konservatives PBO starten.</p></div>
         </div>
 
-        <h3 class="text-lg font-semibold text-accent-secondary mb-4 pl-4 border-l-2 border-accent-secondary">1. RAM aktivieren (EXPO)</h3>
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">1. RAM aktivieren (EXPO)</h3>
+        <div class="glass-strong rounded-xl overflow-hidden mb-2">
+          <table class="w-full text-sm"><thead><tr class="bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10"><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Pfad</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Einstellung</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Wert</th></tr></thead>
+            <tbody><tr><td class="px-4 py-2 text-gray-400">Tweaker</td><td class="px-4 py-2">XMP/EXPO Profile</td><td class="px-4 py-2 text-accent-primary font-semibold">Profile 1</td></tr></tbody>
+          </table>
+        </div>
+        <p class="text-sm text-gray-400 mb-6">Aktiviert DDR5-6000MHz CL30 mit FCLK 3000MHz (1:1 Ratio).</p>
 
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">2. Resizable BAR</h3>
         <div class="glass-strong rounded-xl overflow-hidden mb-6">
-          <table class="w-full text-sm">
-            <thead>
-              <tr class="bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10">
-                <th class="text-left px-4 py-3 text-accent-primary font-semibold uppercase text-xs">Pfad</th>
-                <th class="text-left px-4 py-3 text-accent-primary font-semibold uppercase text-xs">Einstellung</th>
-                <th class="text-left px-4 py-3 text-accent-primary font-semibold uppercase text-xs">Wert</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="px-4 py-3 text-gray-400">Tweaker</td>
-                <td class="px-4 py-3">XMP/EXPO Profile</td>
-                <td class="px-4 py-3"><span class="text-accent-primary font-semibold">Profile 1</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="text-gray-400 text-sm mb-8">Aktiviert automatisch DDR5-6000MHz CL30 mit FCLK 3000MHz (1:1 Ratio).</p>
-
-        <h3 class="text-lg font-semibold text-accent-secondary mb-4 pl-4 border-l-2 border-accent-secondary">2. Global C-State Control (KRITISCH!)</h3>
-
-        <div class="glass-strong rounded-xl overflow-hidden mb-4">
-          <table class="w-full text-sm">
-            <thead>
-              <tr class="bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10">
-                <th class="text-left px-4 py-3 text-accent-primary font-semibold uppercase text-xs">Pfad</th>
-                <th class="text-left px-4 py-3 text-accent-primary font-semibold uppercase text-xs">Einstellung</th>
-                <th class="text-left px-4 py-3 text-accent-primary font-semibold uppercase text-xs">Wert</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="px-4 py-3 text-gray-400 text-xs">Settings → AMD CBS → SMU Common Options → CPPC</td>
-                <td class="px-4 py-3">Global C-State Control</td>
-                <td class="px-4 py-3"><span class="text-accent-warning font-semibold">Enabled (NICHT Auto!)</span></td>
-              </tr>
+          <table class="w-full text-sm"><thead><tr class="bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10"><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Pfad</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Einstellung</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Wert</th></tr></thead>
+            <tbody class="divide-y divide-accent-primary/10">
+              <tr><td class="px-4 py-2 text-gray-400">Settings → IO Ports</td><td class="px-4 py-2">Above 4G Decoding</td><td class="px-4 py-2 text-accent-primary font-semibold">Enabled</td></tr>
+              <tr><td class="px-4 py-2 text-gray-400">Settings → IO Ports</td><td class="px-4 py-2">Resizable BAR</td><td class="px-4 py-2 text-accent-primary font-semibold">Enabled</td></tr>
+              <tr><td class="px-4 py-2 text-gray-400">Boot</td><td class="px-4 py-2">CSM Support</td><td class="px-4 py-2 text-accent-primary font-semibold">Disabled</td></tr>
             </tbody>
           </table>
         </div>
 
-        <!-- Tip Alert -->
-        <div class="glass-strong rounded-xl p-4 mb-8 border-l-4 border-accent-primary flex gap-4">
-          <i data-lucide="lightbulb" class="w-6 h-6 text-accent-primary flex-shrink-0"></i>
-          <div>
-            <p class="text-sm text-gray-300">Manuell auf "Enabled" setzen eliminiert Micro-Stuttering bei X3D CPUs! "Auto" kann Probleme verursachen.</p>
-          </div>
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">3. Global C-State Control (KRITISCH!)</h3>
+        <div class="glass-strong rounded-xl overflow-hidden mb-2">
+          <table class="w-full text-sm"><thead><tr class="bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10"><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Pfad</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Einstellung</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Wert</th></tr></thead>
+            <tbody><tr><td class="px-4 py-2 text-gray-400 text-xs">Settings → AMD CBS → SMU Common Options → CPPC</td><td class="px-4 py-2">Global C-State Control</td><td class="px-4 py-2 text-accent-warning font-semibold">Enabled (NICHT Auto!)</td></tr></tbody>
+          </table>
+        </div>
+        <div class="glass-strong rounded-xl p-3 mb-6 border-l-4 border-accent-primary flex gap-3">
+          <i data-lucide="lightbulb" class="w-5 h-5 text-accent-primary flex-shrink-0"></i>
+          <p class="text-sm">Manuell auf "Enabled" setzen eliminiert Micro-Stuttering bei X3D CPUs! "Auto" kann Probleme verursachen.</p>
         </div>
 
-        <h3 class="text-lg font-semibold text-accent-secondary mb-4 pl-4 border-l-2 border-accent-secondary">3. PBO (Precision Boost Overdrive)</h3>
-
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">4. PBO (Precision Boost Overdrive)</h3>
         <div class="glass-strong rounded-xl overflow-hidden mb-6">
-          <table class="w-full text-sm">
-            <thead>
-              <tr class="bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10">
-                <th class="text-left px-4 py-3 text-accent-primary font-semibold uppercase text-xs">Einstellung</th>
-                <th class="text-left px-4 py-3 text-accent-primary font-semibold uppercase text-xs">Wert</th>
-                <th class="text-left px-4 py-3 text-accent-primary font-semibold uppercase text-xs">Erklärung</th>
-              </tr>
-            </thead>
+          <table class="w-full text-sm"><thead><tr class="bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10"><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Einstellung</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Wert</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Erklärung</th></tr></thead>
             <tbody class="divide-y divide-accent-primary/10">
-              <tr>
-                <td class="px-4 py-3">Precision Boost Overdrive</td>
-                <td class="px-4 py-3"><span class="text-accent-primary font-semibold">Advanced</span></td>
-                <td class="px-4 py-3 text-gray-400">Volle Kontrolle</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3">PBO Limits</td>
-                <td class="px-4 py-3"><span class="text-accent-primary font-semibold">Motherboard</span></td>
-                <td class="px-4 py-3 text-gray-400">Nutzt Mainboard-Limits</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3">PBO Scalar</td>
-                <td class="px-4 py-3"><span class="text-accent-primary font-semibold">1x - 10x</span></td>
-                <td class="px-4 py-3 text-gray-400">1x für Stabilität, höher für mehr Boost</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3">Boost Clock Override</td>
-                <td class="px-4 py-3"><span class="text-accent-primary font-semibold">+200MHz</span></td>
-                <td class="px-4 py-3 text-gray-400">Erhöht maximales Boost-Limit</td>
-              </tr>
+              <tr><td class="px-4 py-2">Precision Boost Overdrive</td><td class="px-4 py-2 text-accent-primary font-semibold">Advanced</td><td class="px-4 py-2 text-gray-400">Volle Kontrolle</td></tr>
+              <tr><td class="px-4 py-2">PBO Limits</td><td class="px-4 py-2 text-accent-primary font-semibold">Motherboard</td><td class="px-4 py-2 text-gray-400">Nutzt Mainboard-Limits</td></tr>
+              <tr><td class="px-4 py-2">PBO Scalar</td><td class="px-4 py-2 text-accent-primary font-semibold">1x - 10x</td><td class="px-4 py-2 text-gray-400">Start mit 1x</td></tr>
+              <tr><td class="px-4 py-2">Boost Clock Override</td><td class="px-4 py-2 text-accent-primary font-semibold">+200MHz</td><td class="px-4 py-2 text-gray-400">Bis ~5.45 GHz</td></tr>
             </tbody>
           </table>
         </div>
 
-        <h3 class="text-lg font-semibold text-accent-secondary mb-4 pl-4 border-l-2 border-accent-secondary">4. Curve Optimizer (Mit 360mm AIO empfohlen)</h3>
-
-        <div class="glass-strong rounded-xl overflow-hidden mb-4">
-          <table class="w-full text-sm">
-            <thead>
-              <tr class="bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10">
-                <th class="text-left px-4 py-3 text-accent-primary font-semibold uppercase text-xs">Einstellung</th>
-                <th class="text-left px-4 py-3 text-accent-primary font-semibold uppercase text-xs">Wert</th>
-                <th class="text-left px-4 py-3 text-accent-primary font-semibold uppercase text-xs">Hinweis</th>
-              </tr>
-            </thead>
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">5. Curve Optimizer (Mit 360mm AIO)</h3>
+        <div class="glass-strong rounded-xl overflow-hidden mb-2">
+          <table class="w-full text-sm"><thead><tr class="bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10"><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Einstellung</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Wert</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Hinweis</th></tr></thead>
             <tbody class="divide-y divide-accent-primary/10">
-              <tr>
-                <td class="px-4 py-3">Curve Optimizer</td>
-                <td class="px-4 py-3"><span class="text-accent-primary font-semibold">All Cores</span></td>
-                <td class="px-4 py-3 text-gray-400">Einfacher Start</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3">Sign</td>
-                <td class="px-4 py-3"><span class="text-accent-primary font-semibold">Negative</span></td>
-                <td class="px-4 py-3 text-gray-400">Undervolting</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3">Magnitude</td>
-                <td class="px-4 py-3"><span class="text-accent-warning font-semibold">-15 bis -20 (Start)</span></td>
-                <td class="px-4 py-3 text-gray-400">Konservativ beginnen!</td>
-              </tr>
+              <tr><td class="px-4 py-2">Curve Optimizer</td><td class="px-4 py-2 text-accent-primary font-semibold">All Cores</td><td class="px-4 py-2 text-gray-400">Einfacher Start</td></tr>
+              <tr><td class="px-4 py-2">Sign</td><td class="px-4 py-2 text-accent-primary font-semibold">Negative</td><td class="px-4 py-2 text-gray-400">Undervolting</td></tr>
+              <tr><td class="px-4 py-2">Magnitude</td><td class="px-4 py-2 text-accent-warning font-semibold">-15 bis -20</td><td class="px-4 py-2 text-gray-400">Konservativ starten!</td></tr>
             </tbody>
           </table>
         </div>
-
-        <!-- Warning Alert -->
-        <div class="glass-strong rounded-xl p-4 mb-4 border-l-4 border-accent-warning flex gap-4">
-          <i data-lucide="alert-triangle" class="w-6 h-6 text-accent-warning flex-shrink-0"></i>
-          <div>
-            <p class="font-semibold text-accent-warning">Stabilität testen!</p>
-            <p class="text-sm text-gray-400">Starte mit -15 bis -20 und teste mit Cinebench R23, OCCT oder Y-Cruncher. Viele User mit 360mm AIO erreichen -25 bis -30 stabil, aber jede CPU ist anders. Bei Crashes: Wert erhöhen (z.B. -20 → -15).</p>
-          </div>
+        <div class="glass-strong rounded-xl p-3 border-l-4 border-accent-warning flex gap-3">
+          <i data-lucide="alert-triangle" class="w-5 h-5 text-accent-warning flex-shrink-0"></i>
+          <p class="text-sm"><span class="font-semibold text-accent-warning">Stabilität testen!</span> Mit Cinebench R23, OCCT, Y-Cruncher. Viele erreichen -25 bis -30, aber jede CPU ist anders!</p>
         </div>
       </section>
 
-      <!-- Section: Windows 11 -->
-      <section id="windows" class="py-12 scroll-mt-8">
-        <div class="flex items-center gap-4 mb-8 pb-4 border-b border-accent-primary/20">
-          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 flex items-center justify-center">
-            <i data-lucide="monitor" class="w-6 h-6 text-accent-primary"></i>
+      <!-- Section: Windows -->
+      <section id="windows" class="py-10 scroll-mt-8">
+        <div class="flex items-center gap-4 mb-6 pb-3 border-b border-accent-primary/20">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 flex items-center justify-center">
+            <i data-lucide="layout-grid" class="w-5 h-5 text-accent-primary"></i>
           </div>
           <h2 class="text-2xl font-bold text-gradient">Windows 11 24H2 Optimierungen</h2>
         </div>
 
-        <h3 class="text-lg font-semibold text-accent-secondary mb-4 pl-4 border-l-2 border-accent-secondary">VBS/Memory Integrity deaktivieren (5-15% FPS!)</h3>
-
-        <!-- Warning Alert -->
-        <div class="glass-strong rounded-xl p-4 mb-6 border-l-4 border-accent-warning flex gap-4">
-          <i data-lucide="alert-triangle" class="w-6 h-6 text-accent-warning flex-shrink-0"></i>
-          <div>
-            <p class="font-semibold text-accent-warning">Windows 11 24H2 Update</p>
-            <p class="text-sm text-gray-400">VBS ist komplexer zu deaktivieren geworden. Es gibt jetzt eine zusätzliche Windows Hello VBS-Abhängigkeit die auch deaktiviert werden muss!</p>
-          </div>
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">VBS/Memory Integrity deaktivieren (5-15% FPS!)</h3>
+        <div class="glass-strong rounded-xl p-4 mb-4 border-l-4 border-accent-warning flex gap-3">
+          <i data-lucide="alert-triangle" class="w-5 h-5 text-accent-warning flex-shrink-0 mt-0.5"></i>
+          <div><p class="font-semibold text-accent-warning">Windows 11 24H2 Update</p><p class="text-sm text-gray-400">VBS ist komplexer zu deaktivieren. Windows Hello VBS-Abhängigkeit muss auch deaktiviert werden!</p></div>
         </div>
 
-        <div class="space-y-6">
-          <div>
-            <h4 class="font-semibold text-white mb-3">Schritt 1: Memory Integrity deaktivieren</h4>
-            <ol class="list-decimal list-inside space-y-2 text-gray-400 text-sm ml-4">
-              <li>Einstellungen → Datenschutz & Sicherheit → Windows-Sicherheit</li>
-              <li>Gerätesicherheit → Kernisolierung → Details</li>
-              <li>Speicherintegrität → <strong class="text-accent-danger">AUS</strong></li>
-            </ol>
-          </div>
-
-          <div>
-            <h4 class="font-semibold text-white mb-3">Schritt 2: VBS via Registry deaktivieren (Admin CMD)</h4>
-            <div class="bg-dark-900 rounded-lg p-4 font-mono text-sm text-accent-primary overflow-x-auto">
-              <code>reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v EnableVirtualizationBasedSecurity /t REG_DWORD /d 0 /f</code>
-            </div>
-          </div>
-
-          <div>
-            <h4 class="font-semibold text-white mb-3">Schritt 3: Windows Hello VBS deaktivieren (NEU für 24H2!)</h4>
-            <div class="bg-dark-900 rounded-lg p-4 font-mono text-sm text-accent-primary overflow-x-auto">
-              <code>reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\WindowsHello" /v Enabled /t REG_DWORD /d 0 /f</code>
-            </div>
-          </div>
-
-          <div>
-            <h4 class="font-semibold text-white mb-3">Schritt 4: Hypervisor deaktivieren</h4>
-            <div class="bg-dark-900 rounded-lg p-4 font-mono text-sm text-accent-primary overflow-x-auto">
-              <code>bcdedit /set hypervisorlaunchtype off</code>
-            </div>
-          </div>
+        <div class="space-y-4 mb-6">
+          <div><h4 class="font-semibold mb-2">Schritt 1: Memory Integrity deaktivieren</h4><p class="text-sm text-gray-400">Einstellungen → Datenschutz & Sicherheit → Windows-Sicherheit → Gerätesicherheit → Kernisolierung → Speicherintegrität → <span class="text-accent-danger font-semibold">AUS</span></p></div>
+          <div><h4 class="font-semibold mb-2">Schritt 2: VBS via Registry (Admin CMD)</h4><div class="bg-dark-900 rounded-lg p-3 font-mono text-xs text-accent-primary overflow-x-auto"><code>reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v EnableVirtualizationBasedSecurity /t REG_DWORD /d 0 /f</code></div></div>
+          <div><h4 class="font-semibold mb-2">Schritt 3: Windows Hello VBS (NEU für 24H2!)</h4><div class="bg-dark-900 rounded-lg p-3 font-mono text-xs text-accent-primary overflow-x-auto"><code>reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\WindowsHello" /v Enabled /t REG_DWORD /d 0 /f</code></div></div>
+          <div><h4 class="font-semibold mb-2">Schritt 4: Hypervisor deaktivieren</h4><div class="bg-dark-900 rounded-lg p-3 font-mono text-xs text-accent-primary overflow-x-auto"><code>bcdedit /set hypervisorlaunchtype off</code></div></div>
         </div>
+        <p class="text-sm text-gray-400 mb-6">PC neustarten. Prüfen mit <code class="bg-dark-800 px-2 py-0.5 rounded text-accent-primary">msinfo32</code> → "Virtualization-based security" = "Not enabled"</p>
 
-        <p class="text-gray-400 text-sm mt-6">PC neustarten. Prüfen mit <code class="bg-dark-800 px-2 py-1 rounded text-accent-primary">msinfo32</code> → "Virtualization-based security" sollte "Not enabled" zeigen.</p>
-
-        <h3 class="text-lg font-semibold text-accent-secondary mb-4 mt-8 pl-4 border-l-2 border-accent-secondary">Weitere Gaming-Optimierungen</h3>
-
-        <div class="glass-strong rounded-xl overflow-hidden">
-          <table class="w-full text-sm">
-            <thead>
-              <tr class="bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10">
-                <th class="text-left px-4 py-3 text-accent-primary font-semibold uppercase text-xs">Einstellung</th>
-                <th class="text-left px-4 py-3 text-accent-primary font-semibold uppercase text-xs">Pfad</th>
-                <th class="text-left px-4 py-3 text-accent-primary font-semibold uppercase text-xs">Wert</th>
-              </tr>
-            </thead>
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">Weitere Gaming-Optimierungen</h3>
+        <div class="glass-strong rounded-xl overflow-hidden mb-4">
+          <table class="w-full text-sm"><thead><tr class="bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10"><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Einstellung</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Pfad</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Wert</th></tr></thead>
             <tbody class="divide-y divide-accent-primary/10">
-              <tr>
-                <td class="px-4 py-3">Game Mode</td>
-                <td class="px-4 py-3 text-gray-400">Einstellungen → Gaming</td>
-                <td class="px-4 py-3"><span class="text-accent-primary font-semibold">EIN</span></td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3">HAGS</td>
-                <td class="px-4 py-3 text-gray-400">System → Bildschirm → Grafik</td>
-                <td class="px-4 py-3"><span class="text-accent-primary font-semibold">EIN</span></td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3">Optimierungen für Fenstermodus</td>
-                <td class="px-4 py-3 text-gray-400">System → Bildschirm → Grafik</td>
-                <td class="px-4 py-3"><span class="text-accent-warning font-semibold">AUS (24H2 Stutter Fix!)</span></td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3">Xbox Game Bar</td>
-                <td class="px-4 py-3 text-gray-400">Einstellungen → Gaming</td>
-                <td class="px-4 py-3"><span class="text-accent-primary font-semibold">AUS</span></td>
-              </tr>
+              <tr><td class="px-4 py-2">Game Mode</td><td class="px-4 py-2 text-gray-400">Einstellungen → Gaming</td><td class="px-4 py-2 text-accent-primary font-semibold">EIN</td></tr>
+              <tr><td class="px-4 py-2">HAGS</td><td class="px-4 py-2 text-gray-400">System → Bildschirm → Grafik</td><td class="px-4 py-2 text-accent-primary font-semibold">EIN</td></tr>
+              <tr><td class="px-4 py-2">Optimierungen für Fenstermodus</td><td class="px-4 py-2 text-gray-400">System → Bildschirm → Grafik</td><td class="px-4 py-2 text-accent-warning font-semibold">AUS (Stutter Fix!)</td></tr>
+              <tr><td class="px-4 py-2">Xbox Game Bar</td><td class="px-4 py-2 text-gray-400">Einstellungen → Gaming</td><td class="px-4 py-2 text-accent-primary font-semibold">AUS</td></tr>
+              <tr><td class="px-4 py-2">Hintergrundaufnahme</td><td class="px-4 py-2 text-gray-400">Gaming → Aufnahmen</td><td class="px-4 py-2 text-accent-primary font-semibold">AUS</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">Ultimate Performance Power Plan</h3>
+        <div class="bg-dark-900 rounded-lg p-3 font-mono text-xs text-accent-primary overflow-x-auto mb-2"><code>powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61</code></div>
+        <p class="text-sm text-gray-400">Dann in Systemsteuerung → Energieoptionen auswählen.</p>
+      </section>
+
+      <!-- Section: NVIDIA -->
+      <section id="nvidia" class="py-10 scroll-mt-8">
+        <div class="flex items-center gap-4 mb-6 pb-3 border-b border-accent-primary/20">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 flex items-center justify-center">
+            <i data-lucide="gpu-card" class="w-5 h-5 text-accent-primary"></i>
+          </div>
+          <h2 class="text-2xl font-bold text-gradient">NVIDIA Control Panel</h2>
+        </div>
+        <p class="text-gray-400 mb-4 text-sm">Rechtsklick auf Desktop → NVIDIA Systemsteuerung → 3D-Einstellungen verwalten</p>
+
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">Globale Einstellungen</h3>
+        <div class="glass-strong rounded-xl overflow-hidden mb-4">
+          <table class="w-full text-sm"><thead><tr class="bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10"><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Einstellung</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Wert</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Erklärung</th></tr></thead>
+            <tbody class="divide-y divide-accent-primary/10">
+              <tr><td class="px-4 py-2">Energieverwaltungsmodus</td><td class="px-4 py-2 text-accent-primary font-semibold">Maximale Leistung</td><td class="px-4 py-2 text-gray-400">Verhindert GPU Downclocking</td></tr>
+              <tr><td class="px-4 py-2">Modus für geringe Latenz</td><td class="px-4 py-2 text-accent-primary font-semibold">Ein</td><td class="px-4 py-2 text-gray-400">Nicht Ultra (kann Probleme machen)</td></tr>
+              <tr><td class="px-4 py-2">Vertikale Synchronisierung</td><td class="px-4 py-2 text-accent-primary font-semibold">Ein</td><td class="px-4 py-2 text-gray-400">Mit G-Sync + Frame Cap</td></tr>
+              <tr><td class="px-4 py-2">Max. Bildfrequenz</td><td class="px-4 py-2 text-accent-warning font-semibold">237 FPS</td><td class="px-4 py-2 text-gray-400">240Hz - 3 für G-Sync Headroom</td></tr>
+              <tr><td class="px-4 py-2">Shader-Cache-Größe</td><td class="px-4 py-2 text-accent-primary font-semibold">100 GB / Unbegrenzt</td><td class="px-4 py-2 text-gray-400">Verhindert Shader-Stutter</td></tr>
+              <tr><td class="px-4 py-2">Texturfilterung - Qualität</td><td class="px-4 py-2 text-accent-primary font-semibold">Hohe Leistung</td><td class="px-4 py-2 text-gray-400">Minimal sichtbar</td></tr>
+              <tr><td class="px-4 py-2">Anisotrope Filterung</td><td class="px-4 py-2 text-accent-primary font-semibold">16x</td><td class="px-4 py-2 text-gray-400">Kein Performance-Impact</td></tr>
+              <tr><td class="px-4 py-2">Max. Bildfrequenz Hintergrund</td><td class="px-4 py-2">30 FPS</td><td class="px-4 py-2 text-gray-400">Spart Strom bei Alt-Tab</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">G-Sync Einstellungen (240Hz OLED)</h3>
+        <ol class="list-decimal list-inside space-y-1 text-sm text-gray-400 mb-4">
+          <li>Anzeige → G-SYNC einrichten</li>
+          <li>"G-SYNC, G-SYNC-kompatibel aktivieren" → <strong class="text-white">Häkchen</strong></li>
+          <li>"Für Fenstermodus und Vollbild aktivieren"</li>
+          <li>ASUS OLED als primären G-Sync Monitor wählen</li>
+        </ol>
+        <div class="glass-strong rounded-xl p-3 border-l-4 border-accent-primary flex gap-3">
+          <i data-lucide="lightbulb" class="w-5 h-5 text-accent-primary flex-shrink-0"></i>
+          <p class="text-sm"><span class="font-semibold text-accent-primary">Optimale Kombination:</span> G-Sync EIN + V-Sync EIN + Max Frame Rate 237 + Low Latency EIN = Tear-Free ohne Input Lag!</p>
+        </div>
+      </section>
+
+      <!-- Section: RAM -->
+      <section id="ram" class="py-10 scroll-mt-8">
+        <div class="flex items-center gap-4 mb-6 pb-3 border-b border-accent-primary/20">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 flex items-center justify-center">
+            <i data-lucide="memory-stick" class="w-5 h-5 text-accent-primary"></i>
+          </div>
+          <h2 class="text-2xl font-bold text-gradient">RAM-Optimierung</h2>
+        </div>
+        <p class="text-gray-400 mb-4">DDR5-6000 CL30 mit 2x32GB ist der perfekte Sweet Spot für AM5:</p>
+        <ul class="list-disc list-inside space-y-1 text-sm text-gray-400 mb-4">
+          <li><strong class="text-white">FCLK 3000MHz</strong> (1:1 Ratio) = beste Latenz</li>
+          <li><strong class="text-white">2 Sticks</strong> = optimal (nicht 4!)</li>
+          <li><strong class="text-white">EXPO Profile 1</strong> aktiviert alles automatisch</li>
+        </ul>
+        <div class="glass-strong rounded-xl p-3 mb-4 border-l-4 border-accent-danger flex gap-3">
+          <i data-lucide="alert-octagon" class="w-5 h-5 text-accent-danger flex-shrink-0"></i>
+          <p class="text-sm">Verwende <span class="font-semibold text-accent-danger">NICHT</span> 4 RAM-Sticks! Dies würde ein Downclocking auf ~5600MHz erfordern.</p>
+        </div>
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">Erwartete Benchmarks</h3>
+        <div class="glass-strong rounded-xl overflow-hidden">
+          <table class="w-full text-sm"><thead><tr class="bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10"><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Test</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Stock EXPO</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Optimiert</th></tr></thead>
+            <tbody class="divide-y divide-accent-primary/10">
+              <tr><td class="px-4 py-2">AIDA64 Latenz</td><td class="px-4 py-2">65-70ns</td><td class="px-4 py-2 text-accent-primary font-semibold">60-65ns</td></tr>
+              <tr><td class="px-4 py-2">AIDA64 Read/Write</td><td class="px-4 py-2">~80 GB/s</td><td class="px-4 py-2 text-accent-primary font-semibold">~85 GB/s</td></tr>
             </tbody>
           </table>
         </div>
       </section>
 
+      <!-- Section: SSD -->
+      <section id="ssd" class="py-10 scroll-mt-8">
+        <div class="flex items-center gap-4 mb-6 pb-3 border-b border-accent-primary/20">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 flex items-center justify-center">
+            <i data-lucide="hard-drive" class="w-5 h-5 text-accent-primary"></i>
+          </div>
+          <h2 class="text-2xl font-bold text-gradient">SSD-Wartung (Samsung 990 PRO)</h2>
+        </div>
+        <div class="glass-strong rounded-xl p-4 mb-4 border-l-4 border-accent-danger flex gap-3">
+          <i data-lucide="alert-octagon" class="w-5 h-5 text-accent-danger flex-shrink-0 mt-0.5"></i>
+          <div><p class="font-semibold text-accent-danger">KRITISCH: Firmware prüfen!</p><p class="text-sm text-gray-400">Frühere Firmware-Versionen hatten schnelle Health-Verschlechterung! Stelle sicher, dass du Firmware <strong class="text-white">5B2QJXF7</strong> oder neuer hast.</p></div>
+        </div>
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">Samsung Magician Einstellungen</h3>
+        <ul class="list-disc list-inside space-y-1 text-sm text-gray-400">
+          <li>Firmware auf neueste Version updaten</li>
+          <li>Performance Optimization → "Full Performance Mode"</li>
+          <li>Drive Health regelmäßig prüfen (sollte "Good" sein)</li>
+          <li>Temperatur sollte unter 70°C bleiben</li>
+        </ul>
+      </section>
+
+      <!-- Section: Anti-Stutter -->
+      <section id="antistutter" class="py-10 scroll-mt-8">
+        <div class="flex items-center gap-4 mb-6 pb-3 border-b border-accent-primary/20">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 flex items-center justify-center">
+            <i data-lucide="zap-off" class="w-5 h-5 text-accent-primary"></i>
+          </div>
+          <h2 class="text-2xl font-bold text-gradient">Anti-Stutter Fixes</h2>
+        </div>
+        <div class="glass-strong rounded-xl overflow-hidden mb-4">
+          <table class="w-full text-sm"><thead><tr class="bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10"><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Problem</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Lösung</th></tr></thead>
+            <tbody class="divide-y divide-accent-primary/10">
+              <tr><td class="px-4 py-2">Nach Win11 24H2 Update</td><td class="px-4 py-2 text-accent-primary font-semibold">Optimierungen für Fenstermodus → AUS</td></tr>
+              <tr><td class="px-4 py-2">Nach NVIDIA Update</td><td class="px-4 py-2">DDU Clean Install</td></tr>
+              <tr><td class="px-4 py-2">Micro-Stuttering allgemein</td><td class="px-4 py-2 text-accent-primary font-semibold">Global C-State auf Enabled (nicht Auto!)</td></tr>
+              <tr><td class="px-4 py-2">Bei allen Spielen</td><td class="px-4 py-2">VBS komplett deaktivieren</td></tr>
+              <tr><td class="px-4 py-2">Game Bar Overlays</td><td class="px-4 py-2">Xbox Game Bar komplett AUS</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">System File Check</h3>
+        <div class="bg-dark-900 rounded-lg p-3 font-mono text-xs text-accent-primary overflow-x-auto"><code>sfc /scannow && DISM /Online /Cleanup-Image /RestoreHealth</code></div>
+      </section>
+
       <!-- Section: Wooting -->
-      <section id="wooting" class="py-12 scroll-mt-8">
-        <div class="flex items-center gap-4 mb-8 pb-4 border-b border-accent-primary/20">
-          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 flex items-center justify-center">
-            <i data-lucide="keyboard" class="w-6 h-6 text-accent-primary"></i>
+      <section id="wooting" class="py-10 scroll-mt-8">
+        <div class="flex items-center gap-4 mb-6 pb-3 border-b border-accent-primary/20">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 flex items-center justify-center">
+            <i data-lucide="keyboard" class="w-5 h-5 text-accent-primary"></i>
           </div>
           <h2 class="text-2xl font-bold text-gradient">Wooting 80HE Settings</h2>
         </div>
+        <p class="text-gray-400 mb-4 text-sm">Beste Gaming-Tastatur dank Rapid Trigger und 8kHz Polling.</p>
 
-        <p class="text-gray-400 mb-6">Die Wooting 80HE ist das beste Gaming-Keyboard für Competitive Gaming dank Rapid Trigger und 8kHz Polling. Hier sind optimierte Profile für verschiedene Genres:</p>
-
-        <h3 class="text-lg font-semibold text-accent-secondary mb-4 pl-4 border-l-2 border-accent-secondary">Basis-Einstellungen (Global)</h3>
-
-        <div class="glass-strong rounded-xl overflow-hidden mb-8">
-          <table class="w-full text-sm">
-            <thead>
-              <tr class="bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10">
-                <th class="text-left px-4 py-3 text-accent-primary font-semibold uppercase text-xs">Einstellung</th>
-                <th class="text-left px-4 py-3 text-accent-primary font-semibold uppercase text-xs">Empfehlung</th>
-              </tr>
-            </thead>
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">Basis-Einstellungen</h3>
+        <div class="glass-strong rounded-xl overflow-hidden mb-6">
+          <table class="w-full text-sm"><thead><tr class="bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10"><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Einstellung</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Empfehlung</th></tr></thead>
             <tbody class="divide-y divide-accent-primary/10">
-              <tr>
-                <td class="px-4 py-3">Polling Rate</td>
-                <td class="px-4 py-3"><span class="text-accent-primary font-semibold">8000 Hz (8kHz)</span></td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3">Rapid Trigger</td>
-                <td class="px-4 py-3"><span class="text-accent-primary font-semibold">Aktiviert</span></td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3">Continuous Rapid Trigger</td>
-                <td class="px-4 py-3"><span class="text-accent-primary font-semibold">An (für WASD)</span></td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3">Tachyon Mode</td>
-                <td class="px-4 py-3"><span class="text-accent-primary font-semibold">An</span></td>
-              </tr>
+              <tr><td class="px-4 py-2">Polling Rate</td><td class="px-4 py-2 text-accent-primary font-semibold">8000 Hz (8kHz)</td></tr>
+              <tr><td class="px-4 py-2">Tachyon Mode</td><td class="px-4 py-2 text-accent-primary font-semibold">EIN</td></tr>
+              <tr><td class="px-4 py-2">Rapid Trigger</td><td class="px-4 py-2 text-accent-primary font-semibold">Aktiviert</td></tr>
+              <tr><td class="px-4 py-2">Continuous RT (WASD)</td><td class="px-4 py-2 text-accent-primary font-semibold">EIN</td></tr>
             </tbody>
           </table>
         </div>
 
-        <h3 class="text-lg font-semibold text-accent-secondary mb-4 pl-4 border-l-2 border-accent-secondary">Game-Spezifische Profile</h3>
-
-        <div class="grid md:grid-cols-2 gap-4 mb-8">
-          <!-- FPS Competitive -->
-          <div class="glass-strong rounded-xl p-5 hover:border-accent-primary/50 transition-colors">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-10 h-10 rounded-lg bg-dark-700 flex items-center justify-center">
-                <i data-lucide="crosshair" class="w-5 h-5 text-accent-danger"></i>
-              </div>
-              <div>
-                <h4 class="font-semibold text-white">FPS Competitive</h4>
-                <p class="text-xs text-gray-500">CS2, Valorant, R6 Siege</p>
-              </div>
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">Game-Profile</h3>
+        <div class="grid md:grid-cols-2 gap-3 mb-6">
+          <div class="glass-strong rounded-xl p-4">
+            <div class="flex items-center gap-2 mb-3"><i data-lucide="crosshair" class="w-5 h-5 text-accent-danger"></i><h4 class="font-semibold">FPS Competitive</h4></div>
+            <p class="text-xs text-gray-500 mb-2">CS2, Valorant, R6 Siege</p>
+            <div class="space-y-1 text-sm">
+              <div class="flex justify-between"><span class="text-gray-500">Actuation</span><span class="text-accent-secondary">0.1-0.2mm</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">RT Sensitivity</span><span class="text-accent-secondary">0.2-0.4mm</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Rappy Snappy</span><span class="text-accent-primary">AN</span></div>
             </div>
-            <div class="grid grid-cols-2 gap-2 text-sm">
-              <div class="flex justify-between py-1 border-b border-white/5">
-                <span class="text-gray-500">Actuation</span>
-                <span class="text-accent-secondary font-semibold">0.1-0.2mm</span>
-              </div>
-              <div class="flex justify-between py-1 border-b border-white/5">
-                <span class="text-gray-500">RT Sensitivity</span>
-                <span class="text-accent-secondary font-semibold">0.2-0.4mm</span>
-              </div>
-              <div class="flex justify-between py-1 border-b border-white/5">
-                <span class="text-gray-500">Continuous RT</span>
-                <span class="text-accent-primary font-semibold">AN</span>
-              </div>
-              <div class="flex justify-between py-1 border-b border-white/5">
-                <span class="text-gray-500">Rappy Snappy</span>
-                <span class="text-accent-primary font-semibold">AN</span>
-              </div>
-            </div>
-            <p class="text-xs text-gray-500 mt-3">Maximale Reaktionszeit für Counter-Strafing</p>
           </div>
-
-          <!-- MMO -->
-          <div class="glass-strong rounded-xl p-5 hover:border-accent-primary/50 transition-colors">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-10 h-10 rounded-lg bg-dark-700 flex items-center justify-center">
-                <i data-lucide="swords" class="w-5 h-5 text-accent-purple"></i>
-              </div>
-              <div>
-                <h4 class="font-semibold text-white">MMO / WoW</h4>
-                <p class="text-xs text-gray-500">WoW, FFXIV, Lost Ark</p>
-              </div>
+          <div class="glass-strong rounded-xl p-4">
+            <div class="flex items-center gap-2 mb-3"><i data-lucide="swords" class="w-5 h-5 text-accent-purple"></i><h4 class="font-semibold">MMO / WoW</h4></div>
+            <p class="text-xs text-gray-500 mb-2">WoW, FFXIV, Lost Ark</p>
+            <div class="space-y-1 text-sm">
+              <div class="flex justify-between"><span class="text-gray-500">Actuation</span><span class="text-accent-secondary">1.0-1.5mm</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Rapid Trigger</span><span class="text-gray-400">Optional</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Keybinds</span><span class="text-accent-secondary">1.5mm</span></div>
             </div>
-            <div class="grid grid-cols-2 gap-2 text-sm">
-              <div class="flex justify-between py-1 border-b border-white/5">
-                <span class="text-gray-500">Actuation</span>
-                <span class="text-accent-secondary font-semibold">1.0-1.5mm</span>
-              </div>
-              <div class="flex justify-between py-1 border-b border-white/5">
-                <span class="text-gray-500">Rapid Trigger</span>
-                <span class="text-gray-400">Optional</span>
-              </div>
-              <div class="flex justify-between py-1 border-b border-white/5">
-                <span class="text-gray-500">WASD</span>
-                <span class="text-accent-secondary font-semibold">1.0mm</span>
-              </div>
-              <div class="flex justify-between py-1 border-b border-white/5">
-                <span class="text-gray-500">Keybinds</span>
-                <span class="text-accent-secondary font-semibold">1.5mm</span>
-              </div>
-            </div>
-            <p class="text-xs text-gray-500 mt-3">Verhindert versehentliche Skill-Aktivierung</p>
           </div>
         </div>
 
-        <h3 class="text-lg font-semibold text-accent-secondary mb-4 pl-4 border-l-2 border-accent-secondary">Wootabase Import-Codes</h3>
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">Wootabase Import-Codes</h3>
+        <div class="glass-strong rounded-xl p-4 space-y-2">
+          <a href="https://wootabase.com/profile/5de7a9b20bbef678f8aadc77e982386cc3f4" target="_blank" class="flex items-center justify-between p-2 bg-dark-800 rounded-lg hover:bg-dark-700 transition-colors text-sm"><span class="flex items-center gap-2"><i data-lucide="download" class="w-4 h-4 text-accent-primary"></i>BEST CS2 SETTINGS BY WOOTING</span><span class="text-xs text-gray-500">CS2</span></a>
+          <a href="https://wootabase.com/profile/f8e85ca041a8787333aa8502da524aa4bb50" target="_blank" class="flex items-center justify-between p-2 bg-dark-800 rounded-lg hover:bg-dark-700 transition-colors text-sm"><span class="flex items-center gap-2"><i data-lucide="download" class="w-4 h-4 text-accent-primary"></i>FPS Rapid Trigger Profile</span><span class="text-xs text-gray-500">Valorant</span></a>
+          <a href="https://wooting.io/ambassadors/tenz" target="_blank" class="flex items-center justify-between p-2 bg-dark-800 rounded-lg hover:bg-dark-700 transition-colors text-sm"><span class="flex items-center gap-2"><i data-lucide="star" class="w-4 h-4 text-accent-warning"></i>TenZ Official Settings</span><span class="text-xs text-gray-500">Pro Player</span></a>
+        </div>
+        <div class="glass-strong rounded-xl p-3 mt-4 border-l-4 border-accent-danger flex gap-3">
+          <i data-lucide="alert-octagon" class="w-5 h-5 text-accent-danger flex-shrink-0"></i>
+          <p class="text-sm"><span class="font-semibold text-accent-danger">Achtung:</span> Rappy Snappy ist in CS2 verboten!</p>
+        </div>
+      </section>
 
-        <div class="glass-strong rounded-xl p-5">
-          <p class="text-sm text-gray-400 mb-4">Importiere diese Profile direkt in Wootility:</p>
-          <div class="space-y-3">
-            <a href="https://wootabase.com/profile/5de7a9b20bbef678f8aadc77e982386cc3f4" target="_blank" class="flex items-center justify-between p-3 bg-dark-800 rounded-lg hover:bg-dark-700 transition-colors">
-              <div class="flex items-center gap-3">
-                <i data-lucide="download" class="w-5 h-5 text-accent-primary"></i>
-                <span>BEST CS2 SETTINGS BY WOOTING</span>
-              </div>
-              <span class="text-xs text-gray-500">CS2</span>
-            </a>
-            <a href="https://wootabase.com/profile/f8e85ca041a8787333aa8502da524aa4bb50" target="_blank" class="flex items-center justify-between p-3 bg-dark-800 rounded-lg hover:bg-dark-700 transition-colors">
-              <div class="flex items-center gap-3">
-                <i data-lucide="download" class="w-5 h-5 text-accent-primary"></i>
-                <span>FPS Rapid Trigger Profile</span>
-              </div>
-              <span class="text-xs text-gray-500">Valorant/FPS</span>
-            </a>
-            <a href="https://wootabase.com/profile/502a0236cc59e21126ba066c0576375ef4e8" target="_blank" class="flex items-center justify-between p-3 bg-dark-800 rounded-lg hover:bg-dark-700 transition-colors">
-              <div class="flex items-center gap-3">
-                <i data-lucide="download" class="w-5 h-5 text-accent-primary"></i>
-                <span>Radiant Valorant Profile</span>
-              </div>
-              <span class="text-xs text-gray-500">Valorant</span>
-            </a>
-            <a href="https://wooting.io/ambassadors/tenz" target="_blank" class="flex items-center justify-between p-3 bg-dark-800 rounded-lg hover:bg-dark-700 transition-colors">
-              <div class="flex items-center gap-3">
-                <i data-lucide="star" class="w-5 h-5 text-accent-warning"></i>
-                <span>TenZ Official Settings</span>
-              </div>
-              <span class="text-xs text-gray-500">Pro Player</span>
-            </a>
+      <!-- Section: Mouse -->
+      <section id="mouse" class="py-10 scroll-mt-8">
+        <div class="flex items-center gap-4 mb-6 pb-3 border-b border-accent-primary/20">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 flex items-center justify-center">
+            <i data-lucide="mouse" class="w-5 h-5 text-accent-primary"></i>
           </div>
+          <h2 class="text-2xl font-bold text-gradient">Razer Viper V3 Pro Settings</h2>
+        </div>
+        <p class="text-gray-400 mb-4 text-sm">Beste Wireless Gaming-Maus 2025 mit 8kHz Polling und 54g Gewicht.</p>
+
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">Razer Synapse 4 Einstellungen</h3>
+        <div class="glass-strong rounded-xl overflow-hidden mb-4">
+          <table class="w-full text-sm"><thead><tr class="bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10"><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Einstellung</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Empfehlung</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Hinweis</th></tr></thead>
+            <tbody class="divide-y divide-accent-primary/10">
+              <tr><td class="px-4 py-2">DPI</td><td class="px-4 py-2 text-accent-primary font-semibold">800 - 1600</td><td class="px-4 py-2 text-gray-400">800 ist Pro-Standard</td></tr>
+              <tr><td class="px-4 py-2">Polling Rate</td><td class="px-4 py-2 text-accent-primary font-semibold">8000 Hz</td><td class="px-4 py-2 text-gray-400">Braucht 4K Hz Dongle</td></tr>
+              <tr><td class="px-4 py-2">Lift-Off Distance</td><td class="px-4 py-2 text-accent-primary font-semibold">1mm (Low)</td><td class="px-4 py-2 text-gray-400">Präzises Aiming</td></tr>
+              <tr><td class="px-4 py-2">Motion Sync</td><td class="px-4 py-2 text-accent-primary font-semibold">EIN</td><td class="px-4 py-2 text-gray-400">Sync mit Monitor</td></tr>
+              <tr><td class="px-4 py-2">Low Power Mode</td><td class="px-4 py-2 text-accent-danger font-semibold">AUS</td><td class="px-4 py-2 text-gray-400">Reduziert Polling!</td></tr>
+            </tbody>
+          </table>
         </div>
 
-        <!-- Warning -->
-        <div class="glass-strong rounded-xl p-4 mt-6 border-l-4 border-accent-danger flex gap-4">
-          <i data-lucide="alert-octagon" class="w-6 h-6 text-accent-danger flex-shrink-0"></i>
-          <div>
-            <p class="font-semibold text-accent-danger">Achtung: Anti-Cheat</p>
-            <p class="text-sm text-gray-400">Rappy Snappy ist in CS2 verboten! Prüfe immer die Regeln des jeweiligen Spiels.</p>
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">Pro Player Settings</h3>
+        <div class="grid md:grid-cols-2 gap-3">
+          <div class="glass-strong rounded-xl p-3"><p class="font-semibold text-accent-primary">TenZ (Valorant)</p><p class="text-sm text-gray-400">800 DPI, 0.4 Sens, 4000 Hz</p></div>
+          <div class="glass-strong rounded-xl p-3"><p class="font-semibold text-accent-secondary">s1mple (CS2)</p><p class="text-sm text-gray-400">400 DPI, 3.09 Sens, 1000 Hz</p></div>
+        </div>
+      </section>
+
+      <!-- Section: Headset -->
+      <section id="headset" class="py-10 scroll-mt-8">
+        <div class="flex items-center gap-4 mb-6 pb-3 border-b border-accent-primary/20">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 flex items-center justify-center">
+            <i data-lucide="headphones" class="w-5 h-5 text-accent-primary"></i>
           </div>
+          <h2 class="text-2xl font-bold text-gradient">SteelSeries Arctis Nova Pro Wireless</h2>
+        </div>
+
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">SteelSeries GG (Sonar) Settings</h3>
+        <div class="glass-strong rounded-xl overflow-hidden mb-4">
+          <table class="w-full text-sm"><thead><tr class="bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10"><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Einstellung</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Gaming</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Musik</th></tr></thead>
+            <tbody class="divide-y divide-accent-primary/10">
+              <tr><td class="px-4 py-2">Spatial Audio</td><td class="px-4 py-2 text-accent-primary font-semibold">Sonar 3D Audio</td><td class="px-4 py-2">Stereo</td></tr>
+              <tr><td class="px-4 py-2">EQ Preset</td><td class="px-4 py-2 text-accent-primary font-semibold">FPS Competition</td><td class="px-4 py-2">Flat/Smiley</td></tr>
+              <tr><td class="px-4 py-2">ANC</td><td class="px-4 py-2 text-accent-warning">AUS/Niedrig</td><td class="px-4 py-2">Hoch</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">FPS EQ (Schritte hören)</h3>
+        <div class="glass-strong rounded-xl p-3 mb-4">
+          <div class="flex justify-between text-sm mb-1"><span class="text-gray-400">Bass</span><span class="text-accent-secondary">-2 dB</span></div>
+          <div class="flex justify-between text-sm mb-1"><span class="text-gray-400">Mids</span><span class="text-accent-secondary">+1 dB</span></div>
+          <div class="flex justify-between text-sm"><span class="text-gray-400">Treble</span><span class="text-accent-primary font-semibold">+3 dB</span></div>
+        </div>
+
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">Mikrofon-Settings</h3>
+        <div class="glass-strong rounded-xl overflow-hidden">
+          <table class="w-full text-sm"><tbody class="divide-y divide-accent-primary/10">
+            <tr><td class="px-4 py-2 text-gray-400">Gain</td><td class="px-4 py-2 text-accent-primary font-semibold">70-80%</td></tr>
+            <tr><td class="px-4 py-2 text-gray-400">Noise Gate</td><td class="px-4 py-2">Mittel</td></tr>
+            <tr><td class="px-4 py-2 text-gray-400">Noise Cancellation</td><td class="px-4 py-2 text-accent-primary font-semibold">Hoch</td></tr>
+          </tbody></table>
+        </div>
+      </section>
+
+      <!-- Section: OLED -->
+      <section id="oled" class="py-10 scroll-mt-8">
+        <div class="flex items-center gap-4 mb-6 pb-3 border-b border-accent-primary/20">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 flex items-center justify-center">
+            <i data-lucide="monitor" class="w-5 h-5 text-accent-primary"></i>
+          </div>
+          <h2 class="text-2xl font-bold text-gradient">ASUS ROG SWIFT OLED (DisplayWidget)</h2>
+        </div>
+
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">GameVisual Modi</h3>
+        <div class="glass-strong rounded-xl overflow-hidden mb-4">
+          <table class="w-full text-sm"><thead><tr class="bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10"><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Modus</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Verwendung</th></tr></thead>
+            <tbody class="divide-y divide-accent-primary/10">
+              <tr><td class="px-4 py-2 text-accent-primary font-semibold">User Mode</td><td class="px-4 py-2">🎮 SDR Gaming (kalibrierbar)</td></tr>
+              <tr><td class="px-4 py-2">sRGB Mode</td><td class="px-4 py-2">📄 Arbeit, Web-Browsing</td></tr>
+              <tr><td class="px-4 py-2">Gaming HDR</td><td class="px-4 py-2">🌟 HDR-Spiele</td></tr>
+              <tr><td class="px-4 py-2">FPS Mode</td><td class="px-4 py-2">🔫 Competitive (hellt Schatten)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">OLED Care (NICHT deaktivieren!)</h3>
+        <div class="glass-strong rounded-xl overflow-hidden mb-4">
+          <table class="w-full text-sm"><tbody class="divide-y divide-accent-primary/10">
+            <tr><td class="px-4 py-2">Screen Saver</td><td class="px-4 py-2 text-accent-primary font-semibold">AN</td></tr>
+            <tr><td class="px-4 py-2">Pixel Shift</td><td class="px-4 py-2 text-accent-primary font-semibold">AN</td></tr>
+            <tr><td class="px-4 py-2">Logo Brightness</td><td class="px-4 py-2 text-accent-primary font-semibold">AN (Low/Medium)</td></tr>
+            <tr><td class="px-4 py-2">Pixel Cleaning</td><td class="px-4 py-2">Periodisch ausführen</td></tr>
+          </tbody></table>
+        </div>
+        <div class="glass-strong rounded-xl p-3 border-l-4 border-accent-warning flex gap-3">
+          <i data-lucide="alert-triangle" class="w-5 h-5 text-accent-warning flex-shrink-0"></i>
+          <p class="text-sm"><span class="font-semibold text-accent-warning">HDR Tipp:</span> Windows HDR NUR aktivieren bei HDR-Content! SDR mit HDR sieht ausgewaschen aus.</p>
+        </div>
+      </section>
+
+      <!-- Section: OBS -->
+      <section id="obs" class="py-10 scroll-mt-8">
+        <div class="flex items-center gap-4 mb-6 pb-3 border-b border-accent-primary/20">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 flex items-center justify-center">
+            <i data-lucide="video" class="w-5 h-5 text-accent-primary"></i>
+          </div>
+          <h2 class="text-2xl font-bold text-gradient">OBS Streaming (Twitch)</h2>
+        </div>
+
+        <div class="glass-strong rounded-xl p-4 mb-4">
+          <h4 class="font-semibold text-accent-primary mb-2">🚀 Enhanced Broadcasting (Empfohlen!)</h4>
+          <p class="text-sm text-gray-400 mb-2">Als Affiliate nutze Enhanced Broadcasting (OBS 30.2+):</p>
+          <ul class="list-disc list-inside text-sm text-gray-400 space-y-1">
+            <li>Automatische Transcodes für alle Viewer</li>
+            <li>Client-seitige Encodierung mit RTX 4080</li>
+            <li>OBS → Einstellungen → Stream → "Enhanced Broadcasting" ✓</li>
+          </ul>
+        </div>
+
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">Manuelle NVENC Settings</h3>
+        <div class="glass-strong rounded-xl overflow-hidden mb-4">
+          <table class="w-full text-sm"><thead><tr class="bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10"><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Einstellung</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Twitch</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">YouTube</th></tr></thead>
+            <tbody class="divide-y divide-accent-primary/10">
+              <tr><td class="px-4 py-2">Encoder</td><td class="px-4 py-2 text-accent-primary font-semibold">NVENC H.264</td><td class="px-4 py-2 text-accent-primary font-semibold">NVENC AV1</td></tr>
+              <tr><td class="px-4 py-2">Rate Control</td><td class="px-4 py-2">CBR</td><td class="px-4 py-2">CBR</td></tr>
+              <tr><td class="px-4 py-2">Bitrate</td><td class="px-4 py-2">6000-8000 kbps</td><td class="px-4 py-2">12000-20000 kbps</td></tr>
+              <tr><td class="px-4 py-2">Keyframe</td><td class="px-4 py-2 text-accent-warning font-semibold">2 (Pflicht!)</td><td class="px-4 py-2">2</td></tr>
+              <tr><td class="px-4 py-2">Preset</td><td class="px-4 py-2 text-accent-primary font-semibold">P6: Slower</td><td class="px-4 py-2">P6: Slower</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">Video-Einstellungen</h3>
+        <div class="glass-strong rounded-xl overflow-hidden">
+          <table class="w-full text-sm"><tbody class="divide-y divide-accent-primary/10">
+            <tr><td class="px-4 py-2 text-gray-400">Base Resolution</td><td class="px-4 py-2 text-accent-primary font-semibold">3840x2160 (4K)</td></tr>
+            <tr><td class="px-4 py-2 text-gray-400">Output Resolution</td><td class="px-4 py-2">1920x1080</td></tr>
+            <tr><td class="px-4 py-2 text-gray-400">Downscale Filter</td><td class="px-4 py-2 text-accent-primary font-semibold">Lanczos (36 Samples)</td></tr>
+            <tr><td class="px-4 py-2 text-gray-400">FPS</td><td class="px-4 py-2">60</td></tr>
+          </tbody></table>
+        </div>
+      </section>
+
+      <!-- Section: Upgrades -->
+      <section id="upgrades" class="py-10 scroll-mt-8">
+        <div class="flex items-center gap-4 mb-6 pb-3 border-b border-accent-primary/20">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 flex items-center justify-center">
+            <i data-lucide="trending-up" class="w-5 h-5 text-accent-primary"></i>
+          </div>
+          <h2 class="text-2xl font-bold text-gradient">Upgrade-Empfehlungen</h2>
+        </div>
+
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">Lohnenswerte Upgrades</h3>
+        <div class="glass-strong rounded-xl p-4 mb-4 border-l-4 border-accent-primary">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="text-2xl">🥇</span>
+            <div>
+              <p class="font-semibold text-accent-primary">GPU: RTX 5080 / 5090</p>
+              <p class="text-sm text-gray-400">Aktuell: RTX 4080 Super</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-400 mb-2">Erwarteter Gain: <span class="text-accent-primary">+40-70% Performance</span></p>
+          <p class="text-sm text-gray-400">→ Größter Gewinn für konstante 4K 240Hz. Warten auf Q1 2026 Release.</p>
+        </div>
+
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">Nicht lohnenswert</h3>
+        <div class="glass-strong rounded-xl overflow-hidden">
+          <table class="w-full text-sm"><thead><tr class="bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10"><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Komponente</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Grund</th></tr></thead>
+            <tbody class="divide-y divide-accent-primary/10">
+              <tr><td class="px-4 py-2">CPU</td><td class="px-4 py-2 text-gray-400">9800X3D ist die beste Gaming-CPU, kein Upgrade nötig</td></tr>
+              <tr><td class="px-4 py-2">RAM</td><td class="px-4 py-2 text-gray-400">64GB DDR5-6000 ist optimal, höhere Speeds bringen &lt;3%</td></tr>
+              <tr><td class="px-4 py-2">Keyboard</td><td class="px-4 py-2 text-gray-400">Wooting 80HE ist das Beste am Markt</td></tr>
+              <tr><td class="px-4 py-2">Mouse</td><td class="px-4 py-2 text-gray-400">Viper V3 Pro ist Top-Tier</td></tr>
+              <tr><td class="px-4 py-2">Headset</td><td class="px-4 py-2 text-gray-400">Arctis Nova Pro Wireless ist Premium</td></tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
       <!-- Section: Checklist -->
-      <section id="checklist" class="py-12 scroll-mt-8">
-        <div class="flex items-center gap-4 mb-8 pb-4 border-b border-accent-primary/20">
-          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 flex items-center justify-center">
-            <i data-lucide="check-square" class="w-6 h-6 text-accent-primary"></i>
+      <section id="checklist" class="py-10 scroll-mt-8">
+        <div class="flex items-center gap-4 mb-6 pb-3 border-b border-accent-primary/20">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 flex items-center justify-center">
+            <i data-lucide="check-square" class="w-5 h-5 text-accent-primary"></i>
           </div>
           <h2 class="text-2xl font-bold text-gradient">Wartungs-Checkliste</h2>
         </div>
 
-        <h3 class="text-lg font-semibold text-accent-secondary mb-4 pl-4 border-l-2 border-accent-secondary">Einmalige Einrichtung</h3>
-
-        <!-- Progress Bar -->
-        <div class="glass-strong rounded-xl p-4 mb-4 flex items-center gap-4 flex-wrap">
-          <div class="font-semibold text-accent-primary">
-            Fortschritt: <span id="setupCount">0</span>/<span id="setupTotal">10</span>
-          </div>
-          <div class="flex-1 min-w-[150px] h-2 bg-dark-800 rounded-full overflow-hidden">
-            <div id="setupBar" class="h-full bg-gradient-to-r from-accent-primary to-accent-secondary rounded-full transition-all duration-300" style="width: 0%"></div>
-          </div>
-          <button onclick="resetChecklist('setup')" class="px-3 py-1 border border-accent-danger text-accent-danger rounded-lg text-sm hover:bg-accent-danger/20 transition-colors">
-            Reset
-          </button>
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">Einmalige Einrichtung</h3>
+        <div class="glass-strong rounded-xl p-3 mb-3 flex items-center gap-3 flex-wrap">
+          <span class="font-semibold text-accent-primary">Fortschritt: <span id="setupCount">0</span>/<span id="setupTotal">12</span></span>
+          <div class="flex-1 min-w-[100px] h-2 bg-dark-800 rounded-full overflow-hidden"><div id="setupBar" class="h-full bg-gradient-to-r from-accent-primary to-accent-secondary rounded-full transition-all" style="width:0%"></div></div>
+          <button onclick="resetChecklist('setup')" class="px-2 py-1 border border-accent-danger text-accent-danger rounded text-xs hover:bg-accent-danger/20">Reset</button>
+        </div>
+        <div id="setupChecklist" class="space-y-2 mb-6">
+          <label class="flex items-center gap-3 p-2 glass rounded-lg cursor-pointer hover:border-accent-primary/30 text-sm"><input type="checkbox" class="checkbox-custom hidden" onchange="updateProgress('setup')"><span class="w-4 h-4 border-2 border-accent-primary rounded flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5 text-dark-900 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span><span>BIOS: EXPO Profile 1 aktivieren</span></label>
+          <label class="flex items-center gap-3 p-2 glass rounded-lg cursor-pointer hover:border-accent-primary/30 text-sm"><input type="checkbox" class="checkbox-custom hidden" onchange="updateProgress('setup')"><span class="w-4 h-4 border-2 border-accent-primary rounded flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5 text-dark-900 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span><span>BIOS: Global C-State auf Enabled</span></label>
+          <label class="flex items-center gap-3 p-2 glass rounded-lg cursor-pointer hover:border-accent-primary/30 text-sm"><input type="checkbox" class="checkbox-custom hidden" onchange="updateProgress('setup')"><span class="w-4 h-4 border-2 border-accent-primary rounded flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5 text-dark-900 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span><span>BIOS: PBO +200MHz + Curve Optimizer</span></label>
+          <label class="flex items-center gap-3 p-2 glass rounded-lg cursor-pointer hover:border-accent-primary/30 text-sm"><input type="checkbox" class="checkbox-custom hidden" onchange="updateProgress('setup')"><span class="w-4 h-4 border-2 border-accent-primary rounded flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5 text-dark-900 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span><span>Windows: VBS komplett deaktivieren</span></label>
+          <label class="flex items-center gap-3 p-2 glass rounded-lg cursor-pointer hover:border-accent-primary/30 text-sm"><input type="checkbox" class="checkbox-custom hidden" onchange="updateProgress('setup')"><span class="w-4 h-4 border-2 border-accent-primary rounded flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5 text-dark-900 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span><span>Windows: Fenstermodus-Optimierung AUS</span></label>
+          <label class="flex items-center gap-3 p-2 glass rounded-lg cursor-pointer hover:border-accent-primary/30 text-sm"><input type="checkbox" class="checkbox-custom hidden" onchange="updateProgress('setup')"><span class="w-4 h-4 border-2 border-accent-primary rounded flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5 text-dark-900 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span><span>NVIDIA: G-Sync + 237 FPS Cap</span></label>
+          <label class="flex items-center gap-3 p-2 glass rounded-lg cursor-pointer hover:border-accent-primary/30 text-sm"><input type="checkbox" class="checkbox-custom hidden" onchange="updateProgress('setup')"><span class="w-4 h-4 border-2 border-accent-primary rounded flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5 text-dark-900 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span><span>Samsung: Firmware 5B2QJXF7+ prüfen</span></label>
+          <label class="flex items-center gap-3 p-2 glass rounded-lg cursor-pointer hover:border-accent-primary/30 text-sm"><input type="checkbox" class="checkbox-custom hidden" onchange="updateProgress('setup')"><span class="w-4 h-4 border-2 border-accent-primary rounded flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5 text-dark-900 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span><span>Wooting: 8kHz + Rapid Trigger</span></label>
+          <label class="flex items-center gap-3 p-2 glass rounded-lg cursor-pointer hover:border-accent-primary/30 text-sm"><input type="checkbox" class="checkbox-custom hidden" onchange="updateProgress('setup')"><span class="w-4 h-4 border-2 border-accent-primary rounded flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5 text-dark-900 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span><span>Razer: 8kHz + LOD 1mm</span></label>
+          <label class="flex items-center gap-3 p-2 glass rounded-lg cursor-pointer hover:border-accent-primary/30 text-sm"><input type="checkbox" class="checkbox-custom hidden" onchange="updateProgress('setup')"><span class="w-4 h-4 border-2 border-accent-primary rounded flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5 text-dark-900 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span><span>SteelSeries: Sonar 3D Audio</span></label>
+          <label class="flex items-center gap-3 p-2 glass rounded-lg cursor-pointer hover:border-accent-primary/30 text-sm"><input type="checkbox" class="checkbox-custom hidden" onchange="updateProgress('setup')"><span class="w-4 h-4 border-2 border-accent-primary rounded flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5 text-dark-900 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span><span>DisplayWidget: OLED Care AN</span></label>
+          <label class="flex items-center gap-3 p-2 glass rounded-lg cursor-pointer hover:border-accent-primary/30 text-sm"><input type="checkbox" class="checkbox-custom hidden" onchange="updateProgress('setup')"><span class="w-4 h-4 border-2 border-accent-primary rounded flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5 text-dark-900 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span><span>iCUE: Pumpe auf Extreme</span></label>
         </div>
 
-        <!-- Checklist Items -->
-        <div id="setupChecklist" class="space-y-2 mb-8">
-          <label class="flex items-center gap-3 p-3 glass rounded-lg cursor-pointer hover:border-accent-primary/30 transition-colors">
-            <input type="checkbox" class="checkbox-custom hidden" onchange="updateProgress('setup')">
-            <div class="checkbox-label flex items-center gap-3 w-full">
-              <div class="checkbox-box w-5 h-5 border-2 border-accent-primary rounded flex items-center justify-center transition-colors">
-                <svg class="w-3 h-3 text-dark-900 opacity-0 transform scale-0 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-              </div>
-              <span>BIOS via Q-Flash updaten (kein Beta-BIOS!)</span>
-            </div>
-          </label>
-          <label class="flex items-center gap-3 p-3 glass rounded-lg cursor-pointer hover:border-accent-primary/30 transition-colors">
-            <input type="checkbox" class="checkbox-custom hidden" onchange="updateProgress('setup')">
-            <div class="checkbox-label flex items-center gap-3 w-full">
-              <div class="checkbox-box w-5 h-5 border-2 border-accent-primary rounded flex items-center justify-center transition-colors">
-                <svg class="w-3 h-3 text-dark-900 opacity-0 transform scale-0 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-              </div>
-              <span>EXPO Profile 1 aktivieren</span>
-            </div>
-          </label>
-          <label class="flex items-center gap-3 p-3 glass rounded-lg cursor-pointer hover:border-accent-primary/30 transition-colors">
-            <input type="checkbox" class="checkbox-custom hidden" onchange="updateProgress('setup')">
-            <div class="checkbox-label flex items-center gap-3 w-full">
-              <div class="checkbox-box w-5 h-5 border-2 border-accent-primary rounded flex items-center justify-center transition-colors">
-                <svg class="w-3 h-3 text-dark-900 opacity-0 transform scale-0 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-              </div>
-              <span>Global C-State auf "Enabled" setzen (nicht Auto!)</span>
-            </div>
-          </label>
-          <label class="flex items-center gap-3 p-3 glass rounded-lg cursor-pointer hover:border-accent-primary/30 transition-colors">
-            <input type="checkbox" class="checkbox-custom hidden" onchange="updateProgress('setup')">
-            <div class="checkbox-label flex items-center gap-3 w-full">
-              <div class="checkbox-box w-5 h-5 border-2 border-accent-primary rounded flex items-center justify-center transition-colors">
-                <svg class="w-3 h-3 text-dark-900 opacity-0 transform scale-0 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-              </div>
-              <span>PBO Advanced + Boost Override +200MHz</span>
-            </div>
-          </label>
-          <label class="flex items-center gap-3 p-3 glass rounded-lg cursor-pointer hover:border-accent-primary/30 transition-colors">
-            <input type="checkbox" class="checkbox-custom hidden" onchange="updateProgress('setup')">
-            <div class="checkbox-label flex items-center gap-3 w-full">
-              <div class="checkbox-box w-5 h-5 border-2 border-accent-primary rounded flex items-center justify-center transition-colors">
-                <svg class="w-3 h-3 text-dark-900 opacity-0 transform scale-0 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-              </div>
-              <span>Curve Optimizer -15 bis -20 (testen!)</span>
-            </div>
-          </label>
-          <label class="flex items-center gap-3 p-3 glass rounded-lg cursor-pointer hover:border-accent-primary/30 transition-colors">
-            <input type="checkbox" class="checkbox-custom hidden" onchange="updateProgress('setup')">
-            <div class="checkbox-label flex items-center gap-3 w-full">
-              <div class="checkbox-box w-5 h-5 border-2 border-accent-primary rounded flex items-center justify-center transition-colors">
-                <svg class="w-3 h-3 text-dark-900 opacity-0 transform scale-0 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-              </div>
-              <span>VBS komplett deaktivieren (inkl. Windows Hello)</span>
-            </div>
-          </label>
-          <label class="flex items-center gap-3 p-3 glass rounded-lg cursor-pointer hover:border-accent-primary/30 transition-colors">
-            <input type="checkbox" class="checkbox-custom hidden" onchange="updateProgress('setup')">
-            <div class="checkbox-label flex items-center gap-3 w-full">
-              <div class="checkbox-box w-5 h-5 border-2 border-accent-primary rounded flex items-center justify-center transition-colors">
-                <svg class="w-3 h-3 text-dark-900 opacity-0 transform scale-0 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-              </div>
-              <span>NVIDIA: G-Sync + Max Frame Rate 237 + Low Latency Ein</span>
-            </div>
-          </label>
-          <label class="flex items-center gap-3 p-3 glass rounded-lg cursor-pointer hover:border-accent-primary/30 transition-colors">
-            <input type="checkbox" class="checkbox-custom hidden" onchange="updateProgress('setup')">
-            <div class="checkbox-label flex items-center gap-3 w-full">
-              <div class="checkbox-box w-5 h-5 border-2 border-accent-primary rounded flex items-center justify-center transition-colors">
-                <svg class="w-3 h-3 text-dark-900 opacity-0 transform scale-0 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-              </div>
-              <span>Samsung Magician: Firmware 5B2QJXF7+ prüfen</span>
-            </div>
-          </label>
-          <label class="flex items-center gap-3 p-3 glass rounded-lg cursor-pointer hover:border-accent-primary/30 transition-colors">
-            <input type="checkbox" class="checkbox-custom hidden" onchange="updateProgress('setup')">
-            <div class="checkbox-label flex items-center gap-3 w-full">
-              <div class="checkbox-box w-5 h-5 border-2 border-accent-primary rounded flex items-center justify-center transition-colors">
-                <svg class="w-3 h-3 text-dark-900 opacity-0 transform scale-0 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-              </div>
-              <span>Wooting 80HE: 8kHz Polling + Profile einrichten</span>
-            </div>
-          </label>
-          <label class="flex items-center gap-3 p-3 glass rounded-lg cursor-pointer hover:border-accent-primary/30 transition-colors">
-            <input type="checkbox" class="checkbox-custom hidden" onchange="updateProgress('setup')">
-            <div class="checkbox-label flex items-center gap-3 w-full">
-              <div class="checkbox-box w-5 h-5 border-2 border-accent-primary rounded flex items-center justify-center transition-colors">
-                <svg class="w-3 h-3 text-dark-900 opacity-0 transform scale-0 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-              </div>
-              <span>DisplayWidget Center: OLED Care aktiviert lassen</span>
-            </div>
-          </label>
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">Monatliche Wartung</h3>
+        <div class="glass-strong rounded-xl p-3 mb-3 flex items-center gap-3 flex-wrap">
+          <span class="font-semibold text-accent-primary">Fortschritt: <span id="monthlyCount">0</span>/<span id="monthlyTotal">5</span></span>
+          <div class="flex-1 min-w-[100px] h-2 bg-dark-800 rounded-full overflow-hidden"><div id="monthlyBar" class="h-full bg-gradient-to-r from-accent-primary to-accent-secondary rounded-full transition-all" style="width:0%"></div></div>
+          <button onclick="resetChecklist('monthly')" class="px-2 py-1 border border-accent-danger text-accent-danger rounded text-xs hover:bg-accent-danger/20">Reset</button>
+        </div>
+        <div id="monthlyChecklist" class="space-y-2">
+          <label class="flex items-center gap-3 p-2 glass rounded-lg cursor-pointer hover:border-accent-primary/30 text-sm"><input type="checkbox" class="checkbox-custom hidden" onchange="updateProgress('monthly')"><span class="w-4 h-4 border-2 border-accent-primary rounded flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5 text-dark-900 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span><span>NVIDIA Treiber-Updates prüfen</span></label>
+          <label class="flex items-center gap-3 p-2 glass rounded-lg cursor-pointer hover:border-accent-primary/30 text-sm"><input type="checkbox" class="checkbox-custom hidden" onchange="updateProgress('monthly')"><span class="w-4 h-4 border-2 border-accent-primary rounded flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5 text-dark-900 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span><span>SSD Health prüfen</span></label>
+          <label class="flex items-center gap-3 p-2 glass rounded-lg cursor-pointer hover:border-accent-primary/30 text-sm"><input type="checkbox" class="checkbox-custom hidden" onchange="updateProgress('monthly')"><span class="w-4 h-4 border-2 border-accent-primary rounded flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5 text-dark-900 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span><span>Temperaturen kontrollieren</span></label>
+          <label class="flex items-center gap-3 p-2 glass rounded-lg cursor-pointer hover:border-accent-primary/30 text-sm"><input type="checkbox" class="checkbox-custom hidden" onchange="updateProgress('monthly')"><span class="w-4 h-4 border-2 border-accent-primary rounded flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5 text-dark-900 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span><span>Firmware-Updates prüfen</span></label>
+          <label class="flex items-center gap-3 p-2 glass rounded-lg cursor-pointer hover:border-accent-primary/30 text-sm"><input type="checkbox" class="checkbox-custom hidden" onchange="updateProgress('monthly')"><span class="w-4 h-4 border-2 border-accent-primary rounded flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5 text-dark-900 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span><span>OLED Pixel Cleaning</span></label>
         </div>
       </section>
 
-      <!-- Quick Wins Summary -->
-      <section class="py-12">
-        <div class="flex items-center gap-4 mb-8 pb-4 border-b border-accent-primary/20">
-          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 flex items-center justify-center">
-            <i data-lucide="rocket" class="w-6 h-6 text-accent-primary"></i>
+      <!-- Section: Troubleshooting -->
+      <section id="troubleshooting" class="py-10 scroll-mt-8">
+        <div class="flex items-center gap-4 mb-6 pb-3 border-b border-accent-primary/20">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 flex items-center justify-center">
+            <i data-lucide="bug" class="w-5 h-5 text-accent-primary"></i>
+          </div>
+          <h2 class="text-2xl font-bold text-gradient">Troubleshooting</h2>
+        </div>
+
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">Temperatur-Erwartungen (360mm AIO)</h3>
+        <div class="glass-strong rounded-xl overflow-hidden mb-6">
+          <table class="w-full text-sm"><thead><tr class="bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10"><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Szenario</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Erwartete Temp</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Status</th></tr></thead>
+            <tbody class="divide-y divide-accent-primary/10">
+              <tr><td class="px-4 py-2">Idle/Desktop</td><td class="px-4 py-2">35-45°C</td><td class="px-4 py-2 text-accent-primary">✅ Normal</td></tr>
+              <tr><td class="px-4 py-2">Gaming</td><td class="px-4 py-2">60-75°C</td><td class="px-4 py-2 text-accent-primary">✅ Optimal</td></tr>
+              <tr><td class="px-4 py-2">Cinebench/Stress</td><td class="px-4 py-2">75-85°C</td><td class="px-4 py-2 text-accent-primary">✅ Akzeptabel</td></tr>
+              <tr><td class="px-4 py-2">Über 85°C Gaming</td><td class="px-4 py-2">-</td><td class="px-4 py-2 text-accent-warning">⚠️ Prüfen</td></tr>
+              <tr><td class="px-4 py-2">Über 90°C</td><td class="px-4 py-2">-</td><td class="px-4 py-2 text-accent-danger">🔴 Problem!</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="text-lg font-semibold text-accent-secondary mb-3 pl-3 border-l-2 border-accent-secondary">Häufige Probleme</h3>
+        <div class="glass-strong rounded-xl overflow-hidden">
+          <table class="w-full text-sm"><thead><tr class="bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10"><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Problem</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Lösung</th></tr></thead>
+            <tbody class="divide-y divide-accent-primary/10">
+              <tr><td class="px-4 py-2">PC bootet nicht nach BIOS</td><td class="px-4 py-2">CMOS Reset (Jumper oder Batterie 30s)</td></tr>
+              <tr><td class="px-4 py-2">EXPO instabil</td><td class="px-4 py-2">Memory Training, evtl. 5600MHz testen</td></tr>
+              <tr><td class="px-4 py-2">Curve Optimizer Crash</td><td class="px-4 py-2">Wert erhöhen (-20 → -15 → -10)</td></tr>
+              <tr><td class="px-4 py-2">VBS deaktiviert sich nicht</td><td class="px-4 py-2">Windows Hello Registry auch deaktivieren!</td></tr>
+              <tr><td class="px-4 py-2">Samsung FW Update fehlgeschlagen</td><td class="px-4 py-2">ISO von Samsung, via USB booten</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Quick Wins -->
+      <section class="py-10">
+        <div class="flex items-center gap-4 mb-6 pb-3 border-b border-accent-primary/20">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 flex items-center justify-center">
+            <i data-lucide="rocket" class="w-5 h-5 text-accent-primary"></i>
           </div>
           <h2 class="text-2xl font-bold text-gradient">Quick-Wins Zusammenfassung</h2>
         </div>
-
-        <ol class="space-y-3 text-gray-300">
-          <li class="flex gap-3"><span class="text-accent-primary font-bold">1.</span> <span><strong class="text-white">BIOS:</strong> EXPO + Global C-State Enabled + PBO +200MHz</span></li>
-          <li class="flex gap-3"><span class="text-accent-primary font-bold">2.</span> <span><strong class="text-white">BIOS:</strong> Curve Optimizer -15 bis -20 (konservativ starten!)</span></li>
-          <li class="flex gap-3"><span class="text-accent-primary font-bold">3.</span> <span><strong class="text-white">Windows:</strong> VBS komplett deaktivieren (5-15% mehr FPS!)</span></li>
-          <li class="flex gap-3"><span class="text-accent-primary font-bold">4.</span> <span><strong class="text-white">Windows:</strong> Optimierungen für Fenstermodus AUS</span></li>
-          <li class="flex gap-3"><span class="text-accent-primary font-bold">5.</span> <span><strong class="text-white">NVIDIA:</strong> G-Sync + 237 FPS Cap + Low Latency Ein</span></li>
-          <li class="flex gap-3"><span class="text-accent-primary font-bold">6.</span> <span><strong class="text-white">Wooting:</strong> 8kHz + Rapid Trigger für Competitive</span></li>
+        <ol class="space-y-2 text-sm text-gray-300">
+          <li class="flex gap-2"><span class="text-accent-primary font-bold">1.</span><span><strong class="text-white">BIOS:</strong> EXPO + Global C-State Enabled + PBO +200MHz</span></li>
+          <li class="flex gap-2"><span class="text-accent-primary font-bold">2.</span><span><strong class="text-white">BIOS:</strong> Curve Optimizer -15 bis -20</span></li>
+          <li class="flex gap-2"><span class="text-accent-primary font-bold">3.</span><span><strong class="text-white">Windows:</strong> VBS deaktivieren (5-15% FPS!)</span></li>
+          <li class="flex gap-2"><span class="text-accent-primary font-bold">4.</span><span><strong class="text-white">Windows:</strong> Fenstermodus-Optimierung AUS</span></li>
+          <li class="flex gap-2"><span class="text-accent-primary font-bold">5.</span><span><strong class="text-white">NVIDIA:</strong> G-Sync + 237 FPS Cap + Low Latency</span></li>
+          <li class="flex gap-2"><span class="text-accent-primary font-bold">6.</span><span><strong class="text-white">Peripherie:</strong> Alles auf 8kHz Polling</span></li>
         </ol>
-
-        <!-- Final Message -->
-        <div class="glass-strong rounded-xl p-6 mt-8 border-l-4 border-accent-primary text-center">
-          <div class="flex items-center justify-center gap-3 mb-2">
-            <i data-lucide="gamepad-2" class="w-8 h-8 text-accent-primary"></i>
-          </div>
-          <p class="text-lg font-semibold text-accent-primary">Viel Spaß beim Zocken auf deinem OLED!</p>
-          <p class="text-sm text-gray-400 mt-1">Dein System gehört zu den Top 1% weltweit.</p>
+        <div class="glass-strong rounded-xl p-4 mt-6 border-l-4 border-accent-primary text-center">
+          <i data-lucide="gamepad-2" class="w-8 h-8 text-accent-primary mx-auto mb-2"></i>
+          <p class="font-semibold text-accent-primary">Viel Spaß beim Zocken auf deinem OLED!</p>
+          <p class="text-sm text-gray-400">Dein System gehört zu den Top 1% weltweit.</p>
         </div>
       </section>
 
       <!-- Footer -->
-      <footer class="text-center py-12 border-t border-accent-primary/20 mt-12">
-        <div class="mb-4">
-          <div class="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-accent-primary to-accent-secondary flex items-center justify-center">
-            <i data-lucide="monitor" class="w-7 h-7 text-dark-900"></i>
-          </div>
+      <footer class="text-center py-10 border-t border-accent-primary/20 mt-8">
+        <div class="w-12 h-12 mx-auto rounded-xl bg-gradient-to-br from-accent-primary to-accent-secondary flex items-center justify-center mb-3">
+          <i data-lucide="monitor" class="w-6 h-6 text-dark-900"></i>
         </div>
         <p class="text-gray-400">Ultimate Gaming PC Optimization Guide</p>
         <p class="text-gray-500 text-sm">Version 2.0.0 - Januar 2026</p>
-        <p class="text-gray-600 text-xs mt-4">Ryzen 9800X3D • RTX 4080 Super • Wooting 80HE • ASUS ROG SWIFT OLED</p>
+        <p class="text-gray-600 text-xs mt-3">Ryzen 9800X3D • RTX 4080 Super • Wooting 80HE • Razer Viper V3 Pro • Arctis Nova Pro</p>
       </footer>
     </div>
   </main>
 
-  <!-- Back to Top Button -->
-  <button id="backToTop" onclick="scrollToTop()" class="fixed bottom-6 right-6 w-12 h-12 glass-strong rounded-full flex items-center justify-center text-accent-primary opacity-0 invisible transition-all duration-300 hover:bg-accent-primary/20 no-print">
-    <i data-lucide="chevron-up" class="w-6 h-6"></i>
-  </button>
-
-  <!-- Print Button -->
-  <button onclick="window.print()" class="fixed bottom-6 right-20 w-12 h-12 glass-strong rounded-full flex items-center justify-center text-accent-secondary hover:bg-accent-secondary/20 transition-all no-print">
-    <i data-lucide="printer" class="w-5 h-5"></i>
-  </button>
+  <button id="backToTop" onclick="scrollToTop()" class="fixed bottom-5 right-5 w-10 h-10 glass-strong rounded-full flex items-center justify-center text-accent-primary opacity-0 invisible transition-all hover:bg-accent-primary/20 no-print"><i data-lucide="chevron-up" class="w-5 h-5"></i></button>
 
   <script>
-    // Initialize Lucide Icons
     lucide.createIcons();
-
-    // Mobile Menu Toggle
-    const menuToggle = document.getElementById('menuToggle');
-    const sidebar = document.getElementById('sidebar');
-
-    menuToggle.addEventListener('click', () => {
-      sidebar.classList.toggle('-translate-x-full');
-    });
-
-    // Close sidebar on link click (mobile)
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth < 768) {
-          sidebar.classList.add('-translate-x-full');
-        }
-      });
-    });
-
-    // Progress Bar
-    window.addEventListener('scroll', () => {
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      document.getElementById('progressBar').style.width = scrolled + '%';
-
-      // Back to top button visibility
-      const backToTop = document.getElementById('backToTop');
-      if (winScroll > 500) {
-        backToTop.classList.remove('opacity-0', 'invisible');
-        backToTop.classList.add('opacity-100', 'visible');
-      } else {
-        backToTop.classList.add('opacity-0', 'invisible');
-        backToTop.classList.remove('opacity-100', 'visible');
-      }
-    });
-
-    // Active Navigation
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    window.addEventListener('scroll', () => {
-      let current = 'hero';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (scrollY >= sectionTop) {
-          current = section.getAttribute('id');
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) {
-          link.classList.add('active');
-        }
-      });
-    });
-
-    // Scroll to Top
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // Checklist Functions
-    function updateProgress(listId) {
-      const checklist = document.getElementById(listId + 'Checklist');
-      const checkboxes = checklist.querySelectorAll('input[type="checkbox"]');
-      const checked = checklist.querySelectorAll('input[type="checkbox"]:checked').length;
-      const total = checkboxes.length;
-      const percentage = (checked / total) * 100;
-
-      document.getElementById(listId + 'Count').textContent = checked;
-      document.getElementById(listId + 'Total').textContent = total;
-      document.getElementById(listId + 'Bar').style.width = percentage + '%';
-
-      // Save to localStorage
-      const states = Array.from(checkboxes).map(cb => cb.checked);
-      localStorage.setItem('checklist_' + listId, JSON.stringify(states));
-    }
-
-    function loadChecklist(listId) {
-      const saved = localStorage.getItem('checklist_' + listId);
-      if (saved) {
-        const states = JSON.parse(saved);
-        const checklist = document.getElementById(listId + 'Checklist');
-        const checkboxes = checklist.querySelectorAll('input[type="checkbox"]');
-        checkboxes.forEach((cb, i) => {
-          if (states[i]) cb.checked = true;
-        });
-      }
-      updateProgress(listId);
-    }
-
-    function resetChecklist(listId) {
-      const checklist = document.getElementById(listId + 'Checklist');
-      checklist.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
-      localStorage.removeItem('checklist_' + listId);
-      updateProgress(listId);
-    }
-
-    // Initialize
-    document.addEventListener('DOMContentLoaded', () => {
-      loadChecklist('setup');
-    });
-
-    // Search Functionality
-    const searchInput = document.getElementById('searchInput');
-    searchInput.addEventListener('input', (e) => {
-      const query = e.target.value.toLowerCase();
-      // Simple search - highlights matching sections
-      document.querySelectorAll('section').forEach(section => {
-        const text = section.textContent.toLowerCase();
-        if (query && text.includes(query)) {
-          section.style.opacity = '1';
-        } else if (query) {
-          section.style.opacity = '0.3';
-        } else {
-          section.style.opacity = '1';
-        }
-      });
-    });
+    const menuToggle=document.getElementById('menuToggle'),sidebar=document.getElementById('sidebar');
+    menuToggle.addEventListener('click',()=>sidebar.classList.toggle('-translate-x-full'));
+    document.querySelectorAll('.nav-link').forEach(l=>l.addEventListener('click',()=>{if(window.innerWidth<768)sidebar.classList.add('-translate-x-full')}));
+    window.addEventListener('scroll',()=>{const s=document.documentElement.scrollTop,h=document.documentElement.scrollHeight-document.documentElement.clientHeight;document.getElementById('progressBar').style.width=(s/h*100)+'%';const b=document.getElementById('backToTop');s>500?(b.classList.remove('opacity-0','invisible'),b.classList.add('opacity-100')):(b.classList.add('opacity-0','invisible'),b.classList.remove('opacity-100'))});
+    function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'})}
+    function updateProgress(id){const c=document.getElementById(id+'Checklist'),boxes=c.querySelectorAll('input[type="checkbox"]'),checked=c.querySelectorAll('input:checked').length,total=boxes.length;document.getElementById(id+'Count').textContent=checked;document.getElementById(id+'Total').textContent=total;document.getElementById(id+'Bar').style.width=(checked/total*100)+'%';boxes.forEach(b=>{const svg=b.nextElementSibling.querySelector('svg');if(b.checked){svg.classList.remove('opacity-0');svg.classList.add('opacity-100');b.nextElementSibling.classList.add('bg-accent-primary')}else{svg.classList.add('opacity-0');svg.classList.remove('opacity-100');b.nextElementSibling.classList.remove('bg-accent-primary')}});localStorage.setItem('checklist_'+id,JSON.stringify(Array.from(boxes).map(b=>b.checked)))}
+    function loadChecklist(id){const saved=localStorage.getItem('checklist_'+id);if(saved){const states=JSON.parse(saved),boxes=document.getElementById(id+'Checklist').querySelectorAll('input[type="checkbox"]');boxes.forEach((b,i)=>{if(states[i])b.checked=true})}updateProgress(id)}
+    function resetChecklist(id){document.getElementById(id+'Checklist').querySelectorAll('input').forEach(b=>b.checked=false);localStorage.removeItem('checklist_'+id);updateProgress(id)}
+    document.addEventListener('DOMContentLoaded',()=>{loadChecklist('setup');loadChecklist('monthly')});
   </script>
 </body>
 </html>

@@ -1,6 +1,12 @@
 {
   "version": "2.0.0",
   "lastUpdated": "2026-01-30",
+  "case": {
+    "name": "Lian Li PC-O11 Dynamic",
+    "color": "Schwarz",
+    "formFactor": "Mid-Tower",
+    "icon": "box"
+  },
   "system": {
     "cpu": {
       "name": "AMD Ryzen 7 9800X3D",
@@ -15,7 +21,8 @@
         "tdp": "120W",
         "socket": "AM5"
       },
-      "notes": "Beste Gaming-CPU 2025/2026"
+      "notes": "Beste Gaming-CPU 2025/2026",
+      "upgradeOptions": []
     },
     "gpu": {
       "name": "MSI RTX 4080 Super Gaming X Trio",
@@ -27,7 +34,21 @@
         "tdp": "320W",
         "pcie": "Gen 4 x16"
       },
-      "notes": "High-End 4K Gaming"
+      "notes": "High-End 4K Gaming",
+      "upgradeOptions": [
+        {
+          "name": "RTX 5080",
+          "expectedRelease": "Q1 2026",
+          "expectedGain": "+40-50% Performance",
+          "recommendation": "Warten lohnt sich"
+        },
+        {
+          "name": "RTX 5090",
+          "expectedRelease": "Q1 2026",
+          "expectedGain": "+70-80% Performance",
+          "recommendation": "Nur wenn 4K 240Hz konstant gewünscht"
+        }
+      ]
     },
     "ram": {
       "name": "G.Skill 64GB DDR5-6000 CL30",
@@ -39,7 +60,14 @@
         "timings": "CL30-40-40-96",
         "voltage": "1.35V"
       },
-      "notes": "Optimaler Sweet Spot für AM5"
+      "notes": "Optimaler Sweet Spot für AM5",
+      "upgradeOptions": [
+        {
+          "name": "DDR5-6400 CL28",
+          "expectedGain": "+2-3% Performance",
+          "recommendation": "Nicht lohnenswert, minimal Gain"
+        }
+      ]
     },
     "motherboard": {
       "name": "Gigabyte X670 Gaming X AX",
@@ -51,7 +79,14 @@
         "formFactor": "ATX",
         "wifi": "Wi-Fi 6E"
       },
-      "notes": "Solides Gaming-Board"
+      "notes": "Solides Gaming-Board",
+      "upgradeOptions": [
+        {
+          "name": "X870E Board",
+          "expectedGain": "USB4, bessere VRMs",
+          "recommendation": "Nur bei Zen 6 Upgrade sinnvoll"
+        }
+      ]
     },
     "storage": {
       "name": "Samsung 990 PRO 2TB",
@@ -63,7 +98,19 @@
         "readSpeed": "7450 MB/s",
         "writeSpeed": "6900 MB/s"
       },
-      "notes": "Firmware 5B2QJXF7+ empfohlen!"
+      "notes": "Firmware 5B2QJXF7+ empfohlen!",
+      "upgradeOptions": [
+        {
+          "name": "Gen5 SSD (T700, 990 EVO Plus)",
+          "expectedGain": "Schnellere Ladezeiten",
+          "recommendation": "Kaum spürbar im Gaming, nur für Produktivität"
+        },
+        {
+          "name": "Zweite 2TB SSD",
+          "expectedGain": "Mehr Speicher",
+          "recommendation": "Sinnvoll wenn Platz knapp wird"
+        }
+      ]
     },
     "cooler": {
       "name": "Corsair H150i Elite Capellix XT",
@@ -74,7 +121,8 @@
         "radiator": "360mm",
         "fans": "3x ML120 RGB"
       },
-      "notes": "Ausreichend für PBO + Curve Optimizer"
+      "notes": "Ausreichend für PBO + Curve Optimizer",
+      "upgradeOptions": []
     },
     "psu": {
       "name": "be quiet! Straight Power 12 1000W",
@@ -85,7 +133,8 @@
         "efficiency": "80+ Gold",
         "modular": "Fully Modular"
       },
-      "notes": "Genug Headroom"
+      "notes": "Genug Headroom auch für RTX 5090",
+      "upgradeOptions": []
     },
     "keyboard": {
       "name": "Wooting 80HE",
@@ -96,7 +145,36 @@
         "pollingRate": "8000 Hz",
         "features": "Rapid Trigger, Analog Input"
       },
-      "notes": "Beste Gaming-Tastatur"
+      "notes": "Beste Gaming-Tastatur",
+      "upgradeOptions": []
+    },
+    "mouse": {
+      "name": "Razer Viper V3 Pro",
+      "icon": "mouse",
+      "tier": "gold",
+      "specs": {
+        "sensor": "Focus Pro 35K Gen-2",
+        "pollingRate": "8000 Hz (mit Dongle)",
+        "weight": "54g",
+        "battery": "95 Stunden",
+        "switches": "Optical Gen-3"
+      },
+      "notes": "Beste Wireless Gaming-Maus 2025",
+      "upgradeOptions": []
+    },
+    "headset": {
+      "name": "SteelSeries Arctis Nova Pro Wireless",
+      "icon": "headphones",
+      "tier": "gold",
+      "specs": {
+        "drivers": "40mm Premium Hi-Fi",
+        "frequency": "10-40,000 Hz",
+        "anc": "Active Noise Cancellation",
+        "battery": "Dual-Battery (Hot-Swap)",
+        "connection": "2.4GHz + Bluetooth"
+      },
+      "notes": "Bestes Gaming-Headset",
+      "upgradeOptions": []
     }
   },
   "monitors": [
@@ -124,5 +202,35 @@
       "usage": "Third Monitor",
       "tier": "good"
     }
-  ]
+  ],
+  "upgradeRecommendations": {
+    "priority": [
+      {
+        "rank": 1,
+        "component": "GPU",
+        "current": "RTX 4080 Super",
+        "recommended": "RTX 5080 / 5090",
+        "reason": "Größter Performance-Gewinn für 4K 240Hz",
+        "waitFor": "Q1 2026 Release"
+      }
+    ],
+    "notWorth": [
+      {
+        "component": "CPU",
+        "reason": "9800X3D ist die beste Gaming-CPU, kein Upgrade nötig"
+      },
+      {
+        "component": "RAM",
+        "reason": "64GB DDR5-6000 ist optimal, höhere Speeds bringen <3%"
+      },
+      {
+        "component": "Keyboard",
+        "reason": "Wooting 80HE ist das Beste am Markt"
+      },
+      {
+        "component": "Mouse",
+        "reason": "Viper V3 Pro ist Top-Tier"
+      }
+    ]
+  }
 }

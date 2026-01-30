@@ -1,0 +1,190 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-01-30",
+  "mouse": {
+    "name": "Razer Viper V3 Pro",
+    "software": {
+      "name": "Razer Synapse 4",
+      "url": "https://www.razer.com/synapse-4"
+    },
+    "optimalSettings": {
+      "dpi": {
+        "recommended": "800-1600",
+        "note": "Persönliche Präferenz, 800 ist Standard für Pros",
+        "stages": ["400", "800", "1600", "3200"]
+      },
+      "pollingRate": {
+        "value": "8000 Hz",
+        "note": "Benötigt 4K Hz Dongle (separat erhältlich)",
+        "fallback": "4000 Hz mit Standard-Dongle"
+      },
+      "liftOffDistance": {
+        "value": "1mm (Low)",
+        "note": "Niedrig für präzises Aiming"
+      },
+      "motionSync": {
+        "value": "EIN",
+        "note": "Synchronisiert mit Monitor-Refresh"
+      },
+      "asymmetricCutoff": {
+        "value": "AUS",
+        "note": "Nur aktivieren wenn Tracking-Probleme"
+      }
+    },
+    "synapseSettings": {
+      "performance": [
+        { "setting": "DPI", "value": "800-1600", "type": "slider" },
+        { "setting": "Polling Rate", "value": "8000 Hz", "type": "dropdown" },
+        { "setting": "Lift-Off Distance", "value": "1mm", "type": "dropdown" }
+      ],
+      "calibration": [
+        { "setting": "Surface Calibration", "value": "Smart Tracking", "note": "Oder manuell für dein Mauspad" },
+        { "setting": "Asymmetric Cut-Off", "value": "AUS", "type": "toggle" }
+      ],
+      "powerSaving": [
+        { "setting": "Low Power Mode", "value": "AUS", "note": "Reduziert Polling Rate - nicht für Gaming!" },
+        { "setting": "Sleep Mode", "value": "5 Minuten", "note": "Spart Akku bei Inaktivität" }
+      ]
+    },
+    "proPlayerSettings": [
+      {
+        "name": "TenZ",
+        "game": "Valorant",
+        "dpi": "800",
+        "sensitivity": "0.4",
+        "pollingRate": "4000 Hz"
+      },
+      {
+        "name": "s1mple",
+        "game": "CS2",
+        "dpi": "400",
+        "sensitivity": "3.09",
+        "pollingRate": "1000 Hz"
+      }
+    ]
+  },
+  "headset": {
+    "name": "SteelSeries Arctis Nova Pro Wireless",
+    "software": {
+      "name": "SteelSeries GG (Sonar)",
+      "url": "https://steelseries.com/gg"
+    },
+    "baseStationSettings": {
+      "audioOutput": {
+        "value": "Hi-Res",
+        "note": "Für beste Qualität"
+      },
+      "sidetone": {
+        "value": "Niedrig bis Mittel",
+        "note": "Hör deine eigene Stimme"
+      },
+      "eqPresets": {
+        "recommended": "Performance",
+        "options": ["Flat", "Bass Boost", "Performance", "Smiley", "Focus"]
+      }
+    },
+    "sonarSettings": {
+      "spatialAudio": {
+        "gaming": {
+          "value": "Sonar 3D Audio",
+          "note": "Bessere Ortung als Windows Sonic/Dolby"
+        },
+        "music": {
+          "value": "Stereo",
+          "note": "Für Musik Spatial Audio ausschalten"
+        }
+      },
+      "eqProfiles": {
+        "fps": {
+          "name": "FPS Competition",
+          "settings": "Höhen betont für Schritte",
+          "bass": "-2 dB",
+          "mids": "+1 dB",
+          "treble": "+3 dB"
+        },
+        "immersive": {
+          "name": "Immersive Gaming",
+          "settings": "Ausgewogen mit Bass",
+          "bass": "+2 dB",
+          "mids": "0 dB",
+          "treble": "+1 dB"
+        }
+      },
+      "micSettings": {
+        "gain": "70-80%",
+        "noiseGate": "Mittel",
+        "noiseCancellation": "Hoch",
+        "compressor": "Leicht"
+      }
+    },
+    "ancSettings": {
+      "gaming": "AUS (oder Niedrig)",
+      "note": "ANC kann minimale Latenz hinzufügen",
+      "immersive": "Hoch",
+      "transparency": "Für Gespräche"
+    },
+    "batteryTips": [
+      "Dual-Battery System: Immer einen laden während du spielst",
+      "Hot-Swap: Wechseln ohne Unterbrechung",
+      "Bluetooth für Handy, 2.4GHz für Gaming"
+    ]
+  },
+  "streamDeck": {
+    "name": "Elgato Stream Deck",
+    "software": {
+      "name": "Stream Deck Software",
+      "url": "https://www.elgato.com/downloads"
+    },
+    "recommendedPlugins": [
+      {
+        "name": "Audio Switcher",
+        "purpose": "Schnell zwischen Audio-Outputs wechseln",
+        "url": "Stream Deck Store"
+      },
+      {
+        "name": "OBS Tools",
+        "purpose": "Erweiterte OBS-Steuerung",
+        "url": "Stream Deck Store"
+      },
+      {
+        "name": "Voicemod",
+        "purpose": "Voice Changer Steuerung",
+        "url": "Stream Deck Store"
+      },
+      {
+        "name": "Spotify",
+        "purpose": "Musik-Steuerung",
+        "url": "Stream Deck Store"
+      },
+      {
+        "name": "Discord",
+        "purpose": "Mute/Deafen Shortcuts",
+        "url": "Stream Deck Store"
+      },
+      {
+        "name": "Multi Action",
+        "purpose": "Mehrere Aktionen mit einem Klick",
+        "builtin": true
+      }
+    ],
+    "suggestedLayout": {
+      "row1": ["OBS: Scene 1", "OBS: Scene 2", "OBS: Scene 3", "OBS: Start/Stop"],
+      "row2": ["Mic Mute", "Discord Mute", "Audio: Headset", "Audio: Speaker"],
+      "row3": ["Spotify Play", "Spotify Skip", "Volume Up", "Volume Down"]
+    },
+    "profileIdeas": [
+      {
+        "name": "Streaming",
+        "buttons": ["Szenen", "Alerts", "Chat", "Musik"]
+      },
+      {
+        "name": "Gaming",
+        "buttons": ["Discord", "Audio Switch", "Screenshot", "Clip"]
+      },
+      {
+        "name": "Produktivität",
+        "buttons": ["Apps öffnen", "Websites", "Shortcuts", "Timer"]
+      }
+    ]
+  }
+}
