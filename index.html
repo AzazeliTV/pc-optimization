@@ -896,52 +896,188 @@
           <div><h2 class="text-3xl font-bold" style="background: linear-gradient(135deg, #76b900 0%, #88cc00 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">NVIDIA Control Panel</h2><p class="text-gray-500 text-sm mt-1">GPU-Einstellungen</p></div>
         </div>
         <div class="category-box">
-        <div class="card rounded-2xl p-3 mb-4 border-l-4 border-accent-secondary">
-          <h4 class="font-semibold text-accent-secondary text-sm mb-2">NVIDIA Systemsteuerung öffnen</h4>
-          <p class="text-sm text-gray-400">Rechtsklick auf Desktop → "NVIDIA Systemsteuerung" (oder: Windows-Taste → "NVIDIA" eingeben)</p>
-          <p class="text-sm text-gray-400 mt-1">Dann: "3D-Einstellungen verwalten" in der linken Spalte</p>
+        <div class="card rounded-2xl p-3 mb-4 border-l-4 border-green-500">
+          <h4 class="font-semibold text-green-400 text-sm mb-2">NVIDIA Systemsteuerung öffnen</h4>
+          <p class="text-sm text-gray-400">Rechtsklick auf Desktop → "NVIDIA Systemsteuerung" → Links: <span class="text-white">"3D-Einstellungen verwalten"</span></p>
         </div>
 
-        <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">Globale Einstellungen</h3>
-        <div class="table-modern bg-dark-800/50 mb-4">
-          <table class="w-full text-sm"><thead><tr><th class="text-left px-5 py-4">Einstellung</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Wert</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Erklärung</th></tr></thead>
-            <tbody class="">
-              <tr><td class="px-4 py-2">Energieverwaltungsmodus</td><td class="px-4 py-2 text-accent-primary font-semibold">Maximale Leistung bevorzugen</td><td class="px-4 py-2 text-gray-400">GPU taktet nicht runter</td></tr>
-              <tr><td class="px-4 py-2">Modus für geringe Latenz</td><td class="px-4 py-2 text-accent-primary font-semibold">Ein</td><td class="px-4 py-2 text-gray-400">"Ultra" kann Stutter verursachen!</td></tr>
-              <tr><td class="px-4 py-2">Vertikale Synchronisierung</td><td class="px-4 py-2 text-accent-primary font-semibold">Ein</td><td class="px-4 py-2 text-gray-400">Nur aktiv wenn FPS > Monitor Hz</td></tr>
-              <tr><td class="px-4 py-2">Max. Bildfrequenz</td><td class="px-4 py-2 text-accent-warning font-semibold">237</td><td class="px-4 py-2 text-gray-400">240Hz - 3 = G-Sync Headroom</td></tr>
-              <tr><td class="px-4 py-2">Shader-Cache-Größe</td><td class="px-4 py-2 text-accent-primary font-semibold">Unbegrenzt</td><td class="px-4 py-2 text-gray-400">Verhindert Shader-Stutter</td></tr>
-              <tr><td class="px-4 py-2">Texturfilterung - Qualität</td><td class="px-4 py-2 text-accent-primary font-semibold">Hohe Leistung</td><td class="px-4 py-2 text-gray-400">Kaum sichtbarer Unterschied</td></tr>
-              <tr><td class="px-4 py-2">Anisotrope Filterung</td><td class="px-4 py-2 text-accent-primary font-semibold">16x</td><td class="px-4 py-2 text-gray-400">Kein Performance-Impact</td></tr>
-              <tr><td class="px-4 py-2">Threaded Optimization</td><td class="px-4 py-2 text-accent-primary font-semibold">Ein</td><td class="px-4 py-2 text-gray-400">Nutzt Multi-Core CPU</td></tr>
-              <tr><td class="px-4 py-2">Max. Bildfrequenz Hintergrund</td><td class="px-4 py-2">30</td><td class="px-4 py-2 text-gray-400">Spart Strom bei Alt-Tab</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">G-Sync Einstellungen (240Hz OLED)</h3>
-        <div class="card rounded-2xl p-4 mb-4">
-          <ol class="space-y-2 text-sm">
-            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">1</span><span class="text-gray-400">Links: "Anzeige" → <span class="text-white">"G-SYNC einrichten"</span></span></li>
-            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">2</span><span class="text-gray-400">Häkchen bei <span class="text-white">"G-SYNC, G-SYNC-kompatibel aktivieren"</span></span></li>
-            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">3</span><span class="text-gray-400">Wähle: <span class="text-white">"Für Vollbild- und Fenstermodus aktivieren"</span></span></li>
-            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">4</span><span class="text-gray-400">Wähle deinen <span class="text-white">ASUS OLED Monitor</span> unten in der Liste</span></li>
-            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">5</span><span class="text-gray-400">Klicke <span class="text-white">"Übernehmen"</span></span></li>
-          </ol>
-        </div>
-
-        <div class="alert alert-info mb-4">
-          <i data-lucide="lightbulb" class="w-5 h-5 text-accent-primary flex-shrink-0"></i>
-          <div>
-            <p class="text-sm font-semibold text-accent-primary mb-1">Warum V-Sync EIN mit G-Sync?</p>
-            <p class="text-sm text-gray-400">Der Frame-Cap (237) hält FPS immer unter 240Hz → G-Sync ist immer aktiv. V-Sync springt nur ein wenn FPS > 237, was durch den Cap nie passiert. Ergebnis: Tear-Free + minimaler Input Lag!</p>
+        <h3 class="text-sm font-semibold text-green-400 uppercase tracking-wider mb-4">Wichtigste Einstellungen</h3>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
+          <div class="card rounded-2xl p-4 border border-green-500/20">
+            <div class="flex items-center justify-between mb-2">
+              <h4 class="font-semibold text-white text-sm">Energieverwaltung</h4>
+              <span class="px-2 py-1 rounded-full bg-green-500/20 text-green-400 text-xs font-bold">Max. Leistung</span>
+            </div>
+            <p class="text-xs text-gray-400 mb-2"><span class="text-green-400 font-semibold">Vorteil:</span> GPU bleibt auf hohen Clocks. Kein Runtertakten in ruhigen Szenen → konstantere FPS.</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-green-500/20">
+            <div class="flex items-center justify-between mb-2">
+              <h4 class="font-semibold text-white text-sm">Geringe Latenz</h4>
+              <span class="px-2 py-1 rounded-full bg-green-500/20 text-green-400 text-xs font-bold">Ein</span>
+            </div>
+            <p class="text-xs text-gray-400 mb-2"><span class="text-green-400 font-semibold">Vorteil:</span> Frames werden später gerendert → weniger Input Lag. "Ultra" nur wenn GPU >95% Auslastung!</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-warning/30">
+            <div class="flex items-center justify-between mb-2">
+              <h4 class="font-semibold text-white text-sm">Max. Bildfrequenz</h4>
+              <span class="px-2 py-1 rounded-full bg-accent-warning/20 text-accent-warning text-xs font-bold">237 FPS</span>
+            </div>
+            <p class="text-xs text-gray-400 mb-2"><span class="text-accent-warning font-semibold">Wichtig:</span> 240Hz - 3 = G-Sync bleibt aktiv. Verhindert Tearing bei hohen FPS.</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-green-500/20">
+            <div class="flex items-center justify-between mb-2">
+              <h4 class="font-semibold text-white text-sm">V-Sync</h4>
+              <span class="px-2 py-1 rounded-full bg-green-500/20 text-green-400 text-xs font-bold">Ein</span>
+            </div>
+            <p class="text-xs text-gray-400 mb-2"><span class="text-green-400 font-semibold">Vorteil:</span> Mit Frame Cap (237) kein zusätzlicher Lag! Fängt nur Frames >237 ab.</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-green-500/20">
+            <div class="flex items-center justify-between mb-2">
+              <h4 class="font-semibold text-white text-sm">Shader-Cache</h4>
+              <span class="px-2 py-1 rounded-full bg-green-500/20 text-green-400 text-xs font-bold">Unbegrenzt</span>
+            </div>
+            <p class="text-xs text-gray-400 mb-2"><span class="text-green-400 font-semibold">Vorteil:</span> Shader auf SSD gespeichert. Kein Stutter bei neuen Areas oder erstem Start!</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-green-500/20">
+            <div class="flex items-center justify-between mb-2">
+              <h4 class="font-semibold text-white text-sm">Threaded Opt.</h4>
+              <span class="px-2 py-1 rounded-full bg-green-500/20 text-green-400 text-xs font-bold">Ein</span>
+            </div>
+            <p class="text-xs text-gray-400 mb-2"><span class="text-green-400 font-semibold">Vorteil:</span> GPU-Treiber nutzt alle CPU-Kerne. Wichtig für DX11-Games wie CS2!</p>
           </div>
         </div>
 
-        <div class="card rounded-2xl p-3 border-l-4 border-accent-warning">
-          <h4 class="font-semibold text-accent-warning text-sm mb-2">G-Sync verifizieren</h4>
-          <p class="text-sm text-gray-400">NVIDIA Systemsteuerung → Anzeige → "G-SYNC-Indikator einrichten" → Häkchen setzen</p>
-          <p class="text-sm text-gray-400 mt-1">Jetzt zeigt ein Overlay "G-SYNC On" wenn es aktiv ist (nach Test wieder deaktivieren).</p>
+        <h3 class="text-sm font-semibold text-green-400 uppercase tracking-wider mb-4">Weitere Einstellungen</h3>
+        <div class="table-modern bg-dark-800/50 mb-4">
+          <table class="w-full text-sm"><thead><tr><th class="text-left px-5 py-4">Einstellung</th><th class="text-left px-4 py-2 text-green-400 text-xs uppercase">Wert</th><th class="text-left px-4 py-2 text-green-400 text-xs uppercase">Warum</th></tr></thead>
+            <tbody class="">
+              <tr><td class="px-4 py-2">Texturfilterung - Qualität</td><td class="px-4 py-2 text-green-400 font-semibold">Hohe Leistung</td><td class="px-4 py-2 text-gray-400">Kaum sichtbar, paar FPS mehr</td></tr>
+              <tr><td class="px-4 py-2">Anisotrope Filterung</td><td class="px-4 py-2 text-green-400 font-semibold">16x</td><td class="px-4 py-2 text-gray-400">Kostet nichts, sieht besser aus</td></tr>
+              <tr><td class="px-4 py-2">Max. Bildfrequenz Hintergrund</td><td class="px-4 py-2 text-gray-400">30</td><td class="px-4 py-2 text-gray-400">Spart Strom bei Alt-Tab</td></tr>
+              <tr><td class="px-4 py-2">Antialiasing - FXAA</td><td class="px-4 py-2 text-gray-400">Aus</td><td class="px-4 py-2 text-gray-400">Ingame AA ist besser</td></tr>
+            </tbody>
+          </table>
+        </div>
+        </div>
+
+        <div class="category-box">
+        <div class="flex flex-col md:flex-row gap-4 mb-4">
+          <div class="flex-1">
+            <h3 class="text-sm font-semibold text-green-400 uppercase tracking-wider mb-3">G-Sync Einstellungen (240Hz OLED)</h3>
+            <p class="text-gray-400 text-sm">G-Sync synchronisiert Monitor-Refresh mit GPU-Frames. Kein Tearing, minimaler Input Lag.</p>
+          </div>
+          <div class="card rounded-2xl p-4 border-l-4 border-green-500 bg-gradient-to-br from-green-500/10 to-transparent md:w-56 flex-shrink-0">
+            <p class="text-xs text-green-400 font-semibold uppercase tracking-wider mb-2">Dein Vorteil</p>
+            <p class="text-white font-bold text-lg mb-1">Tear-Free Gaming</p>
+            <p class="text-xs text-gray-400">Smooth ohne Input Lag wie bei V-Sync.</p>
+          </div>
+        </div>
+
+        <div class="card rounded-2xl p-4 mb-4">
+          <h4 class="font-semibold text-green-400 mb-3 text-sm">Anzeige → "G-SYNC einrichten"</h4>
+          <ol class="space-y-2 text-sm">
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 text-dark-900 flex items-center justify-center font-bold text-xs">1</span><span class="text-gray-400">Häkchen bei <span class="text-white">"G-SYNC, G-SYNC-kompatibel aktivieren"</span></span></li>
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 text-dark-900 flex items-center justify-center font-bold text-xs">2</span><span class="text-gray-400">Wähle: <span class="text-white">"Für Vollbild- und Fenstermodus aktivieren"</span></span></li>
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 text-dark-900 flex items-center justify-center font-bold text-xs">3</span><span class="text-gray-400">Wähle deinen <span class="text-white">ASUS OLED Monitor</span> → "Übernehmen"</span></li>
+          </ol>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-3">
+          <div class="alert alert-info">
+            <i data-lucide="lightbulb" class="w-5 h-5 text-accent-primary flex-shrink-0"></i>
+            <div>
+              <p class="text-sm font-semibold text-white">V-Sync + G-Sync + Cap?</p>
+              <p class="text-xs text-gray-400">Cap hält FPS bei 237 → G-Sync aktiv. V-Sync greift nie ein. Perfekte Kombo!</p>
+            </div>
+          </div>
+          <div class="card rounded-2xl p-3 border-l-4 border-accent-warning">
+            <h4 class="font-semibold text-accent-warning text-sm mb-2">G-Sync testen</h4>
+            <p class="text-xs text-gray-400">Anzeige → "G-SYNC-Indikator" aktivieren → Zeigt Overlay im Spiel.</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="category-box">
+        <div class="flex flex-col md:flex-row gap-4 mb-4">
+          <div class="flex-1">
+            <h3 class="text-sm font-semibold text-green-400 uppercase tracking-wider mb-3">NVIDIA Reflex (In-Game)</h3>
+            <p class="text-gray-400 text-sm">Reflex reduziert System-Latenz direkt im Spiel. Muss pro Game aktiviert werden!</p>
+          </div>
+          <div class="card rounded-2xl p-4 border-l-4 border-accent-secondary bg-gradient-to-br from-accent-secondary/10 to-transparent md:w-56 flex-shrink-0">
+            <p class="text-xs text-accent-secondary font-semibold uppercase tracking-wider mb-2">Dein Vorteil</p>
+            <p class="text-white font-bold text-lg mb-1">-20-50% Latenz</p>
+            <p class="text-xs text-gray-400">Spürbar schnellere Reaktion.</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-3 mb-4">
+          <div class="card rounded-2xl p-3 text-center">
+            <i data-lucide="crosshair" class="w-6 h-6 text-accent-danger mx-auto mb-2"></i>
+            <p class="font-semibold text-sm">CS2</p>
+            <p class="text-xs text-gray-500">Video → NVIDIA Reflex</p>
+            <span class="px-2 py-1 rounded-full bg-green-500/20 text-green-400 text-xs font-bold mt-2 inline-block">Enabled</span>
+          </div>
+          <div class="card rounded-2xl p-3 text-center">
+            <i data-lucide="crosshair" class="w-6 h-6 text-accent-primary mx-auto mb-2"></i>
+            <p class="font-semibold text-sm">Valorant</p>
+            <p class="text-xs text-gray-500">Video → NVIDIA Reflex</p>
+            <span class="px-2 py-1 rounded-full bg-green-500/20 text-green-400 text-xs font-bold mt-2 inline-block">On + Boost</span>
+          </div>
+          <div class="card rounded-2xl p-3 text-center">
+            <i data-lucide="swords" class="w-6 h-6 text-accent-warning mx-auto mb-2"></i>
+            <p class="font-semibold text-sm">Fortnite</p>
+            <p class="text-xs text-gray-500">Video → NVIDIA Reflex</p>
+            <span class="px-2 py-1 rounded-full bg-green-500/20 text-green-400 text-xs font-bold mt-2 inline-block">On + Boost</span>
+          </div>
+        </div>
+
+        <div class="alert alert-info">
+          <i data-lucide="info" class="w-4 h-4 text-accent-primary flex-shrink-0"></i>
+          <p class="text-xs"><span class="text-white font-semibold">"On + Boost"</span> hält GPU auf hohen Clocks. Gut für Valorant/Fortnite. In CS2 reicht "Enabled".</p>
+        </div>
+        </div>
+
+        <div class="category-box">
+        <div class="flex flex-col md:flex-row gap-4 mb-4">
+          <div class="flex-1">
+            <h3 class="text-sm font-semibold text-green-400 uppercase tracking-wider mb-3">DLSS & Frame Generation (RTX 4080 Super)</h3>
+            <p class="text-gray-400 text-sm">DLSS 3 mit Frame Generation - KI-Frames für massive FPS-Boosts in Singleplayer-Games.</p>
+          </div>
+          <div class="card rounded-2xl p-4 border-l-4 border-accent-purple bg-gradient-to-br from-accent-purple/10 to-transparent md:w-56 flex-shrink-0">
+            <p class="text-xs text-accent-purple font-semibold uppercase tracking-wider mb-2">Dein Vorteil</p>
+            <p class="text-white font-bold text-lg mb-1">+50-100% FPS</p>
+            <p class="text-xs text-gray-400">Für AAA-Games wie Cyberpunk.</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="sparkles" class="w-5 h-5 text-green-400"></i> DLSS Super Resolution</h4>
+            <p class="text-xs text-gray-400 mb-3">KI-Upscaling für mehr FPS bei guter Qualität.</p>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between"><span class="text-gray-500">Competitive (CS2)</span><span class="text-accent-danger font-semibold">AUS</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">AAA Games</span><span class="text-green-400 font-semibold">Quality</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">4K Gaming</span><span class="text-green-400 font-semibold">Balanced</span></div>
+            </div>
+          </div>
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="clapperboard" class="w-5 h-5 text-accent-purple"></i> Frame Generation</h4>
+            <p class="text-xs text-gray-400 mb-3">KI-Zwischenframes. Nur RTX 40-Series!</p>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between"><span class="text-gray-500">Competitive</span><span class="text-accent-danger font-semibold">AUS</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Singleplayer</span><span class="text-green-400 font-semibold">EIN</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Streaming</span><span class="text-green-400 font-semibold">EIN</span></div>
+            </div>
+            <p class="text-xs text-accent-warning mt-3">⚠️ +10ms Latenz - nicht für Competitive!</p>
+          </div>
+        </div>
+
+        <div class="alert alert-warning">
+          <i data-lucide="alert-triangle" class="w-5 h-5 text-accent-warning flex-shrink-0"></i>
+          <div>
+            <p class="font-semibold text-accent-warning text-sm">Für dein Setup</p>
+            <p class="text-xs text-gray-400">CS2/Valorant: <span class="text-white">DLSS AUS, Reflex EIN</span> - 240Hz easy erreichbar. Frame Gen nur für Cyberpunk etc!</p>
+          </div>
         </div>
         </div>
       </section>
@@ -2275,9 +2411,11 @@
       { title: 'VBS deaktivieren', section: 'Windows', id: 'windows', keywords: 'vbs memory integrity virtualization security fps' },
       { title: 'Ultimate Performance', section: 'Windows', id: 'windows', keywords: 'power plan energie leistung powercfg' },
       { title: 'Game Mode / HAGS', section: 'Windows', id: 'windows', keywords: 'game mode hags hardware accelerated gpu scheduling' },
-      { title: 'G-Sync Einstellungen', section: 'NVIDIA', id: 'nvidia', keywords: 'gsync g-sync vsync fps cap monitor' },
-      { title: 'Low Latency Mode', section: 'NVIDIA', id: 'nvidia', keywords: 'latency input lag nvidia reflex' },
-      { title: 'Shader Cache', section: 'NVIDIA', id: 'nvidia', keywords: 'shader cache stutter' },
+      { title: 'G-Sync Einstellungen', section: 'NVIDIA', id: 'nvidia', keywords: 'gsync g-sync vsync fps cap monitor tearing' },
+      { title: 'Low Latency Mode', section: 'NVIDIA', id: 'nvidia', keywords: 'latency input lag nvidia low latency' },
+      { title: 'NVIDIA Reflex', section: 'NVIDIA', id: 'nvidia', keywords: 'reflex latenz input lag cs2 valorant fortnite' },
+      { title: 'DLSS Frame Generation', section: 'NVIDIA', id: 'nvidia', keywords: 'dlss frame generation fps boost rtx 4080' },
+      { title: 'Shader Cache', section: 'NVIDIA', id: 'nvidia', keywords: 'shader cache stutter kompilieren' },
       { title: 'RAM Stabilität testen', section: 'RAM', id: 'ram', keywords: 'testmem5 tm5 occt aida64 benchmark' },
       { title: 'Samsung Firmware', section: 'SSD', id: 'ssd', keywords: 'firmware 990 pro samsung magician ssd' },
       { title: 'DDU Clean Install', section: 'Anti-Stutter', id: 'antistutter', keywords: 'ddu treiber driver clean uninstall' },
