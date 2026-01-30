@@ -606,8 +606,8 @@
         <div class="category-box">
         <div class="flex flex-col md:flex-row gap-4 mb-4">
           <div class="flex-1">
-            <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-3">VBS/Memory Integrity deaktivieren</h3>
-            <p class="text-gray-400 text-sm">Virtualization-Based Security prüft jeden Speicherzugriff auf Malware. Gut für Firmen-PCs, aber kostet Gaming-Performance.</p>
+            <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-3">Speicherintegrität deaktivieren</h3>
+            <p class="text-gray-400 text-sm">Die Speicherintegrität (Memory Integrity) prüft jeden Speicherzugriff auf Malware. Kostet aber Gaming-Performance.</p>
           </div>
           <div class="card rounded-2xl p-4 border-l-4 border-accent-danger bg-gradient-to-br from-accent-danger/10 to-transparent md:w-56 flex-shrink-0">
             <p class="text-xs text-accent-danger font-semibold uppercase tracking-wider mb-2">Dein Vorteil</p>
@@ -616,68 +616,78 @@
           </div>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-3 mb-4">
-          <div class="alert alert-danger">
-            <i data-lucide="shield-off" class="w-5 h-5 text-accent-danger flex-shrink-0 mt-0.5"></i>
-            <div><p class="font-semibold text-accent-danger text-sm">Sicherheitshinweis</p><p class="text-xs text-gray-400">Reduziert Windows-Sicherheit. Nur für reine Gaming-PCs empfohlen.</p></div>
-          </div>
-          <div class="alert alert-warning">
-            <i data-lucide="alert-triangle" class="w-5 h-5 text-accent-warning flex-shrink-0 mt-0.5"></i>
-            <div><p class="font-semibold text-accent-warning text-sm">Windows 11 24H2</p><p class="text-xs text-gray-400">Alle 4 Schritte nötig! Microsoft hat VBS schwerer deaktivierbar gemacht.</p></div>
-          </div>
+        <div class="alert alert-danger mb-4">
+          <i data-lucide="shield-off" class="w-5 h-5 text-accent-danger flex-shrink-0 mt-0.5"></i>
+          <div><p class="font-semibold text-accent-danger text-sm">Sicherheitshinweis</p><p class="text-xs text-gray-400">Reduziert Windows-Sicherheit. Für reine Gaming-PCs in Ordnung.</p></div>
         </div>
 
-        <div class="card rounded-2xl p-4 mb-6">
-          <ol class="space-y-4 text-sm">
-            <li class="flex gap-3">
+        <div class="card rounded-2xl p-4 mb-4">
+          <h4 class="font-semibold text-accent-primary mb-3 text-sm">So geht's (2 Klicks)</h4>
+          <div class="space-y-3 text-sm">
+            <div class="flex gap-3">
               <span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">1</span>
               <div class="flex-1">
-                <span class="font-semibold text-white">Memory Integrity deaktivieren</span>
-                <p class="text-gray-400 mt-1">Windows-Taste → "Kernisolierung" eingeben → Enter</p>
-                <p class="text-gray-400">Oder: Einstellungen → Datenschutz & Sicherheit → Windows-Sicherheit → Gerätesicherheit → Kernisolierung</p>
-                <p class="text-accent-danger mt-1">→ Speicherintegrität: <span class="font-semibold">AUS</span></p>
+                <p class="text-gray-400">Windows-Taste → <span class="text-white font-semibold">"Kernisolierung"</span> eingeben → Enter</p>
               </div>
-            </li>
-            <li class="flex gap-3">
+            </div>
+            <div class="flex gap-3">
               <span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">2</span>
               <div class="flex-1">
-                <span class="font-semibold text-white">VBS via Registry deaktivieren</span>
-                <p class="text-gray-400 mt-1">Rechtsklick auf Start → "Terminal (Administrator)" → Folgenden Befehl eingeben:</p>
-                <div class="bg-dark-900 rounded-lg p-2 mt-2 font-mono text-xs text-accent-primary overflow-x-auto"><code>reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v EnableVirtualizationBasedSecurity /t REG_DWORD /d 0 /f</code></div>
+                <p class="text-gray-400"><span class="text-white font-semibold">"Speicherintegrität"</span> → Schalter auf <span class="text-accent-danger font-bold">AUS</span></p>
               </div>
-            </li>
-            <li class="flex gap-3">
-              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">3</span>
+            </div>
+            <div class="flex gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-secondary text-dark-900 flex items-center justify-center font-bold text-xs">3</span>
               <div class="flex-1">
-                <span class="font-semibold text-white">Windows Hello VBS deaktivieren (NEU für 24H2!)</span>
-                <p class="text-gray-400 mt-1">Im gleichen Terminal:</p>
-                <div class="bg-dark-900 rounded-lg p-2 mt-2 font-mono text-xs text-accent-primary overflow-x-auto"><code>reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\WindowsHello" /v Enabled /t REG_DWORD /d 0 /f</code></div>
+                <p class="text-gray-400">PC <span class="text-white font-semibold">neu starten</span> → Fertig!</p>
               </div>
-            </li>
-            <li class="flex gap-3">
-              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">4</span>
-              <div class="flex-1">
-                <span class="font-semibold text-white">Hypervisor deaktivieren</span>
-                <p class="text-gray-400 mt-1">Im gleichen Terminal:</p>
-                <div class="bg-dark-900 rounded-lg p-2 mt-2 font-mono text-xs text-accent-primary overflow-x-auto"><code>bcdedit /set hypervisorlaunchtype off</code></div>
-              </div>
-            </li>
-            <li class="flex gap-3">
-              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-secondary text-dark-900 flex items-center justify-center font-bold text-xs">5</span>
-              <div class="flex-1">
-                <span class="font-semibold text-white">PC neustarten und verifizieren</span>
-                <p class="text-gray-400 mt-1">Nach Neustart: <code class="bg-dark-800 px-2 py-0.5 rounded text-accent-primary">Win + R</code> → <code class="bg-dark-800 px-2 py-0.5 rounded text-accent-primary">msinfo32</code> → Enter</p>
-                <p class="text-gray-400 mt-1">Suche nach "Virtualization-based security" → sollte <span class="text-accent-primary font-semibold">"Nicht aktiviert"</span> zeigen</p>
-              </div>
-            </li>
-          </ol>
+            </div>
+          </div>
         </div>
 
-        <div class="card rounded-2xl p-3 mb-6 border-l-4 border-accent-secondary">
-          <h4 class="font-semibold text-accent-secondary text-sm mb-2">VBS wieder aktivieren (falls Probleme)</h4>
-          <div class="bg-dark-900 rounded-lg p-2 font-mono text-xs text-accent-primary overflow-x-auto"><code>bcdedit /set hypervisorlaunchtype auto</code></div>
-          <p class="text-xs text-gray-500 mt-2">Dann PC neustarten und Memory Integrity wieder aktivieren.</p>
-        </div>
+        <!-- Fallback für 24H2 wenn Schalter nicht funktioniert -->
+        <details class="card rounded-2xl mb-6 group">
+          <summary class="p-4 cursor-pointer flex items-center justify-between hover:bg-dark-700/50 rounded-2xl transition-colors">
+            <div class="flex items-center gap-3">
+              <i data-lucide="alert-triangle" class="w-5 h-5 text-accent-warning"></i>
+              <div>
+                <p class="font-semibold text-white text-sm">Schalter funktioniert nicht? (Windows 11 24H2)</p>
+                <p class="text-xs text-gray-500">Registry-Methode falls sich der Schalter nicht deaktivieren lässt</p>
+              </div>
+            </div>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <div class="p-4 pt-0 border-t border-dark-700">
+            <p class="text-xs text-gray-400 mb-3">Falls der Schalter ausgegraut ist oder sich nach Neustart wieder aktiviert:</p>
+            <ol class="space-y-3 text-sm">
+              <li class="flex gap-3">
+                <span class="flex-shrink-0 w-5 h-5 rounded-full bg-accent-warning text-dark-900 flex items-center justify-center font-bold text-xs">1</span>
+                <div class="flex-1">
+                  <p class="text-gray-400 text-xs">Rechtsklick auf Start → <span class="text-white">"Terminal (Administrator)"</span></p>
+                </div>
+              </li>
+              <li class="flex gap-3">
+                <span class="flex-shrink-0 w-5 h-5 rounded-full bg-accent-warning text-dark-900 flex items-center justify-center font-bold text-xs">2</span>
+                <div class="flex-1">
+                  <p class="text-gray-400 text-xs mb-1">Diese Befehle nacheinander eingeben:</p>
+                  <div class="bg-dark-900 rounded-lg p-2 font-mono text-xs text-accent-primary overflow-x-auto space-y-1">
+                    <code class="block">reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v EnableVirtualizationBasedSecurity /t REG_DWORD /d 0 /f</code>
+                    <code class="block">bcdedit /set hypervisorlaunchtype off</code>
+                  </div>
+                </div>
+              </li>
+              <li class="flex gap-3">
+                <span class="flex-shrink-0 w-5 h-5 rounded-full bg-accent-warning text-dark-900 flex items-center justify-center font-bold text-xs">3</span>
+                <div class="flex-1">
+                  <p class="text-gray-400 text-xs">PC neu starten</p>
+                </div>
+              </li>
+            </ol>
+            <div class="mt-3 p-2 bg-dark-800 rounded-lg">
+              <p class="text-xs text-gray-500"><span class="text-accent-secondary font-semibold">Rückgängig machen:</span> <code class="text-accent-primary">bcdedit /set hypervisorlaunchtype auto</code> + Schalter wieder AN</p>
+            </div>
+          </div>
+        </details>
 
         <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">Weitere Gaming-Optimierungen</h3>
 
