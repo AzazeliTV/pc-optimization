@@ -116,6 +116,11 @@
     .alert-danger { background: linear-gradient(135deg, rgba(255,68,102,0.1) 0%, rgba(255,68,102,0.05) 100%); border: 1px solid rgba(255,68,102,0.2); }
     .alert-info { background: linear-gradient(135deg, rgba(0,255,136,0.08) 0%, rgba(0,212,255,0.05) 100%); border: 1px solid rgba(0,255,136,0.15); }
 
+    /* Category Containers */
+    .category-box { background: linear-gradient(145deg, rgba(15,22,40,0.6) 0%, rgba(10,15,30,0.7) 100%); border: 1px solid rgba(255,255,255,0.05); border-radius: 24px; padding: 32px; margin-bottom: 24px; backdrop-filter: blur(10px); box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
+    .category-box:hover { border-color: rgba(0,255,136,0.15); }
+    .category-label { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, rgba(0,255,136,0.12) 0%, rgba(0,212,255,0.08) 100%); border: 1px solid rgba(0,255,136,0.2); padding: 6px 16px; border-radius: 20px; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(0,255,136,0.9); margin-bottom: 20px; }
+
     /* Print */
     @media print { .sidebar, .no-print { display: none !important; } .main-content { margin-left: 0 !important; } }
 
@@ -235,6 +240,7 @@
           </div>
         </div>
 
+        <div class="category-box">
         <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">Hardware Komponenten</h3>
         <div class="grid md:grid-cols-2 gap-4 mb-8">
           <div class="card rounded-2xl p-5 flex items-center gap-4 transition-all"><div class="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-primary/20 to-accent-primary/5 flex items-center justify-center"><i data-lucide="cpu" class="w-6 h-6 text-accent-primary"></i></div><div class="flex-1"><p class="text-xs text-gray-500 mb-1">CPU</p><p class="font-semibold text-white">AMD Ryzen 7 9800X3D</p></div><i data-lucide="trophy" class="w-6 h-6 text-yellow-400"></i></div>
@@ -271,6 +277,7 @@
             </tbody>
           </table>
         </div>
+        </div>
       </section>
 
       <!-- Section: Peripherals -->
@@ -281,11 +288,13 @@
           </div>
           <div><h2 class="text-3xl font-bold text-white">Peripheriegeräte</h2><p class="text-gray-500 text-sm mt-1">Gaming-Zubehör</p></div>
         </div>
+        <div class="category-box">
         <div class="grid md:grid-cols-2 gap-3">
           <div class="card rounded-2xl p-4 flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-dark-700 flex items-center justify-center"><i data-lucide="keyboard" class="w-5 h-5 text-accent-primary"></i></div><div class="flex-1"><p class="text-xs text-gray-500">Keyboard</p><p class="font-semibold text-accent-primary">Wooting 80HE</p><p class="text-xs text-gray-500">8kHz, Rapid Trigger, Hall Effect</p></div><i data-lucide="trophy" class="w-6 h-6 text-yellow-400"></i></div>
           <div class="card rounded-2xl p-4 flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-dark-700 flex items-center justify-center"><i data-lucide="mouse" class="w-5 h-5 text-accent-primary"></i></div><div class="flex-1"><p class="text-xs text-gray-500">Maus</p><p class="font-semibold text-accent-primary">Razer Viper V3 Pro</p><p class="text-xs text-gray-500">8kHz, 54g, Focus Pro 35K</p></div><i data-lucide="trophy" class="w-6 h-6 text-yellow-400"></i></div>
           <div class="card rounded-2xl p-4 flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-dark-700 flex items-center justify-center"><i data-lucide="headphones" class="w-5 h-5 text-accent-primary"></i></div><div class="flex-1"><p class="text-xs text-gray-500">Headset</p><p class="font-semibold text-accent-primary">SteelSeries Arctis Nova Pro Wireless</p><p class="text-xs text-gray-500">ANC, Dual-Battery, Hi-Res Audio</p></div><i data-lucide="trophy" class="w-6 h-6 text-yellow-400"></i></div>
           <div class="card rounded-2xl p-4 flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-dark-700 flex items-center justify-center"><i data-lucide="sliders" class="w-5 h-5 text-accent-secondary"></i></div><div class="flex-1"><p class="text-xs text-gray-500">Stream Deck</p><p class="font-semibold">Elgato Stream Deck</p><p class="text-xs text-gray-500">OBS-Steuerung, Shortcuts</p></div><i data-lucide="check-circle" class="w-5 h-5 text-accent-primary"></i></div>
+        </div>
         </div>
       </section>
 
@@ -297,6 +306,7 @@
           </div>
           <div><h2 class="text-3xl font-bold text-white">Benötigte Software</h2></div>
         </div>
+        <div class="category-box">
         <div class="table-modern bg-dark-800/50 mb-4">
           <table class="w-full text-sm">
             <thead><tr class="bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10"><th class="text-left px-4 py-3 text-accent-primary font-semibold text-xs uppercase">Tool</th><th class="text-left px-4 py-3 text-accent-primary font-semibold text-xs uppercase">Zweck</th><th class="text-left px-4 py-3 text-accent-primary font-semibold text-xs uppercase">Download</th></tr></thead>
@@ -318,6 +328,7 @@
           <i data-lucide="alert-octagon" class="w-5 h-5 text-accent-danger flex-shrink-0 mt-0.5"></i>
           <p class="text-sm"><span class="font-semibold text-accent-danger">NIEMALS</span> BIOS über Windows-Apps (Gigabyte Control Center) updaten! Immer Q-Flash im BIOS nutzen.</p>
         </div>
+        </div>
       </section>
 
       <!-- Section: BIOS -->
@@ -329,6 +340,7 @@
           <div><h2 class="text-3xl font-bold text-white">BIOS-Einstellungen (Gigabyte X670)</h2></div>
         </div>
 
+        <div class="category-box">
         <div class="alert alert-warning">
           <i data-lucide="alert-triangle" class="w-5 h-5 text-accent-warning flex-shrink-0 mt-0.5"></i>
           <div><p class="font-semibold text-accent-warning">9800X3D Sicherheitshinweis</p><p class="text-sm text-gray-400">Dein Gigabyte X670 ist NICHT in der Hauptrisikogruppe für CPU-Ausfälle (82% waren ASRock). Trotzdem: Immer stabiles BIOS (keine Beta!), konservatives PBO starten.</p></div>
@@ -399,6 +411,7 @@
           <i data-lucide="alert-triangle" class="w-5 h-5 text-accent-warning flex-shrink-0"></i>
           <p class="text-sm"><span class="font-semibold text-accent-warning">Stabilität testen!</span> Mit Cinebench R23, OCCT, Y-Cruncher. Viele erreichen -25 bis -30, aber jede CPU ist anders!</p>
         </div>
+        </div>
       </section>
 
       <!-- Section: Windows -->
@@ -410,6 +423,7 @@
           <div><h2 class="text-3xl font-bold text-white">Windows 11 24H2 Optimierungen</h2></div>
         </div>
 
+        <div class="category-box">
         <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">VBS/Memory Integrity deaktivieren (5-15% FPS!)</h3>
         <div class="alert alert-warning mb-4">
           <i data-lucide="alert-triangle" class="w-5 h-5 text-accent-warning flex-shrink-0 mt-0.5"></i>
@@ -440,6 +454,7 @@
         <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">Ultimate Performance Power Plan</h3>
         <div class="bg-dark-900 rounded-lg p-3 font-mono text-xs text-accent-primary overflow-x-auto mb-2"><code>powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61</code></div>
         <p class="text-sm text-gray-400">Dann in Systemsteuerung → Energieoptionen auswählen.</p>
+        </div>
       </section>
 
       <!-- Section: NVIDIA -->
@@ -450,6 +465,7 @@
           </div>
           <div><h2 class="text-3xl font-bold" style="background: linear-gradient(135deg, #76b900 0%, #88cc00 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">NVIDIA Control Panel</h2><p class="text-gray-500 text-sm mt-1">GPU-Einstellungen</p></div>
         </div>
+        <div class="category-box">
         <p class="text-gray-400 mb-4 text-sm">Rechtsklick auf Desktop → NVIDIA Systemsteuerung → 3D-Einstellungen verwalten</p>
 
         <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">Globale Einstellungen</h3>
@@ -479,6 +495,7 @@
           <i data-lucide="lightbulb" class="w-5 h-5 text-accent-primary flex-shrink-0"></i>
           <p class="text-sm"><span class="font-semibold text-accent-primary">Optimale Kombination:</span> G-Sync EIN + V-Sync EIN + Max Frame Rate 237 + Low Latency EIN = Tear-Free ohne Input Lag!</p>
         </div>
+        </div>
       </section>
 
       <!-- Section: RAM -->
@@ -489,6 +506,7 @@
           </div>
           <div><h2 class="text-3xl font-bold text-white">RAM-Optimierung</h2></div>
         </div>
+        <div class="category-box">
         <p class="text-gray-400 mb-4">DDR5-6000 CL30 mit 2x32GB ist der perfekte Sweet Spot für AM5:</p>
         <ul class="list-disc list-inside space-y-1 text-sm text-gray-400 mb-4">
           <li><strong class="text-white">FCLK 3000MHz</strong> (1:1 Ratio) = beste Latenz</li>
@@ -508,6 +526,7 @@
             </tbody>
           </table>
         </div>
+        </div>
       </section>
 
       <!-- Section: SSD -->
@@ -518,6 +537,7 @@
           </div>
           <div><h2 class="text-3xl font-bold text-white">SSD-Wartung (Samsung 990 PRO)</h2></div>
         </div>
+        <div class="category-box">
         <div class="card rounded-2xl p-4 mb-4 border-l-4 border-accent-danger flex gap-3">
           <i data-lucide="alert-octagon" class="w-5 h-5 text-accent-danger flex-shrink-0 mt-0.5"></i>
           <div><p class="font-semibold text-accent-danger">KRITISCH: Firmware prüfen!</p><p class="text-sm text-gray-400">Frühere Firmware-Versionen hatten schnelle Health-Verschlechterung! Stelle sicher, dass du Firmware <strong class="text-white">5B2QJXF7</strong> oder neuer hast.</p></div>
@@ -529,6 +549,7 @@
           <li>Drive Health regelmäßig prüfen (sollte "Good" sein)</li>
           <li>Temperatur sollte unter 70°C bleiben</li>
         </ul>
+        </div>
       </section>
 
       <!-- Section: Anti-Stutter -->
@@ -539,6 +560,7 @@
           </div>
           <div><h2 class="text-3xl font-bold text-white">Anti-Stutter Fixes</h2></div>
         </div>
+        <div class="category-box">
         <div class="table-modern bg-dark-800/50 mb-4">
           <table class="w-full text-sm"><thead><tr><th class="text-left px-5 py-4">Problem</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Lösung</th></tr></thead>
             <tbody class="">
@@ -568,6 +590,7 @@
           <i data-lucide="alert-triangle" class="w-5 h-5 text-accent-warning flex-shrink-0"></i>
           <p class="text-sm"><span class="font-semibold text-accent-warning">Wann DDU nutzen?</span> Bei Treiber-Problemen, Stutter nach Update, oder bei Wechsel AMD ↔ NVIDIA.</p>
         </div>
+        </div>
       </section>
 
       <!-- Section: Wooting -->
@@ -578,6 +601,7 @@
           </div>
           <div><h2 class="text-3xl font-bold text-white">Wooting 80HE Settings</h2></div>
         </div>
+        <div class="category-box">
         <p class="text-gray-400 mb-4 text-sm">Beste Gaming-Tastatur dank Rapid Trigger und 8kHz Polling.</p>
 
         <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">Basis-Einstellungen</h3>
@@ -627,6 +651,7 @@
           <i data-lucide="alert-octagon" class="w-5 h-5 text-accent-danger flex-shrink-0"></i>
           <p class="text-sm"><span class="font-semibold text-accent-danger">Achtung:</span> Rappy Snappy ist in CS2 verboten!</p>
         </div>
+        </div>
       </section>
 
       <!-- Section: Mouse -->
@@ -637,6 +662,7 @@
           </div>
           <div><h2 class="text-3xl font-bold text-white">Razer Viper V3 Pro Settings</h2></div>
         </div>
+        <div class="category-box">
         <p class="text-gray-400 mb-4 text-sm">Beste Wireless Gaming-Maus 2025 mit 8kHz Polling und 54g Gewicht.</p>
 
         <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">Razer Synapse 4 Einstellungen</h3>
@@ -657,6 +683,7 @@
           <div class="card rounded-2xl p-3"><p class="font-semibold text-accent-primary">TenZ (Valorant)</p><p class="text-sm text-gray-400">800 DPI, 0.4 Sens, 4000 Hz</p></div>
           <div class="card rounded-2xl p-3"><p class="font-semibold text-accent-secondary">s1mple (CS2)</p><p class="text-sm text-gray-400">400 DPI, 3.09 Sens, 1000 Hz</p></div>
         </div>
+        </div>
       </section>
 
       <!-- Section: Headset -->
@@ -668,6 +695,7 @@
           <div><h2 class="text-3xl font-bold text-white">SteelSeries Arctis Nova Pro Wireless</h2></div>
         </div>
 
+        <div class="category-box">
         <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">SteelSeries GG (Sonar) Settings</h3>
         <div class="table-modern bg-dark-800/50 mb-4">
           <table class="w-full text-sm"><thead><tr><th class="text-left px-5 py-4">Einstellung</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Gaming</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Musik</th></tr></thead>
@@ -694,6 +722,7 @@
             <tr><td class="px-4 py-2 text-gray-400">Noise Cancellation</td><td class="px-4 py-2 text-accent-primary font-semibold">Hoch</td></tr>
           </tbody></table>
         </div>
+        </div>
       </section>
 
       <!-- Section: Stream Deck -->
@@ -705,6 +734,7 @@
           <div><h2 class="text-3xl font-bold text-white">Elgato Stream Deck</h2></div>
         </div>
 
+        <div class="category-box">
         <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">Empfohlene Plugins</h3>
         <div class="grid md:grid-cols-2 gap-3 mb-6">
           <div class="card rounded-2xl p-3 flex items-center gap-3"><i data-lucide="volume-2" class="w-5 h-5 text-accent-primary"></i><div><p class="font-semibold text-sm">Audio Switcher</p><p class="text-xs text-gray-500">Schnell zwischen Audio-Outputs wechseln</p></div></div>
@@ -732,6 +762,7 @@
           <div class="card rounded-2xl p-3 text-center"><i data-lucide="gamepad-2" class="w-6 h-6 text-accent-primary mx-auto mb-2"></i><p class="font-semibold text-sm">Gaming</p><p class="text-xs text-gray-500">Discord, Audio Switch, Screenshot, Clip</p></div>
           <div class="card rounded-2xl p-3 text-center"><i data-lucide="briefcase" class="w-6 h-6 text-accent-secondary mx-auto mb-2"></i><p class="font-semibold text-sm">Produktivität</p><p class="text-xs text-gray-500">Apps öffnen, Websites, Shortcuts</p></div>
         </div>
+        </div>
       </section>
 
       <!-- Section: OLED -->
@@ -743,6 +774,7 @@
           <div><h2 class="text-3xl font-bold text-white">ASUS ROG SWIFT OLED (DisplayWidget)</h2></div>
         </div>
 
+        <div class="category-box">
         <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">GameVisual Modi</h3>
         <div class="table-modern bg-dark-800/50 mb-4">
           <table class="w-full text-sm"><thead><tr><th class="text-left px-5 py-4">Modus</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Verwendung</th></tr></thead>
@@ -768,6 +800,7 @@
           <i data-lucide="alert-triangle" class="w-5 h-5 text-accent-warning flex-shrink-0"></i>
           <p class="text-sm"><span class="font-semibold text-accent-warning">HDR Tipp:</span> Windows HDR NUR aktivieren bei HDR-Content! SDR mit HDR sieht ausgewaschen aus.</p>
         </div>
+        </div>
       </section>
 
       <!-- Section: OBS -->
@@ -779,6 +812,7 @@
           <div><h2 class="text-3xl font-bold text-white">OBS Streaming (Twitch)</h2></div>
         </div>
 
+        <div class="category-box">
         <div class="card rounded-2xl p-4 mb-4">
           <h4 class="font-semibold text-accent-primary mb-2 flex items-center gap-2"><i data-lucide="rocket" class="w-5 h-5"></i> Enhanced Broadcasting (Empfohlen!)</h4>
           <p class="text-sm text-gray-400 mb-2">Als Affiliate nutze Enhanced Broadcasting (OBS 30.2+):</p>
@@ -811,6 +845,7 @@
             <tr><td class="px-4 py-2 text-gray-400">FPS</td><td class="px-4 py-2">60</td></tr>
           </tbody></table>
         </div>
+        </div>
       </section>
 
       <!-- Section: Upgrades -->
@@ -821,6 +856,7 @@
           </div>
           <div><h2 class="text-3xl font-bold text-white">Upgrade-Empfehlungen</h2></div>
         </div>
+        <div class="category-box">
 
         <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">Lohnenswerte Upgrades</h3>
         <div class="card rounded-2xl p-4 mb-4 border-l-4 border-accent-primary">
@@ -847,6 +883,7 @@
             </tbody>
           </table>
         </div>
+        </div>
       </section>
 
       <!-- Section: Checklist -->
@@ -858,6 +895,7 @@
           <div><h2 class="text-3xl font-bold text-white">Wartungs-Checkliste</h2></div>
         </div>
 
+        <div class="category-box">
         <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">Einmalige Einrichtung</h3>
         <div class="card rounded-2xl p-3 mb-3 flex items-center gap-3 flex-wrap">
           <span class="font-semibold text-accent-primary">Fortschritt: <span id="setupCount">0</span>/<span id="setupTotal">12</span></span>
@@ -892,6 +930,7 @@
           <label class="flex items-center gap-3 p-2 glass rounded-lg cursor-pointer hover:border-accent-primary/30 text-sm"><input type="checkbox" class="checkbox-custom hidden" onchange="updateProgress('monthly')"><span class="w-4 h-4 border-2 border-accent-primary rounded flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5 text-dark-900 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span><span>Firmware-Updates prüfen</span></label>
           <label class="flex items-center gap-3 p-2 glass rounded-lg cursor-pointer hover:border-accent-primary/30 text-sm"><input type="checkbox" class="checkbox-custom hidden" onchange="updateProgress('monthly')"><span class="w-4 h-4 border-2 border-accent-primary rounded flex items-center justify-center flex-shrink-0"><svg class="w-2.5 h-2.5 text-dark-900 opacity-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></span><span>OLED Pixel Cleaning</span></label>
         </div>
+        </div>
       </section>
 
       <!-- Section: Troubleshooting -->
@@ -903,6 +942,7 @@
           <div><h2 class="text-3xl font-bold text-white">Troubleshooting</h2></div>
         </div>
 
+        <div class="category-box">
         <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">HWiNFO64 - Wichtige Werte</h3>
         <div class="table-modern bg-dark-800/50 mb-6">
           <table class="w-full text-sm"><thead><tr><th class="text-left px-5 py-4">Sensor</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Wert</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Wo finden</th></tr></thead>
@@ -948,6 +988,7 @@
             </tbody>
           </table>
         </div>
+        </div>
       </section>
 
       <!-- Quick Wins -->
@@ -958,6 +999,7 @@
           </div>
           <div><h2 class="text-3xl font-bold text-white">Quick-Wins Zusammenfassung</h2></div>
         </div>
+        <div class="category-box">
         <ol class="space-y-2 text-sm text-gray-300">
           <li class="flex gap-2"><span class="text-accent-primary font-bold">1.</span><span><strong class="text-white">BIOS:</strong> EXPO + Global C-State Enabled + PBO +200MHz</span></li>
           <li class="flex gap-2"><span class="text-accent-primary font-bold">2.</span><span><strong class="text-white">BIOS:</strong> Curve Optimizer -15 bis -20</span></li>
@@ -970,6 +1012,7 @@
           <i data-lucide="gamepad-2" class="w-8 h-8 text-accent-primary mx-auto mb-2"></i>
           <p class="font-semibold text-accent-primary">Viel Spaß beim Zocken auf deinem OLED!</p>
           <p class="text-sm text-gray-400">Dein System gehört zu den Top 1% weltweit.</p>
+        </div>
         </div>
       </section>
 
@@ -1002,7 +1045,37 @@
     const menuToggle=document.getElementById('menuToggle'),sidebar=document.getElementById('sidebar');
     menuToggle.addEventListener('click',()=>sidebar.classList.toggle('-translate-x-full'));
     document.querySelectorAll('.nav-link').forEach(l=>l.addEventListener('click',()=>{if(window.innerWidth<768)sidebar.classList.add('-translate-x-full')}));
-    window.addEventListener('scroll',()=>{const s=document.documentElement.scrollTop,h=document.documentElement.scrollHeight-document.documentElement.clientHeight;document.getElementById('progressBar').style.width=(s/h*100)+'%';const b=document.getElementById('backToTop');s>500?(b.classList.remove('opacity-0','invisible'),b.classList.add('opacity-100')):(b.classList.add('opacity-0','invisible'),b.classList.remove('opacity-100'))});
+
+    // Scroll-Spy: Highlight active section in sidebar
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+    function updateActiveNav() {
+      const scrollPos = window.scrollY + 150;
+      let currentSection = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+      // Special case for hero section at top
+      if (window.scrollY < 100) currentSection = 'hero';
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + currentSection) {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll',()=>{
+      const s=document.documentElement.scrollTop,h=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+      document.getElementById('progressBar').style.width=(s/h*100)+'%';
+      const b=document.getElementById('backToTop');
+      s>500?(b.classList.remove('opacity-0','invisible'),b.classList.add('opacity-100')):(b.classList.add('opacity-0','invisible'),b.classList.remove('opacity-100'));
+      updateActiveNav();
+    });
     function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'})}
     function updateProgress(id){const c=document.getElementById(id+'Checklist'),boxes=c.querySelectorAll('input[type="checkbox"]'),checked=c.querySelectorAll('input:checked').length,total=boxes.length;document.getElementById(id+'Count').textContent=checked;document.getElementById(id+'Total').textContent=total;document.getElementById(id+'Bar').style.width=(checked/total*100)+'%';boxes.forEach(b=>{const svg=b.nextElementSibling.querySelector('svg');if(b.checked){svg.classList.remove('opacity-0');svg.classList.add('opacity-100');b.nextElementSibling.classList.add('bg-accent-primary')}else{svg.classList.add('opacity-0');svg.classList.remove('opacity-100');b.nextElementSibling.classList.remove('bg-accent-primary')}});localStorage.setItem('checklist_'+id,JSON.stringify(Array.from(boxes).map(b=>b.checked)))}
     function loadChecklist(id){const saved=localStorage.getItem('checklist_'+id);if(saved){const states=JSON.parse(saved),boxes=document.getElementById(id+'Checklist').querySelectorAll('input[type="checkbox"]');boxes.forEach((b,i)=>{if(states[i])b.checked=true})}updateProgress(id)}
