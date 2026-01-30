@@ -258,6 +258,7 @@
       <!-- Maintenance Section -->
       <div class="mt-6 mb-2"><span class="nav-section">WARTUNG</span></div>
       <a href="#biosupdate" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="refresh-cw" class="w-4 h-4"></i><span>BIOS Update</span></a>
+      <a href="#amdchipset" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="cpu" class="w-4 h-4"></i><span>AMD Chipset</span></a>
       <a href="#upgrades" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="trending-up" class="w-4 h-4"></i><span>Upgrades</span></a>
       <a href="#checklist" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="check-square" class="w-4 h-4"></i><span>Checkliste</span></a>
       <a href="#troubleshooting" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="bug" class="w-4 h-4"></i><span>Troubleshooting</span></a>
@@ -2894,6 +2895,155 @@
         </div>
       </section>
 
+      <!-- Section: AMD Chipset -->
+      <section id="amdchipset" class="py-12 scroll-mt-8">
+        <div class="section-header">
+          <div class="section-icon" style="background: linear-gradient(135deg, rgba(237,28,36,0.2) 0%, rgba(237,28,36,0.1) 100%); border-color: rgba(237,28,36,0.3);">
+            <i data-lucide="cpu" class="w-6 h-6 text-red-500"></i>
+          </div>
+          <div><h2 class="text-3xl font-bold text-white">AMD Chipset Treiber</h2><p class="text-gray-400 text-sm">Ryzen 9800X3D + AM5 Plattform</p></div>
+        </div>
+
+        <!-- Benefit Card -->
+        <div class="flex flex-wrap gap-4 mb-6">
+          <div class="card rounded-2xl p-4 border-l-4 border-red-500 bg-gradient-to-br from-red-500/10 to-transparent md:w-64 flex-shrink-0">
+            <p class="text-xs text-red-400 font-semibold uppercase tracking-wider mb-2">Dein Vorteil</p>
+            <p class="text-white font-bold text-lg mb-1">3D V-Cache Optimizer</p>
+            <p class="text-xs text-gray-400">Automatische Game-Optimierung für maximale Cache-Performance.</p>
+          </div>
+        </div>
+
+        <div class="category-box">
+        <div class="card rounded-2xl p-4 mb-4 border-l-4 border-red-500">
+          <h4 class="font-semibold text-red-400 text-sm mb-2">AMD Chipset Software herunterladen</h4>
+          <p class="text-sm text-gray-400"><a href="https://www.amd.com/en/support" target="_blank" class="text-red-400 underline">amd.com/support</a> → Chipsets → AMD Socket AM5 → X670 (oder dein Chipsatz) → Download</p>
+        </div>
+
+        <h3 class="text-sm font-semibold text-red-400 uppercase tracking-wider mb-4">Treiber-Auswahl (alle aktivieren!)</h3>
+        <div class="grid md:grid-cols-2 gap-3 mb-6">
+          <div class="card rounded-2xl p-4 border border-red-500/30">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center">
+                <i data-lucide="zap" class="w-4 h-4 text-red-400"></i>
+              </div>
+              <div>
+                <p class="font-semibold text-white text-sm">AMD 3D V-Cache Performance Optimizer</p>
+                <p class="text-xs text-gray-500">Für 9800X3D essentiell!</p>
+              </div>
+            </div>
+            <p class="text-xs text-gray-400">Optimiert automatisch welche Prozesse den 3D V-Cache nutzen. Ohne diesen Treiber verschenkst du Cache-Performance!</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-red-500/30">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center">
+                <i data-lucide="gauge" class="w-4 h-4 text-red-400"></i>
+              </div>
+              <div>
+                <p class="font-semibold text-white text-sm">AMD PPM-Bereitstellungsdatei-Treiber</p>
+                <p class="text-xs text-gray-500">Power Management</p>
+              </div>
+            </div>
+            <p class="text-xs text-gray-400">Steuert das Power Management deines Ryzen. Wichtig für korrekte Boost-Clocks und Energieeffizienz.</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-red-500/30">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center">
+                <i data-lucide="shield" class="w-4 h-4 text-red-400"></i>
+              </div>
+              <div>
+                <p class="font-semibold text-white text-sm">AMD PSP-Treiber</p>
+                <p class="text-xs text-gray-500">Platform Security Processor</p>
+              </div>
+            </div>
+            <p class="text-xs text-gray-400">Sicherheitsprozessor auf dem CPU-Die. Kommunikation zwischen Windows und AMD Security Features.</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-red-500/30">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center">
+                <i data-lucide="plug" class="w-4 h-4 text-red-400"></i>
+              </div>
+              <div>
+                <p class="font-semibold text-white text-sm">AMD GPIO-Treiber</p>
+                <p class="text-xs text-gray-500">General Purpose I/O</p>
+              </div>
+            </div>
+            <p class="text-xs text-gray-400">Steuert die GPIO-Pins auf dem Mainboard. Wichtig für RGB-Controller, Lüfter und andere Komponenten.</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-red-500/30">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center">
+                <i data-lucide="cable" class="w-4 h-4 text-red-400"></i>
+              </div>
+              <div>
+                <p class="font-semibold text-white text-sm">AMD I2C-Treiber</p>
+                <p class="text-xs text-gray-500">Inter-Integrated Circuit</p>
+              </div>
+            </div>
+            <p class="text-xs text-gray-400">Kommunikationsbus für Sensoren, RGB und andere Low-Speed-Geräte auf dem Mainboard.</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-red-500/30">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center">
+                <i data-lucide="settings" class="w-4 h-4 text-red-400"></i>
+              </div>
+              <div>
+                <p class="font-semibold text-white text-sm">AMD Interface Driver</p>
+                <p class="text-xs text-gray-500">System Interface</p>
+              </div>
+            </div>
+            <p class="text-xs text-gray-400">Basis-Interface zwischen Windows und AMD-Hardware. Wird von anderen Treibern benötigt.</p>
+          </div>
+        </div>
+
+        <h3 class="text-sm font-semibold text-red-400 uppercase tracking-wider mb-4">Installation</h3>
+        <div class="card rounded-2xl p-4 mb-4">
+          <ol class="space-y-3 text-sm">
+            <li class="flex gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-red-500 text-white flex items-center justify-center font-bold text-xs">1</span>
+              <div class="flex-1">
+                <p class="text-gray-400"><a href="https://www.amd.com/en/support" target="_blank" class="text-red-400 underline">amd.com/support</a> → Chipsets → AMD Socket AM5 → Dein Chipsatz</p>
+              </div>
+            </li>
+            <li class="flex gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-red-500 text-white flex items-center justify-center font-bold text-xs">2</span>
+              <div class="flex-1">
+                <p class="text-gray-400">"AMD Chipset Software" herunterladen und starten</p>
+              </div>
+            </li>
+            <li class="flex gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-red-500 text-white flex items-center justify-center font-bold text-xs">3</span>
+              <div class="flex-1">
+                <p class="text-gray-400"><span class="text-white font-semibold">Alle 6 Treiber</span> ausgewählt lassen (Haken bei allen!)</p>
+              </div>
+            </li>
+            <li class="flex gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-red-500 text-white flex items-center justify-center font-bold text-xs">4</span>
+              <div class="flex-1">
+                <p class="text-gray-400">"Installieren" klicken → Warten → <span class="text-white font-semibold">PC neu starten</span></p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-3">
+          <div class="alert alert-info">
+            <i data-lucide="refresh-cw" class="w-5 h-5 text-accent-primary flex-shrink-0"></i>
+            <div>
+              <p class="text-sm font-semibold text-white">Wie oft updaten?</p>
+              <p class="text-xs text-gray-400">Alle 2-3 Monate prüfen. AMD released regelmäßig Performance-Updates.</p>
+            </div>
+          </div>
+          <div class="alert alert-warning">
+            <i data-lucide="alert-triangle" class="w-5 h-5 text-accent-warning flex-shrink-0"></i>
+            <div>
+              <p class="text-sm font-semibold text-white">Nicht über Gigabyte App Center!</p>
+              <p class="text-xs text-gray-400">Immer direkt von AMD downloaden - cleaner und aktueller.</p>
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>
+
       <!-- Section: Upgrades -->
       <section id="upgrades" class="py-12 scroll-mt-8">
         <div class="section-header">
@@ -3303,6 +3453,7 @@
       { title: 'OLED Care', section: 'Monitor', id: 'oled', keywords: 'oled burn-in pixel shift screen saver' },
       { title: 'OBS NVENC', section: 'Streaming', id: 'obs', keywords: 'obs nvenc streaming twitch encoder bitrate' },
       { title: 'Q-Flash BIOS Update', section: 'BIOS Update', id: 'biosupdate', keywords: 'bios update q-flash qflash gigabyte firmware x670' },
+      { title: 'AMD Chipset Treiber', section: 'Wartung', id: 'amdchipset', keywords: 'amd chipset treiber driver ryzen am5 v-cache vcache ppm psp gpio' },
       { title: 'Temperaturen', section: 'Troubleshooting', id: 'troubleshooting', keywords: 'temperatur temp hitze thermal throttle' },
       { title: 'CMOS Reset', section: 'BIOS', id: 'bios', keywords: 'cmos reset boot problem crash' },
     ];
