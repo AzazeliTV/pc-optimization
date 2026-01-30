@@ -3029,9 +3029,9 @@
 
         <div class="category-box">
         <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">VST Plugins & Audio Effekte</h3>
-        <p class="text-gray-400 text-sm mb-4">Wave Link unterstützt VST3 Plugins. Empfohlene Effekt-Reihenfolge:</p>
+        <p class="text-gray-400 text-sm mb-4">Wave Link unterstützt VST3 Plugins. Empfohlene Effekt-Reihenfolge für SM7B:</p>
 
-        <div class="grid md:grid-cols-4 gap-3 mb-4">
+        <div class="grid md:grid-cols-5 gap-3 mb-4">
           <div class="card rounded-2xl p-3 text-center border-2 border-accent-primary/30">
             <span class="text-accent-primary font-bold text-lg">1</span>
             <p class="font-semibold text-sm mt-1">Noise Gate</p>
@@ -3044,24 +3044,78 @@
           </div>
           <div class="card rounded-2xl p-3 text-center border-2 border-accent-warning/30">
             <span class="text-accent-warning font-bold text-lg">3</span>
-            <p class="font-semibold text-sm mt-1">Compressor</p>
-            <p class="text-xs text-gray-500">Lautstärke ausgleichen</p>
+            <p class="font-semibold text-sm mt-1">DeEsser</p>
+            <p class="text-xs text-gray-500">S/T-Laute dämpfen</p>
           </div>
           <div class="card rounded-2xl p-3 text-center border-2 border-accent-purple/30">
             <span class="text-accent-purple font-bold text-lg">4</span>
+            <p class="font-semibold text-sm mt-1">Compressor</p>
+            <p class="text-xs text-gray-500">Lautstärke ausgleichen</p>
+          </div>
+          <div class="card rounded-2xl p-3 text-center border-2 border-accent-danger/30">
+            <span class="text-accent-danger font-bold text-lg">5</span>
             <p class="font-semibold text-sm mt-1">Limiter</p>
             <p class="text-xs text-gray-500">Peaks verhindern</p>
           </div>
         </div>
 
-        <div class="table-modern bg-dark-800/50 mb-4">
-          <table class="w-full text-sm"><thead><tr><th class="text-left px-5 py-4">Elgato Plugin</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Funktion</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Empfohlene Einstellung</th></tr></thead>
-            <tbody class="">
-              <tr><td class="px-4 py-2 font-semibold">Elgato Equalizer</td><td class="px-4 py-2 text-gray-400">Frequenzen anpassen</td><td class="px-4 py-2 text-accent-secondary">Low +2dB, Mid -1dB, High +3dB</td></tr>
-              <tr><td class="px-4 py-2 font-semibold">Elgato Compressor</td><td class="px-4 py-2 text-gray-400">Dynamik kontrollieren</td><td class="px-4 py-2 text-accent-secondary">Threshold -18dB, Ratio 3:1</td></tr>
-              <tr><td class="px-4 py-2 font-semibold">Noise Removal</td><td class="px-4 py-2 text-gray-400">Hintergrund entfernen</td><td class="px-4 py-2 text-accent-secondary">Ultra Lightweight oder NVIDIA RTX</td></tr>
-            </tbody>
-          </table>
+        <!-- SM7B Pro Settings -->
+        <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="sliders" class="w-5 h-5 text-accent-primary"></i> SM7B Pro Settings (Wave Link)</h4>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <!-- Noise Gate -->
+          <div class="card rounded-2xl p-4 border border-accent-primary/30">
+            <h5 class="font-semibold text-accent-primary text-sm mb-3">Noise Gate</h5>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between"><span class="text-gray-400">Threshold</span><span class="text-white font-mono">-45 bis -40 dB</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Attack</span><span class="text-white font-mono">5-10 ms</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Release</span><span class="text-white font-mono">150-200 ms</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Attenuation</span><span class="text-white font-mono">75-85%</span></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-2">Tipp: 85% Attenuation lässt minimal Raumton durch = natürlicher</p>
+          </div>
+
+          <!-- EQ Settings -->
+          <div class="card rounded-2xl p-4 border border-accent-secondary/30">
+            <h5 class="font-semibold text-accent-secondary text-sm mb-3">EQ (SM7B spezifisch)</h5>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between"><span class="text-gray-400">High-Pass Filter</span><span class="text-white font-mono">80 Hz</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Low-Mids (100-250 Hz)</span><span class="text-white font-mono">-2 bis -4 dB</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Presence (3-5 kHz)</span><span class="text-white font-mono">+3 bis +5 dB</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Highs (8-12 kHz)</span><span class="text-white font-mono">+2 bis +3 dB</span></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-2">Entfernt "muddy" Sound, bringt Klarheit und Präsenz</p>
+          </div>
+
+          <!-- DeEsser -->
+          <div class="card rounded-2xl p-4 border border-accent-warning/30">
+            <h5 class="font-semibold text-accent-warning text-sm mb-3">DeEsser</h5>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between"><span class="text-gray-400">Intensität</span><span class="text-white font-mono">40-50%</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Frequenz</span><span class="text-white font-mono">5-8 kHz</span></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-2">Reduziert scharfe S/T/Z-Laute und Mund-Klicks</p>
+          </div>
+
+          <!-- Compressor -->
+          <div class="card rounded-2xl p-4 border border-accent-purple/30">
+            <h5 class="font-semibold text-accent-purple text-sm mb-3">Compressor</h5>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between"><span class="text-gray-400">Threshold</span><span class="text-white font-mono">-18 dB</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Ratio</span><span class="text-white font-mono">3:1 bis 4:1</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Attack</span><span class="text-white font-mono">5-10 ms</span></div>
+              <div class="flex justify-between"><span class="text-gray-400">Release</span><span class="text-white font-mono">150-250 ms</span></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-2">4:1 für natürlichen Sound, 5:1+ für Broadcasting</p>
+          </div>
+        </div>
+
+        <div class="alert alert-info mb-4">
+          <i data-lucide="lightbulb" class="w-5 h-5 text-accent-primary flex-shrink-0"></i>
+          <div>
+            <p class="font-semibold text-white text-sm">Pro Tipp: Gaming vs Podcast</p>
+            <p class="text-xs text-gray-400"><span class="text-accent-primary">Gaming/Streaming:</span> EQ flat lassen, SM7B klingt gut ohne Game-Audio Konkurrenz | <span class="text-accent-secondary">Podcast:</span> Presence boost (+5dB bei 4kHz) für Radio-Sound</p>
+          </div>
         </div>
 
         <div class="card rounded-2xl p-3 mb-4">
@@ -3222,6 +3276,35 @@
           <div class="card rounded-2xl p-3 flex items-center gap-3"><i data-lucide="x" class="w-5 h-5 text-accent-danger"></i><span class="text-sm">Echo Cancellation: AUS</span></div>
           <div class="card rounded-2xl p-3 flex items-center gap-3"><i data-lucide="x" class="w-5 h-5 text-accent-danger"></i><span class="text-sm">Noise Reduction: AUS</span></div>
           <div class="card rounded-2xl p-3 flex items-center gap-3"><i data-lucide="x" class="w-5 h-5 text-accent-danger"></i><span class="text-sm">Auto Gain Control: AUS</span></div>
+        </div>
+        </div>
+
+        <div class="category-box">
+        <h3 class="text-sm font-semibold text-accent-warning uppercase tracking-wider mb-4">Bekannte Discord Bugs & Workarounds</h3>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="card rounded-2xl p-4 border-l-4 border-accent-danger">
+            <h4 class="font-semibold text-accent-danger text-sm mb-2 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4"></i> Mic Test ist kaputt!</h4>
+            <p class="text-sm text-gray-400 mb-2">Der "Mic Test" unter Voice & Video ist komplett broken - <span class="text-white">niemals benutzen!</span></p>
+            <p class="text-xs text-gray-500">Zum Testen: Eigenen Test-Server erstellen und dort mit Handy beitreten.</p>
+          </div>
+
+          <div class="card rounded-2xl p-4 border-l-4 border-accent-warning">
+            <h4 class="font-semibold text-accent-warning text-sm mb-2 flex items-center gap-2"><i data-lucide="cpu" class="w-4 h-4"></i> Krisp deaktiviert sich selbst</h4>
+            <p class="text-sm text-gray-400 mb-2">Bei hoher CPU-Last schaltet Discord Krisp automatisch aus.</p>
+            <p class="text-xs text-gray-500">Workaround: Voice & Video Settings offen lassen während Gaming - verhindert Auto-Disable.</p>
+          </div>
+
+          <div class="card rounded-2xl p-4 border-l-4 border-accent-primary">
+            <h4 class="font-semibold text-accent-primary text-sm mb-2 flex items-center gap-2"><i data-lucide="mic" class="w-4 h-4"></i> SM7B + Wave Link = Beste Lösung</h4>
+            <p class="text-sm text-gray-400">Mit Wave Link Voice Focus brauchst du Krisp <span class="text-white">sowieso nicht</span>. Wave Link macht das besser!</p>
+          </div>
+
+          <div class="card rounded-2xl p-4 border-l-4 border-accent-secondary">
+            <h4 class="font-semibold text-accent-secondary text-sm mb-2 flex items-center gap-2"><i data-lucide="volume-2" class="w-4 h-4"></i> Audio Bitrate erhöhen</h4>
+            <p class="text-sm text-gray-400 mb-2">Server Settings → <span class="text-white">64 kbps → 96 kbps</span> (oder höher mit Nitro)</p>
+            <p class="text-xs text-gray-500">Höhere Bitrate = bessere Sprachqualität für alle im Channel.</p>
+          </div>
         </div>
         </div>
       </section>
