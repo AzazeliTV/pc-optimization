@@ -816,55 +816,73 @@
           <div class="card rounded-2xl p-4 border border-green-500/20">
             <div class="flex items-center justify-between mb-2">
               <h4 class="font-semibold text-white text-sm">Energieverwaltungsmodus</h4>
-              <span class="px-2 py-1 rounded-full bg-green-500/20 text-green-400 text-xs font-bold">Max.</span>
             </div>
-            <p class="text-xs text-gray-400 mb-2"><span class="text-green-400 font-semibold">Vorteil:</span> GPU bleibt auf hohen Clocks. Kein Runtertakten → konstantere FPS.</p>
+            <p class="text-green-400 font-semibold text-sm mb-2">→ Maximale Leistung bevorzugen</p>
+            <p class="text-xs text-gray-400"><span class="text-green-400 font-semibold">Vorteil:</span> GPU bleibt auf hohen Clocks. Kein Runtertakten.</p>
           </div>
           <div class="card rounded-2xl p-4 border border-green-500/20">
             <div class="flex items-center justify-between mb-2">
-              <h4 class="font-semibold text-white text-sm">Geringe Latenz</h4>
-              <span class="px-2 py-1 rounded-full bg-green-500/20 text-green-400 text-xs font-bold">Ein</span>
+              <h4 class="font-semibold text-white text-sm">Modus für geringe Latenz</h4>
             </div>
-            <p class="text-xs text-gray-400 mb-2"><span class="text-green-400 font-semibold">Vorteil:</span> Frames werden später gerendert → weniger Input Lag. "Ultra" nur wenn GPU >95% Auslastung!</p>
+            <p class="text-green-400 font-semibold text-sm mb-2">→ Ein</p>
+            <p class="text-xs text-gray-400"><span class="text-green-400 font-semibold">Vorteil:</span> Weniger Input Lag. "Ultra" nur wenn GPU &gt;95% Auslastung!</p>
           </div>
           <div class="card rounded-2xl p-4 border border-accent-warning/30">
             <div class="flex items-center justify-between mb-2">
               <h4 class="font-semibold text-white text-sm">Max. Bildfrequenz</h4>
-              <span class="px-2 py-1 rounded-full bg-accent-warning/20 text-accent-warning text-xs font-bold">237 FPS</span>
             </div>
-            <p class="text-xs text-gray-400 mb-2"><span class="text-accent-warning font-semibold">Wichtig:</span> 240Hz - 3 = G-Sync bleibt aktiv. Verhindert Tearing bei hohen FPS.</p>
+            <p class="text-accent-warning font-semibold text-sm mb-2">→ 237</p>
+            <p class="text-xs text-gray-400"><span class="text-accent-warning font-semibold">Wichtig:</span> 240Hz - 3 = G-Sync bleibt aktiv.</p>
           </div>
           <div class="card rounded-2xl p-4 border border-green-500/20">
             <div class="flex items-center justify-between mb-2">
-              <h4 class="font-semibold text-white text-sm">V-Sync</h4>
-              <span class="px-2 py-1 rounded-full bg-green-500/20 text-green-400 text-xs font-bold">Ein</span>
+              <h4 class="font-semibold text-white text-sm">Vertikale Synchronisierung</h4>
             </div>
-            <p class="text-xs text-gray-400 mb-2"><span class="text-green-400 font-semibold">Vorteil:</span> Mit Frame Cap (237) kein zusätzlicher Lag! Fängt nur Frames >237 ab.</p>
+            <p class="text-green-400 font-semibold text-sm mb-2">→ Ein</p>
+            <p class="text-xs text-gray-400"><span class="text-green-400 font-semibold">Vorteil:</span> Mit Frame Cap (237) kein zusätzlicher Lag!</p>
           </div>
           <div class="card rounded-2xl p-4 border border-green-500/20">
             <div class="flex items-center justify-between mb-2">
-              <h4 class="font-semibold text-white text-sm">Shader-Cache</h4>
-              <span class="px-2 py-1 rounded-full bg-green-500/20 text-green-400 text-xs font-bold">Unbegrenzt</span>
+              <h4 class="font-semibold text-white text-sm">Shader-Cache-Größe</h4>
             </div>
-            <p class="text-xs text-gray-400 mb-2"><span class="text-green-400 font-semibold">Vorteil:</span> Shader auf SSD gespeichert. Kein Stutter bei neuen Areas oder erstem Start!</p>
+            <p class="text-green-400 font-semibold text-sm mb-2">→ Unbegrenzt</p>
+            <p class="text-xs text-gray-400"><span class="text-green-400 font-semibold">Vorteil:</span> Kein Stutter bei neuen Areas!</p>
           </div>
           <div class="card rounded-2xl p-4 border border-green-500/20">
             <div class="flex items-center justify-between mb-2">
-              <h4 class="font-semibold text-white text-sm">Threaded Opt.</h4>
-              <span class="px-2 py-1 rounded-full bg-green-500/20 text-green-400 text-xs font-bold">Ein</span>
+              <h4 class="font-semibold text-white text-sm">Threaded Optimierung</h4>
             </div>
-            <p class="text-xs text-gray-400 mb-2"><span class="text-green-400 font-semibold">Vorteil:</span> GPU-Treiber nutzt alle CPU-Kerne. Wichtig für DX11-Games wie CS2!</p>
+            <p class="text-green-400 font-semibold text-sm mb-2">→ Ein</p>
+            <p class="text-xs text-gray-400"><span class="text-green-400 font-semibold">Vorteil:</span> Nutzt alle CPU-Kerne. Wichtig für DX11!</p>
           </div>
         </div>
 
-        <h3 class="text-sm font-semibold text-green-400 uppercase tracking-wider mb-4">Weitere Einstellungen</h3>
+        <h3 class="text-sm font-semibold text-green-400 uppercase tracking-wider mb-4">Alle Einstellungen (alphabetisch)</h3>
         <div class="table-modern bg-dark-800/50 mb-4">
-          <table class="w-full text-sm"><thead><tr><th class="text-left px-5 py-4">Einstellung</th><th class="text-left px-4 py-2 text-green-400 text-xs uppercase">Wert</th><th class="text-left px-4 py-2 text-green-400 text-xs uppercase">Warum</th></tr></thead>
+          <table class="w-full text-sm"><thead><tr><th class="text-left px-5 py-4">Einstellung (exakter Name)</th><th class="text-left px-4 py-2 text-green-400 text-xs uppercase">Wert</th></tr></thead>
             <tbody class="">
-              <tr><td class="px-4 py-2">Texturfilterung - Qualität</td><td class="px-4 py-2 text-green-400 font-semibold">Hohe Leistung</td><td class="px-4 py-2 text-gray-400">Kaum sichtbar, paar FPS mehr</td></tr>
-              <tr><td class="px-4 py-2">Anisotrope Filterung</td><td class="px-4 py-2 text-green-400 font-semibold">16x</td><td class="px-4 py-2 text-gray-400">Kostet nichts, sieht besser aus</td></tr>
-              <tr><td class="px-4 py-2">Max. Bildfrequenz Hintergrund</td><td class="px-4 py-2 text-gray-400">30</td><td class="px-4 py-2 text-gray-400">Spart Strom bei Alt-Tab</td></tr>
-              <tr><td class="px-4 py-2">Antialiasing - FXAA</td><td class="px-4 py-2 text-gray-400">Aus</td><td class="px-4 py-2 text-gray-400">Ingame AA ist besser</td></tr>
+              <tr><td class="px-4 py-2">Ambient Occlusion</td><td class="px-4 py-2 text-gray-400">Aus</td></tr>
+              <tr><td class="px-4 py-2">Anisotrope Filterung</td><td class="px-4 py-2 text-green-400 font-semibold">16x</td></tr>
+              <tr><td class="px-4 py-2">Antialiasing - FXAA</td><td class="px-4 py-2 text-gray-400">Aus</td></tr>
+              <tr><td class="px-4 py-2">Antialiasing - Gammkorrektur</td><td class="px-4 py-2 text-gray-400">Aus</td></tr>
+              <tr><td class="px-4 py-2">Antialiasing - Modus</td><td class="px-4 py-2 text-gray-400">Anwendungsgesteuert</td></tr>
+              <tr><td class="px-4 py-2">Antialiasing - Transparenz</td><td class="px-4 py-2 text-gray-400">Aus</td></tr>
+              <tr><td class="px-4 py-2">DSR - Faktoren</td><td class="px-4 py-2 text-gray-400">Aus</td></tr>
+              <tr><td class="px-4 py-2">DSR - Glättung</td><td class="px-4 py-2 text-gray-400">Aus</td></tr>
+              <tr><td class="px-4 py-2">Energieverwaltungsmodus</td><td class="px-4 py-2 text-green-400 font-semibold">Maximale Leistung bevorzugen</td></tr>
+              <tr><td class="px-4 py-2">Max. Bildfrequenz</td><td class="px-4 py-2 text-accent-warning font-semibold">237 FPS</td></tr>
+              <tr><td class="px-4 py-2">Max. Bildfrequenz Hintergrundanwendung</td><td class="px-4 py-2 text-gray-400">30 FPS</td></tr>
+              <tr><td class="px-4 py-2">Modus für geringe Latenz</td><td class="px-4 py-2 text-green-400 font-semibold">Ein</td></tr>
+              <tr><td class="px-4 py-2">Monitor-Technologie</td><td class="px-4 py-2 text-green-400 font-semibold">G-SYNC-kompatibel</td></tr>
+              <tr><td class="px-4 py-2">OpenGL-Rendering-GPU</td><td class="px-4 py-2 text-green-400 font-semibold">RTX 4080 SUPER</td></tr>
+              <tr><td class="px-4 py-2">Shader-Cache-Größe</td><td class="px-4 py-2 text-green-400 font-semibold">Unbegrenzt</td></tr>
+              <tr><td class="px-4 py-2">Texturfilterung - Anisotrope Filteroptimierung</td><td class="px-4 py-2 text-gray-400">Ein</td></tr>
+              <tr><td class="px-4 py-2">Texturfilterung - Negative LOD-Verschiebung</td><td class="px-4 py-2 text-gray-400">Zulassen</td></tr>
+              <tr><td class="px-4 py-2">Texturfilterung - Qualität</td><td class="px-4 py-2 text-green-400 font-semibold">Hohe Leistung</td></tr>
+              <tr><td class="px-4 py-2">Texturfilterung - Trilineare Optimierung</td><td class="px-4 py-2 text-gray-400">Ein</td></tr>
+              <tr><td class="px-4 py-2">Threaded Optimierung</td><td class="px-4 py-2 text-green-400 font-semibold">Ein</td></tr>
+              <tr><td class="px-4 py-2">Vertikale Synchronisierung</td><td class="px-4 py-2 text-green-400 font-semibold">Ein</td></tr>
+              <tr><td class="px-4 py-2">Vorgerenderte Frames für Virtuelle Realität</td><td class="px-4 py-2 text-gray-400">1</td></tr>
             </tbody>
           </table>
         </div>
