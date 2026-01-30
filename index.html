@@ -1276,37 +1276,118 @@
           <div><h2 class="text-3xl font-bold text-white">SSD-Wartung (Samsung 990 PRO)</h2></div>
         </div>
         <div class="category-box">
-        <div class="alert alert-danger mb-4">
-          <i data-lucide="alert-octagon" class="w-5 h-5 text-accent-danger flex-shrink-0 mt-0.5"></i>
-          <div><p class="font-semibold text-accent-danger">KRITISCH: Firmware prüfen!</p><p class="text-sm text-gray-400">Frühere Firmware-Versionen hatten einen Bug der die SSD-Lebensdauer schnell reduziert! Mindestens Firmware <span class="text-white font-semibold">5B2QJXF7</span> oder neuer.</p></div>
+        <div class="flex flex-col md:flex-row gap-4 mb-4">
+          <div class="flex-1">
+            <p class="text-gray-400 mb-3">Die Samsung 990 PRO ist eine der schnellsten Gen4 SSDs. Aber: Firmware-Update ist PFLICHT wegen eines bekannten Bugs!</p>
+            <div class="alert alert-danger">
+              <i data-lucide="alert-octagon" class="w-5 h-5 text-accent-danger flex-shrink-0"></i>
+              <div><p class="font-semibold text-accent-danger text-sm">Firmware-Bug!</p><p class="text-xs text-gray-400">Alte Firmware = SSD-Lebensdauer sinkt schnell. Mind. <span class="text-white font-semibold">5B2QJXF7</span> oder neuer!</p></div>
+            </div>
+          </div>
+          <div class="card rounded-2xl p-4 border-l-4 border-accent-primary bg-gradient-to-br from-accent-primary/10 to-transparent md:w-56 flex-shrink-0">
+            <p class="text-xs text-accent-primary font-semibold uppercase tracking-wider mb-2">Dein Vorteil</p>
+            <p class="text-white font-bold text-lg mb-1">7450 MB/s</p>
+            <p class="text-xs text-gray-400">Schnellste Ladezeiten. DirectStorage ready für zukünftige Games.</p>
+          </div>
         </div>
 
+        <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">Firmware Update (Samsung Magician)</h3>
         <div class="card rounded-2xl p-4 mb-4">
-          <h4 class="font-semibold text-accent-primary mb-3 flex items-center gap-2"><i data-lucide="search" class="w-5 h-5"></i> Firmware prüfen (Schritt für Schritt)</h4>
-          <ol class="space-y-3 text-sm">
-            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">1</span><span class="text-gray-400"><a href="https://semiconductor.samsung.com/consumer-storage/support/tools/" target="_blank" class="text-accent-primary underline">Samsung Magician herunterladen</a> und installieren</span></li>
-            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">2</span><span class="text-gray-400">Samsung Magician starten → Deine 990 PRO auswählen</span></li>
-            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">3</span><span class="text-gray-400">Auf der Hauptseite steht <span class="text-white">"Firmware"</span> mit Versionsnummer</span></li>
-            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">4</span><span class="text-gray-400">Vergleiche: Muss <span class="text-accent-primary font-semibold">5B2QJXF7</span> oder höher sein (z.B. 5B2QKXF7)</span></li>
-            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">5</span><span class="text-gray-400">Falls älter: Klicke <span class="text-white">"Update"</span> (PC startet neu!)</span></li>
+          <ol class="space-y-2 text-sm">
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">1</span><span class="text-gray-400"><a href="https://semiconductor.samsung.com/consumer-storage/support/tools/" target="_blank" class="text-accent-primary underline">Samsung Magician</a> herunterladen & installieren</span></li>
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">2</span><span class="text-gray-400">990 PRO auswählen → Firmware-Version prüfen</span></li>
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">3</span><span class="text-gray-400">Falls älter als <span class="text-accent-primary font-semibold">5B2QJXF7</span>: "Update" klicken (PC startet neu)</span></li>
           </ol>
         </div>
+        </div>
 
+        <div class="category-box">
         <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">Samsung Magician Einstellungen</h3>
-        <div class="table-modern bg-dark-800/50 mb-4">
-          <table class="w-full text-sm"><thead><tr><th class="text-left px-5 py-4">Bereich</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Einstellung</th></tr></thead>
-            <tbody class="">
-              <tr><td class="px-4 py-2 text-gray-400">Drive Dashboard</td><td class="px-4 py-2"><span class="text-white">Health Status:</span> Sollte "Good" zeigen</td></tr>
-              <tr><td class="px-4 py-2 text-gray-400">Drive Dashboard</td><td class="px-4 py-2"><span class="text-white">Temperature:</span> Unter 70°C beim Gaming</td></tr>
-              <tr><td class="px-4 py-2 text-gray-400">Performance Optimization</td><td class="px-4 py-2 text-accent-primary font-semibold">Full Performance Mode aktivieren</td></tr>
-              <tr><td class="px-4 py-2 text-gray-400">Over Provisioning</td><td class="px-4 py-2 text-gray-400">Optional: 10% für längere Lebensdauer</td></tr>
-            </tbody>
-          </table>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
+          <div class="card rounded-2xl p-4 border border-accent-primary/20">
+            <div class="flex items-center gap-2 mb-2">
+              <i data-lucide="heart-pulse" class="w-5 h-5 text-accent-primary"></i>
+              <h4 class="font-semibold text-white text-sm">Health Status</h4>
+            </div>
+            <p class="text-accent-primary font-bold text-lg">Good</p>
+            <p class="text-xs text-gray-400">Sollte immer "Good" zeigen. "Warning" = Backup machen!</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-secondary/20">
+            <div class="flex items-center gap-2 mb-2">
+              <i data-lucide="thermometer" class="w-5 h-5 text-accent-secondary"></i>
+              <h4 class="font-semibold text-white text-sm">Temperatur</h4>
+            </div>
+            <p class="text-accent-secondary font-bold text-lg">&lt;70°C</p>
+            <p class="text-xs text-gray-400">Beim Gaming unter 70°C. Darüber = Throttling!</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-warning/20">
+            <div class="flex items-center gap-2 mb-2">
+              <i data-lucide="zap" class="w-5 h-5 text-accent-warning"></i>
+              <h4 class="font-semibold text-white text-sm">Full Performance</h4>
+            </div>
+            <p class="text-accent-warning font-bold text-lg">EIN</p>
+            <p class="text-xs text-gray-400">Performance Optimization aktivieren. Max Speed!</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-gray-600">
+            <div class="flex items-center gap-2 mb-2">
+              <i data-lucide="database" class="w-5 h-5 text-gray-400"></i>
+              <h4 class="font-semibold text-white text-sm">Over Provisioning</h4>
+            </div>
+            <p class="text-gray-400 font-bold text-lg">Optional</p>
+            <p class="text-xs text-gray-400">10% reservieren für längere Lebensdauer.</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="category-box">
+        <div class="flex flex-col md:flex-row gap-4 mb-4">
+          <div class="flex-1">
+            <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-3">Windows SSD-Optimierungen</h3>
+            <p class="text-gray-400 text-sm">Windows 11 optimiert SSDs automatisch, aber ein paar Checks schaden nicht.</p>
+          </div>
+          <div class="card rounded-2xl p-4 border-l-4 border-accent-secondary bg-gradient-to-br from-accent-secondary/10 to-transparent md:w-56 flex-shrink-0">
+            <p class="text-xs text-accent-secondary font-semibold uppercase tracking-wider mb-2">Dein Vorteil</p>
+            <p class="text-white font-bold text-lg mb-1">TRIM aktiv</p>
+            <p class="text-xs text-gray-400">SSD bleibt über Jahre schnell. Kein Performance-Verlust.</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-accent-primary"></i> TRIM Status prüfen</h4>
+            <p class="text-xs text-gray-400 mb-2">PowerShell als Admin:</p>
+            <div class="code-wrapper relative"><div class="bg-dark-900 rounded-lg p-2 font-mono text-xs text-accent-primary overflow-x-auto"><code>fsutil behavior query DisableDeleteNotify</code></div></div>
+            <p class="text-xs text-gray-400 mt-2"><span class="text-accent-primary font-semibold">DisableDeleteNotify = 0</span> = TRIM aktiv (gut!)</p>
+          </div>
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="hard-drive" class="w-5 h-5 text-accent-secondary"></i> Defrag Check</h4>
+            <p class="text-xs text-gray-400 mb-2">Windows-Taste → "Defragmentieren" → SSD auswählen</p>
+            <p class="text-xs text-gray-400">Sollte zeigen: <span class="text-accent-secondary font-semibold">"Optimierung geplant"</span></p>
+            <p class="text-xs text-gray-500 mt-2">Windows führt TRIM automatisch wöchentlich aus.</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-3 mb-4">
+          <div class="card rounded-2xl p-3 flex items-center gap-3">
+            <i data-lucide="check" class="w-5 h-5 text-accent-primary flex-shrink-0"></i>
+            <div><p class="text-sm font-semibold">AHCI Mode</p><p class="text-xs text-gray-500">Im BIOS (nicht IDE!)</p></div>
+          </div>
+          <div class="card rounded-2xl p-3 flex items-center gap-3">
+            <i data-lucide="check" class="w-5 h-5 text-accent-primary flex-shrink-0"></i>
+            <div><p class="text-sm font-semibold">Write Caching</p><p class="text-xs text-gray-500">Geräte-Manager → aktiviert</p></div>
+          </div>
+          <div class="card rounded-2xl p-3 flex items-center gap-3">
+            <i data-lucide="x" class="w-5 h-5 text-accent-danger flex-shrink-0"></i>
+            <div><p class="text-sm font-semibold">Indexierung</p><p class="text-xs text-gray-500">Kann auf SSD deaktiviert werden</p></div>
+          </div>
         </div>
 
         <div class="alert alert-warning">
           <i data-lucide="alert-triangle" class="w-5 h-5 text-accent-warning flex-shrink-0"></i>
-          <p class="text-sm"><span class="font-semibold text-accent-warning">Temperatur zu hoch?</span> SSD-Heatsink nachkaufen oder Gehäusebelüftung verbessern. Über 70°C = Throttling!</p>
+          <div>
+            <p class="font-semibold text-accent-warning text-sm">Temperatur zu hoch?</p>
+            <p class="text-xs text-gray-400">M.2 Heatsink nachkaufen (~15€) oder Gehäuselüfter in Richtung SSD. Über 70°C = SSD drosselt sich selbst!</p>
+          </div>
         </div>
         </div>
       </section>
