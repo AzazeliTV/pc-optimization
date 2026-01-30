@@ -2362,27 +2362,62 @@
         </div>
 
         <h3 class="text-sm font-semibold text-accent-secondary uppercase tracking-wider mb-4">Manuelle NVENC Settings (falls ohne Enhanced)</h3>
+        <p class="text-gray-400 text-sm mb-4">OBS → Einstellungen → Ausgabe → Ausgabemodus: <span class="text-white font-semibold">Erweitert</span> → Streaming Tab</p>
+
         <div class="grid md:grid-cols-2 gap-4 mb-4">
           <div class="card rounded-2xl p-4 border border-accent-purple/30">
-            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="twitch" class="w-5 h-5 text-accent-purple"></i> Twitch</h4>
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="twitch" class="w-5 h-5 text-accent-purple"></i> Twitch (H.264)</h4>
             <div class="space-y-2 text-sm">
-              <div class="flex justify-between"><span class="text-gray-500">Encoder</span><span class="text-accent-primary font-semibold">NVENC H.264</span></div>
-              <div class="flex justify-between"><span class="text-gray-500">Bitrate</span><span class="text-white">6000-8000 kbps</span></div>
-              <div class="flex justify-between"><span class="text-gray-500">Keyframe</span><span class="text-accent-warning font-semibold">2 (Pflicht!)</span></div>
-              <div class="flex justify-between"><span class="text-gray-500">Preset</span><span class="text-white">P6: Slower</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Encoder</span><span class="text-accent-primary font-semibold">NVIDIA NVENC H.264</span></div>
               <div class="flex justify-between"><span class="text-gray-500">Rate Control</span><span class="text-white">CBR</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Bitrate</span><span class="text-accent-primary font-semibold">6000 kbps</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Keyframe Interval</span><span class="text-accent-warning font-semibold">2 s (Pflicht!)</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Preset</span><span class="text-white">P5: Slow</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Tuning</span><span class="text-white">High Quality</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Multipass Mode</span><span class="text-accent-primary font-semibold">Two Passes (Quarter)</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Profile</span><span class="text-white">high</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Look-ahead</span><span class="text-accent-primary font-semibold">AN</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Psycho Visual Tuning</span><span class="text-accent-primary font-semibold">AN</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Max B-frames</span><span class="text-white">2</span></div>
             </div>
           </div>
           <div class="card rounded-2xl p-4 border border-accent-danger/30">
-            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="youtube" class="w-5 h-5 text-accent-danger"></i> YouTube</h4>
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="youtube" class="w-5 h-5 text-accent-danger"></i> YouTube (AV1)</h4>
             <div class="space-y-2 text-sm">
-              <div class="flex justify-between"><span class="text-gray-500">Encoder</span><span class="text-accent-primary font-semibold">NVENC AV1</span></div>
-              <div class="flex justify-between"><span class="text-gray-500">Bitrate</span><span class="text-white">12000-20000 kbps</span></div>
-              <div class="flex justify-between"><span class="text-gray-500">Keyframe</span><span class="text-white">2</span></div>
-              <div class="flex justify-between"><span class="text-gray-500">Preset</span><span class="text-white">P6: Slower</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Encoder</span><span class="text-accent-primary font-semibold">NVIDIA NVENC AV1</span></div>
               <div class="flex justify-between"><span class="text-gray-500">Rate Control</span><span class="text-white">CBR</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Bitrate</span><span class="text-accent-primary font-semibold">15000 kbps</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Keyframe Interval</span><span class="text-white">2 s</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Preset</span><span class="text-white">P5: Slow</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Tuning</span><span class="text-white">High Quality</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Multipass Mode</span><span class="text-accent-primary font-semibold">Two Passes (Quarter)</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Look-ahead</span><span class="text-accent-primary font-semibold">AN</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Psycho Visual Tuning</span><span class="text-accent-primary font-semibold">AN</span></div>
             </div>
-            <p class="text-xs text-gray-500 mt-2">AV1 = bessere Qualität bei gleicher Bitrate</p>
+            <p class="text-xs text-accent-secondary mt-2">AV1 = 30% bessere Qualität bei gleicher Bitrate!</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-3 mb-4">
+          <div class="card rounded-2xl p-3 border border-accent-primary/20">
+            <h4 class="font-semibold text-white text-sm mb-2 flex items-center gap-2"><i data-lucide="gauge" class="w-4 h-4 text-accent-primary"></i> Preset Erklärung</h4>
+            <p class="text-xs text-gray-400">P1 (schnell) → P7 (langsam). Höher = bessere Qualität, mehr GPU-Last. <span class="text-white">P5-P6</span> optimal für RTX 4080.</p>
+          </div>
+          <div class="card rounded-2xl p-3 border border-accent-secondary/20">
+            <h4 class="font-semibold text-white text-sm mb-2 flex items-center gap-2"><i data-lucide="eye" class="w-4 h-4 text-accent-secondary"></i> Look-ahead</h4>
+            <p class="text-xs text-gray-400">Analysiert kommende Frames für bessere Bitrate-Verteilung. <span class="text-accent-primary">Immer AN</span> für beste Qualität.</p>
+          </div>
+          <div class="card rounded-2xl p-3 border border-accent-warning/20">
+            <h4 class="font-semibold text-white text-sm mb-2 flex items-center gap-2"><i data-lucide="brain" class="w-4 h-4 text-accent-warning"></i> Psycho Visual</h4>
+            <p class="text-xs text-gray-400">Optimiert für menschliche Wahrnehmung. Mehr Details in wichtigen Bereichen. <span class="text-accent-primary">Immer AN</span>.</p>
+          </div>
+        </div>
+
+        <div class="alert alert-info mb-4">
+          <i data-lucide="info" class="w-5 h-5 text-accent-secondary flex-shrink-0"></i>
+          <div>
+            <p class="font-semibold text-accent-secondary text-sm">Twitch Affiliate Bitrate-Limit</p>
+            <p class="text-xs text-gray-400">Affiliates: max <span class="text-white">6000 kbps</span>. Partner: bis 8500 kbps. Höhere Bitrate = bessere Qualität, aber Viewer mit schlechtem Internet können nicht schauen (ohne Transcoding).</p>
           </div>
         </div>
 
