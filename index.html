@@ -440,19 +440,34 @@
             <li><span class="text-white font-semibold">1.</span> PC neustarten, USB-Stick eingesteckt lassen</li>
             <li><span class="text-white font-semibold">2.</span> Beim Booten <code class="bg-dark-800 px-2 py-0.5 rounded text-accent-primary">DEL</code> drücken um ins BIOS zu kommen</li>
             <li><span class="text-white font-semibold">3.</span> Im BIOS: Drücke <code class="bg-dark-800 px-2 py-0.5 rounded text-accent-primary">F8</code> für Q-Flash</li>
-            <li><span class="text-white font-semibold">4.</span> Oder: Gehe zu <span class="text-white">Save & Exit</span> → <span class="text-white">Q-Flash</span></li>
+            <li><span class="text-white font-semibold">4.</span> Oder: Gehe zu <span class="text-white">Save & Exit</span> Tab (ganz rechts) → <span class="text-white">Q-Flash</span></li>
           </ol>
+          <div class="alert alert-info mt-3">
+            <i data-lucide="info" class="w-4 h-4 text-accent-primary flex-shrink-0"></i>
+            <p class="text-xs">Nach F8 öffnet sich das <span class="text-white font-semibold">Q-Flash Utility</span> - ein separater blauer Bildschirm (nicht mehr das normale BIOS!)</p>
+          </div>
         </div>
 
         <div class="card rounded-2xl p-4 mb-4">
-          <h4 class="font-semibold text-accent-primary mb-3 flex items-center gap-2"><i data-lucide="refresh-cw" class="w-5 h-5"></i> Schritt 4: BIOS flashen</h4>
+          <h4 class="font-semibold text-accent-primary mb-3 flex items-center gap-2"><i data-lucide="refresh-cw" class="w-5 h-5"></i> Schritt 4: BIOS flashen (im Q-Flash Utility)</h4>
+          <p class="text-sm text-gray-400 mb-3">Du siehst jetzt den Q-Flash Bildschirm mit diesen Optionen:</p>
+          <div class="grid grid-cols-2 gap-2 mb-4">
+            <div class="bg-dark-800 rounded-lg p-3 border-2 border-accent-primary">
+              <p class="text-accent-primary font-bold text-sm">► Update BIOS</p>
+              <p class="text-xs text-gray-500">← Das wählen!</p>
+            </div>
+            <div class="bg-dark-800 rounded-lg p-3 border border-dark-600">
+              <p class="text-gray-400 font-semibold text-sm">Save BIOS to Drive</p>
+              <p class="text-xs text-gray-500">Backup (optional)</p>
+            </div>
+          </div>
           <ol class="text-sm text-gray-400 space-y-2">
-            <li><span class="text-white font-semibold">1.</span> Wähle <span class="text-accent-primary">"Update BIOS"</span></li>
-            <li><span class="text-white font-semibold">2.</span> Wähle deinen USB-Stick aus der Liste</li>
-            <li><span class="text-white font-semibold">3.</span> Wähle die BIOS-Datei (z.B. X670GAMINGXAX.F12)</li>
-            <li><span class="text-white font-semibold">4.</span> Bestätige mit <span class="text-accent-primary">"Yes"</span> oder Enter</li>
-            <li><span class="text-white font-semibold">5.</span> <span class="text-accent-danger font-semibold">WARTEN!</span> PC nicht ausschalten! Dauert 2-5 Minuten</li>
-            <li><span class="text-white font-semibold">6.</span> PC startet automatisch neu</li>
+            <li><span class="text-white font-semibold">1.</span> Mit Pfeiltasten <span class="text-accent-primary">"Update BIOS"</span> auswählen → <code class="bg-dark-800 px-2 py-0.5 rounded text-accent-primary">Enter</code></li>
+            <li><span class="text-white font-semibold">2.</span> Dein USB-Stick erscheint in der Liste → auswählen → <code class="bg-dark-800 px-2 py-0.5 rounded text-accent-primary">Enter</code></li>
+            <li><span class="text-white font-semibold">3.</span> Die BIOS-Datei auswählen (z.B. <span class="text-white">X670GAMINGXAX.F12</span>) → <code class="bg-dark-800 px-2 py-0.5 rounded text-accent-primary">Enter</code></li>
+            <li><span class="text-white font-semibold">4.</span> "Are you sure?" erscheint → <span class="text-accent-primary">"Yes"</span> wählen</li>
+            <li><span class="text-white font-semibold">5.</span> <span class="text-accent-danger font-semibold">WARTEN!</span> Fortschrittsbalken läuft durch. PC NICHT ausschalten! (2-5 Min)</li>
+            <li><span class="text-white font-semibold">6.</span> PC startet automatisch neu ins BIOS</li>
           </ol>
         </div>
 
