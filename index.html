@@ -2662,6 +2662,58 @@
           </table>
         </div>
 
+        <h3 class="text-sm font-semibold text-accent-secondary uppercase tracking-wider mb-4">Temperaturen richtig testen</h3>
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <div class="card rounded-2xl p-4 border border-accent-primary/20">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="activity" class="w-5 h-5 text-accent-primary"></i> HWiNFO64 (Monitoring)</h4>
+            <ol class="text-xs text-gray-400 space-y-1">
+              <li><span class="text-white font-semibold">1.</span> <a href="https://www.hwinfo.com/download/" target="_blank" class="text-accent-primary underline">HWiNFO64</a> starten → "Sensors Only"</li>
+              <li><span class="text-white font-semibold">2.</span> Suche: <span class="text-white">CPU (Tctl/Tdie)</span> = CPU Temp</li>
+              <li><span class="text-white font-semibold">3.</span> Suche: <span class="text-white">GPU Temperature</span> = GPU Temp</li>
+              <li><span class="text-white font-semibold">4.</span> Während Test: Max-Werte beobachten</li>
+            </ol>
+            <p class="text-xs text-gray-500 mt-2">Tipp: HWiNFO im Hintergrund laufen lassen!</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-secondary/20">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="cpu" class="w-5 h-5 text-accent-secondary"></i> CPU Stress-Test</h4>
+            <ol class="text-xs text-gray-400 space-y-1">
+              <li><span class="text-white font-semibold">1.</span> <a href="https://www.maxon.net/en/cinebench" target="_blank" class="text-accent-primary underline">Cinebench R24</a> herunterladen</li>
+              <li><span class="text-white font-semibold">2.</span> "CPU (Multi Core)" starten</li>
+              <li><span class="text-white font-semibold">3.</span> <span class="text-accent-warning">10 Minuten</span> laufen lassen</li>
+              <li><span class="text-white font-semibold">4.</span> Max Temp in HWiNFO prüfen</li>
+            </ol>
+            <p class="text-xs text-accent-primary mt-2">9800X3D + 360mm AIO: Max ~80-85°C = OK</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-warning/20">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="monitor" class="w-5 h-5 text-accent-warning"></i> GPU Stress-Test</h4>
+            <ol class="text-xs text-gray-400 space-y-1">
+              <li><span class="text-white font-semibold">1.</span> <a href="https://www.3dmark.com/" target="_blank" class="text-accent-primary underline">3DMark</a> (Steam) oder <a href="https://geeks3d.com/furmark/" target="_blank" class="text-accent-primary underline">FurMark</a></li>
+              <li><span class="text-white font-semibold">2.</span> 3DMark: Time Spy Stress Test</li>
+              <li><span class="text-white font-semibold">3.</span> <span class="text-accent-warning">20 Loops</span> durchlaufen</li>
+              <li><span class="text-white font-semibold">4.</span> Max Temp in HWiNFO prüfen</li>
+            </ol>
+            <p class="text-xs text-accent-primary mt-2">RTX 4080 Super: Max ~75-80°C = OK</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-danger/20">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="flame" class="w-5 h-5 text-accent-danger"></i> Realer Gaming-Test</h4>
+            <ol class="text-xs text-gray-400 space-y-1">
+              <li><span class="text-white font-semibold">1.</span> HWiNFO64 im Hintergrund</li>
+              <li><span class="text-white font-semibold">2.</span> Cyberpunk 2077 / Alan Wake 2 starten</li>
+              <li><span class="text-white font-semibold">3.</span> <span class="text-accent-warning">30+ Minuten</span> spielen</li>
+              <li><span class="text-white font-semibold">4.</span> Max-Werte nach Session prüfen</li>
+            </ol>
+            <p class="text-xs text-gray-500 mt-2">Realistischer als Synthetic Benchmarks!</p>
+          </div>
+        </div>
+
+        <div class="alert alert-warning mb-4">
+          <i data-lucide="thermometer" class="w-5 h-5 text-accent-warning flex-shrink-0"></i>
+          <div>
+            <p class="font-semibold text-accent-warning text-sm">Zu heiß? Checklist:</p>
+            <p class="text-xs text-gray-400">AIO-Pumpe läuft? (iCUE prüfen) • Lüfterkurve aggressiver • Gehäuse-Airflow okay? • Wärmeleitpaste erneuern (nach 2-3 Jahren)</p>
+          </div>
+        </div>
+
         <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">Häufige Probleme</h3>
         <div class="table-modern bg-dark-800/50">
           <table class="w-full text-sm"><thead><tr><th class="text-left px-5 py-4">Problem</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Lösung</th></tr></thead>
