@@ -11,7 +11,7 @@
         extend: {
           colors: {
             dark: { 900: '#0a0a0f', 800: '#0f0f19', 700: '#14142a', 600: '#1a1a2e' },
-            accent: { primary: '#00ff88', secondary: '#00d4ff', warning: '#ffaa00', danger: '#ff4466', purple: '#aa44ff' }
+            accent: { primary: '#00ff88', secondary: '#00d4ff', warning: '#ffaa00', danger: '#ff4466', purple: '#aa44ff', directstorage: '#ff6b35', network: '#4ecdc4' }
           }
         }
       }
@@ -19,6 +19,12 @@
   </script>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- PrismJS for Syntax Highlighting -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-batch.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-powershell.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
   <style>
     * { box-sizing: border-box; }
     body { font-family: 'Inter', system-ui, sans-serif; background: linear-gradient(135deg, #0c1222 0%, #0a0f1a 50%, #0d1525 100%); min-height: 100vh; }
@@ -105,6 +111,26 @@
 
     /* Code blocks */
     .code-block { background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.05); border-radius: 10px; font-family: 'JetBrains Mono', monospace; }
+
+    /* PrismJS Override for Dark Theme */
+    pre[class*="language-"] { background: rgba(0,0,0,0.4) !important; border-radius: 10px; margin: 0; padding: 16px !important; }
+    code[class*="language-"] { font-family: 'JetBrains Mono', monospace !important; font-size: 13px; }
+
+    /* Section Accent Colors */
+    .section-directstorage .section-icon { background: linear-gradient(135deg, rgba(255,107,53,0.2) 0%, rgba(255,140,0,0.15) 100%); border-color: rgba(255,107,53,0.3); box-shadow: 0 4px 20px rgba(255,107,53,0.15); }
+    .section-directstorage .section-header::after { background: linear-gradient(90deg, rgba(255,107,53,0.4) 0%, rgba(255,140,0,0.2) 30%, transparent 70%); }
+    .section-directstorage .category-label { background: linear-gradient(135deg, rgba(255,107,53,0.12) 0%, rgba(255,140,0,0.08) 100%); border-color: rgba(255,107,53,0.25); color: #ff6b35; }
+
+    .section-network .section-icon { background: linear-gradient(135deg, rgba(78,205,196,0.2) 0%, rgba(0,212,255,0.15) 100%); border-color: rgba(78,205,196,0.3); box-shadow: 0 4px 20px rgba(78,205,196,0.15); }
+    .section-network .section-header::after { background: linear-gradient(90deg, rgba(78,205,196,0.4) 0%, rgba(0,212,255,0.2) 30%, transparent 70%); }
+    .section-network .category-label { background: linear-gradient(135deg, rgba(78,205,196,0.12) 0%, rgba(0,212,255,0.08) 100%); border-color: rgba(78,205,196,0.25); color: #4ecdc4; }
+
+    .section-monitoring .section-icon { background: linear-gradient(135deg, rgba(170,68,255,0.2) 0%, rgba(138,43,226,0.15) 100%); border-color: rgba(170,68,255,0.3); box-shadow: 0 4px 20px rgba(170,68,255,0.15); }
+    .section-monitoring .section-header::after { background: linear-gradient(90deg, rgba(170,68,255,0.4) 0%, rgba(138,43,226,0.2) 30%, transparent 70%); }
+    .section-monitoring .category-label { background: linear-gradient(135deg, rgba(170,68,255,0.12) 0%, rgba(138,43,226,0.08) 100%); border-color: rgba(170,68,255,0.25); color: #aa44ff; }
+
+    /* Unified hover transitions */
+    .card, .glass-card, .category-box, .btn, .tag, .nav-link { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
 
     /* Checkboxes */
     .checkbox-item { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04); transition: all 0.2s; }
@@ -242,6 +268,8 @@
       <a href="#nvidia" class="nav-link flex items-center gap-3 text-sm font-medium"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>NVIDIA</span></a>
       <a href="#ram" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="memory-stick" class="w-4 h-4"></i><span>RAM</span></a>
       <a href="#ssd" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="hard-drive" class="w-4 h-4"></i><span>SSD</span></a>
+      <a href="#directstorage" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="rocket" class="w-4 h-4" style="color: #ff6b35;"></i><span>DirectStorage</span></a>
+      <a href="#network" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="wifi" class="w-4 h-4" style="color: #4ecdc4;"></i><span>Netzwerk</span></a>
       <a href="#antistutter" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="zap-off" class="w-4 h-4"></i><span>Anti-Stutter</span></a>
 
       <!-- Peripherals Section -->
@@ -259,6 +287,7 @@
       <div class="mt-6 mb-2"><span class="nav-section">WARTUNG</span></div>
       <a href="#biosupdate" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="refresh-cw" class="w-4 h-4"></i><span>BIOS Update</span></a>
       <a href="#amdchipset" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="cpu" class="w-4 h-4"></i><span>AMD Chipset</span></a>
+      <a href="#monitoring" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="bar-chart-2" class="w-4 h-4"></i><span>Monitoring</span></a>
       <a href="#upgrades" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="trending-up" class="w-4 h-4"></i><span>Upgrades</span></a>
       <a href="#checklist" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="check-square" class="w-4 h-4"></i><span>Checkliste</span></a>
       <a href="#troubleshooting" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="bug" class="w-4 h-4"></i><span>Troubleshooting</span></a>
@@ -1157,6 +1186,114 @@
           </div>
         </div>
         </div>
+
+        <div class="category-box">
+        <div class="flex flex-col md:flex-row gap-4 mb-4">
+          <div class="flex-1">
+            <h3 class="text-sm font-semibold text-accent-purple uppercase tracking-wider mb-3">Per-Game Profile (NVIDIA App)</h3>
+            <p class="text-gray-400 text-sm">Unterschiedliche Spiele brauchen unterschiedliche Settings! Competitive FPS will max Performance, Story Games wollen Qualität. Erstelle Profile für jeden Spieltyp.</p>
+          </div>
+          <div class="card rounded-2xl p-4 border-l-4 border-accent-purple bg-gradient-to-br from-accent-purple/10 to-transparent md:w-56 flex-shrink-0">
+            <p class="text-xs text-accent-purple font-semibold uppercase tracking-wider mb-2">Dein Vorteil</p>
+            <p class="text-white font-bold text-lg mb-1">Auto-Switch</p>
+            <p class="text-xs text-gray-400">Profile wechseln automatisch je Spiel.</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <div class="card rounded-2xl p-4 border-2 border-accent-danger/30">
+            <h4 class="font-semibold text-accent-danger mb-3 flex items-center gap-2">
+              <i data-lucide="crosshair" class="w-5 h-5"></i> Competitive Profile
+            </h4>
+            <p class="text-xs text-gray-500 mb-3">CS2, Valorant, Fortnite, Apex Legends</p>
+            <div class="space-y-2">
+              <div class="flex justify-between text-sm items-center p-2 bg-dark-800 rounded-lg">
+                <span class="text-gray-400">Low Latency Mode</span>
+                <span class="text-accent-danger font-semibold">Ultra</span>
+              </div>
+              <div class="flex justify-between text-sm items-center p-2 bg-dark-800 rounded-lg">
+                <span class="text-gray-400">Max Frame Rate</span>
+                <span class="text-gray-300">Off (Reflex regelt)</span>
+              </div>
+              <div class="flex justify-between text-sm items-center p-2 bg-dark-800 rounded-lg">
+                <span class="text-gray-400">Power Management</span>
+                <span class="text-accent-danger font-semibold">Max Performance</span>
+              </div>
+              <div class="flex justify-between text-sm items-center p-2 bg-dark-800 rounded-lg">
+                <span class="text-gray-400">Texture Filtering</span>
+                <span class="text-accent-danger font-semibold">High Performance</span>
+              </div>
+              <div class="flex justify-between text-sm items-center p-2 bg-dark-800 rounded-lg">
+                <span class="text-gray-400">Threaded Optimization</span>
+                <span class="text-green-400 font-semibold">On</span>
+              </div>
+              <div class="flex justify-between text-sm items-center p-2 bg-dark-800 rounded-lg">
+                <span class="text-gray-400">V-Sync</span>
+                <span class="text-accent-danger font-semibold">Off</span>
+              </div>
+            </div>
+            <p class="text-xs text-gray-500 mt-3">Ziel: Minimale Latenz, maximale FPS, konstante Frametimes</p>
+          </div>
+
+          <div class="card rounded-2xl p-4 border-2 border-accent-purple/30">
+            <h4 class="font-semibold text-accent-purple mb-3 flex items-center gap-2">
+              <i data-lucide="sparkles" class="w-5 h-5"></i> Quality Profile
+            </h4>
+            <p class="text-xs text-gray-500 mb-3">Cyberpunk, RDR2, Hogwarts Legacy, Elden Ring</p>
+            <div class="space-y-2">
+              <div class="flex justify-between text-sm items-center p-2 bg-dark-800 rounded-lg">
+                <span class="text-gray-400">Low Latency Mode</span>
+                <span class="text-accent-purple font-semibold">On</span>
+              </div>
+              <div class="flex justify-between text-sm items-center p-2 bg-dark-800 rounded-lg">
+                <span class="text-gray-400">Max Frame Rate</span>
+                <span class="text-accent-purple font-semibold">120 FPS</span>
+              </div>
+              <div class="flex justify-between text-sm items-center p-2 bg-dark-800 rounded-lg">
+                <span class="text-gray-400">Power Management</span>
+                <span class="text-gray-300">Optimal Power</span>
+              </div>
+              <div class="flex justify-between text-sm items-center p-2 bg-dark-800 rounded-lg">
+                <span class="text-gray-400">Texture Filtering</span>
+                <span class="text-accent-purple font-semibold">Quality</span>
+              </div>
+              <div class="flex justify-between text-sm items-center p-2 bg-dark-800 rounded-lg">
+                <span class="text-gray-400">DLSS</span>
+                <span class="text-accent-purple font-semibold">Quality + Frame Gen</span>
+              </div>
+              <div class="flex justify-between text-sm items-center p-2 bg-dark-800 rounded-lg">
+                <span class="text-gray-400">V-Sync</span>
+                <span class="text-green-400 font-semibold">On</span>
+              </div>
+            </div>
+            <p class="text-xs text-gray-500 mt-3">Ziel: Beste Grafik, smooth 60-120 FPS mit Frame Gen</p>
+          </div>
+        </div>
+
+        <div class="card rounded-2xl p-4 mb-4">
+          <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="settings" class="w-5 h-5 text-green-400"></i> Profile erstellen (NVIDIA App)</h4>
+          <ol class="space-y-2 text-sm">
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 text-dark-900 flex items-center justify-center font-bold text-xs">1</span><span class="text-gray-400">NVIDIA App öffnen → <span class="text-white">Graphics</span> Tab</span></li>
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 text-dark-900 flex items-center justify-center font-bold text-xs">2</span><span class="text-gray-400">Oben: <span class="text-white">"Program Settings"</span> → Game auswählen (z.B. cs2.exe)</span></li>
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 text-dark-900 flex items-center justify-center font-bold text-xs">3</span><span class="text-gray-400">Einstellungen nach Profil-Typ (Competitive/Quality) anpassen</span></li>
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 text-dark-900 flex items-center justify-center font-bold text-xs">4</span><span class="text-gray-400"><span class="text-white">"Apply"</span> klicken - Profile werden automatisch geladen beim Spielstart!</span></li>
+          </ol>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-3">
+          <div class="alert alert-info">
+            <i data-lucide="lightbulb" class="w-5 h-5 text-accent-primary flex-shrink-0"></i>
+            <div>
+              <p class="text-sm font-semibold text-white">Profile Inspector (Profi-Tool)</p>
+              <p class="text-xs text-gray-400">Mehr Optionen als NVIDIA App! <a href="https://github.com/Orbmu2k/nvidiaProfileInspector" target="_blank" class="text-accent-primary underline">GitHub Download →</a></p>
+            </div>
+          </div>
+          <div class="card rounded-2xl p-3 border-l-4 border-accent-secondary">
+            <h4 class="font-semibold text-accent-secondary text-sm mb-1">Export/Import</h4>
+            <p class="text-xs text-gray-400">Profile Inspector kann Profile als .nip exportieren - praktisch für Backup oder Sharing!</p>
+          </div>
+        </div>
+        </div>
       </section>
 
       <!-- Section: RAM -->
@@ -1508,6 +1645,328 @@
           <div>
             <p class="font-semibold text-accent-warning text-sm">Temperatur zu hoch?</p>
             <p class="text-xs text-gray-400">M.2 Heatsink nachkaufen (~15€) oder Gehäuselüfter in Richtung SSD. Über 70°C = SSD drosselt sich selbst!</p>
+          </div>
+        </div>
+        </div>
+      </section>
+
+      <!-- Section: DirectStorage -->
+      <section id="directstorage" class="py-12 scroll-mt-8 section-directstorage">
+        <div class="section-header">
+          <div class="section-icon" style="background: linear-gradient(135deg, rgba(255,107,53,0.2) 0%, rgba(255,107,53,0.1) 100%); border-color: rgba(255,107,53,0.3);">
+            <i data-lucide="rocket" class="w-6 h-6" style="color: #ff6b35;"></i>
+          </div>
+          <div><h2 class="text-3xl font-bold text-white">DirectStorage 2.0</h2><p class="text-gray-400 text-sm">GPU-beschleunigtes Laden für deine Samsung 9100 PRO</p></div>
+        </div>
+
+        <!-- Benefit Card -->
+        <div class="flex flex-wrap gap-4 mb-6">
+          <div class="card rounded-2xl p-4 border-l-4 bg-gradient-to-br from-orange-500/10 to-transparent md:w-64 flex-shrink-0" style="border-color: #ff6b35;">
+            <p class="text-xs font-semibold uppercase tracking-wider mb-2" style="color: #ff6b35;">Dein Vorteil</p>
+            <p class="text-white font-bold text-lg mb-1">-70% Ladezeit</p>
+            <p class="text-xs text-gray-400">Direkt von SSD zur GPU - CPU wird umgangen!</p>
+          </div>
+          <div class="card rounded-2xl p-4 border-l-4 border-accent-primary bg-gradient-to-br from-accent-primary/10 to-transparent md:w-64 flex-shrink-0">
+            <p class="text-xs text-accent-primary font-semibold uppercase tracking-wider mb-2">PCIe 5.0 Vorteil</p>
+            <p class="text-white font-bold text-lg mb-1">14.8 GB/s</p>
+            <p class="text-xs text-gray-400">2x schneller als PCIe 4.0!</p>
+          </div>
+        </div>
+
+        <div class="category-box">
+        <div class="flex flex-col md:flex-row gap-4 mb-4">
+          <div class="flex-1">
+            <h3 class="text-sm font-semibold uppercase tracking-wider mb-3" style="color: #ff6b35;">Was ist DirectStorage?</h3>
+            <p class="text-gray-400 text-sm">DirectStorage ermöglicht es Spielen, Assets <span class="text-white font-semibold">direkt von der SSD zur GPU</span> zu laden. Die GPU dekomprimiert die Daten selbst, statt die CPU zu belasten. Ergebnis: Dramatisch kürzere Ladezeiten und weniger Texture-Pop-in.</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-3 mb-4">
+          <div class="card rounded-2xl p-4 text-center border" style="border-color: rgba(255,107,53,0.3);">
+            <i data-lucide="cpu" class="w-6 h-6 mx-auto mb-2 text-gray-400"></i>
+            <p class="font-semibold text-sm mb-1">Traditionell</p>
+            <p class="text-xs text-gray-500">SSD → CPU → RAM → GPU</p>
+            <p class="text-xs text-accent-danger mt-1">CPU-Bottleneck</p>
+          </div>
+          <div class="card rounded-2xl p-4 text-center border" style="border-color: rgba(255,107,53,0.5);">
+            <i data-lucide="arrow-right" class="w-6 h-6 mx-auto mb-2 text-gray-400"></i>
+            <p class="font-semibold text-sm mb-1">vs.</p>
+          </div>
+          <div class="card rounded-2xl p-4 text-center border-2" style="border-color: #ff6b35;">
+            <i data-lucide="zap" class="w-6 h-6 mx-auto mb-2" style="color: #ff6b35;"></i>
+            <p class="font-semibold text-sm mb-1">DirectStorage</p>
+            <p class="text-xs text-gray-500">SSD → GPU (direkt!)</p>
+            <p class="text-xs mt-1" style="color: #ff6b35;">Max Speed!</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="category-box">
+        <h3 class="text-sm font-semibold uppercase tracking-wider mb-4" style="color: #ff6b35;">Voraussetzungen prüfen</h3>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
+          <div class="card rounded-2xl p-3 flex items-center gap-3">
+            <i data-lucide="check-circle" class="w-5 h-5 text-green-400 flex-shrink-0"></i>
+            <div><p class="text-sm font-semibold">Windows 11</p><p class="text-xs text-gray-500">22H2 oder neuer</p></div>
+          </div>
+          <div class="card rounded-2xl p-3 flex items-center gap-3">
+            <i data-lucide="check-circle" class="w-5 h-5 text-green-400 flex-shrink-0"></i>
+            <div><p class="text-sm font-semibold">NVMe SSD</p><p class="text-xs text-gray-500">Samsung 9100 PRO ✓</p></div>
+          </div>
+          <div class="card rounded-2xl p-3 flex items-center gap-3">
+            <i data-lucide="check-circle" class="w-5 h-5 text-green-400 flex-shrink-0"></i>
+            <div><p class="text-sm font-semibold">RTX 20/30/40</p><p class="text-xs text-gray-500">RTX 4080 Super ✓</p></div>
+          </div>
+          <div class="card rounded-2xl p-3 flex items-center gap-3">
+            <i data-lucide="check-circle" class="w-5 h-5 text-green-400 flex-shrink-0"></i>
+            <div><p class="text-sm font-semibold">DirectX 12</p><p class="text-xs text-gray-500">Game muss DX12 nutzen</p></div>
+          </div>
+        </div>
+
+        <div class="alert alert-info mb-4">
+          <i data-lucide="info" class="w-5 h-5 text-accent-primary flex-shrink-0"></i>
+          <div>
+            <p class="text-sm font-semibold text-white">Dein Setup ist perfekt!</p>
+            <p class="text-xs text-gray-400">Samsung 9100 PRO (PCIe 5.0) + RTX 4080 Super = Maximale DirectStorage Performance. PCIe 5.0 liefert <span class="font-semibold" style="color: #ff6b35;">14.8 GB/s</span> statt nur 7 GB/s bei Gen4!</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="category-box">
+        <h3 class="text-sm font-semibold uppercase tracking-wider mb-4" style="color: #ff6b35;">DirectStorage aktivieren</h3>
+        <div class="card rounded-2xl p-4 mb-4">
+          <ol class="space-y-3 text-sm">
+            <li class="flex gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full text-white flex items-center justify-center font-bold text-xs" style="background: #ff6b35;">1</span>
+              <div class="flex-1">
+                <p class="text-gray-400"><span class="text-white font-semibold">Windows-Einstellungen</span> → System → Speicher → Erweiterte Speichereinstellungen</p>
+              </div>
+            </li>
+            <li class="flex gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full text-white flex items-center justify-center font-bold text-xs" style="background: #ff6b35;">2</span>
+              <div class="flex-1">
+                <p class="text-gray-400">Prüfe ob <span class="text-white font-semibold">"Optimierter Spielespeicher"</span> verfügbar ist</p>
+              </div>
+            </li>
+            <li class="flex gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full text-white flex items-center justify-center font-bold text-xs" style="background: #ff6b35;">3</span>
+              <div class="flex-1">
+                <p class="text-gray-400">Falls nicht sichtbar: DirectStorage wird <span class="text-white font-semibold">automatisch</span> aktiviert wenn ein kompatibles Spiel läuft</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="card rounded-2xl p-4 border-l-4" style="border-color: #ff6b35;">
+          <h4 class="font-semibold text-white mb-2 flex items-center gap-2"><i data-lucide="terminal" class="w-5 h-5" style="color: #ff6b35;"></i> Status prüfen (PowerShell)</h4>
+          <div class="code-wrapper relative"><div class="bg-dark-900 rounded-lg p-2 font-mono text-xs overflow-x-auto" style="color: #ff6b35;"><code>Get-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\GraphicsDrivers" -Name DirectStorageSupported</code></div></div>
+          <p class="text-xs text-gray-500 mt-2">DirectStorageSupported = 1 bedeutet aktiviert</p>
+        </div>
+        </div>
+
+        <div class="category-box">
+        <h3 class="text-sm font-semibold uppercase tracking-wider mb-4" style="color: #ff6b35;">Kompatible Spiele (2025/2026)</h3>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 mb-4">
+          <div class="card rounded-2xl p-3 flex items-center gap-3 border" style="border-color: rgba(255,107,53,0.3);">
+            <i data-lucide="gamepad-2" class="w-5 h-5 flex-shrink-0" style="color: #ff6b35;"></i>
+            <div><p class="text-sm font-semibold">Ratchet & Clank: Rift Apart</p><p class="text-xs text-gray-500">DirectStorage 1.1</p></div>
+          </div>
+          <div class="card rounded-2xl p-3 flex items-center gap-3 border" style="border-color: rgba(255,107,53,0.3);">
+            <i data-lucide="gamepad-2" class="w-5 h-5 flex-shrink-0" style="color: #ff6b35;"></i>
+            <div><p class="text-sm font-semibold">Forspoken</p><p class="text-xs text-gray-500">DirectStorage 1.0</p></div>
+          </div>
+          <div class="card rounded-2xl p-3 flex items-center gap-3 border" style="border-color: rgba(255,107,53,0.3);">
+            <i data-lucide="gamepad-2" class="w-5 h-5 flex-shrink-0" style="color: #ff6b35;"></i>
+            <div><p class="text-sm font-semibold">Black Myth: Wukong</p><p class="text-xs text-gray-500">DirectStorage 1.2</p></div>
+          </div>
+          <div class="card rounded-2xl p-3 flex items-center gap-3 border" style="border-color: rgba(255,107,53,0.3);">
+            <i data-lucide="gamepad-2" class="w-5 h-5 flex-shrink-0" style="color: #ff6b35;"></i>
+            <div><p class="text-sm font-semibold">Star Wars Outlaws</p><p class="text-xs text-gray-500">DirectStorage 1.2</p></div>
+          </div>
+          <div class="card rounded-2xl p-3 flex items-center gap-3 border" style="border-color: rgba(255,107,53,0.3);">
+            <i data-lucide="gamepad-2" class="w-5 h-5 flex-shrink-0" style="color: #ff6b35;"></i>
+            <div><p class="text-sm font-semibold">Avatar: Frontiers of Pandora</p><p class="text-xs text-gray-500">DirectStorage 1.1</p></div>
+          </div>
+          <div class="card rounded-2xl p-3 flex items-center gap-3 border" style="border-color: rgba(255,107,53,0.3);">
+            <i data-lucide="gamepad-2" class="w-5 h-5 flex-shrink-0" style="color: #ff6b35;"></i>
+            <div><p class="text-sm font-semibold">Indiana Jones (2024)</p><p class="text-xs text-gray-500">DirectStorage 1.2</p></div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="card rounded-2xl p-4 border border-green-500/30">
+            <h4 class="font-semibold text-green-400 mb-2 text-sm">PCIe 5.0 Vorteil (9100 PRO)</h4>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between"><span class="text-gray-500">Bandbreite</span><span class="font-semibold" style="color: #ff6b35;">14.8 GB/s</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">vs PCIe 4.0</span><span class="text-gray-400">7 GB/s</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Vorteil</span><span class="text-green-400 font-semibold">+111% schneller</span></div>
+            </div>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-warning/30">
+            <h4 class="font-semibold text-accent-warning mb-2 text-sm">Erwartete Verbesserung</h4>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between"><span class="text-gray-500">Ladezeiten</span><span class="font-semibold" style="color: #ff6b35;">-40% bis -70%</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Texture Streaming</span><span class="text-green-400 font-semibold">Kein Pop-in</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">CPU-Last</span><span class="text-green-400 font-semibold">Stark reduziert</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-warning mt-4">
+          <i data-lucide="alert-triangle" class="w-5 h-5 text-accent-warning flex-shrink-0"></i>
+          <div>
+            <p class="font-semibold text-accent-warning text-sm">Wichtig zu wissen</p>
+            <p class="text-xs text-gray-400">DirectStorage muss vom Entwickler im Spiel implementiert werden. Nicht jedes DX12-Spiel nutzt es automatisch. Die Anzahl kompatibler Spiele wächst aber stetig!</p>
+          </div>
+        </div>
+        </div>
+      </section>
+
+      <!-- Section: Network Optimization -->
+      <section id="network" class="py-12 scroll-mt-8 section-network">
+        <div class="section-header">
+          <div class="section-icon" style="background: linear-gradient(135deg, rgba(78,205,196,0.2) 0%, rgba(78,205,196,0.1) 100%); border-color: rgba(78,205,196,0.3);">
+            <i data-lucide="wifi" class="w-6 h-6" style="color: #4ecdc4;"></i>
+          </div>
+          <div><h2 class="text-3xl font-bold text-white">Netzwerk-Optimierung</h2><p class="text-gray-400 text-sm">Jede Millisekunde zählt im Competitive Gaming</p></div>
+        </div>
+
+        <!-- Benefit Card -->
+        <div class="flex flex-wrap gap-4 mb-6">
+          <div class="card rounded-2xl p-4 border-l-4 bg-gradient-to-br from-teal-500/10 to-transparent md:w-64 flex-shrink-0" style="border-color: #4ecdc4;">
+            <p class="text-xs font-semibold uppercase tracking-wider mb-2" style="color: #4ecdc4;">Dein Vorteil</p>
+            <p class="text-white font-bold text-lg mb-1">-5-15ms Ping</p>
+            <p class="text-xs text-gray-400">Optimierte DNS & TCP Settings.</p>
+          </div>
+        </div>
+
+        <div class="category-box">
+        <h3 class="text-sm font-semibold uppercase tracking-wider mb-4" style="color: #4ecdc4;">DNS optimieren</h3>
+        <p class="text-gray-400 text-sm mb-4">Schnellere DNS-Auflösung = schnellerer Verbindungsaufbau zu Game-Servern.</p>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <div class="card rounded-2xl p-4 border" style="border-color: rgba(78,205,196,0.3);">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background: rgba(78,205,196,0.2);">
+                <span class="font-bold text-sm" style="color: #4ecdc4;">1</span>
+              </div>
+              <h4 class="font-semibold text-white text-sm">Cloudflare DNS (Empfohlen)</h4>
+            </div>
+            <div class="bg-dark-900 rounded-lg p-3 mb-2">
+              <p class="font-mono text-sm" style="color: #4ecdc4;">Primär: 1.1.1.1</p>
+              <p class="font-mono text-sm text-gray-400">Sekundär: 1.0.0.1</p>
+            </div>
+            <p class="text-xs text-gray-500">Schnellster öffentlicher DNS, Privacy-fokussiert</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-gray-700">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center">
+                <span class="font-bold text-sm text-blue-400">2</span>
+              </div>
+              <h4 class="font-semibold text-white text-sm">Google DNS (Alternative)</h4>
+            </div>
+            <div class="bg-dark-900 rounded-lg p-3 mb-2">
+              <p class="font-mono text-sm text-blue-400">Primär: 8.8.8.8</p>
+              <p class="font-mono text-sm text-gray-400">Sekundär: 8.8.4.4</p>
+            </div>
+            <p class="text-xs text-gray-500">Sehr zuverlässig, global verfügbar</p>
+          </div>
+        </div>
+
+        <div class="card rounded-2xl p-4 mb-4">
+          <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="settings" class="w-5 h-5" style="color: #4ecdc4;"></i> DNS ändern (Windows 11)</h4>
+          <ol class="space-y-2 text-sm">
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full text-white flex items-center justify-center font-bold text-xs" style="background: #4ecdc4;">1</span><span class="text-gray-400">Einstellungen → Netzwerk & Internet → <span class="text-white">Ethernet</span> oder <span class="text-white">WLAN</span></span></li>
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full text-white flex items-center justify-center font-bold text-xs" style="background: #4ecdc4;">2</span><span class="text-gray-400">Hardware-Eigenschaften → DNS-Serverzuweisung → <span class="text-white">Bearbeiten</span></span></li>
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full text-white flex items-center justify-center font-bold text-xs" style="background: #4ecdc4;">3</span><span class="text-gray-400">Auf <span class="text-white">Manuell</span> → IPv4 aktivieren → DNS-Adressen eintragen</span></li>
+          </ol>
+        </div>
+        </div>
+
+        <div class="category-box">
+        <h3 class="text-sm font-semibold uppercase tracking-wider mb-4" style="color: #4ecdc4;">Nagle's Algorithm deaktivieren</h3>
+        <p class="text-gray-400 text-sm mb-4">Nagle's Algorithm bündelt kleine Pakete, um Bandbreite zu sparen - schlecht für Gaming! Deaktivieren = sofortige Paket-Übertragung.</p>
+
+        <div class="card rounded-2xl p-4 mb-4 border-l-4" style="border-color: #4ecdc4;">
+          <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="terminal" class="w-5 h-5" style="color: #4ecdc4;"></i> Registry-Einstellungen</h4>
+          <p class="text-xs text-gray-500 mb-3">Regedit öffnen (Win+R → regedit) → Zum Pfad navigieren:</p>
+          <div class="bg-dark-900 rounded-lg p-3 font-mono text-xs mb-3 overflow-x-auto" style="color: #4ecdc4;">
+            HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\{Deine-Adapter-ID}
+          </div>
+          <p class="text-xs text-gray-400 mb-3">Für jeden Netzwerk-Adapter mit IP-Adresse folgende DWORD-Werte erstellen:</p>
+          <div class="grid md:grid-cols-2 gap-3">
+            <div class="bg-dark-900 rounded-lg p-3">
+              <p class="font-mono text-sm"><span style="color: #4ecdc4;">TcpAckFrequency</span> = <span class="text-accent-primary">1</span></p>
+              <p class="text-xs text-gray-500 mt-1">ACK sofort senden</p>
+            </div>
+            <div class="bg-dark-900 rounded-lg p-3">
+              <p class="font-mono text-sm"><span style="color: #4ecdc4;">TCPNoDelay</span> = <span class="text-accent-primary">1</span></p>
+              <p class="text-xs text-gray-500 mt-1">Pakete sofort senden</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-warning mb-4">
+          <i data-lucide="alert-triangle" class="w-5 h-5 text-accent-warning flex-shrink-0"></i>
+          <div>
+            <p class="font-semibold text-accent-warning text-sm">Adapter-ID finden</p>
+            <p class="text-xs text-gray-400">Unter Interfaces gibt es mehrere Ordner mit langen IDs. Öffne jeden und suche nach dem mit <span class="text-white">IPAddress</span> oder <span class="text-white">DhcpIPAddress</span> - das ist dein aktiver Adapter!</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="category-box">
+        <h3 class="text-sm font-semibold uppercase tracking-wider mb-4" style="color: #4ecdc4;">Weitere Netzwerk-Tweaks</h3>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="sliders" class="w-5 h-5" style="color: #4ecdc4;"></i> Network Throttling Index</h4>
+            <p class="text-xs text-gray-400 mb-3">Windows drosselt standardmäßig Netzwerk für Multimedia. Deaktivieren:</p>
+            <div class="bg-dark-900 rounded-lg p-2 font-mono text-xs mb-2 overflow-x-auto" style="color: #4ecdc4;">
+              HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile
+            </div>
+            <div class="bg-dark-900 rounded-lg p-2 font-mono text-xs">
+              <span style="color: #4ecdc4;">NetworkThrottlingIndex</span> = <span class="text-accent-primary">ffffffff</span> (DWORD Hex)
+            </div>
+          </div>
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="activity" class="w-5 h-5" style="color: #4ecdc4;"></i> TCP Auto-Tuning</h4>
+            <p class="text-xs text-gray-400 mb-3">Für stabiles Gaming auf "normal" lassen (CMD als Admin):</p>
+            <div class="code-wrapper relative"><div class="bg-dark-900 rounded-lg p-2 font-mono text-xs overflow-x-auto" style="color: #4ecdc4;"><code>netsh int tcp set global autotuninglevel=normal</code></div></div>
+            <p class="text-xs text-gray-500 mt-2">Nur auf "disabled" setzen wenn du Probleme hast!</p>
+          </div>
+        </div>
+
+        <div class="card rounded-2xl p-4 border-l-4 border-accent-primary">
+          <h4 class="font-semibold text-accent-primary mb-2 flex items-center gap-2"><i data-lucide="router" class="w-5 h-5"></i> Router QoS (Gaming-Priorität)</h4>
+          <p class="text-xs text-gray-400 mb-2">Die meisten Gaming-Router haben QoS (Quality of Service). Aktiviere es und setze deinen PC auf höchste Priorität!</p>
+          <ul class="text-xs text-gray-500 space-y-1">
+            <li>• <span class="text-white">ASUS:</span> Adaptive QoS → Gaming-Modus</li>
+            <li>• <span class="text-white">Netgear:</span> Dynamic QoS → Add Device</li>
+            <li>• <span class="text-white">FritzBox:</span> Internet → Filter → Priorisierung</li>
+          </ul>
+        </div>
+        </div>
+
+        <div class="category-box">
+        <h3 class="text-sm font-semibold uppercase tracking-wider mb-4" style="color: #4ecdc4;">Status prüfen</h3>
+        <div class="grid md:grid-cols-3 gap-3">
+          <div class="card rounded-2xl p-3 text-center">
+            <i data-lucide="gauge" class="w-6 h-6 mx-auto mb-2" style="color: #4ecdc4;"></i>
+            <p class="font-semibold text-sm">Ping testen</p>
+            <p class="text-xs text-gray-500">ping google.com -n 20</p>
+            <span class="px-2 py-1 rounded-full text-xs font-bold mt-2 inline-block" style="background: rgba(78,205,196,0.2); color: #4ecdc4;">&lt;20ms = Optimal</span>
+          </div>
+          <div class="card rounded-2xl p-3 text-center">
+            <i data-lucide="activity" class="w-6 h-6 mx-auto mb-2" style="color: #4ecdc4;"></i>
+            <p class="font-semibold text-sm">Jitter prüfen</p>
+            <p class="text-xs text-gray-500">Variation im Ping</p>
+            <span class="px-2 py-1 rounded-full text-xs font-bold mt-2 inline-block" style="background: rgba(78,205,196,0.2); color: #4ecdc4;">&lt;5ms = Stabil</span>
+          </div>
+          <div class="card rounded-2xl p-3 text-center">
+            <i data-lucide="globe" class="w-6 h-6 mx-auto mb-2" style="color: #4ecdc4;"></i>
+            <p class="font-semibold text-sm">Packet Loss</p>
+            <p class="text-xs text-gray-500">Verlorene Pakete</p>
+            <span class="px-2 py-1 rounded-full text-xs font-bold mt-2 inline-block" style="background: rgba(78,205,196,0.2); color: #4ecdc4;">0% = Perfekt</span>
           </div>
         </div>
         </div>
@@ -3221,6 +3680,256 @@
           </div>
         </div>
         </div>
+
+        <div class="category-box">
+        <div class="flex flex-col md:flex-row gap-4 mb-4">
+          <div class="flex-1">
+            <h3 class="text-sm font-semibold text-red-400 uppercase tracking-wider mb-3">3D V-Cache Optimizer im Detail</h3>
+            <p class="text-gray-400 text-sm">Der 9800X3D hat zwei Chiplet-Bereiche: Einen mit 3D V-Cache (96MB!) und einen ohne. Der Optimizer sorgt dafür, dass Games automatisch auf dem V-Cache-Chiplet laufen!</p>
+          </div>
+          <div class="card rounded-2xl p-4 border-l-4 border-red-500 bg-gradient-to-br from-red-500/10 to-transparent md:w-56 flex-shrink-0">
+            <p class="text-xs text-red-400 font-semibold uppercase tracking-wider mb-2">Gaming Impact</p>
+            <p class="text-white font-bold text-lg mb-1">+15-25% FPS</p>
+            <p class="text-xs text-gray-400">In cache-sensitiven Spielen wie CS2!</p>
+          </div>
+        </div>
+
+        <div class="card rounded-2xl p-4 mb-4">
+          <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-red-400"></i> V-Cache Status prüfen (Windows 24H2)</h4>
+          <ol class="space-y-2 text-sm">
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-red-500 text-white flex items-center justify-center font-bold text-xs">1</span><span class="text-gray-400"><span class="text-white">Task-Manager</span> öffnen (Strg+Shift+Esc)</span></li>
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-red-500 text-white flex items-center justify-center font-bold text-xs">2</span><span class="text-gray-400">Tab <span class="text-white">"Leistung"</span> → CPU auswählen</span></li>
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-red-500 text-white flex items-center justify-center font-bold text-xs">3</span><span class="text-gray-400">Rechtsklick auf Graph → <span class="text-white">"Logische Prozessoren"</span> zeigen</span></li>
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-red-500 text-white flex items-center justify-center font-bold text-xs">4</span><span class="text-gray-400">Kerne 0-7 = V-Cache CCD, Kerne 8-15 = Compute CCD</span></li>
+          </ol>
+          <p class="text-xs text-gray-500 mt-3">Beim Gaming sollten hauptsächlich Kerne 0-7 aktiv sein!</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <div class="card rounded-2xl p-4 border border-green-500/30">
+            <h4 class="font-semibold text-green-400 mb-3 text-sm flex items-center gap-2"><i data-lucide="gamepad-2" class="w-5 h-5"></i> Profitiert von V-Cache</h4>
+            <ul class="text-xs text-gray-400 space-y-1">
+              <li>• <span class="text-white">CS2</span> - bis +25% FPS</li>
+              <li>• <span class="text-white">Valorant</span> - bis +20% FPS</li>
+              <li>• <span class="text-white">Rainbow Six Siege</span> - bis +22% FPS</li>
+              <li>• <span class="text-white">Minecraft</span> - bis +30% FPS</li>
+              <li>• <span class="text-white">Starfield</span> - bis +18% FPS</li>
+              <li>• <span class="text-white">Anno 1800</span> - bis +35% FPS</li>
+            </ul>
+          </div>
+          <div class="card rounded-2xl p-4 border border-gray-600">
+            <h4 class="font-semibold text-gray-400 mb-3 text-sm flex items-center gap-2"><i data-lucide="cpu" class="w-5 h-5"></i> Weniger V-Cache Vorteil</h4>
+            <ul class="text-xs text-gray-400 space-y-1">
+              <li>• <span class="text-white">Cyberpunk 2077</span> - GPU-limitiert</li>
+              <li>• <span class="text-white">Forza Horizon 5</span> - GPU-limitiert</li>
+              <li>• <span class="text-white">Call of Duty</span> - minimal</li>
+              <li>• <span class="text-white">Streaming/Encoding</span> - kein Vorteil</li>
+              <li>• <span class="text-white">Produktivität</span> - kein Vorteil</li>
+            </ul>
+            <p class="text-xs text-gray-500 mt-2">GPU-limitierte Spiele profitieren weniger.</p>
+          </div>
+        </div>
+
+        <div class="card rounded-2xl p-4 mb-4 border-l-4 border-accent-warning">
+          <h4 class="font-semibold text-accent-warning mb-2 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-5 h-5"></i> Troubleshooting: Efficiency Mode deaktivieren</h4>
+          <p class="text-xs text-gray-400 mb-3">Windows kann fälschlicherweise "Efficiency Mode" auf Games setzen, was Performance killt!</p>
+          <ol class="space-y-2 text-sm">
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-warning text-dark-900 flex items-center justify-center font-bold text-xs">1</span><span class="text-gray-400">Task-Manager → <span class="text-white">"Details"</span> Tab</span></li>
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-warning text-dark-900 flex items-center justify-center font-bold text-xs">2</span><span class="text-gray-400">Game-Prozess finden (z.B. cs2.exe)</span></li>
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-warning text-dark-900 flex items-center justify-center font-bold text-xs">3</span><span class="text-gray-400">Rechtsklick → <span class="text-white">"Efficiency Mode"</span> → <span class="text-accent-danger font-semibold">Deaktivieren</span></span></li>
+          </ol>
+          <p class="text-xs text-gray-500 mt-2">Falls ein grünes Blatt-Symbol neben dem Prozess ist = Efficiency Mode ist aktiv!</p>
+        </div>
+
+        <div class="card rounded-2xl p-4 border-l-4 border-accent-primary">
+          <h4 class="font-semibold text-accent-primary mb-2 flex items-center gap-2"><i data-lucide="terminal" class="w-5 h-5"></i> PPM Provisioning prüfen</h4>
+          <p class="text-xs text-gray-400 mb-3">Stelle sicher, dass der AMD PPM-Treiber korrekt installiert ist:</p>
+          <div class="code-wrapper relative"><div class="bg-dark-900 rounded-lg p-2 font-mono text-xs text-accent-primary overflow-x-auto"><code>powercfg /qh SCHEME_CURRENT SUB_PROCESSOR PERFEPP</code></div></div>
+          <p class="text-xs text-gray-500 mt-2">Sollte "AMD" oder "Balanced" Power Scheme zeigen, nicht "Windows Default".</p>
+        </div>
+        </div>
+      </section>
+
+      <!-- Section: Performance Monitoring -->
+      <section id="monitoring" class="py-12 scroll-mt-8 section-monitoring">
+        <div class="section-header">
+          <div class="section-icon">
+            <i data-lucide="bar-chart-2" class="w-6 h-6 text-accent-primary"></i>
+          </div>
+          <div><h2 class="text-3xl font-bold text-white">Performance Monitoring</h2><p class="text-gray-400 text-sm">Benchmarking & Troubleshooting Tools</p></div>
+        </div>
+
+        <!-- Benefit Card -->
+        <div class="flex flex-wrap gap-4 mb-6">
+          <div class="card rounded-2xl p-4 border-l-4 border-accent-primary bg-gradient-to-br from-accent-primary/10 to-transparent md:w-64 flex-shrink-0">
+            <p class="text-xs text-accent-primary font-semibold uppercase tracking-wider mb-2">Dein Vorteil</p>
+            <p class="text-white font-bold text-lg mb-1">Daten statt Gefühl</p>
+            <p class="text-xs text-gray-400">Objektive Frame Time Analyse für echte Verbesserungen.</p>
+          </div>
+        </div>
+
+        <div class="category-box">
+        <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">CapFrameX - Frame Time Analyse</h3>
+        <div class="flex flex-col md:flex-row gap-4 mb-4">
+          <div class="flex-1">
+            <p class="text-gray-400 text-sm mb-3">Das beste kostenlose Tool für detaillierte Frame Time Analyse. Miss 1% und 0.1% Lows - die Werte die wirklich zählen!</p>
+            <a href="https://www.capframex.com/" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-accent-primary/20 text-accent-primary rounded-lg text-sm hover:bg-accent-primary/30 transition-colors">
+              <i data-lucide="download" class="w-4 h-4"></i> capframex.com
+            </a>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-3 mb-4">
+          <div class="card rounded-2xl p-4 text-center border border-accent-primary/30">
+            <p class="text-2xl font-bold text-accent-primary mb-1">AVG FPS</p>
+            <p class="text-xs text-gray-500">Durchschnittliche FPS</p>
+            <p class="text-xs text-gray-400 mt-2">Gut für Überblick, aber...</p>
+          </div>
+          <div class="card rounded-2xl p-4 text-center border-2 border-accent-secondary">
+            <p class="text-2xl font-bold text-accent-secondary mb-1">1% Low</p>
+            <p class="text-xs text-gray-500">Die schlechtesten 1%</p>
+            <p class="text-xs text-accent-secondary mt-2">Zeigt Mikroruckler!</p>
+          </div>
+          <div class="card rounded-2xl p-4 text-center border-2 border-accent-warning">
+            <p class="text-2xl font-bold text-accent-warning mb-1">0.1% Low</p>
+            <p class="text-xs text-gray-500">Die schlechtesten 0.1%</p>
+            <p class="text-xs text-accent-warning mt-2">Zeigt harte Stutter!</p>
+          </div>
+        </div>
+
+        <div class="card rounded-2xl p-4 mb-4">
+          <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="play" class="w-5 h-5 text-accent-primary"></i> CapFrameX benutzen</h4>
+          <ol class="space-y-2 text-sm">
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">1</span><span class="text-gray-400">CapFrameX starten → <span class="text-white">Capture</span> Tab</span></li>
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">2</span><span class="text-gray-400">Spiel starten → <span class="text-white">F11</span> drücken zum Aufzeichnen</span></li>
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">3</span><span class="text-gray-400">60-120 Sekunden spielen → <span class="text-white">F11</span> zum Stoppen</span></li>
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">4</span><span class="text-gray-400"><span class="text-white">Analysis</span> Tab → Ergebnisse ansehen + vergleichen</span></li>
+          </ol>
+        </div>
+        </div>
+
+        <div class="category-box">
+        <h3 class="text-sm font-semibold text-accent-secondary uppercase tracking-wider mb-4">HWiNFO64 + RTSS Overlay</h3>
+        <div class="flex flex-col md:flex-row gap-4 mb-4">
+          <div class="flex-1">
+            <p class="text-gray-400 text-sm mb-3">Hardware-Monitoring mit In-Game Overlay. Sehe CPU/GPU Temps, Auslastung und Frame Times während du spielst!</p>
+            <div class="flex flex-wrap gap-2">
+              <a href="https://www.hwinfo.com/" target="_blank" class="inline-flex items-center gap-2 px-3 py-1.5 bg-accent-secondary/20 text-accent-secondary rounded-lg text-xs hover:bg-accent-secondary/30 transition-colors">
+                <i data-lucide="download" class="w-3 h-3"></i> HWiNFO64
+              </a>
+              <a href="https://www.guru3d.com/files-details/rtss-rivatuner-statistics-server-download.html" target="_blank" class="inline-flex items-center gap-2 px-3 py-1.5 bg-accent-primary/20 text-accent-primary rounded-lg text-xs hover:bg-accent-primary/30 transition-colors">
+                <i data-lucide="download" class="w-3 h-3"></i> RTSS (RivaTuner)
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card rounded-2xl p-4 mb-4">
+          <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="monitor" class="w-5 h-5 text-accent-secondary"></i> Wichtige Sensoren für Overlay</h4>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
+            <div class="bg-dark-800 rounded-lg p-3">
+              <p class="text-accent-primary font-semibold text-sm">CPU Tctl/Tdie</p>
+              <p class="text-xs text-gray-500">Haupt-CPU Temperatur</p>
+              <p class="text-xs text-accent-danger mt-1">&gt;90°C = Throttling!</p>
+            </div>
+            <div class="bg-dark-800 rounded-lg p-3">
+              <p class="text-green-400 font-semibold text-sm">GPU Temperature</p>
+              <p class="text-xs text-gray-500">GPU Temperatur</p>
+              <p class="text-xs text-accent-warning mt-1">&gt;83°C = Throttling!</p>
+            </div>
+            <div class="bg-dark-800 rounded-lg p-3">
+              <p class="text-accent-secondary font-semibold text-sm">GPU Memory Used</p>
+              <p class="text-xs text-gray-500">VRAM Verbrauch</p>
+              <p class="text-xs text-gray-400 mt-1">Max 16GB (4080S)</p>
+            </div>
+            <div class="bg-dark-800 rounded-lg p-3">
+              <p class="text-accent-warning font-semibold text-sm">Frametime</p>
+              <p class="text-xs text-gray-500">Zeit pro Frame</p>
+              <p class="text-xs text-accent-primary mt-1">4.17ms = 240 FPS</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card rounded-2xl p-4 mb-4">
+          <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="settings" class="w-5 h-5 text-accent-secondary"></i> RTSS Setup für Overlay</h4>
+          <ol class="space-y-2 text-sm">
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-secondary text-dark-900 flex items-center justify-center font-bold text-xs">1</span><span class="text-gray-400">RTSS starten → <span class="text-white">"Show On-Screen Display"</span> aktivieren</span></li>
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-secondary text-dark-900 flex items-center justify-center font-bold text-xs">2</span><span class="text-gray-400">HWiNFO64 starten → <span class="text-white">Settings</span> → "Shared Memory Support" aktivieren</span></li>
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-secondary text-dark-900 flex items-center justify-center font-bold text-xs">3</span><span class="text-gray-400">HWiNFO → Sensor klicken → <span class="text-white">RTSS Button</span> → "Show value in OSD"</span></li>
+          </ol>
+        </div>
+        </div>
+
+        <div class="category-box">
+        <h3 class="text-sm font-semibold text-accent-warning uppercase tracking-wider mb-4">Quick Benchmark Routine</h3>
+        <p class="text-gray-400 text-sm mb-4">Teste dein System nach jeder Optimierung! Diese 3 Benchmarks decken alles ab:</p>
+
+        <div class="grid md:grid-cols-3 gap-4 mb-4">
+          <div class="card rounded-2xl p-4 border border-accent-primary/30">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold">1</span>
+              <h4 class="font-semibold text-white text-sm">3DMark Time Spy</h4>
+            </div>
+            <p class="text-xs text-gray-400 mb-3">GPU-fokussierter Benchmark. Vergleiche deinen Score mit anderen RTX 4080 Super Systemen.</p>
+            <div class="bg-dark-800 rounded-lg p-2 text-center">
+              <p class="text-xs text-gray-500">Erwarteter Score</p>
+              <p class="text-accent-primary font-bold">~25.000 - 27.000</p>
+            </div>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-secondary/30">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent-secondary text-dark-900 flex items-center justify-center font-bold">2</span>
+              <h4 class="font-semibold text-white text-sm">Cinebench 2024</h4>
+            </div>
+            <p class="text-xs text-gray-400 mb-3">CPU Multi-Core & Single-Core Test. Zeigt ob PBO richtig funktioniert.</p>
+            <div class="bg-dark-800 rounded-lg p-2 text-center">
+              <p class="text-xs text-gray-500">Multi-Core</p>
+              <p class="text-accent-secondary font-bold">~1.100 - 1.200</p>
+            </div>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-warning/30">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent-warning text-dark-900 flex items-center justify-center font-bold">3</span>
+              <h4 class="font-semibold text-white text-sm">CS2 Workshop Map</h4>
+            </div>
+            <p class="text-xs text-gray-400 mb-3">Real-World Gaming Test. 5 Min auf FPS Benchmark Map mit CapFrameX.</p>
+            <div class="bg-dark-800 rounded-lg p-2 text-center">
+              <p class="text-xs text-gray-500">Erwartete FPS</p>
+              <p class="text-accent-warning font-bold">400-600 AVG</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-info">
+          <i data-lucide="lightbulb" class="w-5 h-5 text-accent-primary flex-shrink-0"></i>
+          <div>
+            <p class="text-sm font-semibold text-white">Vorher/Nachher Vergleich</p>
+            <p class="text-xs text-gray-400">Führe diese Tests <span class="text-white">vor</span> und <span class="text-white">nach</span> jeder Optimierung durch. CapFrameX kann Sessions direkt vergleichen!</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="category-box">
+        <h3 class="text-sm font-semibold text-green-400 uppercase tracking-wider mb-4">FrameView (NVIDIA)</h3>
+        <p class="text-gray-400 text-sm mb-4">Kostenlos von NVIDIA - zeigt FPS, Frame Times und Power Draw. Perfekt für GPU-fokussierte Analyse.</p>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white mb-2 flex items-center gap-2"><i data-lucide="zap" class="w-5 h-5 text-green-400"></i> Features</h4>
+            <ul class="text-xs text-gray-400 space-y-1">
+              <li>• FPS + Frame Time Graphen</li>
+              <li>• GPU Power Draw (Watt)</li>
+              <li>• Stutter-Analyse (Frame Time Spikes)</li>
+              <li>• Integriert in NVIDIA App</li>
+            </ul>
+          </div>
+          <div class="card rounded-2xl p-4 border-l-4 border-green-500">
+            <h4 class="font-semibold text-green-400 text-sm mb-2">Aktivieren</h4>
+            <p class="text-xs text-gray-400">NVIDIA App → Settings → In-Game Overlay → Performance → <span class="text-white">FrameView aktivieren</span></p>
+            <p class="text-xs text-gray-500 mt-2">Alt+R für Overlay während dem Spielen.</p>
+          </div>
+        </div>
+        </div>
       </section>
 
       <!-- Section: Upgrades -->
@@ -3551,7 +4260,7 @@
     function updateProgress(id){const c=document.getElementById(id+'Checklist'),boxes=c.querySelectorAll('input[type="checkbox"]'),checked=c.querySelectorAll('input:checked').length,total=boxes.length;document.getElementById(id+'Count').textContent=checked;document.getElementById(id+'Total').textContent=total;document.getElementById(id+'Bar').style.width=(checked/total*100)+'%';boxes.forEach(b=>{const svg=b.nextElementSibling.querySelector('svg');if(b.checked){svg.classList.remove('opacity-0');svg.classList.add('opacity-100');b.nextElementSibling.classList.add('bg-accent-primary')}else{svg.classList.add('opacity-0');svg.classList.remove('opacity-100');b.nextElementSibling.classList.remove('bg-accent-primary')}});localStorage.setItem('checklist_'+id,JSON.stringify(Array.from(boxes).map(b=>b.checked)))}
     function loadChecklist(id){const saved=localStorage.getItem('checklist_'+id);if(saved){const states=JSON.parse(saved),boxes=document.getElementById(id+'Checklist').querySelectorAll('input[type="checkbox"]');boxes.forEach((b,i)=>{if(states[i])b.checked=true})}updateProgress(id)}
     function resetChecklist(id){document.getElementById(id+'Checklist').querySelectorAll('input').forEach(b=>b.checked=false);localStorage.removeItem('checklist_'+id);updateProgress(id)}
-    document.addEventListener('DOMContentLoaded',()=>{loadChecklist('setup');loadChecklist('monthly');initCopyButtons();});
+    document.addEventListener('DOMContentLoaded',()=>{loadChecklist('setup');loadChecklist('monthly');initCopyButtons();if(typeof Prism!=='undefined')Prism.highlightAll();});
 
     // Toast Notification
     function showToast(message) {
@@ -3616,8 +4325,15 @@
       { title: 'NVIDIA Reflex', section: 'NVIDIA', id: 'nvidia', keywords: 'reflex latenz input lag cs2 valorant fortnite' },
       { title: 'DLSS 4 Frame Generation', section: 'NVIDIA', id: 'nvidia', keywords: 'dlss dlss4 frame generation fps boost rtx 4080 smooth motion' },
       { title: 'Shader Cache', section: 'NVIDIA', id: 'nvidia', keywords: 'shader cache stutter kompilieren' },
+      { title: 'Per-Game Profile', section: 'NVIDIA', id: 'nvidia', keywords: 'profile competitive quality cs2 cyberpunk settings nvidia app' },
+      { title: 'Profile Inspector', section: 'NVIDIA', id: 'nvidia', keywords: 'nvidiaprofileinspector export import profile' },
       { title: 'RAM Stabilität testen', section: 'RAM', id: 'ram', keywords: 'testmem5 tm5 occt aida64 benchmark' },
       { title: 'Samsung Firmware', section: 'SSD', id: 'ssd', keywords: 'firmware 9100 pro samsung magician ssd pcie 5.0' },
+      { title: 'DirectStorage 2.0', section: 'DirectStorage', id: 'directstorage', keywords: 'directstorage loading ladezeit gpu pcie 5.0 nvme' },
+      { title: 'Kompatible Spiele DirectStorage', section: 'DirectStorage', id: 'directstorage', keywords: 'ratchet clank forspoken wukong star wars outlaws' },
+      { title: 'DNS Optimierung', section: 'Netzwerk', id: 'network', keywords: 'dns cloudflare google ping latenz' },
+      { title: 'Nagle Algorithm', section: 'Netzwerk', id: 'network', keywords: 'nagle tcp tcpnodelay tcpackfrequency registry' },
+      { title: 'Network Throttling', section: 'Netzwerk', id: 'network', keywords: 'throttling index qos gaming priority' },
       { title: 'DDU Clean Install', section: 'Anti-Stutter', id: 'antistutter', keywords: 'ddu treiber driver clean uninstall' },
       { title: 'Rapid Trigger', section: 'Wooting', id: 'wooting', keywords: 'rapid trigger wooting keyboard actuation' },
       { title: 'Wootabase Profile', section: 'Wooting', id: 'wooting', keywords: 'wootabase profile cs2 valorant' },
@@ -3633,6 +4349,11 @@
       { title: 'OBS NVENC', section: 'Streaming', id: 'obs', keywords: 'obs nvenc streaming twitch encoder bitrate' },
       { title: 'Q-Flash BIOS Update', section: 'BIOS Update', id: 'biosupdate', keywords: 'bios update q-flash qflash gigabyte firmware x670' },
       { title: 'AMD Chipset Treiber', section: 'Wartung', id: 'amdchipset', keywords: 'amd chipset treiber driver ryzen am5 v-cache vcache ppm psp gpio' },
+      { title: '3D V-Cache Optimizer', section: 'AMD Chipset', id: 'amdchipset', keywords: '3d vcache v-cache optimizer 9800x3d efficiency mode ccd' },
+      { title: 'CapFrameX', section: 'Monitoring', id: 'monitoring', keywords: 'capframex frametime benchmark 1% low 0.1% fps analyse' },
+      { title: 'HWiNFO64 Overlay', section: 'Monitoring', id: 'monitoring', keywords: 'hwinfo rtss overlay temperatur monitoring sensors' },
+      { title: 'FrameView NVIDIA', section: 'Monitoring', id: 'monitoring', keywords: 'frameview nvidia frametime power draw' },
+      { title: 'Benchmark Routine', section: 'Monitoring', id: 'monitoring', keywords: '3dmark timespy cinebench benchmark score' },
       { title: 'Temperaturen', section: 'Troubleshooting', id: 'troubleshooting', keywords: 'temperatur temp hitze thermal throttle' },
       { title: 'CMOS Reset', section: 'BIOS', id: 'bios', keywords: 'cmos reset boot problem crash' },
     ];
