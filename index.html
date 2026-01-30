@@ -1091,109 +1091,179 @@
           <div><h2 class="text-3xl font-bold text-white">RAM-Optimierung</h2></div>
         </div>
         <div class="category-box">
-        <p class="text-gray-400 mb-4">DDR5-6000 CL30 mit 2x32GB ist der perfekte Sweet Spot für AM5. RAM-Optimierung passiert hauptsächlich <span class="text-white font-semibold">im BIOS</span>!</p>
-
-        <div class="alert alert-info mb-4">
-          <i data-lucide="lightbulb" class="w-5 h-5 text-accent-primary flex-shrink-0"></i>
-          <div>
-            <p class="text-sm"><span class="font-semibold text-white">Was ist EXPO?</span></p>
-            <p class="text-sm text-gray-400">AMD EXPO (Extended Profiles for Overclocking) ist wie Intel XMP - ein vorkonfiguriertes Profil auf deinen RAM-Sticks. Es aktiviert automatisch die beworbene Geschwindigkeit (6000MHz) und optimierte Timings (CL30).</p>
+        <div class="flex flex-col md:flex-row gap-4 mb-4">
+          <div class="flex-1">
+            <p class="text-gray-400 mb-3">DDR5-6000 CL30 mit 2x32GB ist der perfekte Sweet Spot für AM5. RAM-Optimierung passiert im BIOS durch EXPO!</p>
+            <div class="alert alert-info">
+              <i data-lucide="lightbulb" class="w-5 h-5 text-accent-primary flex-shrink-0"></i>
+              <div>
+                <p class="text-sm"><span class="font-semibold text-white">Was ist EXPO?</span></p>
+                <p class="text-xs text-gray-400">AMD EXPO aktiviert automatisch die beworbene RAM-Geschwindigkeit (6000MHz) und optimierte Timings (CL30).</p>
+              </div>
+            </div>
+          </div>
+          <div class="card rounded-2xl p-4 border-l-4 border-accent-secondary bg-gradient-to-br from-accent-secondary/10 to-transparent md:w-56 flex-shrink-0">
+            <p class="text-xs text-accent-secondary font-semibold uppercase tracking-wider mb-2">Dein Vorteil</p>
+            <p class="text-white font-bold text-lg mb-1">+25% Speed</p>
+            <p class="text-xs text-gray-400">4800 → 6000 MHz. Bessere 1% Lows, schnellere Ladezeiten.</p>
           </div>
         </div>
 
-        <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">EXPO im BIOS aktivieren (Gigabyte X670)</h3>
+        <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">RAM Slot Konfiguration</h3>
+        <div class="card rounded-2xl p-4 mb-4">
+          <div class="flex items-center justify-center gap-2 mb-3">
+            <div class="text-center">
+              <div class="w-8 h-16 rounded bg-dark-700 border-2 border-dashed border-gray-600 flex items-center justify-center"><span class="text-xs text-gray-500">A1</span></div>
+              <p class="text-xs text-gray-500 mt-1">leer</p>
+            </div>
+            <div class="text-center">
+              <div class="w-8 h-16 rounded bg-accent-primary/30 border-2 border-accent-primary flex items-center justify-center"><span class="text-xs text-accent-primary font-bold">A2</span></div>
+              <p class="text-xs text-accent-primary mt-1">32GB</p>
+            </div>
+            <div class="w-12 h-12 rounded-lg bg-dark-600 flex items-center justify-center mx-2">
+              <span class="text-xs text-gray-400">CPU</span>
+            </div>
+            <div class="text-center">
+              <div class="w-8 h-16 rounded bg-accent-primary/30 border-2 border-accent-primary flex items-center justify-center"><span class="text-xs text-accent-primary font-bold">B2</span></div>
+              <p class="text-xs text-accent-primary mt-1">32GB</p>
+            </div>
+            <div class="text-center">
+              <div class="w-8 h-16 rounded bg-dark-700 border-2 border-dashed border-gray-600 flex items-center justify-center"><span class="text-xs text-gray-500">B1</span></div>
+              <p class="text-xs text-gray-500 mt-1">leer</p>
+            </div>
+          </div>
+          <p class="text-xs text-gray-400 text-center">Immer A2 + B2 verwenden (zweite Slots von der CPU) für optimales Dual Channel!</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-3 mb-4">
+          <div class="card rounded-2xl p-4 border border-accent-primary/20">
+            <div class="flex items-center gap-2 mb-2">
+              <i data-lucide="git-branch" class="w-5 h-5 text-accent-primary"></i>
+              <h4 class="font-semibold text-white text-sm">Dual Channel</h4>
+            </div>
+            <p class="text-xs text-gray-400"><span class="text-accent-primary font-semibold">2x Bandbreite</span> vs Single Channel. Wichtig für Gaming-Performance!</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-secondary/20">
+            <div class="flex items-center gap-2 mb-2">
+              <i data-lucide="link" class="w-5 h-5 text-accent-secondary"></i>
+              <h4 class="font-semibold text-white text-sm">FCLK 1:1 Ratio</h4>
+            </div>
+            <p class="text-xs text-gray-400"><span class="text-accent-secondary font-semibold">3000MHz FCLK</span> = optimale Infinity Fabric Latenz. Wird von EXPO automatisch gesetzt!</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-danger/20">
+            <div class="flex items-center gap-2 mb-2">
+              <i data-lucide="x-circle" class="w-5 h-5 text-accent-danger"></i>
+              <h4 class="font-semibold text-white text-sm">Nicht 4 Sticks!</h4>
+            </div>
+            <p class="text-xs text-gray-400">4 Sticks = Downclocking auf <span class="text-accent-danger font-semibold">~5600MHz</span>. Memory Controller Limit!</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="category-box">
+        <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">EXPO im BIOS aktivieren</h3>
         <div class="card rounded-2xl p-4 mb-4">
           <ol class="space-y-3 text-sm">
             <li class="flex gap-3">
               <span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">1</span>
               <div class="flex-1">
                 <span class="font-semibold text-white">BIOS aufrufen</span>
-                <p class="text-gray-400 mt-1">PC neustarten → <span class="text-white">ENTF-Taste</span> mehrfach drücken beim Boot</p>
+                <p class="text-gray-400 mt-1">PC neustarten → <code class="bg-dark-800 px-2 py-0.5 rounded text-accent-primary">ENTF</code> mehrfach drücken</p>
               </div>
             </li>
             <li class="flex gap-3">
               <span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">2</span>
               <div class="flex-1">
                 <span class="font-semibold text-white">EXPO aktivieren</span>
-                <p class="text-gray-400 mt-1"><span class="text-accent-secondary">Tweaker</span> → <span class="text-white">Extreme Memory Profile (X.M.P.)</span> → <span class="text-accent-primary font-semibold">Profile 1</span></p>
-                <p class="text-gray-400 text-xs mt-1">Profile 1 = DDR5-6000 CL30 | Profile 2 = manchmal niedrigere Geschwindigkeit</p>
+                <p class="text-gray-400 mt-1"><span class="text-accent-secondary">Tweaker</span> → <span class="text-white">Extreme Memory Profile</span> → <span class="text-accent-primary font-semibold">Profile 1</span></p>
               </div>
             </li>
             <li class="flex gap-3">
               <span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">3</span>
               <div class="flex-1">
-                <span class="font-semibold text-white">Speichern & Neustarten</span>
-                <p class="text-gray-400 mt-1"><span class="text-white">F10</span> drücken → "Save & Exit" bestätigen</p>
-                <p class="text-gray-400 text-xs mt-1">PC startet evtl. 2-3x neu (Memory Training) - das ist normal!</p>
+                <span class="font-semibold text-white">Speichern</span>
+                <p class="text-gray-400 mt-1"><code class="bg-dark-800 px-2 py-0.5 rounded text-accent-primary">F10</code> → "Save & Exit". PC startet evtl. 2-3x neu (Memory Training).</p>
               </div>
             </li>
           </ol>
         </div>
 
-        <div class="alert alert-warning mb-4">
-          <i data-lucide="alert-triangle" class="w-5 h-5 text-accent-warning flex-shrink-0"></i>
-          <p class="text-sm"><span class="font-semibold text-white">Falls EXPO instabil ist:</span> Wähle stattdessen 5600MHz (falls vorhanden) oder deaktiviere EXPO vorübergehend. Manche Mainboards brauchen ein BIOS-Update für stabiles 6000MHz.</p>
-        </div>
-
-        <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">EXPO verifizieren (nach dem Neustart)</h3>
-        <div class="table-modern bg-dark-800/50 mb-4">
-          <table class="w-full text-sm"><thead><tr><th class="text-left px-5 py-4">Tool</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Wo schauen</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Erwarteter Wert</th></tr></thead>
-            <tbody class="">
-              <tr><td class="px-4 py-2">Task Manager</td><td class="px-4 py-2 text-gray-400">Leistung → Arbeitsspeicher</td><td class="px-4 py-2 text-accent-primary font-semibold">6000 MHz</td></tr>
-              <tr><td class="px-4 py-2">CPU-Z</td><td class="px-4 py-2 text-gray-400">Tab "Memory" → DRAM Frequency</td><td class="px-4 py-2 text-accent-primary font-semibold">3000 MHz (= 6000 MT/s)</td></tr>
-              <tr><td class="px-4 py-2">HWiNFO64</td><td class="px-4 py-2 text-gray-400">Memory → Clock</td><td class="px-4 py-2 text-accent-primary font-semibold">3000 MHz</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="text-xs text-gray-500 mb-6">Hinweis: DDR5-6000 bedeutet 6000 MT/s (Mega-Transfers). Die tatsächliche Taktfrequenz ist die Hälfte (3000 MHz).</p>
-
-        <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">Wichtige RAM-Regeln</h3>
-        <ul class="list-disc list-inside space-y-2 text-sm text-gray-400 mb-4">
-          <li><strong class="text-white">FCLK 3000MHz (1:1 Ratio)</strong> = beste Latenz, wird automatisch von EXPO gesetzt</li>
-          <li><strong class="text-white">2 Sticks in A2 + B2</strong> = optimal für Dual Channel (nicht die direkt neben CPU!)</li>
-          <li><strong class="text-white">EXPO Profile 1</strong> aktiviert alle optimierten Timings automatisch</li>
-        </ul>
-        <div class="alert alert-danger mb-4">
-          <i data-lucide="alert-octagon" class="w-5 h-5 text-accent-danger flex-shrink-0"></i>
-          <p class="text-sm">Verwende <span class="font-semibold text-accent-danger">NICHT</span> 4 RAM-Sticks! Dies erfordert Downclocking auf ~5600MHz wegen erhöhter Last auf dem Memory Controller.</p>
+        <div class="grid md:grid-cols-2 gap-3 mb-4">
+          <div class="card rounded-2xl p-3 border-l-4 border-accent-primary">
+            <h4 class="font-semibold text-accent-primary text-sm mb-2">Verifizieren</h4>
+            <p class="text-xs text-gray-400">Task Manager → Leistung → RAM → sollte <span class="text-accent-primary font-semibold">6000 MHz</span> zeigen</p>
+          </div>
+          <div class="alert alert-warning">
+            <i data-lucide="alert-triangle" class="w-4 h-4 text-accent-warning flex-shrink-0"></i>
+            <p class="text-xs"><span class="font-semibold text-white">Instabil?</span> BIOS-Update prüfen oder auf 5600MHz wechseln.</p>
+          </div>
         </div>
         </div>
 
         <div class="category-box">
-        <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">RAM Stabilität testen</h3>
-        <p class="text-gray-400 text-sm mb-3">Nach EXPO-Aktivierung solltest du die Stabilität prüfen:</p>
+        <div class="flex flex-col md:flex-row gap-4 mb-4">
+          <div class="flex-1">
+            <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-3">RAM Stabilität testen</h3>
+            <p class="text-gray-400 text-sm">Nach EXPO-Aktivierung unbedingt Stabilität prüfen - instabiler RAM = Random Crashes!</p>
+          </div>
+          <div class="card rounded-2xl p-4 border-l-4 border-accent-warning bg-gradient-to-br from-accent-warning/10 to-transparent md:w-56 flex-shrink-0">
+            <p class="text-xs text-accent-warning font-semibold uppercase tracking-wider mb-2">Warum testen?</p>
+            <p class="text-white font-bold text-lg mb-1">Keine Crashes</p>
+            <p class="text-xs text-gray-400">Instabiler RAM = Bluescreens, Game Freezes, Datenverlust.</p>
+          </div>
+        </div>
 
-        <div class="table-modern bg-dark-800/50 mb-4">
-          <table class="w-full text-sm"><thead><tr><th class="text-left px-5 py-4">Tool</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Testdauer</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Was prüfen</th></tr></thead>
-            <tbody class="">
-              <tr><td class="px-4 py-2 text-white">TestMem5 (TM5)</td><td class="px-4 py-2 text-gray-400">~30 Min (anta777 Extreme)</td><td class="px-4 py-2 text-gray-400">0 Errors = stabil</td></tr>
-              <tr><td class="px-4 py-2 text-white">OCCT (Memory Test)</td><td class="px-4 py-2 text-gray-400">1 Stunde</td><td class="px-4 py-2 text-gray-400">Keine Fehler, kein Absturz</td></tr>
-              <tr><td class="px-4 py-2 text-white">Gaming (normal spielen)</td><td class="px-4 py-2 text-gray-400">Mehrere Stunden</td><td class="px-4 py-2 text-gray-400">Keine Freezes/Bluescreens</td></tr>
-            </tbody>
-          </table>
+        <div class="grid md:grid-cols-3 gap-3 mb-4">
+          <div class="card rounded-2xl p-3 text-center">
+            <i data-lucide="cpu" class="w-6 h-6 text-accent-primary mx-auto mb-2"></i>
+            <p class="font-semibold text-sm">TestMem5</p>
+            <p class="text-xs text-gray-500">30 Min mit anta777 Extreme</p>
+            <span class="px-2 py-1 rounded-full bg-accent-primary/20 text-accent-primary text-xs font-bold mt-2 inline-block">0 Errors = OK</span>
+          </div>
+          <div class="card rounded-2xl p-3 text-center">
+            <i data-lucide="activity" class="w-6 h-6 text-accent-secondary mx-auto mb-2"></i>
+            <p class="font-semibold text-sm">OCCT Memory</p>
+            <p class="text-xs text-gray-500">1 Stunde laufen lassen</p>
+            <span class="px-2 py-1 rounded-full bg-accent-secondary/20 text-accent-secondary text-xs font-bold mt-2 inline-block">Kein Absturz = OK</span>
+          </div>
+          <div class="card rounded-2xl p-3 text-center">
+            <i data-lucide="gamepad-2" class="w-6 h-6 text-accent-warning mx-auto mb-2"></i>
+            <p class="font-semibold text-sm">Gaming</p>
+            <p class="text-xs text-gray-500">Mehrere Stunden spielen</p>
+            <span class="px-2 py-1 rounded-full bg-accent-warning/20 text-accent-warning text-xs font-bold mt-2 inline-block">Keine Freezes = OK</span>
+          </div>
         </div>
 
         <div class="card rounded-2xl p-3 border-l-4 border-accent-secondary mb-4">
-          <h4 class="font-semibold text-accent-secondary text-sm mb-2">TestMem5 Setup</h4>
-          <ol class="text-sm text-gray-400 space-y-1">
-            <li>1. <a href="https://github.com/integralfx/MemTestHelper/releases" target="_blank" class="text-accent-primary underline">TestMem5 herunterladen</a></li>
-            <li>2. <a href="https://github.com/integralfx/MemTestHelper/blob/master/anta777%20Extreme.cfg" target="_blank" class="text-accent-primary underline">anta777 Extreme.cfg</a> in TM5-Ordner → "bin" legen</li>
-            <li>3. TM5 starten → Config laden → Test starten</li>
-          </ol>
+          <h4 class="font-semibold text-accent-secondary text-sm mb-2">TestMem5 Download</h4>
+          <div class="flex flex-wrap gap-2">
+            <a href="https://github.com/integralfx/MemTestHelper/releases" target="_blank" class="text-xs bg-dark-800 px-3 py-1 rounded-full text-accent-primary hover:bg-dark-700">TestMem5 Download →</a>
+            <a href="https://github.com/integralfx/MemTestHelper/blob/master/anta777%20Extreme.cfg" target="_blank" class="text-xs bg-dark-800 px-3 py-1 rounded-full text-accent-primary hover:bg-dark-700">anta777 Config →</a>
+          </div>
+        </div>
         </div>
 
-        <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">Erwartete Benchmarks (AIDA64)</h3>
-        <div class="table-modern bg-dark-800/50">
-          <table class="w-full text-sm"><thead><tr><th class="text-left px-5 py-4">Test</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">DDR5-4800 (ohne EXPO)</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">DDR5-6000 (mit EXPO)</th></tr></thead>
-            <tbody class="">
-              <tr><td class="px-4 py-2">Latenz</td><td class="px-4 py-2 text-gray-400">~80-90ns</td><td class="px-4 py-2 text-accent-primary font-semibold">65-70ns</td></tr>
-              <tr><td class="px-4 py-2">Read</td><td class="px-4 py-2 text-gray-400">~60 GB/s</td><td class="px-4 py-2 text-accent-primary font-semibold">~80-85 GB/s</td></tr>
-              <tr><td class="px-4 py-2">Write</td><td class="px-4 py-2 text-gray-400">~55 GB/s</td><td class="px-4 py-2 text-accent-primary font-semibold">~75-80 GB/s</td></tr>
-              <tr><td class="px-4 py-2">Copy</td><td class="px-4 py-2 text-gray-400">~55 GB/s</td><td class="px-4 py-2 text-accent-primary font-semibold">~75-80 GB/s</td></tr>
-            </tbody>
-          </table>
+        <div class="category-box">
+        <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">Erwartete Performance (AIDA64)</h3>
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <div class="card rounded-2xl p-4 border border-gray-700">
+            <h4 class="font-semibold text-gray-400 mb-3 text-sm">DDR5-4800 (ohne EXPO)</h4>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between"><span class="text-gray-500">Latenz</span><span class="text-gray-400">~80-90ns</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Read</span><span class="text-gray-400">~60 GB/s</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Write</span><span class="text-gray-400">~55 GB/s</span></div>
+            </div>
+          </div>
+          <div class="card rounded-2xl p-4 border-2 border-accent-primary/50 bg-gradient-to-br from-accent-primary/5 to-transparent">
+            <h4 class="font-semibold text-accent-primary mb-3 text-sm">DDR5-6000 (mit EXPO) ✓</h4>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between"><span class="text-gray-500">Latenz</span><span class="text-accent-primary font-semibold">65-70ns</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Read</span><span class="text-accent-primary font-semibold">~80-85 GB/s</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Write</span><span class="text-accent-primary font-semibold">~75-80 GB/s</span></div>
+            </div>
+          </div>
         </div>
-        <p class="text-xs text-gray-500 mt-2">AIDA64 → Tools → Cache & Memory Benchmark → Start Benchmark</p>
+        <p class="text-xs text-gray-500">AIDA64 → Tools → Cache & Memory Benchmark → Start Benchmark</p>
         </div>
       </section>
 
