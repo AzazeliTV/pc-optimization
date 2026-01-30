@@ -1401,64 +1401,182 @@
           <div><h2 class="text-3xl font-bold text-white">Anti-Stutter Fixes</h2></div>
         </div>
         <div class="category-box">
-        <div class="table-modern bg-dark-800/50 mb-4">
-          <table class="w-full text-sm"><thead><tr><th class="text-left px-5 py-4">Problem</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Lösung</th></tr></thead>
-            <tbody class="">
-              <tr><td class="px-4 py-2">Nach Win11 24H2 Update</td><td class="px-4 py-2 text-accent-primary font-semibold">Optimierungen für Fenstermodus → AUS</td></tr>
-              <tr><td class="px-4 py-2">Nach NVIDIA Update</td><td class="px-4 py-2">DDU Clean Install</td></tr>
-              <tr><td class="px-4 py-2">Micro-Stuttering allgemein</td><td class="px-4 py-2 text-accent-primary font-semibold">Global C-State auf Enabled (nicht Auto!)</td></tr>
-              <tr><td class="px-4 py-2">Bei allen Spielen</td><td class="px-4 py-2">VBS komplett deaktivieren</td></tr>
-              <tr><td class="px-4 py-2">Game Bar Overlays</td><td class="px-4 py-2">Xbox Game Bar komplett AUS</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">System File Check (beschädigte Dateien reparieren)</h3>
-        <div class="card rounded-2xl p-4 mb-6">
-          <ol class="space-y-3 text-sm">
-            <li class="flex gap-3">
-              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">1</span>
-              <div class="flex-1">
-                <span class="font-semibold text-white">CMD als Admin öffnen</span>
-                <p class="text-gray-400 mt-1">Windows-Taste → "cmd" tippen → Rechtsklick → <span class="text-white">"Als Administrator ausführen"</span></p>
-              </div>
-            </li>
-            <li class="flex gap-3">
-              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">2</span>
-              <div class="flex-1">
-                <span class="font-semibold text-white">System File Checker ausführen</span>
-                <div class="bg-dark-900 rounded-lg p-2 font-mono text-xs text-accent-primary overflow-x-auto mt-2"><code>sfc /scannow</code></div>
-                <p class="text-gray-400 mt-1">Warten bis 100% (dauert 5-15 Minuten)</p>
-              </div>
-            </li>
-            <li class="flex gap-3">
-              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">3</span>
-              <div class="flex-1">
-                <span class="font-semibold text-white">DISM ausführen (tiefere Reparatur)</span>
-                <div class="bg-dark-900 rounded-lg p-2 font-mono text-xs text-accent-primary overflow-x-auto mt-2"><code>DISM /Online /Cleanup-Image /RestoreHealth</code></div>
-                <p class="text-gray-400 mt-1">Warten bis 100% (kann 10-30 Minuten dauern)</p>
-              </div>
-            </li>
-            <li class="flex gap-3">
-              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">4</span>
-              <span class="text-gray-400"><span class="font-semibold text-white">PC neustarten</span> nach Abschluss</span>
-            </li>
-          </ol>
+        <div class="flex flex-col md:flex-row gap-4 mb-6">
+          <div class="flex-1">
+            <p class="text-gray-400 text-sm">Mikroruckler und Frame Drops können frustrierend sein - hier sind die effektivsten Fixes für buttersmooth Gameplay.</p>
+          </div>
+          <div class="card rounded-2xl p-4 border-l-4 border-accent-danger bg-gradient-to-br from-accent-danger/10 to-transparent md:w-56 flex-shrink-0">
+            <p class="text-xs text-accent-danger font-semibold uppercase tracking-wider mb-2">Dein Vorteil</p>
+            <p class="text-white font-bold text-lg mb-1">0.1% Lows ↑</p>
+            <p class="text-xs text-gray-400">Konstante Frametimes. Keine Mikroruckler mehr.</p>
+          </div>
         </div>
 
-        <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">DDU Clean Install (Schritt-für-Schritt)</h3>
-        <div class="card rounded-2xl p-4 mb-4">
-          <ol class="space-y-3 text-sm">
-            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">1</span><div><span class="font-semibold text-white">Vorbereitung:</span> <span class="text-gray-400">Neuen NVIDIA-Treiber herunterladen (noch nicht installieren!)</span></div></li>
-            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">2</span><div><span class="font-semibold text-white">DDU starten:</span> <span class="text-gray-400">Display Driver Uninstaller öffnen</span></div></li>
-            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">3</span><div><span class="font-semibold text-white">Safe Mode:</span> <span class="text-gray-400">DDU fragt nach Neustart → "Safe Mode" wählen</span></div></li>
-            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">4</span><div><span class="font-semibold text-white">Deinstallieren:</span> <span class="text-gray-400">"GPU" → "NVIDIA" → "Clean and restart"</span></div></li>
-            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">5</span><div><span class="font-semibold text-white">Installieren:</span> <span class="text-gray-400">Nach Neustart → Neuen Treiber installieren</span></div></li>
-            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">6</span><div><span class="font-semibold text-white">Einstellungen:</span> <span class="text-gray-400">NVIDIA Control Panel neu konfigurieren (G-Sync etc.)</span></div></li>
-          </ol>
+        <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">Häufige Stutter-Ursachen & Fixes</h3>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
+          <div class="card rounded-2xl p-4 border border-accent-danger/30">
+            <div class="flex items-center justify-between mb-2">
+              <h4 class="font-semibold text-white text-sm flex items-center gap-2"><i data-lucide="monitor" class="w-4 h-4 text-accent-danger"></i> Win11 24H2 Update</h4>
+            </div>
+            <p class="text-xs text-gray-400 mb-2">Einstellungen → System → Bildschirm → Grafik:</p>
+            <p class="text-accent-danger font-bold text-sm">"Fenstermodus-Optimierung" → AUS</p>
+            <p class="text-xs text-gray-500 mt-2"><span class="text-accent-primary font-semibold">Fix:</span> MPO-Bug umgehen, bessere Frametimes</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-warning/30">
+            <div class="flex items-center justify-between mb-2">
+              <h4 class="font-semibold text-white text-sm flex items-center gap-2"><i data-lucide="cpu" class="w-4 h-4 text-accent-warning"></i> Micro-Stuttering</h4>
+            </div>
+            <p class="text-xs text-gray-400 mb-2">BIOS → AMD CBS → Global C-State:</p>
+            <p class="text-accent-warning font-bold text-sm">Enabled (nicht Auto!)</p>
+            <p class="text-xs text-gray-500 mt-2"><span class="text-accent-primary font-semibold">Fix:</span> CPU-Aufwachzeit eliminieren</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-secondary/30">
+            <div class="flex items-center justify-between mb-2">
+              <h4 class="font-semibold text-white text-sm flex items-center gap-2"><i data-lucide="shield-off" class="w-4 h-4 text-accent-secondary"></i> VBS / HVCI</h4>
+            </div>
+            <p class="text-xs text-gray-400 mb-2">Einstellungen → Gerätesicherheit → Kernisolierung:</p>
+            <p class="text-accent-secondary font-bold text-sm">Speicherintegrität → AUS</p>
+            <p class="text-xs text-gray-500 mt-2"><span class="text-accent-primary font-semibold">Fix:</span> +5-15% FPS, weniger Stutter</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-purple/30">
+            <div class="flex items-center justify-between mb-2">
+              <h4 class="font-semibold text-white text-sm flex items-center gap-2"><i data-lucide="gamepad-2" class="w-4 h-4 text-accent-purple"></i> Xbox Game Bar</h4>
+            </div>
+            <p class="text-xs text-gray-400 mb-2">Einstellungen → Spielen → Xbox Game Bar:</p>
+            <p class="text-accent-purple font-bold text-sm">Komplett deaktivieren</p>
+            <p class="text-xs text-gray-500 mt-2"><span class="text-accent-primary font-semibold">Fix:</span> Overlay-Overhead eliminieren</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-primary/30">
+            <div class="flex items-center justify-between mb-2">
+              <h4 class="font-semibold text-white text-sm flex items-center gap-2"><i data-lucide="hard-drive" class="w-4 h-4 text-accent-primary"></i> NVIDIA Treiber</h4>
+            </div>
+            <p class="text-xs text-gray-400 mb-2">Nach Treiberupdate Stutter?</p>
+            <p class="text-accent-primary font-bold text-sm">DDU Clean Install ↓</p>
+            <p class="text-xs text-gray-500 mt-2"><span class="text-accent-primary font-semibold">Fix:</span> Alte Treiber-Reste entfernen</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-gray-600">
+            <div class="flex items-center justify-between mb-2">
+              <h4 class="font-semibold text-white text-sm flex items-center gap-2"><i data-lucide="thermometer" class="w-4 h-4 text-gray-400"></i> Thermal Throttling</h4>
+            </div>
+            <p class="text-xs text-gray-400 mb-2">CPU/GPU zu heiß? HWiNFO checken:</p>
+            <p class="text-gray-300 font-bold text-sm">CPU &lt;90°C, GPU &lt;83°C</p>
+            <p class="text-xs text-gray-500 mt-2"><span class="text-accent-primary font-semibold">Fix:</span> Lüfterkurve, Repaste, Airflow</p>
+          </div>
         </div>
-        <div class="alert alert-warning">
-          <i data-lucide="alert-triangle" class="w-5 h-5 text-accent-warning flex-shrink-0"></i>
-          <p class="text-sm"><span class="font-semibold text-accent-warning">Wann DDU nutzen?</span> Bei Treiber-Problemen, Stutter nach Update, oder bei Wechsel AMD ↔ NVIDIA.</p>
+        </div>
+
+        <div class="category-box">
+        <div class="flex flex-col md:flex-row gap-4 mb-4">
+          <div class="flex-1">
+            <h3 class="text-sm font-semibold text-accent-secondary uppercase tracking-wider mb-3">System File Check</h3>
+            <p class="text-gray-400 text-sm">Beschädigte Windows-Dateien können Stutter verursachen. Diese Befehle reparieren das System.</p>
+          </div>
+          <div class="card rounded-2xl p-4 border-l-4 border-accent-secondary bg-gradient-to-br from-accent-secondary/10 to-transparent md:w-56 flex-shrink-0">
+            <p class="text-xs text-accent-secondary font-semibold uppercase tracking-wider mb-2">Dein Vorteil</p>
+            <p class="text-white font-bold text-lg mb-1">System-Repair</p>
+            <p class="text-xs text-gray-400">Korrupte Dateien automatisch fixen.</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="terminal" class="w-5 h-5 text-accent-primary"></i> SFC (System File Checker)</h4>
+            <p class="text-xs text-gray-400 mb-2">CMD als Admin → Befehl ausführen:</p>
+            <div class="code-wrapper relative"><div class="bg-dark-900 rounded-lg p-2 font-mono text-xs text-accent-primary overflow-x-auto"><code>sfc /scannow</code></div></div>
+            <p class="text-xs text-gray-500 mt-2">Prüft und repariert geschützte Windows-Dateien</p>
+          </div>
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="package" class="w-5 h-5 text-accent-secondary"></i> DISM (tiefere Reparatur)</h4>
+            <p class="text-xs text-gray-400 mb-2">Falls SFC Fehler meldet:</p>
+            <div class="code-wrapper relative"><div class="bg-dark-900 rounded-lg p-2 font-mono text-xs text-accent-secondary overflow-x-auto"><code>DISM /Online /Cleanup-Image /RestoreHealth</code></div></div>
+            <p class="text-xs text-gray-500 mt-2">Repariert das Windows-Systemabbild selbst</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-3 mb-4">
+          <div class="card rounded-2xl p-3 flex items-center gap-3 border border-accent-primary/20">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-sm">1</span>
+            <div><p class="text-sm font-semibold">CMD als Admin</p></div>
+          </div>
+          <div class="card rounded-2xl p-3 flex items-center gap-3 border border-accent-primary/20">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-sm">2</span>
+            <div><p class="text-sm font-semibold">sfc /scannow</p></div>
+          </div>
+          <div class="card rounded-2xl p-3 flex items-center gap-3 border border-accent-primary/20">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-sm">3</span>
+            <div><p class="text-sm font-semibold">DISM (optional)</p></div>
+          </div>
+          <div class="card rounded-2xl p-3 flex items-center gap-3 border border-accent-primary/20">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-sm">4</span>
+            <div><p class="text-sm font-semibold">PC Neustart</p></div>
+          </div>
+        </div>
+        </div>
+
+        <div class="category-box">
+        <div class="flex flex-col md:flex-row gap-4 mb-4">
+          <div class="flex-1">
+            <h3 class="text-sm font-semibold text-accent-warning uppercase tracking-wider mb-3">DDU Clean Install</h3>
+            <p class="text-gray-400 text-sm">Display Driver Uninstaller entfernt GPU-Treiber komplett - die sauberste Methode für Neuinstallationen.</p>
+          </div>
+          <div class="card rounded-2xl p-4 border-l-4 border-accent-warning bg-gradient-to-br from-accent-warning/10 to-transparent md:w-56 flex-shrink-0">
+            <p class="text-xs text-accent-warning font-semibold uppercase tracking-wider mb-2">Dein Vorteil</p>
+            <p class="text-white font-bold text-lg mb-1">Clean Slate</p>
+            <p class="text-xs text-gray-400">Keine Treiber-Reste. Wie frisch installiert.</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-3 mb-4">
+          <div class="card rounded-2xl p-4 border border-accent-warning/20">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-warning text-dark-900 flex items-center justify-center font-bold text-xs">1</span>
+              <h4 class="font-semibold text-white text-sm">Vorbereitung</h4>
+            </div>
+            <p class="text-xs text-gray-400">Neuen NVIDIA-Treiber von nvidia.com herunterladen (noch nicht installieren!)</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-warning/20">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-warning text-dark-900 flex items-center justify-center font-bold text-xs">2</span>
+              <h4 class="font-semibold text-white text-sm">DDU Starten</h4>
+            </div>
+            <p class="text-xs text-gray-400">Display Driver Uninstaller öffnen. DDU fragt nach Safe Mode → <span class="text-accent-warning font-semibold">Bestätigen</span></p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-warning/20">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-warning text-dark-900 flex items-center justify-center font-bold text-xs">3</span>
+              <h4 class="font-semibold text-white text-sm">Deinstallieren</h4>
+            </div>
+            <p class="text-xs text-gray-400">"GPU" → "NVIDIA" → <span class="text-accent-danger font-semibold">"Clean and restart"</span></p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-primary/20">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">4</span>
+              <h4 class="font-semibold text-white text-sm">Neu installieren</h4>
+            </div>
+            <p class="text-xs text-gray-400">Nach Neustart → Heruntergeladenen Treiber ausführen</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-primary/20">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">5</span>
+              <h4 class="font-semibold text-white text-sm">Einstellungen</h4>
+            </div>
+            <p class="text-xs text-gray-400">NVIDIA Control Panel öffnen → G-Sync, Low Latency Mode etc. neu setzen</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-primary/20">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-accent-primary text-dark-900 flex items-center justify-center font-bold text-xs">6</span>
+              <h4 class="font-semibold text-white text-sm">Testen</h4>
+            </div>
+            <p class="text-xs text-gray-400">Spiel starten → Frametimes in HWiNFO oder RTSS checken</p>
+          </div>
+        </div>
+
+        <div class="alert alert-info">
+          <i data-lucide="info" class="w-5 h-5 text-accent-secondary flex-shrink-0"></i>
+          <div>
+            <p class="font-semibold text-accent-secondary text-sm">Wann DDU nutzen?</p>
+            <p class="text-xs text-gray-400">Stutter nach Treiber-Update • Wechsel von AMD ↔ NVIDIA • Grafikfehler/Artefakte • Als letzte Troubleshooting-Maßnahme</p>
+          </div>
         </div>
         </div>
       </section>
