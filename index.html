@@ -536,12 +536,20 @@
         </div>
 
         <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">1. RAM aktivieren (EXPO)</h3>
-        <div class="table-modern bg-dark-800/50 mb-2">
-          <table class="w-full text-sm"><thead><tr><th class="text-left px-5 py-4">Pfad im BIOS</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Einstellung</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Wert</th></tr></thead>
-            <tbody><tr><td class="px-4 py-2 text-gray-400 text-xs">Tweaker (ganz oben)</td><td class="px-4 py-2">Extreme Memory Profile (X.M.P.)</td><td class="px-4 py-2 text-accent-primary font-semibold">Profile 1</td></tr></tbody>
-          </table>
+        <div class="grid md:grid-cols-3 gap-4 mb-4">
+          <div class="md:col-span-2">
+            <div class="table-modern bg-dark-800/50">
+              <table class="w-full text-sm"><thead><tr><th class="text-left px-5 py-4">Pfad im BIOS</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Einstellung</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Wert</th></tr></thead>
+                <tbody><tr><td class="px-4 py-2 text-gray-400 text-xs">Tweaker (ganz oben)</td><td class="px-4 py-2">Extreme Memory Profile (X.M.P.)</td><td class="px-4 py-2 text-accent-primary font-semibold">Profile 1</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card rounded-2xl p-4 border-l-4 border-accent-secondary bg-gradient-to-br from-accent-secondary/10 to-transparent">
+            <p class="text-xs text-accent-secondary font-semibold uppercase tracking-wider mb-2">Dein Vorteil</p>
+            <p class="text-white font-bold text-lg mb-1">+40% RAM Speed</p>
+            <p class="text-xs text-gray-400">DDR5-4800 → DDR5-6000 MHz. Mehr FPS in CPU-limitierten Szenarien, schnellere Ladezeiten.</p>
+          </div>
         </div>
-        <p class="text-sm text-gray-400 mb-3">Aktiviert DDR5-6000MHz CL30 mit FCLK 3000MHz (1:1 Ratio).</p>
         <div class="card rounded-2xl p-3 mb-6">
           <h4 class="font-semibold text-accent-primary text-sm mb-2">EXPO verifizieren nach Neustart:</h4>
           <ul class="text-sm text-gray-400 space-y-1">
@@ -552,14 +560,23 @@
         </div>
 
         <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">2. Resizable BAR</h3>
-        <div class="table-modern bg-dark-800/50 mb-4">
-          <table class="w-full text-sm"><thead><tr><th class="text-left px-5 py-4">Pfad</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Einstellung</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Wert</th></tr></thead>
-            <tbody class="">
-              <tr><td class="px-4 py-2 text-gray-400">Settings → IO Ports</td><td class="px-4 py-2">Above 4G Decoding</td><td class="px-4 py-2 text-accent-primary font-semibold">Enabled</td></tr>
-              <tr><td class="px-4 py-2 text-gray-400">Settings → IO Ports</td><td class="px-4 py-2">Resizable BAR</td><td class="px-4 py-2 text-accent-primary font-semibold">Enabled</td></tr>
-              <tr><td class="px-4 py-2 text-gray-400">Boot</td><td class="px-4 py-2">CSM Support</td><td class="px-4 py-2 text-accent-primary font-semibold">Disabled</td></tr>
-            </tbody>
-          </table>
+        <div class="grid md:grid-cols-3 gap-4 mb-4">
+          <div class="md:col-span-2">
+            <div class="table-modern bg-dark-800/50">
+              <table class="w-full text-sm"><thead><tr><th class="text-left px-5 py-4">Pfad</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Einstellung</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Wert</th></tr></thead>
+                <tbody class="">
+                  <tr><td class="px-4 py-2 text-gray-400">Settings → IO Ports</td><td class="px-4 py-2">Above 4G Decoding</td><td class="px-4 py-2 text-accent-primary font-semibold">Enabled</td></tr>
+                  <tr><td class="px-4 py-2 text-gray-400">Settings → IO Ports</td><td class="px-4 py-2">Resizable BAR</td><td class="px-4 py-2 text-accent-primary font-semibold">Enabled</td></tr>
+                  <tr><td class="px-4 py-2 text-gray-400">Boot</td><td class="px-4 py-2">CSM Support</td><td class="px-4 py-2 text-accent-primary font-semibold">Disabled</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card rounded-2xl p-4 border-l-4 border-accent-primary bg-gradient-to-br from-accent-primary/10 to-transparent">
+            <p class="text-xs text-accent-primary font-semibold uppercase tracking-wider mb-2">Dein Vorteil</p>
+            <p class="text-white font-bold text-lg mb-1">+5-15% FPS</p>
+            <p class="text-xs text-gray-400">CPU kann auf den gesamten VRAM zugreifen statt nur 256MB. Weniger Stutter bei großen Texturen.</p>
+          </div>
         </div>
         <div class="card rounded-2xl p-4 mb-6">
           <h4 class="font-semibold text-accent-primary mb-3 flex items-center gap-2"><i data-lucide="check-square" class="w-5 h-5"></i> Resizable BAR verifizieren</h4>
@@ -572,27 +589,45 @@
         </div>
 
         <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">3. Global C-State Control (KRITISCH!)</h3>
-        <div class="table-modern bg-dark-800/50 mb-2">
-          <table class="w-full text-sm"><thead><tr><th class="text-left px-5 py-4">Pfad</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Einstellung</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Wert</th></tr></thead>
-            <tbody><tr><td class="px-4 py-2 text-gray-400 text-xs">Settings → AMD CBS → SMU Common Options → CPPC</td><td class="px-4 py-2">Global C-State Control</td><td class="px-4 py-2 text-accent-warning font-semibold">Enabled (NICHT Auto!)</td></tr></tbody>
-          </table>
+        <div class="grid md:grid-cols-3 gap-4 mb-4">
+          <div class="md:col-span-2">
+            <div class="table-modern bg-dark-800/50">
+              <table class="w-full text-sm"><thead><tr><th class="text-left px-5 py-4">Pfad</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Einstellung</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Wert</th></tr></thead>
+                <tbody><tr><td class="px-4 py-2 text-gray-400 text-xs">Settings → AMD CBS → SMU Common Options → CPPC</td><td class="px-4 py-2">Global C-State Control</td><td class="px-4 py-2 text-accent-warning font-semibold">Enabled (NICHT Auto!)</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card rounded-2xl p-4 border-l-4 border-accent-danger bg-gradient-to-br from-accent-danger/10 to-transparent">
+            <p class="text-xs text-accent-danger font-semibold uppercase tracking-wider mb-2">Dein Vorteil</p>
+            <p class="text-white font-bold text-lg mb-1">Kein Micro-Stutter!</p>
+            <p class="text-xs text-gray-400">Behebt das berüchtigte X3D Stutter-Problem. CPU bleibt responsive ohne Energiesparmodus-Lags.</p>
+          </div>
         </div>
         <div class="alert alert-info mb-6">
           <i data-lucide="lightbulb" class="w-5 h-5 text-accent-primary flex-shrink-0"></i>
-          <p class="text-sm">Manuell auf "Enabled" setzen eliminiert Micro-Stuttering bei X3D CPUs! "Auto" kann Probleme verursachen.</p>
+          <p class="text-sm">"Auto" bei X3D CPUs verursacht oft Micro-Stutters wenn die CPU aus dem Tiefschlaf aufwacht. Manuell "Enabled" = Problem gelöst!</p>
         </div>
 
         <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">4. PBO (Precision Boost Overdrive)</h3>
-        <p class="text-sm text-gray-400 mb-3"><span class="text-white font-semibold">BIOS-Pfad:</span> Tweaker → Advanced CPU Settings → Precision Boost Overdrive</p>
-        <div class="table-modern bg-dark-800/50 mb-4">
-          <table class="w-full text-sm"><thead><tr><th class="text-left px-5 py-4">Einstellung</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Wert</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Erklärung</th></tr></thead>
-            <tbody class="">
-              <tr><td class="px-4 py-2">Precision Boost Overdrive</td><td class="px-4 py-2 text-accent-primary font-semibold">Advanced</td><td class="px-4 py-2 text-gray-400">Erlaubt manuelle Einstellungen</td></tr>
-              <tr><td class="px-4 py-2">PBO Limits</td><td class="px-4 py-2 text-accent-primary font-semibold">Motherboard</td><td class="px-4 py-2 text-gray-400">Nutzt Mainboard-Limits (sicher)</td></tr>
-              <tr><td class="px-4 py-2">PBO Scalar</td><td class="px-4 py-2 text-accent-warning font-semibold">1x (Start!)</td><td class="px-4 py-2 text-gray-400">Höhere Werte = mehr Spannung/Hitze</td></tr>
-              <tr><td class="px-4 py-2">Max CPU Boost Clock Override</td><td class="px-4 py-2 text-accent-primary font-semibold">+200 MHz</td><td class="px-4 py-2 text-gray-400">Erlaubt Boost bis ~5.4 GHz</td></tr>
-            </tbody>
-          </table>
+        <div class="grid md:grid-cols-3 gap-4 mb-4">
+          <div class="md:col-span-2">
+            <p class="text-sm text-gray-400 mb-3"><span class="text-white font-semibold">BIOS-Pfad:</span> Tweaker → Advanced CPU Settings → Precision Boost Overdrive</p>
+            <div class="table-modern bg-dark-800/50">
+              <table class="w-full text-sm"><thead><tr><th class="text-left px-5 py-4">Einstellung</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Wert</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Erklärung</th></tr></thead>
+                <tbody class="">
+                  <tr><td class="px-4 py-2">Precision Boost Overdrive</td><td class="px-4 py-2 text-accent-primary font-semibold">Advanced</td><td class="px-4 py-2 text-gray-400">Erlaubt manuelle Einstellungen</td></tr>
+                  <tr><td class="px-4 py-2">PBO Limits</td><td class="px-4 py-2 text-accent-primary font-semibold">Motherboard</td><td class="px-4 py-2 text-gray-400">Nutzt Mainboard-Limits (sicher)</td></tr>
+                  <tr><td class="px-4 py-2">PBO Scalar</td><td class="px-4 py-2 text-accent-warning font-semibold">1x (Start!)</td><td class="px-4 py-2 text-gray-400">Höhere Werte = mehr Spannung/Hitze</td></tr>
+                  <tr><td class="px-4 py-2">Max CPU Boost Clock Override</td><td class="px-4 py-2 text-accent-primary font-semibold">+200 MHz</td><td class="px-4 py-2 text-gray-400">Erlaubt Boost bis ~5.4 GHz</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card rounded-2xl p-4 border-l-4 border-accent-warning bg-gradient-to-br from-accent-warning/10 to-transparent">
+            <p class="text-xs text-accent-warning font-semibold uppercase tracking-wider mb-2">Dein Vorteil</p>
+            <p class="text-white font-bold text-lg mb-1">+200 MHz Boost</p>
+            <p class="text-xs text-gray-400">CPU darf höher takten wenn Temperaturen es erlauben. Mehr Single-Thread Performance für Gaming.</p>
+          </div>
         </div>
         <div class="alert alert-info mb-6">
           <i data-lucide="lightbulb" class="w-5 h-5 text-accent-primary flex-shrink-0"></i>
@@ -600,15 +635,24 @@
         </div>
 
         <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">5. Curve Optimizer (Mit 360mm AIO)</h3>
-        <p class="text-sm text-gray-400 mb-3"><span class="text-white font-semibold">BIOS-Pfad:</span> Tweaker → Advanced CPU Settings → PBO → Curve Optimizer</p>
-        <div class="table-modern bg-dark-800/50 mb-4">
-          <table class="w-full text-sm"><thead><tr><th class="text-left px-5 py-4">Einstellung</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Wert</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Hinweis</th></tr></thead>
-            <tbody class="">
-              <tr><td class="px-4 py-2">Curve Optimizer</td><td class="px-4 py-2 text-accent-primary font-semibold">All Cores</td><td class="px-4 py-2 text-gray-400">Gleicher Wert für alle Kerne</td></tr>
-              <tr><td class="px-4 py-2">All Core Curve Optimizer Sign</td><td class="px-4 py-2 text-accent-primary font-semibold">Negative</td><td class="px-4 py-2 text-gray-400">Undervolting (weniger Hitze)</td></tr>
-              <tr><td class="px-4 py-2">All Core Curve Optimizer Magnitude</td><td class="px-4 py-2 text-accent-warning font-semibold">15</td><td class="px-4 py-2 text-gray-400">Start konservativ!</td></tr>
-            </tbody>
-          </table>
+        <div class="grid md:grid-cols-3 gap-4 mb-4">
+          <div class="md:col-span-2">
+            <p class="text-sm text-gray-400 mb-3"><span class="text-white font-semibold">BIOS-Pfad:</span> Tweaker → Advanced CPU Settings → PBO → Curve Optimizer</p>
+            <div class="table-modern bg-dark-800/50">
+              <table class="w-full text-sm"><thead><tr><th class="text-left px-5 py-4">Einstellung</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Wert</th><th class="text-left px-4 py-2 text-accent-primary text-xs uppercase">Hinweis</th></tr></thead>
+                <tbody class="">
+                  <tr><td class="px-4 py-2">Curve Optimizer</td><td class="px-4 py-2 text-accent-primary font-semibold">All Cores</td><td class="px-4 py-2 text-gray-400">Gleicher Wert für alle Kerne</td></tr>
+                  <tr><td class="px-4 py-2">All Core Curve Optimizer Sign</td><td class="px-4 py-2 text-accent-primary font-semibold">Negative</td><td class="px-4 py-2 text-gray-400">Undervolting (weniger Hitze)</td></tr>
+                  <tr><td class="px-4 py-2">All Core Curve Optimizer Magnitude</td><td class="px-4 py-2 text-accent-warning font-semibold">15</td><td class="px-4 py-2 text-gray-400">Start konservativ!</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card rounded-2xl p-4 border-l-4 border-accent-secondary bg-gradient-to-br from-accent-secondary/10 to-transparent">
+            <p class="text-xs text-accent-secondary font-semibold uppercase tracking-wider mb-2">Dein Vorteil</p>
+            <p class="text-white font-bold text-lg mb-1">-10°C Kühler</p>
+            <p class="text-xs text-gray-400">Gleiche Performance bei weniger Spannung. CPU läuft kühler und leiser, kann länger boosten.</p>
+          </div>
         </div>
 
         <div class="card rounded-2xl p-4 mb-4">
