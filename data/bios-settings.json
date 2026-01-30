@@ -1,0 +1,151 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-01-30",
+  "motherboard": "Gigabyte X670 Gaming X AX",
+  "cpu": "AMD Ryzen 7 9800X3D",
+  "sections": [
+    {
+      "id": "expo",
+      "title": "RAM aktivieren (EXPO)",
+      "icon": "memory-stick",
+      "description": "Aktiviert automatisch DDR5-6000MHz CL30 mit FCLK 3000MHz (1:1 Ratio).",
+      "settings": [
+        {
+          "path": "Tweaker",
+          "name": "XMP/EXPO Profile",
+          "value": "Profile 1",
+          "status": "recommended"
+        }
+      ]
+    },
+    {
+      "id": "rebar",
+      "title": "Resizable BAR",
+      "icon": "maximize",
+      "description": "Ermöglicht der CPU Zugriff auf den gesamten GPU-Speicher für bessere Performance.",
+      "settings": [
+        {
+          "path": "Settings → IO Ports",
+          "name": "Above 4G Decoding",
+          "value": "Enabled",
+          "status": "recommended"
+        },
+        {
+          "path": "Settings → IO Ports",
+          "name": "Resizable BAR",
+          "value": "Enabled",
+          "status": "recommended"
+        },
+        {
+          "path": "Boot",
+          "name": "CSM Support",
+          "value": "Disabled",
+          "status": "recommended"
+        }
+      ]
+    },
+    {
+      "id": "cstate",
+      "title": "Global C-State Control (KRITISCH!)",
+      "icon": "alert-triangle",
+      "critical": true,
+      "description": "Manuell auf 'Enabled' setzen eliminiert Micro-Stuttering bei X3D CPUs! 'Auto' kann Probleme verursachen.",
+      "settings": [
+        {
+          "path": "Settings → AMD CBS → SMU Common Options → CPPC",
+          "name": "Global C-State Control",
+          "value": "Enabled (NICHT Auto!)",
+          "status": "critical"
+        }
+      ]
+    },
+    {
+      "id": "pbo",
+      "title": "PBO (Precision Boost Overdrive)",
+      "icon": "zap",
+      "description": "Erhöht die CPU-Performance durch erweiterte Boost-Einstellungen.",
+      "settings": [
+        {
+          "path": "AMD Overclocking → PBO",
+          "name": "Precision Boost Overdrive",
+          "value": "Advanced",
+          "status": "recommended",
+          "explanation": "Volle Kontrolle über PBO"
+        },
+        {
+          "path": "AMD Overclocking → PBO",
+          "name": "PBO Limits",
+          "value": "Motherboard",
+          "status": "recommended",
+          "explanation": "Nutzt Mainboard-Limits"
+        },
+        {
+          "path": "AMD Overclocking → PBO",
+          "name": "PBO Scalar",
+          "value": "1x - 10x",
+          "status": "recommended",
+          "explanation": "1x für Stabilität, höher für mehr Boost"
+        },
+        {
+          "path": "AMD Overclocking → PBO",
+          "name": "Max CPU Boost Clock Override",
+          "value": "+200 MHz",
+          "status": "recommended",
+          "explanation": "Erhöht maximales Boost-Limit auf ~5.4 GHz"
+        }
+      ]
+    },
+    {
+      "id": "curve-optimizer",
+      "title": "Curve Optimizer",
+      "icon": "trending-down",
+      "description": "Undervolting für bessere Temperaturen und höhere Boost-Clocks. Mit 360mm AIO empfohlen.",
+      "warning": "Stabilität testen! Starte mit -15 bis -20 und teste mit Cinebench R23, OCCT oder Y-Cruncher. Viele User mit 360mm AIO erreichen -25 bis -30 stabil, aber jede CPU ist anders. Bei Crashes: Wert erhöhen (z.B. -20 → -15).",
+      "settings": [
+        {
+          "path": "AMD Overclocking → PBO → Curve Optimizer",
+          "name": "Curve Optimizer",
+          "value": "All Cores",
+          "status": "recommended",
+          "explanation": "Einfacher Start, später Per-Core möglich"
+        },
+        {
+          "path": "AMD Overclocking → PBO → Curve Optimizer",
+          "name": "All Core Curve Optimizer Sign",
+          "value": "Negative",
+          "status": "recommended",
+          "explanation": "Undervolting = weniger Spannung"
+        },
+        {
+          "path": "AMD Overclocking → PBO → Curve Optimizer",
+          "name": "All Core Curve Optimizer Magnitude",
+          "value": "-15 bis -20",
+          "status": "warning",
+          "explanation": "Konservativ starten! Max stabil: -25 bis -30"
+        }
+      ],
+      "stabilityTests": [
+        "Cinebench R23 Multi-Core (10 Min)",
+        "OCCT CPU Test (30 Min)",
+        "Y-Cruncher (verschiedene Modi)",
+        "Gaming (mehrere Stunden)",
+        "Idle + Sleep/Wake Test"
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "type": "danger",
+      "icon": "alert-octagon",
+      "title": "NIEMALS BIOS über Windows-Apps updaten!",
+      "message": "Immer Q-Flash direkt im BIOS nutzen. Gigabyte Control Center kann das BIOS beschädigen."
+    },
+    {
+      "type": "warning",
+      "icon": "alert-triangle",
+      "title": "9800X3D Sicherheitshinweis",
+      "message": "Dein Gigabyte X670 ist NICHT in der Hauptrisikogruppe für CPU-Ausfälle (82% waren ASRock). Trotzdem: Immer stabiles BIOS (keine Beta!), konservatives PBO starten."
+    }
+  ],
+  "biosUpdateUrl": "https://www.gigabyte.com/Motherboard/X670-GAMING-X-AX-rev-10/support#support-dl-bios"
+}

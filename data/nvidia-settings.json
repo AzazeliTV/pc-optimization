@@ -1,0 +1,165 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-01-30",
+  "gpu": "MSI RTX 4080 Super Gaming X Trio",
+  "monitor": {
+    "name": "ASUS ROG SWIFT OLED PG32UCDMR",
+    "refreshRate": 240,
+    "resolution": "3840x2160",
+    "gsync": true
+  },
+  "sections": [
+    {
+      "id": "global-3d",
+      "title": "Globale 3D-Einstellungen",
+      "icon": "sliders",
+      "path": "NVIDIA Systemsteuerung → 3D-Einstellungen verwalten → Globale Einstellungen",
+      "settings": [
+        {
+          "name": "Energieverwaltungsmodus",
+          "value": "Maximale Leistung bevorzugen",
+          "status": "recommended",
+          "explanation": "Verhindert GPU Downclocking während Gaming"
+        },
+        {
+          "name": "Modus für geringe Latenz",
+          "value": "Ein",
+          "status": "recommended",
+          "explanation": "Reduziert Input Lag. 'Ultra' kann bei manchen Spielen Probleme verursachen"
+        },
+        {
+          "name": "Vertikale Synchronisierung",
+          "value": "Ein",
+          "status": "recommended",
+          "explanation": "Mit G-Sync + Frame Cap für tear-free Gaming"
+        },
+        {
+          "name": "Max. Bildfrequenz",
+          "value": "237",
+          "status": "recommended",
+          "explanation": "240Hz - 3 für G-Sync Headroom"
+        },
+        {
+          "name": "Max. Bildfrequenz Hintergrund",
+          "value": "30",
+          "status": "optional",
+          "explanation": "Spart Strom/Wärme bei Alt-Tab"
+        },
+        {
+          "name": "Shader-Cache-Größe",
+          "value": "100 GB / Unbegrenzt",
+          "status": "recommended",
+          "explanation": "Verhindert Shader-Kompilierungs-Stutter"
+        },
+        {
+          "name": "Texturfilterung - Qualität",
+          "value": "Hohe Leistung",
+          "status": "recommended",
+          "explanation": "Minimal sichtbarer Unterschied, mehr FPS"
+        },
+        {
+          "name": "Anisotrope Filterung",
+          "value": "16x",
+          "status": "recommended",
+          "explanation": "Kein messbarer Performance-Impact"
+        },
+        {
+          "name": "Bildscharfzeichnung",
+          "value": "Ein (0.50, 0.17)",
+          "status": "optional",
+          "explanation": "Macht Bild schärfer, Geschmackssache"
+        },
+        {
+          "name": "Threaded Optimization",
+          "value": "Ein",
+          "status": "recommended",
+          "explanation": "Bessere CPU-Nutzung"
+        },
+        {
+          "name": "Virtual Reality Pre-Rendered Frames",
+          "value": "1",
+          "status": "recommended",
+          "explanation": "Reduziert Latenz auch ohne VR"
+        }
+      ]
+    },
+    {
+      "id": "gsync",
+      "title": "G-Sync Einstellungen",
+      "icon": "monitor",
+      "path": "NVIDIA Systemsteuerung → Anzeige → G-SYNC einrichten",
+      "description": "Optimale G-Sync Konfiguration für OLED 240Hz.",
+      "steps": [
+        "\"G-SYNC, G-SYNC-kompatibel aktivieren\" → Häkchen setzen",
+        "\"Für Fenstermodus und Vollbild aktivieren\" auswählen",
+        "ASUS ROG SWIFT OLED als primären G-Sync Monitor wählen"
+      ],
+      "optimalCombo": {
+        "title": "Optimale Kombination für niedrigste Latenz",
+        "settings": [
+          { "name": "G-Sync", "value": "EIN" },
+          { "name": "V-Sync (NVCP)", "value": "EIN" },
+          { "name": "Max Frame Rate", "value": "237" },
+          { "name": "Low Latency Mode", "value": "EIN" },
+          { "name": "In-Game V-Sync", "value": "AUS" }
+        ],
+        "result": "Tear-Free Gaming ohne Input Lag!"
+      }
+    },
+    {
+      "id": "rtx-features",
+      "title": "RTX Features",
+      "icon": "sparkles",
+      "settings": [
+        {
+          "name": "RTX Video Super Resolution",
+          "path": "Video → RTX-Videoverbesserung",
+          "value": "Stufe 4",
+          "explanation": "Verbessert YouTube & Video-Streaming automatisch"
+        },
+        {
+          "name": "NVIDIA Reflex",
+          "note": "In-Game aktivieren wenn verfügbar",
+          "explanation": "Reduziert System-Latenz in unterstützten Spielen"
+        }
+      ]
+    },
+    {
+      "id": "per-game",
+      "title": "Pro-Game Einstellungen",
+      "icon": "gamepad-2",
+      "description": "Manche Spiele profitieren von individuellen Einstellungen.",
+      "note": "Erstelle Programmeinstellungen für Spiele die anders laufen sollen.",
+      "examples": [
+        {
+          "game": "CS2",
+          "settings": [
+            { "name": "Low Latency Mode", "value": "Ein (oder Reflex in-game)" },
+            { "name": "Max Frame Rate", "value": "Aus (uncapped)" }
+          ]
+        },
+        {
+          "game": "Cyberpunk 2077",
+          "settings": [
+            { "name": "Low Latency Mode", "value": "Aus (DLSS Frame Gen)" },
+            { "name": "DLSS", "value": "Quality + Frame Generation" }
+          ]
+        }
+      ]
+    }
+  ],
+  "driverTips": {
+    "title": "Treiber-Tipps",
+    "items": [
+      "Nutze Game Ready Driver für neueste Spiele",
+      "Studio Driver für Content Creation",
+      "Bei Problemen: DDU im Safe Mode, dann Clean Install",
+      "NVCleanstall für minimale Installation ohne Bloat"
+    ]
+  },
+  "links": {
+    "driverDownload": "https://www.nvidia.com/download/index.aspx",
+    "ddu": "https://www.guru3d.com/files-details/display-driver-uninstaller-download.html",
+    "nvcleanstall": "https://www.techpowerup.com/nvcleanstall/"
+  }
+}

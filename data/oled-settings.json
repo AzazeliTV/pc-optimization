@@ -1,0 +1,124 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-01-30",
+  "monitor": {
+    "name": "ASUS ROG SWIFT OLED PG32UCDMR",
+    "panel": "QD-OLED",
+    "resolution": "3840x2160",
+    "refreshRate": "240 Hz",
+    "hdr": true,
+    "gsync": true
+  },
+  "software": {
+    "name": "DisplayWidget Center",
+    "downloadUrl": "https://www.asus.com/support/",
+    "required": true
+  },
+  "sections": [
+    {
+      "id": "gamevisual",
+      "title": "GameVisual Modi",
+      "icon": "palette",
+      "description": "Verschiedene Presets für unterschiedliche Anwendungen.",
+      "modes": [
+        {
+          "name": "User Mode",
+          "icon": "sliders",
+          "usage": "SDR Gaming (kalibrierbar)",
+          "recommended": true,
+          "note": "Beste Wahl für angepasste Einstellungen"
+        },
+        {
+          "name": "sRGB Mode",
+          "icon": "monitor",
+          "usage": "Arbeit, Web-Browsing",
+          "note": "Akkurate Farben für Content Creation"
+        },
+        {
+          "name": "Gaming HDR",
+          "icon": "sun",
+          "usage": "HDR-Spiele",
+          "note": "Nur bei HDR-Content aktivieren"
+        },
+        {
+          "name": "FPS Mode",
+          "icon": "crosshair",
+          "usage": "Competitive Gaming",
+          "note": "Hellt Schatten auf für bessere Sichtbarkeit"
+        }
+      ]
+    },
+    {
+      "id": "oled-care",
+      "title": "OLED Care (NICHT deaktivieren!)",
+      "icon": "shield",
+      "critical": true,
+      "description": "Diese Features schützen vor Burn-In und verlängern die Lebensdauer.",
+      "settings": [
+        {
+          "name": "Screen Saver",
+          "value": "AN",
+          "status": "required",
+          "explanation": "Dimmt bei statischen Bildern"
+        },
+        {
+          "name": "Pixel Shift",
+          "value": "AN",
+          "status": "required",
+          "explanation": "Bewegt Pixel minimal um Burn-In zu verhindern"
+        },
+        {
+          "name": "Logo Brightness",
+          "value": "Low oder Medium",
+          "status": "recommended",
+          "explanation": "Dimmt statische helle Bereiche (HUDs, Logos)"
+        },
+        {
+          "name": "Pixel Cleaning",
+          "value": "Periodisch ausführen",
+          "status": "recommended",
+          "explanation": "Alle 4 Stunden oder manuell nach langen Sessions"
+        }
+      ],
+      "warning": "OLED Care Features schützen deinen teuren Monitor! Nicht deaktivieren um 'besseres Bild' zu bekommen."
+    },
+    {
+      "id": "hdr",
+      "title": "HDR Einstellungen",
+      "icon": "sun",
+      "description": "HDR richtig nutzen für bestes Bild.",
+      "tips": [
+        {
+          "title": "Windows HDR NUR bei HDR-Content aktivieren",
+          "explanation": "SDR mit aktiviertem HDR sieht ausgewaschen aus!"
+        },
+        {
+          "title": "In-Game HDR",
+          "explanation": "Besser als Windows HDR - aktiviere HDR im Spiel selbst"
+        },
+        {
+          "title": "HDR Kalibrierung",
+          "explanation": "Windows Einstellungen → System → Bildschirm → HDR → HDR kalibrieren"
+        }
+      ],
+      "peakBrightness": "1000+ nits (HDR)",
+      "note": "QD-OLED hat perfektes Schwarz und unendlichen Kontrast - ideal für HDR!"
+    },
+    {
+      "id": "desktop-tips",
+      "title": "Desktop-Nutzung Tipps",
+      "icon": "monitor",
+      "tips": [
+        "Dunkles Theme in Windows verwenden",
+        "Browser Dark Mode aktivieren",
+        "Taskleiste automatisch ausblenden",
+        "Bildschirmschoner aktivieren (5-10 Min)",
+        "Bei längerer Abwesenheit Monitor ausschalten"
+      ]
+    }
+  ],
+  "firmwareUpdate": {
+    "note": "Firmware-Updates über DisplayWidget Center prüfen",
+    "url": "https://www.asus.com/support/"
+  }
+}

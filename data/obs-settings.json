@@ -1,0 +1,116 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-01-30",
+  "gpu": "RTX 4080 Super",
+  "useCase": "Twitch Affiliate",
+  "sections": [
+    {
+      "id": "enhanced-broadcasting",
+      "title": "Twitch Enhanced Broadcasting",
+      "icon": "sparkles",
+      "recommended": true,
+      "description": "Als Affiliate nutze Enhanced Broadcasting (OBS 30.2+) für automatische Transcodes!",
+      "benefits": [
+        "Automatische Transcodes für alle Viewer",
+        "Client-seitige Encodierung mit RTX 4080",
+        "Automatische optimale Settings",
+        "Mehrere Qualitätsstufen ohne Partner-Status"
+      ],
+      "howToEnable": "OBS → Einstellungen → Stream → \"Enhanced Broadcasting\" Checkbox aktivieren",
+      "requirements": [
+        "OBS Studio 30.2 oder neuer",
+        "Twitch-Account verbunden",
+        "NVENC-fähige GPU"
+      ]
+    },
+    {
+      "id": "encoder",
+      "title": "Encoder-Einstellungen",
+      "icon": "cpu",
+      "description": "Manuelle Einstellungen falls Enhanced Broadcasting nicht genutzt wird.",
+      "platforms": {
+        "twitch": {
+          "name": "Twitch",
+          "settings": [
+            { "name": "Encoder", "value": "NVENC H.264", "note": "H.264 für beste Kompatibilität" },
+            { "name": "Rate Control", "value": "CBR" },
+            { "name": "Bitrate", "value": "6000-8000 kbps", "note": "Max 8500 für Non-Partner" },
+            { "name": "Keyframe Interval", "value": "2", "critical": true, "note": "PFLICHT für Twitch!" },
+            { "name": "Preset", "value": "P6: Slower", "note": "Beste Qualität ohne FPS-Verlust" },
+            { "name": "Tuning", "value": "High Quality" },
+            { "name": "Multipass Mode", "value": "Two Passes (Quarter Resolution)" },
+            { "name": "Profile", "value": "high" },
+            { "name": "Look-ahead", "value": "Ein" },
+            { "name": "Psycho Visual Tuning", "value": "Ein" },
+            { "name": "Max B-frames", "value": "2" }
+          ]
+        },
+        "youtube": {
+          "name": "YouTube",
+          "settings": [
+            { "name": "Encoder", "value": "NVENC AV1", "note": "40% effizienter als H.264!" },
+            { "name": "Rate Control", "value": "CBR" },
+            { "name": "Bitrate", "value": "12000-20000 kbps", "note": "YouTube erlaubt mehr" },
+            { "name": "Keyframe Interval", "value": "2" },
+            { "name": "Preset", "value": "P6: Slower" },
+            { "name": "Look-ahead", "value": "Ein" },
+            { "name": "Psycho Visual Tuning", "value": "Ein" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "video",
+      "title": "Video-Einstellungen",
+      "icon": "video",
+      "settings": [
+        {
+          "name": "Base (Canvas) Resolution",
+          "value": "3840x2160",
+          "note": "4K vom OLED Monitor"
+        },
+        {
+          "name": "Output (Scaled) Resolution",
+          "value": "1920x1080",
+          "note": "Standard für Streaming"
+        },
+        {
+          "name": "Downscale Filter",
+          "value": "Lanczos (36 Samples)",
+          "note": "Beste Qualität für Downscaling"
+        },
+        {
+          "name": "FPS",
+          "value": "60",
+          "note": "Standard für Gaming-Streams"
+        }
+      ],
+      "tip": "4K→1080p Downsampling gibt besonders scharfe Streams!"
+    },
+    {
+      "id": "audio",
+      "title": "Audio-Einstellungen",
+      "icon": "mic",
+      "settings": [
+        { "name": "Sample Rate", "value": "48 kHz" },
+        { "name": "Audio Bitrate", "value": "160 kbps", "note": "320 für Musik-Streams" }
+      ]
+    },
+    {
+      "id": "performance",
+      "title": "Performance-Tipps",
+      "icon": "zap",
+      "tips": [
+        "Game Capture statt Display Capture nutzen (weniger GPU-Last)",
+        "OBS als Admin starten für Priorität",
+        "Preview deaktivieren während Streaming (spart GPU)",
+        "NVENC nutzt eigenen Encoder-Chip → kein FPS-Verlust beim Gaming"
+      ]
+    }
+  ],
+  "links": {
+    "obsDownload": "https://obsproject.com/",
+    "twitchInspector": "https://inspector.twitch.tv/",
+    "streamElements": "https://streamelements.com/obslive"
+  }
+}

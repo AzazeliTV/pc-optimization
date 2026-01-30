@@ -1,0 +1,135 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-01-30",
+  "windowsVersion": "Windows 11 24H2",
+  "sections": [
+    {
+      "id": "vbs",
+      "title": "VBS/Memory Integrity deaktivieren",
+      "icon": "shield-off",
+      "impact": "5-15% mehr FPS",
+      "critical": true,
+      "description": "Virtualization-Based Security kostet erheblich Performance beim Gaming.",
+      "warning": "Windows 11 24H2 Update: VBS ist komplexer zu deaktivieren geworden. Es gibt jetzt eine zusätzliche Windows Hello VBS-Abhängigkeit die auch deaktiviert werden muss!",
+      "steps": [
+        {
+          "title": "Memory Integrity deaktivieren",
+          "type": "gui",
+          "instructions": [
+            "Einstellungen → Datenschutz & Sicherheit → Windows-Sicherheit",
+            "Gerätesicherheit → Kernisolierung → Details",
+            "Speicherintegrität → AUS"
+          ]
+        },
+        {
+          "title": "Tamper Protection deaktivieren",
+          "type": "gui",
+          "note": "Für Registry-Änderungen nötig",
+          "instructions": [
+            "Windows-Sicherheit → Viren- & Bedrohungsschutz",
+            "Einstellungen verwalten → Manipulationsschutz → AUS"
+          ]
+        },
+        {
+          "title": "VBS via Registry deaktivieren",
+          "type": "cmd",
+          "adminRequired": true,
+          "command": "reg add \"HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\DeviceGuard\" /v EnableVirtualizationBasedSecurity /t REG_DWORD /d 0 /f"
+        },
+        {
+          "title": "Windows Hello VBS deaktivieren (NEU für 24H2!)",
+          "type": "cmd",
+          "adminRequired": true,
+          "command": "reg add \"HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\DeviceGuard\\Scenarios\\WindowsHello\" /v Enabled /t REG_DWORD /d 0 /f"
+        },
+        {
+          "title": "Hypervisor deaktivieren",
+          "type": "cmd",
+          "adminRequired": true,
+          "command": "bcdedit /set hypervisorlaunchtype off"
+        }
+      ],
+      "verification": {
+        "command": "msinfo32",
+        "expected": "Virtualization-based security = Not enabled"
+      },
+      "note": "Das Deaktivieren von VBS kann Windows Hello Face Recognition beeinträchtigen. PIN-Login funktioniert weiterhin."
+    },
+    {
+      "id": "gaming-settings",
+      "title": "Gaming-Optimierungen",
+      "icon": "gamepad-2",
+      "description": "Windows-Einstellungen für optimale Gaming-Performance.",
+      "settings": [
+        {
+          "name": "Game Mode",
+          "path": "Einstellungen → Gaming → Spielmodus",
+          "value": "EIN",
+          "status": "recommended",
+          "explanation": "Priorisiert Gaming-Prozesse"
+        },
+        {
+          "name": "HAGS (Hardware-Accelerated GPU Scheduling)",
+          "path": "System → Bildschirm → Grafik → Standardgrafikeinstellungen",
+          "value": "EIN",
+          "status": "recommended",
+          "explanation": "Reduziert Latenz bei modernen GPUs"
+        },
+        {
+          "name": "Optimierungen für Fenstermodus",
+          "path": "System → Bildschirm → Grafik → Standardgrafikeinstellungen",
+          "value": "AUS",
+          "status": "critical",
+          "explanation": "24H2 Stutter Fix! Verursacht Mikroruckler wenn aktiviert"
+        },
+        {
+          "name": "Xbox Game Bar",
+          "path": "Einstellungen → Gaming → Xbox Game Bar",
+          "value": "AUS",
+          "status": "recommended",
+          "explanation": "Spart Ressourcen, verhindert Overlay-Probleme"
+        },
+        {
+          "name": "Hintergrundaufnahme",
+          "path": "Einstellungen → Gaming → Aufnahmen",
+          "value": "AUS",
+          "status": "recommended",
+          "explanation": "Spart GPU-Ressourcen"
+        }
+      ]
+    },
+    {
+      "id": "power-plan",
+      "title": "Ultimate Performance Power Plan",
+      "icon": "zap",
+      "description": "Aktiviert den versteckten Ultimate Performance Energiesparplan.",
+      "command": "powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61",
+      "postStep": "Dann in Systemsteuerung → Energieoptionen auswählen.",
+      "note": "Ryzen-Tipp: 'Balanced' Power Plan funktioniert auch gut mit AMD Chipset Driver, da dieser den AMD Power Plan inkludiert."
+    },
+    {
+      "id": "services",
+      "title": "Optionale Dienste deaktivieren",
+      "icon": "settings",
+      "description": "Diese Dienste können sicher deaktiviert werden für minimalen Performance-Gewinn.",
+      "optional": true,
+      "services": [
+        {
+          "name": "SysMain (Superfetch)",
+          "impact": "minimal",
+          "note": "Bei SSD nicht nötig"
+        },
+        {
+          "name": "Windows Search Indexer",
+          "impact": "minimal",
+          "note": "Nur wenn du die Suche nicht nutzt"
+        }
+      ]
+    }
+  ],
+  "antiCheatWarning": {
+    "title": "Anti-Cheat Kompatibilität",
+    "message": "Einige Spiele mit Anti-Cheat (z.B. Riot Vanguard 2.0) benötigen VBS! Prüfe vor dem Deaktivieren.",
+    "games": ["Valorant (Vanguard)", "FACEIT Anti-Cheat"]
+  }
+}

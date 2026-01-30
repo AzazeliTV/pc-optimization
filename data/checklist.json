@@ -1,0 +1,191 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-01-30",
+  "checklists": [
+    {
+      "id": "setup",
+      "title": "Einmalige Einrichtung",
+      "icon": "clipboard-check",
+      "items": [
+        {
+          "id": "bios-update",
+          "text": "BIOS via Q-Flash updaten (kein Beta-BIOS!)",
+          "category": "bios",
+          "priority": "high"
+        },
+        {
+          "id": "expo",
+          "text": "EXPO Profile 1 aktivieren",
+          "category": "bios",
+          "priority": "high"
+        },
+        {
+          "id": "rebar",
+          "text": "Resizable BAR + Above 4G Decoding aktivieren",
+          "category": "bios",
+          "priority": "medium"
+        },
+        {
+          "id": "csm",
+          "text": "CSM deaktivieren",
+          "category": "bios",
+          "priority": "medium"
+        },
+        {
+          "id": "cstate",
+          "text": "Global C-State auf \"Enabled\" setzen (nicht Auto!)",
+          "category": "bios",
+          "priority": "critical"
+        },
+        {
+          "id": "pbo",
+          "text": "PBO Advanced + Boost Override +200MHz",
+          "category": "bios",
+          "priority": "high"
+        },
+        {
+          "id": "curve",
+          "text": "Curve Optimizer -15 bis -20 (testen!)",
+          "category": "bios",
+          "priority": "medium"
+        },
+        {
+          "id": "chipset",
+          "text": "AMD Chipset Driver installieren",
+          "category": "software",
+          "priority": "high"
+        },
+        {
+          "id": "memory-integrity",
+          "text": "Memory Integrity deaktivieren",
+          "category": "windows",
+          "priority": "high"
+        },
+        {
+          "id": "vbs",
+          "text": "VBS komplett deaktivieren (inkl. Windows Hello Registry)",
+          "category": "windows",
+          "priority": "high"
+        },
+        {
+          "id": "gamemode",
+          "text": "Game Mode aktivieren",
+          "category": "windows",
+          "priority": "medium"
+        },
+        {
+          "id": "hags",
+          "text": "HAGS aktivieren",
+          "category": "windows",
+          "priority": "medium"
+        },
+        {
+          "id": "windowed-opt",
+          "text": "Optimierungen für Fenstermodus AUS",
+          "category": "windows",
+          "priority": "critical"
+        },
+        {
+          "id": "xbox-gamebar",
+          "text": "Xbox Game Bar komplett deaktivieren",
+          "category": "windows",
+          "priority": "medium"
+        },
+        {
+          "id": "gsync",
+          "text": "NVIDIA: G-Sync aktivieren",
+          "category": "nvidia",
+          "priority": "high"
+        },
+        {
+          "id": "framecap",
+          "text": "NVIDIA: Max Frame Rate auf 237",
+          "category": "nvidia",
+          "priority": "high"
+        },
+        {
+          "id": "lowlatency",
+          "text": "NVIDIA: Low Latency Mode auf Ein",
+          "category": "nvidia",
+          "priority": "high"
+        },
+        {
+          "id": "ssd-firmware",
+          "text": "Samsung Magician: Firmware 5B2QJXF7+ prüfen",
+          "category": "hardware",
+          "priority": "critical"
+        },
+        {
+          "id": "icue",
+          "text": "Corsair iCUE: Pumpe auf Extreme",
+          "category": "hardware",
+          "priority": "medium"
+        },
+        {
+          "id": "oled-care",
+          "text": "DisplayWidget Center: OLED Care aktiviert lassen",
+          "category": "hardware",
+          "priority": "high"
+        },
+        {
+          "id": "wooting-polling",
+          "text": "Wooting 80HE: 8kHz Polling aktivieren",
+          "category": "peripherals",
+          "priority": "high"
+        },
+        {
+          "id": "wooting-profiles",
+          "text": "Wooting 80HE: Game-Profile einrichten",
+          "category": "peripherals",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "monthly",
+      "title": "Monatliche Wartung",
+      "icon": "calendar",
+      "items": [
+        {
+          "id": "nvidia-driver",
+          "text": "NVIDIA Treiber-Updates prüfen",
+          "category": "software"
+        },
+        {
+          "id": "ssd-health",
+          "text": "Samsung Magician: SSD Health prüfen",
+          "category": "hardware"
+        },
+        {
+          "id": "windows-update",
+          "text": "Windows Update: Optionale Updates prüfen",
+          "category": "windows"
+        },
+        {
+          "id": "temps",
+          "text": "Temperaturen mit HWiNFO64 kontrollieren",
+          "category": "monitoring"
+        },
+        {
+          "id": "displaywidget-update",
+          "text": "DisplayWidget: Firmware-Updates prüfen",
+          "category": "hardware"
+        },
+        {
+          "id": "wooting-firmware",
+          "text": "Wootility: Firmware-Updates prüfen",
+          "category": "peripherals"
+        }
+      ]
+    }
+  ],
+  "categories": {
+    "bios": { "name": "BIOS", "color": "warning" },
+    "windows": { "name": "Windows", "color": "secondary" },
+    "nvidia": { "name": "NVIDIA", "color": "primary" },
+    "hardware": { "name": "Hardware", "color": "purple" },
+    "software": { "name": "Software", "color": "primary" },
+    "peripherals": { "name": "Peripherie", "color": "secondary" },
+    "monitoring": { "name": "Monitoring", "color": "primary" }
+  }
+}
