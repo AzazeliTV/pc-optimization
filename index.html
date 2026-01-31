@@ -564,26 +564,52 @@
           </div>
         </div>
 
-        <!-- Quick Overview Table -->
-        <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">Schnellübersicht - Alle wichtigen Einstellungen</h3>
-        <div class="table-modern bg-dark-800/50 mb-6">
-          <table class="w-full text-sm"><thead><tr><th class="text-left px-4 py-3">Einstellung</th><th class="text-left px-4 py-3 text-accent-primary text-xs uppercase">Pfad</th><th class="text-left px-4 py-3 text-accent-primary text-xs uppercase">Wert</th></tr></thead>
+        <!-- Die Essential 5 - Keep it Simple -->
+        <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4 flex items-center gap-2">
+          <i data-lucide="zap" class="w-4 h-4"></i> Die Essential 5 – Keep it Simple
+        </h3>
+        <p class="text-gray-400 text-sm mb-4">Diese 5 Einstellungen reichen für stabiles Daily-Gaming. Alles andere ist optional.</p>
+
+        <div class="table-modern bg-dark-800/50 mb-4">
+          <table class="w-full text-sm"><thead><tr><th class="text-left px-4 py-3">#</th><th class="text-left px-4 py-3">Einstellung</th><th class="text-left px-4 py-3 text-accent-primary text-xs uppercase">Pfad</th><th class="text-left px-4 py-3 text-accent-primary text-xs uppercase">Wert</th></tr></thead>
             <tbody>
-              <tr class="border-t border-dark-700"><td class="px-4 py-2 font-semibold text-white">XMP/EXPO Profile</td><td class="px-4 py-2 text-gray-400 text-xs">Tweaker</td><td class="px-4 py-2 text-accent-primary font-semibold">EXPO 1</td></tr>
-              <tr><td class="px-4 py-2 font-semibold text-white">X3D Turbo Mode</td><td class="px-4 py-2 text-gray-400 text-xs">Tweaker</td><td class="px-4 py-2 text-accent-danger font-semibold">Disabled ⚠️</td></tr>
-              <tr><td class="px-4 py-2 font-semibold text-white">PBO Enhancement</td><td class="px-4 py-2 text-gray-400 text-xs">Tweaker</td><td class="px-4 py-2 text-accent-primary font-semibold">80 Level 4</td></tr>
-              <tr><td class="px-4 py-2 font-semibold text-white">EXPO High Bandwidth</td><td class="px-4 py-2 text-gray-400 text-xs">Tweaker</td><td class="px-4 py-2 text-accent-primary font-semibold">Enabled</td></tr>
-              <tr><td class="px-4 py-2 font-semibold text-white">Re-Size BAR Support</td><td class="px-4 py-2 text-gray-400 text-xs">Settings → IO Ports</td><td class="px-4 py-2 text-accent-primary font-semibold">Enabled</td></tr>
-              <tr><td class="px-4 py-2 font-semibold text-white">CSM Support</td><td class="px-4 py-2 text-gray-400 text-xs">Boot</td><td class="px-4 py-2 text-accent-primary font-semibold">Disabled</td></tr>
-              <tr><td class="px-4 py-2 font-semibold text-white">Global C-State</td><td class="px-4 py-2 text-gray-400 text-xs">Settings → AMD CBS → CPU Common Options</td><td class="px-4 py-2 text-accent-warning font-semibold">Enabled</td></tr>
-              <tr><td class="px-4 py-2 font-semibold text-white">PBO (Detailliert)</td><td class="px-4 py-2 text-gray-400 text-xs">Settings → AMD Overclocking → PBO</td><td class="px-4 py-2 text-accent-primary font-semibold">Advanced</td></tr>
-              <tr><td class="px-4 py-2 font-semibold text-white">Max CPU Boost Override</td><td class="px-4 py-2 text-gray-400 text-xs">Settings → AMD Overclocking → PBO</td><td class="px-4 py-2 text-accent-primary font-semibold">+200 MHz</td></tr>
-              <tr><td class="px-4 py-2 font-semibold text-white">Curve Optimizer</td><td class="px-4 py-2 text-gray-400 text-xs">Settings → AMD Overclocking → PBO</td><td class="px-4 py-2 text-accent-secondary font-semibold">-25 bis -30 (testen!)</td></tr>
-              <tr><td class="px-4 py-2 font-semibold text-white">SVM Mode</td><td class="px-4 py-2 text-gray-400 text-xs">Settings → AMD CBS → CPU Common Options</td><td class="px-4 py-2 text-gray-400">Nach Bedarf</td></tr>
-              <tr><td class="px-4 py-2 font-semibold text-white">ErP Ready</td><td class="px-4 py-2 text-gray-400 text-xs">Settings → Platform Power</td><td class="px-4 py-2 text-accent-primary font-semibold">Enabled</td></tr>
+              <tr class="border-t border-dark-700"><td class="px-4 py-2 text-accent-primary font-bold">1</td><td class="px-4 py-2 font-semibold text-white">XMP/EXPO</td><td class="px-4 py-2 text-gray-400 text-xs">Tweaker</td><td class="px-4 py-2 text-accent-primary font-semibold">EXPO 1</td></tr>
+              <tr><td class="px-4 py-2 text-accent-primary font-bold">2</td><td class="px-4 py-2 font-semibold text-white">High Bandwidth Support</td><td class="px-4 py-2 text-gray-400 text-xs">Tweaker</td><td class="px-4 py-2 text-accent-warning font-semibold">Optional: Enabled*</td></tr>
+              <tr><td class="px-4 py-2 text-accent-primary font-bold">3</td><td class="px-4 py-2 font-semibold text-white">PBO Enhancement</td><td class="px-4 py-2 text-gray-400 text-xs">Tweaker</td><td class="px-4 py-2 text-accent-primary font-semibold">90 Level 1</td></tr>
+              <tr><td class="px-4 py-2 text-accent-primary font-bold">4</td><td class="px-4 py-2 font-semibold text-white">Re-Size BAR Support</td><td class="px-4 py-2 text-gray-400 text-xs">Settings → IO Ports</td><td class="px-4 py-2 text-accent-primary font-semibold">Enabled</td></tr>
+              <tr><td class="px-4 py-2 text-accent-primary font-bold">5</td><td class="px-4 py-2 font-semibold text-white">Global C-State Control</td><td class="px-4 py-2 text-gray-400 text-xs">Settings → AMD CBS → CPU Common</td><td class="px-4 py-2 text-accent-primary font-semibold">Enabled</td></tr>
             </tbody>
           </table>
         </div>
+
+        <div class="card rounded-2xl p-4 mb-4 border-l-4 border-accent-secondary bg-dark-800/50">
+          <p class="text-sm text-gray-400"><span class="text-white font-semibold">*High Bandwidth Support:</span> Optional – nur aktivieren wenn getestet stabil. Bei WHEA-Fehlern, Freezes oder Boot-Problemen → <span class="text-accent-danger">Disabled</span> lassen.</p>
+        </div>
+
+        <div class="card rounded-2xl p-4 mb-6 border-l-4 border-accent-primary bg-dark-800/50">
+          <h4 class="font-semibold text-accent-primary text-sm mb-2 flex items-center gap-2"><i data-lucide="info" class="w-4 h-4"></i> PBO Enhancement "90 Level 1" erklärt</h4>
+          <p class="text-sm text-gray-400">PBO Enhancement "90 Level 1" ist oft der Sweetspot. Es erlaubt der CPU nahe volle Leistung (bis ~90°C) und ist typischerweise etwas effizienter (Level 1 = konservativer Curve Optimizer), ohne aggressives Tuning – ideal für Daily-Gaming mit deiner 360mm AIO. Bei Instabilität oder WHEA-Fehlern: PBO Enhancement auf "Disabled" oder ein niedrigeres Temperatur-Ziel (80/70) stellen.</p>
+        </div>
+
+        <!-- Extended Settings Table -->
+        <details class="mb-6">
+          <summary class="cursor-pointer text-sm font-semibold text-accent-secondary uppercase tracking-wider mb-4 flex items-center gap-2 hover:text-accent-primary transition-colors">
+            <i data-lucide="chevron-down" class="w-4 h-4"></i> Erweiterte Einstellungen (Optional)
+          </summary>
+          <div class="table-modern bg-dark-800/50 mt-4">
+            <table class="w-full text-sm"><thead><tr><th class="text-left px-4 py-3">Einstellung</th><th class="text-left px-4 py-3 text-accent-primary text-xs uppercase">Pfad</th><th class="text-left px-4 py-3 text-accent-primary text-xs uppercase">Wert</th></tr></thead>
+              <tbody>
+                <tr class="border-t border-dark-700"><td class="px-4 py-2 font-semibold text-white">X3D Turbo Mode</td><td class="px-4 py-2 text-gray-400 text-xs">Tweaker</td><td class="px-4 py-2 text-accent-danger font-semibold">Disabled ⚠️</td></tr>
+                <tr><td class="px-4 py-2 font-semibold text-white">CSM Support</td><td class="px-4 py-2 text-gray-400 text-xs">Boot</td><td class="px-4 py-2 text-accent-primary font-semibold">Disabled</td></tr>
+                <tr><td class="px-4 py-2 font-semibold text-white">PBO (Detailliert)</td><td class="px-4 py-2 text-gray-400 text-xs">Settings → AMD Overclocking → PBO</td><td class="px-4 py-2 text-gray-400">Advanced (optional)</td></tr>
+                <tr><td class="px-4 py-2 font-semibold text-white">Max CPU Boost Override</td><td class="px-4 py-2 text-gray-400 text-xs">Settings → AMD Overclocking → PBO</td><td class="px-4 py-2 text-gray-400">+200 MHz (optional)</td></tr>
+                <tr><td class="px-4 py-2 font-semibold text-white">Curve Optimizer</td><td class="px-4 py-2 text-gray-400 text-xs">Settings → AMD Overclocking → PBO</td><td class="px-4 py-2 text-gray-400">-10 bis -30 (testen!)</td></tr>
+                <tr><td class="px-4 py-2 font-semibold text-white">SVM Mode</td><td class="px-4 py-2 text-gray-400 text-xs">Settings → AMD CBS → CPU Common Options</td><td class="px-4 py-2 text-gray-400">Nach Bedarf</td></tr>
+                <tr><td class="px-4 py-2 font-semibold text-white">ErP Ready</td><td class="px-4 py-2 text-gray-400 text-xs">Settings → Platform Power</td><td class="px-4 py-2 text-gray-400">Enabled (optional)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
         </div>
 
         <!-- Detailed Settings -->
@@ -600,8 +626,8 @@
                 <tbody>
                   <tr><td class="px-4 py-2">XMP/EXPO Profile</td><td class="px-4 py-2 text-accent-primary font-semibold">EXPO 1</td></tr>
                   <tr><td class="px-4 py-2">X3D Turbo Mode</td><td class="px-4 py-2 text-accent-danger font-semibold">Disabled ⚠️</td></tr>
-                  <tr><td class="px-4 py-2">Precision Boost Overdrive(PBO) Enhancement</td><td class="px-4 py-2 text-accent-primary font-semibold">80 Level 4</td></tr>
-                  <tr><td class="px-4 py-2">XMP/EXPO High Bandwidth Support</td><td class="px-4 py-2 text-accent-primary font-semibold">Enabled</td></tr>
+                  <tr><td class="px-4 py-2">Precision Boost Overdrive(PBO) Enhancement</td><td class="px-4 py-2 text-accent-primary font-semibold">90 Level 1</td></tr>
+                  <tr><td class="px-4 py-2">XMP/EXPO High Bandwidth Support</td><td class="px-4 py-2 text-accent-warning font-semibold">Optional*</td></tr>
                   <tr><td class="px-4 py-2 text-gray-400">System Memory Multiplier</td><td class="px-4 py-2 text-gray-400">Auto</td></tr>
                 </tbody>
               </table>
@@ -618,14 +644,14 @@
           <div class="grid md:grid-cols-2 gap-4 text-xs text-gray-400">
             <div>
               <p class="text-white font-semibold mb-1">Erste Zahl (90/80/70):</p>
-              <p>Temperatur-Ziel in °C. Bei deiner 360mm AIO kannst du <span class="text-accent-primary font-semibold">80</span> oder sogar <span class="text-accent-primary font-semibold">70</span> wählen für mehr Headroom.</p>
+              <p>Temperatur-Ziel in °C. <span class="text-accent-primary font-semibold">90</span> nutzt mehr thermischen Headroom, <span class="text-accent-primary">80/70</span> für noch konservativere Settings.</p>
             </div>
             <div>
               <p class="text-white font-semibold mb-1">Level (1-5):</p>
-              <p>Curve Optimizer Aggressivität: Level 1 = -10, Level 2 = -20, Level 3 = -25, Level 4 = -30, Level 5 = -35. Start mit <span class="text-accent-primary font-semibold">Level 3-4</span>, teste Stabilität!</p>
+              <p>Curve Optimizer Aggressivität: Level 1 = -10 (sicher), Level 2 = -20, Level 3 = -25, Level 4 = -30, Level 5 = -35. <span class="text-accent-primary font-semibold">Level 1</span> für maximale Stabilität!</p>
             </div>
           </div>
-          <p class="text-xs text-gray-500 mt-2 italic">Empfehlung: "80 Level 4" = 80°C Ziel mit -30 Curve Optimizer. Bei Instabilität: "80 Level 3" probieren.</p>
+          <p class="text-xs text-gray-500 mt-2 italic">Empfehlung: "90 Level 1" = 90°C Ziel mit konservativem Curve Optimizer (-10). Stabil für Daily-Gaming.</p>
         </div>
         <div class="alert alert-danger mb-4">
           <i data-lucide="alert-triangle" class="w-5 h-5 text-accent-danger flex-shrink-0 mt-0.5"></i>
