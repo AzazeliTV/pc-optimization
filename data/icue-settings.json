@@ -20,12 +20,12 @@
     "balanced": {
       "rpm": 2417,
       "tempDifference": "-0.5°C",
-      "recommendation": "Guter Kompromiss"
+      "recommendation": "Daily-Standard (empfohlen)"
     },
     "intensiv": {
       "rpm": 2637,
       "tempDifference": "-1.5°C",
-      "recommendation": "Gaming-Standard (empfohlen)"
+      "recommendation": "Bei Bedarf / lange Sessions"
     }
   },
   "fanCurve": {
@@ -122,7 +122,7 @@
     }
   },
   "quickSetup": [
-    "Pumpe auf Intensiv stellen",
+    "Pumpe auf Balanced stellen (Intensiv bei Bedarf)",
     "Custom Fan Curve basierend auf Coolant Temp erstellen",
     "RGB auf Static Color oder einfache Effekte",
     "LCD auf 15-30 FPS, keine Murals",

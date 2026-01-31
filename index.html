@@ -368,7 +368,7 @@
           <div class="alert alert-info">
             <i data-lucide="info" class="w-5 h-5 text-accent-primary flex-shrink-0 mt-0.5"></i>
             <div class="text-sm text-gray-300">
-              <strong class="text-white">Hinweis:</strong> Dieser Guide ist für die oben genannte Hardware optimiert (AMD Ryzen 9800X3D, NVIDIA RTX 4080 Super, X870 Mainboard).
+              <strong class="text-white">Hinweis:</strong> Dieser Guide ist für die oben genannte Hardware optimiert (AMD Ryzen 9800X3D, NVIDIA RTX 4080 Super, Gigabyte X670 Gaming X AX).
               Die meisten Tipps sind universell anwendbar, aber BIOS-Pfade und spezifische Einstellungen können bei anderer Hardware abweichen.
             </div>
           </div>
@@ -857,7 +857,7 @@
             </div>
             <div>
               <p class="font-semibold text-white text-sm mb-1">Pumpe</p>
-              <p class="text-xs text-gray-400">In iCUE: Pumpe auf <span class="text-accent-primary font-semibold">Intensiv</span> oder <span class="text-accent-primary font-semibold">100%</span> fest setzen.</p>
+              <p class="text-xs text-gray-400">In iCUE: Pumpe auf <span class="text-accent-primary font-semibold">Balanciert</span> (Daily) oder <span class="text-accent-secondary font-semibold">Intensiv</span> bei Bedarf.</p>
             </div>
           </div>
         </div>
@@ -2160,8 +2160,8 @@
               <h4 class="font-semibold text-white text-sm flex items-center gap-2"><i data-lucide="monitor" class="w-4 h-4 text-accent-danger"></i> Win11 24H2 Update</h4>
             </div>
             <p class="text-xs text-gray-400 mb-2">Einstellungen → System → Bildschirm → Grafik:</p>
-            <p class="text-accent-danger font-bold text-sm">"Fenstermodus-Optimierung" → AUS</p>
-            <p class="text-xs text-gray-500 mt-2"><span class="text-accent-primary font-semibold">Fix:</span> MPO-Bug umgehen, bessere Frametimes</p>
+            <p class="text-accent-primary font-bold text-sm">"Fenstermodus-Optimierung" → EIN (Standard)</p>
+            <p class="text-xs text-gray-500 mt-2"><span class="text-accent-warning font-semibold">Troubleshooting:</span> Bei Stutter-Problemen testweise AUS schalten</p>
           </div>
           <div class="card rounded-2xl p-4 border border-accent-warning/30">
             <div class="flex items-center justify-between mb-2">
@@ -2366,7 +2366,7 @@
             <h4 class="font-semibold text-white mb-3 flex items-center gap-2"><i data-lucide="terminal" class="w-4 h-4 text-accent-secondary"></i> Launch Options</h4>
             <div class="code-wrapper mb-3">
               <div class="code-block p-3 text-xs">
-                <code class="text-gray-300">-novid -high -tickrate 128 +fps_max 0</code>
+                <code class="text-gray-300">-novid -high +fps_max 0</code>
               </div>
               <button class="copy-btn" onclick="copyCode(this)"><i data-lucide="copy" class="w-3 h-3"></i> Copy</button>
             </div>
@@ -2375,7 +2375,6 @@
             <h4 class="font-semibold text-white mb-2 flex items-center gap-2"><i data-lucide="sliders" class="w-4 h-4 text-accent-warning"></i> Console Commands</h4>
             <div class="code-wrapper">
               <div class="code-block p-3 text-xs space-y-1">
-                <code class="text-gray-300 block">cl_forcepreload 1</code>
                 <code class="text-gray-300 block">r_drawtracers_firstperson 0</code>
                 <code class="text-gray-300 block">cl_showfps 1</code>
               </div>
@@ -2585,11 +2584,11 @@
           <div><h2 class="text-3xl font-bold text-white">Wooting 80HE Settings</h2></div>
         </div>
         <div class="category-box">
-        <p class="text-gray-400 mb-4 text-sm">Beste Gaming-Tastatur dank Rapid Trigger und 8kHz Polling. 67% der VCT 2025 Pros nutzen Rapid Trigger!</p>
+        <p class="text-gray-400 mb-4 text-sm">Beste Gaming-Tastatur dank Rapid Trigger und 8kHz Polling. Viele Pro-Spieler setzen auf Rapid Trigger!</p>
 
         <div class="card rounded-2xl p-4 mb-4 border-l-4 border-accent-primary bg-gradient-to-br from-accent-primary/10 to-transparent">
           <h4 class="font-semibold text-accent-primary mb-2 flex items-center gap-2"><i data-lucide="zap" class="w-5 h-5"></i> Counter-Strafing Vorteil</h4>
-          <p class="text-xs text-gray-400 mb-2">Mit Rapid Trigger stoppst du <span class="text-white font-semibold">26% schneller</span> als mit normalen Tastaturen!</p>
+          <p class="text-xs text-gray-400 mb-2">Mit Rapid Trigger stoppst du <span class="text-white font-semibold">deutlich schneller</span> als mit normalen Tastaturen!</p>
           <div class="grid grid-cols-2 gap-3">
             <div class="bg-dark-800 rounded-lg p-2 text-center">
               <p class="text-xs text-gray-500">Normale Tastatur</p>
@@ -3031,8 +3030,8 @@
           </div>
           <div class="card rounded-2xl p-4 border-l-4 border-accent-primary bg-gradient-to-br from-accent-primary/10 to-transparent md:w-56 flex-shrink-0">
             <p class="text-xs text-accent-primary font-semibold uppercase tracking-wider mb-2">Key Point</p>
-            <p class="text-white font-bold text-lg mb-1">Pumpe → Intensiv</p>
-            <p class="text-xs text-gray-400">Unhörbar, aber beste Temps!</p>
+            <p class="text-white font-bold text-lg mb-1">Pumpe → Balanciert</p>
+            <p class="text-xs text-gray-400">Leise & effizient für den Alltag!</p>
           </div>
         </div>
 
@@ -3046,19 +3045,20 @@
             <p class="text-lg font-bold text-gray-400">~2238 RPM</p>
             <p class="text-xs text-gray-500">Basis-Temperatur</p>
           </div>
-          <div class="card rounded-2xl p-4 border border-accent-warning/30">
-            <div class="flex items-center gap-2 mb-2">
-              <i data-lucide="activity" class="w-5 h-5 text-accent-warning"></i>
-              <h4 class="font-semibold text-white text-sm">Balanced</h4>
-            </div>
-            <p class="text-lg font-bold text-accent-warning">~2417 RPM</p>
-            <p class="text-xs text-gray-500">-0.5°C vs Quiet</p>
-          </div>
           <div class="card rounded-2xl p-4 border-2 border-accent-primary/50 bg-accent-primary/5">
+            <div class="flex items-center gap-2 mb-2">
+              <i data-lucide="activity" class="w-5 h-5 text-accent-primary"></i>
+              <h4 class="font-semibold text-white text-sm">Balanced</h4>
+              <span class="text-[10px] bg-accent-primary/20 text-accent-primary px-2 py-0.5 rounded-full">EMPFOHLEN</span>
+            </div>
+            <p class="text-lg font-bold text-accent-primary">~2417 RPM</p>
+            <p class="text-xs text-gray-500">-0.5°C vs Quiet, bester Alltags-Kompromiss</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-secondary/30">
             <div class="flex items-center gap-2 mb-2">
               <i data-lucide="zap" class="w-5 h-5 text-accent-primary"></i>
               <h4 class="font-semibold text-white text-sm">Intensiv</h4>
-              <span class="text-[10px] bg-accent-primary/20 text-accent-primary px-2 py-0.5 rounded-full">EMPFOHLEN</span>
+              <span class="text-[10px] bg-accent-secondary/20 text-accent-secondary px-2 py-0.5 rounded-full">BEI BEDARF</span>
             </div>
             <p class="text-lg font-bold text-accent-primary">~2637 RPM</p>
             <p class="text-xs text-gray-500">-1.5°C vs Quiet, unhörbar!</p>
@@ -5423,10 +5423,10 @@
         </div>
         <div class="category-box">
         <ol class="space-y-2 text-sm text-gray-300">
-          <li class="flex gap-2"><span class="text-accent-primary font-bold">1.</span><span><strong class="text-white">BIOS:</strong> EXPO + Global C-State Enabled + PBO +200MHz</span></li>
-          <li class="flex gap-2"><span class="text-accent-primary font-bold">2.</span><span><strong class="text-white">BIOS:</strong> Curve Optimizer -10 bis -15 (konservativ starten)</span></li>
+          <li class="flex gap-2"><span class="text-accent-primary font-bold">1.</span><span><strong class="text-white">BIOS:</strong> EXPO + Global C-State + Re-Size BAR Enabled</span></li>
+          <li class="flex gap-2"><span class="text-accent-primary font-bold">2.</span><span><strong class="text-white">BIOS:</strong> PBO Enhancement 90 Level 1 (optimaler Sweetspot)</span></li>
           <li class="flex gap-2"><span class="text-accent-primary font-bold">3.</span><span><strong class="text-white">Windows:</strong> VBS deaktivieren (5-15% FPS!)</span></li>
-          <li class="flex gap-2"><span class="text-accent-primary font-bold">4.</span><span><strong class="text-white">Windows:</strong> Fenstermodus-Optimierung AUS</span></li>
+          <li class="flex gap-2"><span class="text-accent-primary font-bold">4.</span><span><strong class="text-white">Windows:</strong> Fenstermodus-Optimierung EIN</span></li>
           <li class="flex gap-2"><span class="text-accent-primary font-bold">5.</span><span><strong class="text-white">NVIDIA:</strong> G-Sync + 237 FPS Cap + Low Latency</span></li>
           <li class="flex gap-2"><span class="text-accent-primary font-bold">6.</span><span><strong class="text-white">Peripherie:</strong> Alles auf 8kHz Polling</span></li>
         </ol>
