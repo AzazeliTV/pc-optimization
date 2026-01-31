@@ -22,7 +22,7 @@
       "tempDifference": "-0.5°C",
       "recommendation": "Guter Kompromiss"
     },
-    "extreme": {
+    "intensiv": {
       "rpm": 2637,
       "tempDifference": "-1.5°C",
       "recommendation": "Gaming-Standard (empfohlen)"
@@ -122,7 +122,7 @@
     }
   },
   "quickSetup": [
-    "Pumpe auf Extreme stellen",
+    "Pumpe auf Intensiv stellen",
     "Custom Fan Curve basierend auf Coolant Temp erstellen",
     "RGB auf Static Color oder einfache Effekte",
     "LCD auf 15-30 FPS, keine Murals",
