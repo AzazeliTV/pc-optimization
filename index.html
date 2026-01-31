@@ -1473,6 +1473,134 @@
           </div>
         </div>
         </div>
+
+        <!-- NVIDIA App System Settings -->
+        <div class="category-box">
+        <div class="flex flex-col md:flex-row gap-4 mb-4">
+          <div class="flex-1">
+            <h3 class="text-sm font-semibold text-green-400 uppercase tracking-wider mb-3">NVIDIA App - System Settings</h3>
+            <p class="text-gray-400 text-sm">Die NVIDIA App hat eigene System-Einstellungen für Auto-Tuning, RTX Features und mehr. Hier findest du alle wichtigen Optionen.</p>
+          </div>
+          <div class="card rounded-2xl p-4 border-l-4 border-green-500 bg-gradient-to-br from-green-500/10 to-transparent md:w-56 flex-shrink-0">
+            <p class="text-xs text-green-400 font-semibold uppercase tracking-wider mb-2">Öffnen</p>
+            <p class="text-white font-bold text-sm mb-1">NVIDIA App → System</p>
+            <p class="text-xs text-gray-400">Links im Menü</p>
+          </div>
+        </div>
+
+        <h4 class="font-semibold text-white mb-4 flex items-center gap-2"><i data-lucide="gauge" class="w-5 h-5 text-green-400"></i> Performance Tab (Auto-Tuning)</h4>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <div class="card rounded-2xl p-4 border-2 border-green-500/30">
+            <div class="flex items-center justify-between mb-3">
+              <h5 class="font-semibold text-white text-sm">Automatic Tuning</h5>
+              <span class="px-2 py-1 rounded-full bg-accent-warning/20 text-accent-warning text-xs font-bold">OPTIONAL</span>
+            </div>
+            <p class="text-xs text-gray-400 mb-3">Automatisches GPU-Overclocking. NVIDIA testet deine GPU 10-20 Min und findet optimale Clocks.</p>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between"><span class="text-gray-500">Empfehlung</span><span class="text-accent-warning font-semibold">Testen erlaubt</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Dauer</span><span class="text-gray-400">10-20 Minuten</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Boost</span><span class="text-green-400">+3-8% Performance</span></div>
+            </div>
+            <p class="text-xs text-accent-warning mt-3">⚠️ Während Tuning: PC idle lassen!</p>
+          </div>
+          <div class="card rounded-2xl p-4">
+            <h5 class="font-semibold text-white text-sm mb-3">Manual Tuning (Profi)</h5>
+            <p class="text-xs text-gray-400 mb-3">Power-User können manuell anpassen:</p>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between"><span class="text-gray-500">Power Target</span><span class="text-gray-400">100% (default)</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Temp Target</span><span class="text-gray-400">83°C (default)</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Fan Speed</span><span class="text-gray-400">Auto</span></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-3">Nur ändern wenn du weißt was du tust!</p>
+          </div>
+        </div>
+
+        <div class="alert alert-info mb-6">
+          <i data-lucide="info" class="w-4 h-4 text-accent-primary flex-shrink-0"></i>
+          <div class="text-xs">
+            <p class="font-semibold text-white mb-1">Auto-Tuning - Ja oder Nein?</p>
+            <p class="text-gray-400">RTX 4080 Super läuft bereits sehr gut ohne Tuning. Auto-Tuning ist <span class="text-white">sicher</span> und kann ein paar % mehr rausholen, ist aber nicht zwingend nötig. Wenn du es testest: GPU bleibt unter Garantie!</p>
+          </div>
+        </div>
+
+        <h4 class="font-semibold text-white mb-4 flex items-center gap-2"><i data-lucide="image" class="w-5 h-5 text-accent-purple"></i> Graphics Tab - RTX Features</h4>
+
+        <div class="grid md:grid-cols-3 gap-3 mb-4">
+          <div class="card rounded-2xl p-4 border border-accent-purple/30">
+            <div class="flex items-center justify-between mb-2">
+              <h5 class="font-semibold text-white text-sm">Smooth Motion</h5>
+              <span class="px-2 py-1 rounded-full bg-accent-purple/20 text-accent-purple text-xs font-bold">NEU</span>
+            </div>
+            <p class="text-xs text-gray-400 mb-3">Frame Gen für ALLE Spiele - auch ohne DLSS Support!</p>
+            <div class="flex justify-between text-sm mb-2"><span class="text-gray-500">Gaming</span><span class="text-accent-warning font-semibold">AUS</span></div>
+            <div class="flex justify-between text-sm"><span class="text-gray-500">Singleplayer</span><span class="text-green-400 font-semibold">EIN</span></div>
+            <p class="text-xs text-gray-500 mt-2">+10-15ms Latenz!</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-purple/30">
+            <div class="flex items-center justify-between mb-2">
+              <h5 class="font-semibold text-white text-sm">RTX Dynamic Vibrance</h5>
+            </div>
+            <p class="text-xs text-gray-400 mb-3">AI-Farbverbesserung - kräftigere Farben ohne Übersättigung.</p>
+            <div class="flex justify-between text-sm mb-2"><span class="text-gray-500">Empfehlung</span><span class="text-green-400 font-semibold">EIN</span></div>
+            <div class="flex justify-between text-sm"><span class="text-gray-500">Intensität</span><span class="text-gray-400">50-70%</span></div>
+            <p class="text-xs text-gray-500 mt-2">Per-Game anpassbar!</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-purple/30">
+            <div class="flex items-center justify-between mb-2">
+              <h5 class="font-semibold text-white text-sm">RTX HDR</h5>
+            </div>
+            <p class="text-xs text-gray-400 mb-3">AI-HDR für SDR-Spiele. Macht alte Games HDR!</p>
+            <div class="flex justify-between text-sm mb-2"><span class="text-gray-500">OLED Monitor</span><span class="text-green-400 font-semibold">EIN</span></div>
+            <div class="flex justify-between text-sm"><span class="text-gray-500">Windows Auto HDR</span><span class="text-accent-danger font-semibold">AUS</span></div>
+            <p class="text-xs text-gray-500 mt-2">Erst Windows Auto HDR aus!</p>
+          </div>
+        </div>
+
+        <div class="card rounded-2xl p-4 border-l-4 border-accent-warning mb-4">
+          <h5 class="font-semibold text-accent-warning text-sm mb-2 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4"></i> Windows Auto HDR deaktivieren (für RTX HDR)</h5>
+          <p class="text-xs text-gray-400 mb-2">RTX HDR funktioniert besser als Windows Auto HDR. So deaktivierst du es:</p>
+          <p class="text-xs text-gray-400 font-mono bg-dark-800 rounded p-2">Einstellungen → System → Bildschirm → HDR → <span class="text-accent-danger">Auto HDR: AUS</span></p>
+        </div>
+
+        <h4 class="font-semibold text-white mb-4 flex items-center gap-2"><i data-lucide="video" class="w-5 h-5 text-accent-secondary"></i> Video Tab - RTX Video</h4>
+
+        <div class="grid md:grid-cols-2 gap-3 mb-4">
+          <div class="card rounded-2xl p-4">
+            <h5 class="font-semibold text-white text-sm mb-3">RTX Video Super Resolution</h5>
+            <p class="text-xs text-gray-400 mb-3">AI-Upscaling für YouTube, Netflix etc. Macht 1080p schärfer!</p>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between"><span class="text-gray-500">Status</span><span class="text-green-400 font-semibold">EIN</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Qualität</span><span class="text-green-400 font-semibold">Auto</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">GPU Nutzung</span><span class="text-gray-400">Medium</span></div>
+            </div>
+          </div>
+          <div class="card rounded-2xl p-4">
+            <h5 class="font-semibold text-white text-sm mb-3">RTX Video HDR</h5>
+            <p class="text-xs text-gray-400 mb-3">Macht SDR-Videos zu HDR. Perfekt für deinen OLED!</p>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between"><span class="text-gray-500">Status</span><span class="text-green-400 font-semibold">EIN</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Brightness</span><span class="text-gray-400">Nach Geschmack</span></div>
+              <div class="flex justify-between"><span class="text-gray-500">Contrast</span><span class="text-gray-400">Nach Geschmack</span></div>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="font-semibold text-white mb-4 flex items-center gap-2"><i data-lucide="list-checks" class="w-5 h-5 text-green-400"></i> Zusammenfassung - NVIDIA App Settings</h4>
+
+        <div class="table-modern bg-dark-800/50 mb-4">
+          <table class="w-full text-sm"><thead><tr><th class="text-left px-4 py-3">Einstellung</th><th class="text-left px-4 py-3">Ort</th><th class="text-left px-4 py-3 text-green-400">Empfehlung</th></tr></thead>
+            <tbody>
+              <tr><td class="px-4 py-2">Auto Tuning</td><td class="px-4 py-2 text-gray-500">System → Performance</td><td class="px-4 py-2 text-accent-warning">Optional (Testen OK)</td></tr>
+              <tr><td class="px-4 py-2">Smooth Motion</td><td class="px-4 py-2 text-gray-500">Graphics</td><td class="px-4 py-2 text-accent-warning">Nur Singleplayer</td></tr>
+              <tr><td class="px-4 py-2">RTX Dynamic Vibrance</td><td class="px-4 py-2 text-gray-500">Graphics</td><td class="px-4 py-2 text-green-400 font-semibold">EIN (50-70%)</td></tr>
+              <tr><td class="px-4 py-2">RTX HDR</td><td class="px-4 py-2 text-gray-500">Graphics</td><td class="px-4 py-2 text-green-400 font-semibold">EIN (für OLED)</td></tr>
+              <tr><td class="px-4 py-2">RTX Video Super Resolution</td><td class="px-4 py-2 text-gray-500">Video</td><td class="px-4 py-2 text-green-400 font-semibold">EIN (Auto)</td></tr>
+              <tr><td class="px-4 py-2">RTX Video HDR</td><td class="px-4 py-2 text-gray-500">Video</td><td class="px-4 py-2 text-green-400 font-semibold">EIN</td></tr>
+            </tbody>
+          </table>
+        </div>
+        </div>
       </section>
 
       <!-- Section: RAM -->
