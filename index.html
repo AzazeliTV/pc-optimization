@@ -145,6 +145,8 @@
     /* Yellow/Gold - Peripherals (Wooting, Mouse, Headset) */
     .section-wooting .section-icon, .section-mouse .section-icon, .section-headset .section-icon, .section-peripherals .section-icon { background: linear-gradient(135deg, rgba(255,170,0,0.2) 0%, rgba(255,200,50,0.15) 100%); border-color: rgba(255,170,0,0.3); box-shadow: 0 4px 20px rgba(255,170,0,0.15); }
     .section-wooting .section-header::after, .section-mouse .section-header::after, .section-headset .section-header::after, .section-peripherals .section-header::after { background: linear-gradient(90deg, rgba(255,170,0,0.4) 0%, rgba(255,200,50,0.2) 30%, transparent 70%); }
+    .section-icue .section-icon { background: linear-gradient(135deg, rgba(0,212,255,0.2) 0%, rgba(0,180,220,0.15) 100%); border-color: rgba(0,212,255,0.3); box-shadow: 0 4px 20px rgba(0,212,255,0.15); }
+    .section-icue .section-header::after { background: linear-gradient(90deg, rgba(0,212,255,0.4) 0%, rgba(0,180,220,0.2) 30%, transparent 70%); }
 
     /* Cyan - Streaming (OBS, Wave Link, Discord, Stream Deck) */
     .section-obs .section-icon, .section-wavelink .section-icon, .section-discord .section-icon, .section-streamdeck .section-icon { background: linear-gradient(135deg, rgba(0,212,255,0.2) 0%, rgba(56,189,248,0.15) 100%); border-color: rgba(0,212,255,0.3); box-shadow: 0 4px 20px rgba(0,212,255,0.15); }
@@ -307,6 +309,7 @@
       <a href="#wooting" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="keyboard" class="w-4 h-4" style="color: #ffaa00;"></i><span>Wooting 80HE</span></a>
       <a href="#mouse" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="mouse" class="w-4 h-4" style="color: #ffaa00;"></i><span>Razer Viper V3</span></a>
       <a href="#headset" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="headphones" class="w-4 h-4" style="color: #ffaa00;"></i><span>Arctis Nova Pro</span></a>
+      <a href="#icue" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="snowflake" class="w-4 h-4" style="color: #00d4ff;"></i><span>Corsair iCUE</span></a>
       <a href="#wavelink" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="mic" class="w-4 h-4" style="color: #00d4ff;"></i><span>Wave Link</span></a>
       <a href="#discord" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="message-circle" class="w-4 h-4" style="color: #00d4ff;"></i><span>Discord</span></a>
       <a href="#streamdeck" class="nav-link flex items-center gap-3 text-sm font-medium"><i data-lucide="grid-3x3" class="w-4 h-4" style="color: #00d4ff;"></i><span>Stream Deck</span></a>
@@ -3023,6 +3026,156 @@
           </div>
         </div>
         <p class="text-xs text-gray-500 mt-3">Tipp: Bluetooth für Handy verbinden → Anrufe annehmen während du spielst, Game-Audio wird automatisch leiser.</p>
+        </div>
+      </section>
+
+      <!-- Section: Corsair iCUE -->
+      <section id="icue" class="py-12 scroll-mt-8 section-icue">
+        <div class="section-header">
+          <div class="section-icon">
+            <i data-lucide="snowflake" class="w-6 h-6 text-accent-secondary"></i>
+          </div>
+          <div><h2 class="text-3xl font-bold text-white">Corsair iCUE</h2><p class="text-gray-400 text-sm mt-1">H150i Elite Capellix XT | 360mm AIO | ML120 RGB Lüfter</p></div>
+        </div>
+
+        <div class="category-box">
+        <div class="flex flex-col md:flex-row gap-4 mb-4">
+          <div class="flex-1">
+            <p class="text-gray-400 text-sm mb-3">iCUE steuert deine AIO-Kühlung, RGB-Beleuchtung und Lüfterprofile. Hier sind die optimalen Einstellungen für maximale Gaming-Performance bei minimaler CPU-Last.</p>
+            <div class="card rounded-2xl p-3 border-l-4 border-accent-secondary">
+              <h4 class="font-semibold text-accent-secondary text-sm mb-2">iCUE Download</h4>
+              <p class="text-xs text-gray-400"><a href="https://www.corsair.com/icue" target="_blank" class="text-accent-primary underline">corsair.com/icue</a> → Neueste Version installieren</p>
+            </div>
+          </div>
+          <div class="card rounded-2xl p-4 border-l-4 border-accent-primary bg-gradient-to-br from-accent-primary/10 to-transparent md:w-56 flex-shrink-0">
+            <p class="text-xs text-accent-primary font-semibold uppercase tracking-wider mb-2">Key Point</p>
+            <p class="text-white font-bold text-lg mb-1">Pumpe → Extreme</p>
+            <p class="text-xs text-gray-400">Unhörbar, aber beste Temps!</p>
+          </div>
+        </div>
+
+        <h3 class="text-sm font-semibold text-accent-secondary uppercase tracking-wider mb-4">Pumpen-Einstellungen</h3>
+        <div class="grid md:grid-cols-3 gap-3 mb-4">
+          <div class="card rounded-2xl p-4 border border-gray-600">
+            <div class="flex items-center gap-2 mb-2">
+              <i data-lucide="volume-x" class="w-5 h-5 text-gray-400"></i>
+              <h4 class="font-semibold text-white text-sm">Quiet</h4>
+            </div>
+            <p class="text-lg font-bold text-gray-400">~2238 RPM</p>
+            <p class="text-xs text-gray-500">Basis-Temperatur</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-warning/30">
+            <div class="flex items-center gap-2 mb-2">
+              <i data-lucide="activity" class="w-5 h-5 text-accent-warning"></i>
+              <h4 class="font-semibold text-white text-sm">Balanced</h4>
+            </div>
+            <p class="text-lg font-bold text-accent-warning">~2417 RPM</p>
+            <p class="text-xs text-gray-500">-0.5°C vs Quiet</p>
+          </div>
+          <div class="card rounded-2xl p-4 border-2 border-accent-primary/50 bg-accent-primary/5">
+            <div class="flex items-center gap-2 mb-2">
+              <i data-lucide="zap" class="w-5 h-5 text-accent-primary"></i>
+              <h4 class="font-semibold text-white text-sm">Extreme</h4>
+              <span class="text-[10px] bg-accent-primary/20 text-accent-primary px-2 py-0.5 rounded-full">EMPFOHLEN</span>
+            </div>
+            <p class="text-lg font-bold text-accent-primary">~2637 RPM</p>
+            <p class="text-xs text-gray-500">-1.5°C vs Quiet, unhörbar!</p>
+          </div>
+        </div>
+
+        <div class="card rounded-2xl p-3 border border-accent-secondary/30 bg-accent-secondary/5 mb-6">
+          <p class="text-sm text-accent-secondary"><i data-lucide="info" class="w-4 h-4 inline mr-2"></i><strong>Wichtig:</strong> Pumpen-Modus macht nur ~1-2°C Unterschied. Die Lüftergeschwindigkeit hat den größten Einfluss!</p>
+        </div>
+
+        <h3 class="text-sm font-semibold text-accent-warning uppercase tracking-wider mb-4">Custom Fan Curve (Coolant Temp)</h3>
+        <p class="text-gray-400 text-sm mb-3">Erstelle eine Custom Fan Curve basierend auf <strong class="text-white">Coolant Temperature</strong> (nicht CPU-Temp!) für stabilere Lüftergeschwindigkeiten ohne nerviges Hochdrehen.</p>
+
+        <div class="overflow-x-auto mb-4">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-white/10">
+                <th class="text-left py-2 px-3 text-accent-primary font-semibold">Kühlmittel-Temp</th>
+                <th class="text-left py-2 px-3 text-accent-primary font-semibold">Lüfter-Speed</th>
+                <th class="text-left py-2 px-3 text-accent-primary font-semibold">Beschreibung</th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-300">
+              <tr class="border-b border-white/5"><td class="py-2 px-3">&lt; 30°C</td><td class="py-2 px-3 text-accent-primary font-semibold">600 RPM (30%)</td><td class="py-2 px-3 text-gray-500">Idle - Fast unhörbar</td></tr>
+              <tr class="border-b border-white/5"><td class="py-2 px-3">30-35°C</td><td class="py-2 px-3">800 RPM (40%)</td><td class="py-2 px-3 text-gray-500">Leichte Last</td></tr>
+              <tr class="border-b border-white/5"><td class="py-2 px-3">35-40°C</td><td class="py-2 px-3">1000 RPM (50%)</td><td class="py-2 px-3 text-gray-500">Gaming Start</td></tr>
+              <tr class="border-b border-white/5"><td class="py-2 px-3">40-45°C</td><td class="py-2 px-3">1200 RPM (60%)</td><td class="py-2 px-3 text-gray-500">Normale Gaming-Last</td></tr>
+              <tr class="border-b border-white/5"><td class="py-2 px-3">45-50°C</td><td class="py-2 px-3">1500 RPM (75%)</td><td class="py-2 px-3 text-gray-500">Hohe Last</td></tr>
+              <tr><td class="py-2 px-3">&gt; 50°C</td><td class="py-2 px-3 text-accent-warning font-semibold">2000 RPM (100%)</td><td class="py-2 px-3 text-gray-500">Maximum - Selten nötig</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="text-sm font-semibold text-accent-danger uppercase tracking-wider mb-4">iCUE Performance-Optimierung</h3>
+        <p class="text-gray-400 text-sm mb-3">iCUE kann bei falschen Einstellungen bis zu 10% CPU-Last verursachen. So minimierst du den Overhead:</p>
+
+        <div class="grid md:grid-cols-2 gap-3 mb-4">
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white text-sm mb-3 flex items-center gap-2"><i data-lucide="layout-dashboard" class="w-4 h-4 text-accent-primary"></i> Widgets entfernen</h4>
+            <ul class="text-xs text-gray-400 space-y-1">
+              <li>• Home-Tab: 3 Punkte bei Graphen → "Remove"</li>
+              <li>• Dashboard-Tab: Unnötige Widgets entfernen</li>
+              <li>• <span class="text-accent-primary">Reduziert CPU-Last erheblich!</span></li>
+            </ul>
+          </div>
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white text-sm mb-3 flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-accent-warning"></i> RGB optimieren</h4>
+            <ul class="text-xs text-gray-400 space-y-1">
+              <li>• Effekte: <span class="text-accent-primary">Static / Solid Color</span></li>
+              <li>• Speed: Low</li>
+              <li>• Brightness: 50-75%</li>
+            </ul>
+          </div>
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white text-sm mb-3 flex items-center gap-2"><i data-lucide="monitor" class="w-4 h-4 text-accent-secondary"></i> LCD Display (falls vorhanden)</h4>
+            <ul class="text-xs text-gray-400 space-y-1">
+              <li>• Frame Rate: <span class="text-accent-primary">15-30 FPS</span> (nicht 60!)</li>
+              <li>• Murals: <span class="text-accent-primary">Deaktiviert</span></li>
+              <li>• Simple Animation oder Static</li>
+            </ul>
+          </div>
+          <div class="card rounded-2xl p-4">
+            <h4 class="font-semibold text-white text-sm mb-3 flex items-center gap-2"><i data-lucide="puzzle" class="w-4 h-4 text-accent-danger"></i> Plugins aufräumen</h4>
+            <ul class="text-xs text-gray-400 space-y-1">
+              <li>• Settings → Plugins: Nicht benötigte löschen</li>
+              <li>• RAM RGB: "Full Software Control" AUS</li>
+              <li>• <span class="text-accent-primary">Kann 30% → 5% CPU senken!</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="text-sm font-semibold text-accent-primary uppercase tracking-wider mb-4">Erwartete Temperaturen</h3>
+        <div class="grid md:grid-cols-3 gap-3 mb-4">
+          <div class="card rounded-2xl p-4 border border-accent-primary/20">
+            <p class="text-xs text-gray-500 mb-1">Idle / Desktop</p>
+            <p class="text-xl font-bold text-accent-primary">35-45°C</p>
+            <p class="text-xs text-gray-500">Kühlmittel: 25-30°C</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-warning/20">
+            <p class="text-xs text-gray-500 mb-1">Gaming</p>
+            <p class="text-xl font-bold text-accent-warning">55-70°C</p>
+            <p class="text-xs text-gray-500">Kühlmittel: 35-42°C</p>
+          </div>
+          <div class="card rounded-2xl p-4 border border-accent-danger/20">
+            <p class="text-xs text-gray-500 mb-1">Rendering / Stress</p>
+            <p class="text-xl font-bold text-accent-danger">70-85°C</p>
+            <p class="text-xs text-gray-500">Kühlmittel: 40-50°C</p>
+          </div>
+        </div>
+
+        <div class="card rounded-2xl p-4 border border-accent-danger/30 bg-accent-danger/5">
+          <h4 class="font-semibold text-accent-danger text-sm mb-2 flex items-center gap-2"><i data-lucide="alert-triangle" class="w-4 h-4"></i> Pumpe laut?</h4>
+          <p class="text-xs text-gray-400">Die H150i Capellix sollte selbst bei 2600 RPM leise sein. Falls laut: <strong class="text-white">Luftblasen im System!</strong> Stelle sicher, dass die Oberseite des Radiators höher als die Pumpe ist (Schläuche nach unten).</p>
+        </div>
+
+        <div class="card rounded-2xl p-4 border border-accent-warning/30 bg-accent-warning/5 mt-3">
+          <h4 class="font-semibold text-accent-warning text-sm mb-2 flex items-center gap-2"><i data-lucide="cpu" class="w-4 h-4"></i> NVIDIA Driver Konflikt</h4>
+          <p class="text-xs text-gray-400">Manche NVIDIA-Treiberversionen (z.B. 566.03) hatten Konflikte mit iCUE. Falls hohe CPU-Last nach GPU-Treiber-Update: DDU verwenden und andere Treiberversion testen.</p>
+        </div>
         </div>
       </section>
 
