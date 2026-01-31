@@ -1,0 +1,138 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-01-31",
+  "device": {
+    "name": "Corsair H150i Elite Capellix XT",
+    "type": "AIO Liquid Cooler",
+    "radiatorSize": "360mm",
+    "fans": "3x ML120 RGB",
+    "software": {
+      "name": "Corsair iCUE",
+      "url": "https://www.corsair.com/icue"
+    }
+  },
+  "pumpSettings": {
+    "quiet": {
+      "rpm": 2238,
+      "tempDifference": "Basis",
+      "recommendation": "Wenn Temps akzeptabel"
+    },
+    "balanced": {
+      "rpm": 2417,
+      "tempDifference": "-0.5°C",
+      "recommendation": "Guter Kompromiss"
+    },
+    "extreme": {
+      "rpm": 2637,
+      "tempDifference": "-1.5°C",
+      "recommendation": "Gaming-Standard (empfohlen)"
+    }
+  },
+  "fanCurve": {
+    "type": "Custom - Coolant Temperature",
+    "reason": "Kühlmitteltemperatur ändert sich langsamer, verhindert nerviges Hochdrehen bei CPU-Spikes",
+    "points": [
+      { "coolantTemp": "<30", "fanSpeed": "600 RPM (30%)", "description": "Idle - Fast unhörbar" },
+      { "coolantTemp": "30-35", "fanSpeed": "800 RPM (40%)", "description": "Leichte Last" },
+      { "coolantTemp": "35-40", "fanSpeed": "1000 RPM (50%)", "description": "Gaming Start" },
+      { "coolantTemp": "40-45", "fanSpeed": "1200 RPM (60%)", "description": "Normale Gaming-Last" },
+      { "coolantTemp": "45-50", "fanSpeed": "1500 RPM (75%)", "description": "Hohe Last" },
+      { "coolantTemp": ">50", "fanSpeed": "2000 RPM (100%)", "description": "Maximum - Selten nötig" }
+    ]
+  },
+  "performanceOptimization": {
+    "widgets": {
+      "action": "Unnötige Graphen entfernen",
+      "location": "Home-Tab und Dashboard-Tab",
+      "impact": "Erhebliche CPU-Last Reduktion"
+    },
+    "rgb": {
+      "performanceMode": {
+        "effects": "Static / Solid Color",
+        "speed": "Low",
+        "brightness": "50-75%"
+      },
+      "fancyMode": {
+        "effects": "Rainbow Wave, etc.",
+        "speed": "Medium/High",
+        "brightness": "100%"
+      }
+    },
+    "lcd": {
+      "frameRate": "15-30 FPS",
+      "murals": "Deaktiviert",
+      "displayMode": "Static Image oder Simple Animation"
+    },
+    "plugins": {
+      "action": "Nicht benötigte Plugins entfernen",
+      "location": "Settings → Plugins"
+    },
+    "ramRgb": {
+      "tip": "Full Software Control deaktivieren kann CPU-Last von 30% auf 5% senken"
+    }
+  },
+  "expectedTemperatures": {
+    "idle": {
+      "cpu": "35-45°C",
+      "coolant": "25-30°C"
+    },
+    "gaming": {
+      "cpu": "55-70°C",
+      "coolant": "35-42°C"
+    },
+    "stress": {
+      "cpu": "70-85°C",
+      "coolant": "40-50°C"
+    }
+  },
+  "troubleshooting": {
+    "loudPump": {
+      "problem": "Pumpe ist laut",
+      "cause": "Luftblasen im System",
+      "solution": "Oberseite des Radiators muss höher als die Pumpe sein (Schläuche nach unten)"
+    },
+    "highCpuUsage": {
+      "problem": "iCUE verursacht hohe CPU-Last",
+      "solutions": [
+        "Graphen/Widgets entfernen",
+        "LCD Frame Rate auf 15-30 FPS",
+        "Murals deaktivieren",
+        "Full Software Control für RAM deaktivieren",
+        "Nicht benötigte Plugins entfernen"
+      ]
+    },
+    "nvidiaConflict": {
+      "problem": "CPU-Spikes nach NVIDIA Treiber-Update",
+      "cause": "Manche Treiberversionen (z.B. 566.03) konfligieren mit iCUE",
+      "solution": "DDU verwenden und anderen Treiberversion testen"
+    }
+  },
+  "firmwareUpdates": {
+    "icueSoftware": {
+      "location": "corsair.com/icue",
+      "frequency": "Bei neuen Versionen"
+    },
+    "aioFirmware": {
+      "location": "iCUE → Gerät → Settings → Update",
+      "frequency": "Wenn verfügbar"
+    },
+    "commanderCore": {
+      "location": "iCUE → Hub auswählen → Update",
+      "frequency": "Wenn verfügbar"
+    }
+  },
+  "quickSetup": [
+    "Pumpe auf Extreme stellen",
+    "Custom Fan Curve basierend auf Coolant Temp erstellen",
+    "RGB auf Static Color oder einfache Effekte",
+    "LCD auf 15-30 FPS, keine Murals",
+    "Alle unnötigen Graphen/Widgets entfernen",
+    "iCUE im Autostart lassen (für Lüfterkontrolle)"
+  ],
+  "sources": [
+    "https://www.corsair.com/us/en/explorer/gamer/accessories/best-performance-settings-for-gaming-icue-windows-gpu-driver/",
+    "https://forum.corsair.com/forums/topic/176700-how-should-the-icue-h150i-elite-lcd-cooler-settings-be/",
+    "https://www.anandtech.com/show/16169/the-corsair-h150i-elite-capellix-cooler-review/4",
+    "https://bit-tech.net/reviews/tech/cooling/corsair-icue-h150i-elite-capellix-review/3/"
+  ]
+}

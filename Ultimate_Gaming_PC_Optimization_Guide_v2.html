@@ -742,10 +742,11 @@
         <li><a href="#section9"><span class="nav-icon">📹</span> OBS Streaming <span class="nav-number">09</span></a></li>
         <li><a href="#section10"><span class="nav-icon">🖥️</span> DisplayWidget <span class="nav-number">10</span></a></li>
         <li><a href="#section11"><span class="nav-icon">⌨️</span> Wooting 80HE <span class="nav-number">11</span></a></li>
+        <li><a href="#section-icue"><span class="nav-icon">❄️</span> Corsair iCUE <span class="nav-number">12</span></a></li>
         
         <div class="sidebar-section">Wartung</div>
-        <li><a href="#section12"><span class="nav-icon">✅</span> Checkliste <span class="nav-number">12</span></a></li>
-        <li><a href="#section13"><span class="nav-icon">🔍</span> Troubleshooting <span class="nav-number">13</span></a></li>
+        <li><a href="#section12"><span class="nav-icon">✅</span> Checkliste <span class="nav-number">13</span></a></li>
+        <li><a href="#section13"><span class="nav-icon">🔍</span> Troubleshooting <span class="nav-number">14</span></a></li>
       </ul>
     </nav>
   </aside>
@@ -1525,6 +1526,144 @@ DISM /Online /Cleanup-Image /RestoreHealth</div>
       </div>
     </section>
 
+    <!-- SECTION iCUE: CORSAIR iCUE -->
+    <section id="section-icue">
+      <div class="section-header">
+        <span class="section-icon">❄️</span>
+        <h2>Corsair iCUE (H150i Elite Capellix XT)</h2>
+      </div>
+
+      <p>iCUE steuert deine AIO-Kühlung, RGB-Beleuchtung und Lüfterprofile. Hier sind die optimalen Einstellungen für maximale Gaming-Performance bei minimaler CPU-Last.</p>
+
+      <h3>Pumpen-Einstellungen</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Modus</th><th>Pumpen-RPM</th><th>Temp-Unterschied</th><th>Empfehlung</th></tr></thead>
+          <tbody>
+            <tr><td>Quiet</td><td>~2238 RPM</td><td>Basis</td><td>Wenn Temps ok sind</td></tr>
+            <tr><td>Balanced</td><td>~2417 RPM</td><td>-0.5°C</td><td>Guter Kompromiss</td></tr>
+            <tr><td><span class="status-good">Extreme</span></td><td>~2637 RPM</td><td>-1.5°C</td><td><span class="status-gold">Gaming-Standard</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="alert alert-tip">
+        <span class="alert-icon">💡</span>
+        <div><strong>Wichtig:</strong> Der Pumpen-Modus macht nur ~1-2°C Unterschied. Die Lüftergeschwindigkeit hat den größten Einfluss auf die Temperaturen! Pumpe auf Extreme ist unhörbar und empfohlen.</div>
+      </div>
+
+      <h3>Optimale Lüfterkurve (ML120 RGB)</h3>
+      <p>Erstelle eine <strong>Custom Fan Curve</strong> basierend auf der <strong>Coolant Temperature</strong> (nicht CPU-Temp!) für stabilere Lüftergeschwindigkeiten:</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Kühlmittel-Temp</th><th>Lüfter-Speed</th><th>Beschreibung</th></tr></thead>
+          <tbody>
+            <tr><td>< 30°C</td><td><span class="status-good">600 RPM (30%)</span></td><td>Idle - Fast unhörbar</td></tr>
+            <tr><td>30-35°C</td><td>800 RPM (40%)</td><td>Leichte Last</td></tr>
+            <tr><td>35-40°C</td><td>1000 RPM (50%)</td><td>Gaming Start</td></tr>
+            <tr><td>40-45°C</td><td>1200 RPM (60%)</td><td>Normale Gaming-Last</td></tr>
+            <tr><td>45-50°C</td><td>1500 RPM (75%)</td><td>Hohe Last</td></tr>
+            <tr><td>> 50°C</td><td><span class="status-warn">2000 RPM (100%)</span></td><td>Maximum - Selten nötig</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="alert alert-info">
+        <span class="alert-icon">ℹ️</span>
+        <div><strong>Warum Coolant Temp?</strong> Die Kühlmitteltemperatur ändert sich langsamer als die CPU-Temperatur. Das verhindert nerviges Hochdrehen der Lüfter bei kurzen CPU-Spikes.</div>
+      </div>
+
+      <h3>iCUE Performance-Optimierung</h3>
+      <p>iCUE kann bei falschen Einstellungen bis zu 10% CPU-Last verursachen. So minimierst du den Overhead:</p>
+
+      <h4>1. Unnötige Widgets entfernen</h4>
+      <ul>
+        <li>Home-Tab: Klicke auf die drei Punkte bei Graphen → "Remove"</li>
+        <li>Dashboard-Tab: Entferne alle nicht benötigten Monitoring-Widgets</li>
+        <li>Dies reduziert die CPU-Last erheblich!</li>
+      </ul>
+
+      <h4>2. RGB-Effekte optimieren</h4>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Einstellung</th><th>Performance-Modus</th><th>Fancy-Modus</th></tr></thead>
+          <tbody>
+            <tr><td>Lighting Effects</td><td><span class="status-good">Static / Solid Color</span></td><td>Rainbow Wave, etc.</td></tr>
+            <tr><td>Effect Speed</td><td>Low</td><td>Medium/High</td></tr>
+            <tr><td>Brightness</td><td>50-75%</td><td>100%</td></tr>
+            <tr><td>CPU Impact</td><td><span class="status-good">Minimal</span></td><td><span class="status-warn">Höher</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>3. LCD Display (falls vorhanden)</h4>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Einstellung</th><th>Empfohlener Wert</th></tr></thead>
+          <tbody>
+            <tr><td>LCD Frame Rate</td><td><span class="status-good">15-30 FPS</span> (nicht 60!)</td></tr>
+            <tr><td>Murals</td><td><span class="status-good">Deaktiviert</span></td></tr>
+            <tr><td>Display Mode</td><td>Static Image oder Simple Animation</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>4. Plugins & Features deaktivieren</h4>
+      <ul>
+        <li>Settings → Plugins: Entferne nicht benötigte Plugins</li>
+        <li>Settings → General: Deaktiviere nicht benötigte Integrationen</li>
+        <li>Bei RAM mit RGB: "Full Software Control" deaktivieren kann CPU-Last von 30% auf 5% senken!</li>
+      </ul>
+
+      <h3>Firmware & Software Updates</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Was updaten?</th><th>Wo?</th><th>Häufigkeit</th></tr></thead>
+          <tbody>
+            <tr><td>iCUE Software</td><td>corsair.com/icue</td><td>Bei neuen Versionen</td></tr>
+            <tr><td>AIO Firmware</td><td>iCUE → Gerät → Settings → Update</td><td>Wenn verfügbar</td></tr>
+            <tr><td>Commander CORE</td><td>iCUE → Hub auswählen → Update</td><td>Wenn verfügbar</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="alert alert-warning">
+        <span class="alert-icon">⚠️</span>
+        <div><strong>NVIDIA Driver Konflikt:</strong> Manche NVIDIA-Treiberversionen (z.B. 566.03) hatten Konflikte mit iCUE. Falls hohe CPU-Last nach GPU-Treiber-Update: DDU verwenden und anderen Treiberversion testen.</div>
+      </div>
+
+      <h3>Zusammenfassung Gaming-Einstellungen</h3>
+      <div class="card">
+        <h4 style="margin-top:0;">Quick-Setup für Gaming</h4>
+        <ol>
+          <li><strong>Pumpe:</strong> Extreme (immer)</li>
+          <li><strong>Lüfter:</strong> Custom Curve basierend auf Coolant Temp</li>
+          <li><strong>RGB:</strong> Static Color oder einfache Effekte</li>
+          <li><strong>LCD:</strong> 15-30 FPS, keine Murals</li>
+          <li><strong>Widgets:</strong> Alle unnötigen Graphen entfernen</li>
+          <li><strong>Startup:</strong> iCUE im Autostart lassen (für Lüfterkontrolle)</li>
+        </ol>
+      </div>
+
+      <h3>Erwartete Temperaturen (mit H150i Elite Capellix XT)</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Szenario</th><th>Erwartete CPU-Temp</th><th>Erwartete Kühlmittel-Temp</th></tr></thead>
+          <tbody>
+            <tr><td>Idle/Desktop</td><td>35-45°C</td><td>25-30°C</td></tr>
+            <tr><td>Gaming</td><td>55-70°C</td><td>35-42°C</td></tr>
+            <tr><td>Rendering/Stress</td><td>70-85°C</td><td>40-50°C</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="alert alert-danger">
+        <span class="alert-icon">🔴</span>
+        <div><strong>Pumpe laut?</strong> Die H150i Capellix sollte selbst bei 2600 RPM leise sein. Falls sie laut ist: Luftblasen im System! Stelle sicher, dass die Oberseite des Radiators höher als die Pumpe ist (Schläuche nach unten).</div>
+      </div>
+    </section>
+
     <!-- SECTION 12: CHECKLIST -->
     <section id="section12">
       <div class="section-header">
@@ -1534,7 +1673,7 @@ DISM /Online /Cleanup-Image /RestoreHealth</div>
 
       <h3>Einmalige Einrichtung</h3>
       <div class="progress-counter" id="setupProgress">
-        <div class="progress-text">Fortschritt: <span id="setupCount">0</span>/<span id="setupTotal">22</span></div>
+        <div class="progress-text">Fortschritt: <span id="setupCount">0</span>/<span id="setupTotal">25</span></div>
         <div class="progress-fill">
           <div class="progress-fill-inner" id="setupBar" style="width: 0%"></div>
         </div>
@@ -1561,6 +1700,9 @@ DISM /Online /Cleanup-Image /RestoreHealth</div>
         <li onclick="toggleCheck(this, 'setup')"><div class="checkbox"></div><span>NVIDIA: Low Latency Mode auf Ein</span></li>
         <li onclick="toggleCheck(this, 'setup')"><div class="checkbox"></div><span>Samsung Magician: Firmware 5B2QJXF7+ prüfen</span></li>
         <li onclick="toggleCheck(this, 'setup')"><div class="checkbox"></div><span>Corsair iCUE: Pumpe auf Extreme</span></li>
+        <li onclick="toggleCheck(this, 'setup')"><div class="checkbox"></div><span>Corsair iCUE: Custom Fan Curve (Coolant Temp) erstellen</span></li>
+        <li onclick="toggleCheck(this, 'setup')"><div class="checkbox"></div><span>Corsair iCUE: Unnötige Widgets/Graphen entfernen</span></li>
+        <li onclick="toggleCheck(this, 'setup')"><div class="checkbox"></div><span>Corsair iCUE: LCD Frame Rate auf 15-30 FPS</span></li>
         <li onclick="toggleCheck(this, 'setup')"><div class="checkbox"></div><span>DisplayWidget Center: OLED Care aktiviert lassen</span></li>
         <li onclick="toggleCheck(this, 'setup')"><div class="checkbox"></div><span>Wooting 80HE: 8kHz Polling aktivieren</span></li>
         <li onclick="toggleCheck(this, 'setup')"><div class="checkbox"></div><span>Wooting 80HE: Game-Profile einrichten</span></li>
@@ -1568,7 +1710,7 @@ DISM /Online /Cleanup-Image /RestoreHealth</div>
 
       <h3>Monatliche Wartung</h3>
       <div class="progress-counter" id="monthlyProgress">
-        <div class="progress-text">Fortschritt: <span id="monthlyCount">0</span>/<span id="monthlyTotal">6</span></div>
+        <div class="progress-text">Fortschritt: <span id="monthlyCount">0</span>/<span id="monthlyTotal">7</span></div>
         <div class="progress-fill">
           <div class="progress-fill-inner" id="monthlyBar" style="width: 0%"></div>
         </div>
@@ -1582,6 +1724,7 @@ DISM /Online /Cleanup-Image /RestoreHealth</div>
         <li onclick="toggleCheck(this, 'monthly')"><div class="checkbox"></div><span>Temperaturen mit HWiNFO64 kontrollieren</span></li>
         <li onclick="toggleCheck(this, 'monthly')"><div class="checkbox"></div><span>DisplayWidget: Firmware-Updates prüfen</span></li>
         <li onclick="toggleCheck(this, 'monthly')"><div class="checkbox"></div><span>Wootility: Firmware-Updates prüfen</span></li>
+        <li onclick="toggleCheck(this, 'monthly')"><div class="checkbox"></div><span>iCUE: AIO & Commander CORE Firmware prüfen</span></li>
       </ul>
     </section>
 
@@ -1634,7 +1777,7 @@ DISM /Online /Cleanup-Image /RestoreHealth</div>
         <li><strong>Windows:</strong> VBS komplett deaktivieren (5-15% mehr FPS!)</li>
         <li><strong>Windows:</strong> Optimierungen für Fenstermodus AUS</li>
         <li><strong>NVIDIA:</strong> G-Sync + 237 FPS Cap + Low Latency Ein</li>
-        <li><strong>iCUE:</strong> Pumpe auf Extreme für beste Temps</li>
+        <li><strong>iCUE:</strong> Pumpe Extreme + Custom Fan Curve + Widgets entfernen</li>
         <li><strong>SSD:</strong> Firmware 5B2QJXF7+ sicherstellen</li>
         <li><strong>Wooting:</strong> 8kHz + Rapid Trigger für Competitive</li>
         <li><strong>OBS:</strong> Enhanced Broadcasting oder NVENC P6</li>
